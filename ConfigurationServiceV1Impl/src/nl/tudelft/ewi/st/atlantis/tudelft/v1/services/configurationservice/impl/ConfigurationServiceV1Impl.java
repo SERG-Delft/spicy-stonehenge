@@ -66,7 +66,10 @@ public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
         return TypeFactory.toGetOPSConfigResponse(response);
     }
 
-    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest param0) {
+    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest request) {
+        if (getConfigServiceDAO().setBSToOPS(request.getBs(), request.getOps())) {
+            return new SetBSToOPSResponse();
+        }
         return null;
     }
 
