@@ -21,6 +21,7 @@ import nl.tudelft.stocktrader.dal.ConfigServiceDAO;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 import nl.tudelft.stocktrader.dal.configservice.BSConfig;
 import nl.tudelft.stocktrader.dal.configservice.ClientConfig;
+import nl.tudelft.stocktrader.dal.configservice.OPSConfig;
 
 public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
 {
@@ -59,20 +60,32 @@ public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
         return TypeFactory.toGetBSConfigResponse(configResponse);
     }
 
-    public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest param0) {
+    public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest request) {
+    	OPSConfig response = getConfigServiceDAO().getOPSConfig(request.getOPSName());
+        
+        return TypeFactory.toGetOPSConfigResponse(response);
+    }
+
+    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest request) {
+        if (getConfigServiceDAO().setBSToOPS(request.getBs(), request.getOps())) {
+            return new SetBSToOPSResponse();
+        }
         return null;
     }
 
-    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest param0) {
+    public SetClientToBSResponse setClientToBS(SetClientToBSRequest request) {
+        if (getConfigServiceDAO().setClientToBS(request.getClient(), request.getBs())) {
+            return new SetClientToBSResponse();
+        }
         return null;
     }
 
-    public SetClientToBSResponse setClientToBS(SetClientToBSRequest param0) {
-        return null;
-    }
-
-    public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest param0) {
-        return null;
+    public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest request) {
+    	GetBSLocationsResponse getBSLocationsResponse = new GetBSLocationsResponse();
+    	getBSLocationsResponse.getLocations()
+    				.addAll(TypeFactory.toRemoteServiceLocationList(
+    						getConfigServiceDAO().getBSLocations()));
+    	return getBSLocationsResponse;
     }
 
 }
