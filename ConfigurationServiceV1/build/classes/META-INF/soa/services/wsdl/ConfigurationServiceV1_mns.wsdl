@@ -84,7 +84,7 @@
 							<xs:element maxOccurs="1" minOccurs="1" name="DBHostName" type="xs:string"/>
 							<xs:element maxOccurs="1" minOccurs="1" name="DBName" type="xs:string"/>
 							<xs:element maxOccurs="1" minOccurs="1" name="DBPort" type="xs:int"/>
-							<xs:element maxOccurs="1" minOccurs="1" name="OPS" type="xs:boolean"/>
+							<xs:element maxOccurs="1" minOccurs="1" name="OPS" type="xs:string"/>
 							<xs:element maxOccurs="1" minOccurs="1" name="OPSName" type="xs:string"/>
 							<xs:element maxOccurs="1" minOccurs="1" name="Sec" type="xs:boolean"/>
 						</xs:sequence>
