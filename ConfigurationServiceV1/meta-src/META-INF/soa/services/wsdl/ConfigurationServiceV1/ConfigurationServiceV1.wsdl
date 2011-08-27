@@ -573,24 +573,7 @@
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
-			<xs:element name="getOPSLocations">
-				<xs:complexType>
-					<xs:sequence>
-
-						<xs:element name="in" type="xs:string"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="getOPSLocationsResponse">
-				<xs:complexType>
-					<xs:sequence>
-
-						<xs:element name="out" type="xs:string"></xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-            <xs:element name="getOPSLocationsRequest" type="xs:string"></xs:element>
-        </xs:schema>
+		</xs:schema>
 	</wsdl:types>
 	<wsdl:message name="getClientConfigRequest">
 		<wsdl:part element="tns:getClientConfigRequest" name="params" />
@@ -636,12 +619,6 @@
 		<wsdl:part element="tns:setServiceLocationResponse"
 			name="params" />
 	</wsdl:message>
-	<wsdl:message name="getOPSLocationsRequest">
-		<wsdl:part name="parameters" element="tns:getOPSLocationsRequest"></wsdl:part>
-	</wsdl:message>
-	<wsdl:message name="getOPSLocationsResponse">
-		<wsdl:part name="parameters" element="tns:getOPSLocationsResponse"></wsdl:part>
-	</wsdl:message>
 	<wsdl:portType name="ConfigurationServicePort">
 		<wsdl:operation name="getClientConfig">
 			<wsdl:documentation>
@@ -656,7 +633,14 @@
 			</wsdl:documentation>
 			<wsdl:input message="tns:getBSConfigRequest" />
 			<wsdl:output message="tns:getBSConfigResponse" />
-		</wsdl:operation>
+		</wsdl:operation>
+		<wsdl:operation name="getOPSConfig">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:getOPSConfigRequest" />
+			<wsdl:output message="tns:getOPSConfigResponse" />
+		</wsdl:operation>
 		<wsdl:operation name="setClientToBS">
 			<wsdl:documentation>
 				Documentation goes here.
@@ -685,10 +669,6 @@
 			<wsdl:input message="tns:setServiceLocationRequest" />
 			<wsdl:output message="tns:setServiceLocationResponse" />
 		</wsdl:operation>
-		<wsdl:operation name="getOPSLocations">
-			<wsdl:input message="tns:getOPSLocationsRequest"></wsdl:input>
-			<wsdl:output message="tns:getOPSLocationsResponse"></wsdl:output>
-		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ConfigurationServiceHttpBinding"
 		type="tns:ConfigurationServicePort">
@@ -704,6 +684,15 @@
 		</wsdl:operation>
 		<wsdl:operation name="getBSConfig">
 			<http:operation location="/getBSConfig" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOPSConfig">
+			<http:operation location="/getOPSConfig" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
 			</wsdl:input>
@@ -765,6 +754,16 @@
 		<wsdl:operation name="getBSConfig">
 			<soap:operation
 				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getBSConfig" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOPSConfig">
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getOPSConfig" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>
