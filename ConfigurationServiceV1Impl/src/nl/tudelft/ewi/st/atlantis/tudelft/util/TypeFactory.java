@@ -1,5 +1,8 @@
 package nl.tudelft.ewi.st.atlantis.tudelft.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
@@ -37,5 +40,25 @@ public class TypeFactory {
 		response.setDBPort(data.getDBPort());
 		
 		return response;
+	}
+	
+	public static List<nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation> toRemoteServiceLocationList(List<nl.tudelft.stocktrader.dal.configservice.ServiceLocation> locations) {
+		List<nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation> remote = new ArrayList<nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation>();
+		
+		for(nl.tudelft.stocktrader.dal.configservice.ServiceLocation l : locations) {
+			remote.add(toRemoteServiceLocation(l));
+		}
+		
+		return remote;
+	}
+	
+	public static nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation toRemoteServiceLocation(nl.tudelft.stocktrader.dal.configservice.ServiceLocation location) {
+		nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation remote = new nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation();
+		
+		remote.setSec(location.isSec());
+		remote.setServiceName(location.getServiceName());
+		remote.setServiceURL(location.getServiceURL());
+		
+		return remote;
 	}
 }

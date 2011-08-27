@@ -73,12 +73,19 @@ public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
         return null;
     }
 
-    public SetClientToBSResponse setClientToBS(SetClientToBSRequest param0) {
+    public SetClientToBSResponse setClientToBS(SetClientToBSRequest request) {
+        if (getConfigServiceDAO().setClientToBS(request.getClient(), request.getBs())) {
+            return new SetClientToBSResponse();
+        }
         return null;
     }
 
-    public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest param0) {
-        return null;
+    public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest request) {
+    	GetBSLocationsResponse getBSLocationsResponse = new GetBSLocationsResponse();
+    	getBSLocationsResponse.getLocations()
+    				.addAll(TypeFactory.toRemoteServiceLocationList(
+    						getConfigServiceDAO().getBSLocations()));
+    	return getBSLocationsResponse;
     }
 
 }
