@@ -2,8 +2,10 @@ package nl.tudelft.ewi.st.atlantis.tudelft.util;
 
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.stocktrader.dal.configservice.BSConfig;
 import nl.tudelft.stocktrader.dal.configservice.ClientConfig;
+import nl.tudelft.stocktrader.dal.configservice.OPSConfig;
 
 
 public class TypeFactory {
@@ -24,6 +26,15 @@ public class TypeFactory {
 		response.setOPS(data.getOPS());
 		response.setOPSName(data.getOPSName());
 		response.setSec(data.isSec());
+		
+		return response;
+	}
+	
+	public static GetOPSConfigResponse toGetOPSConfigResponse(OPSConfig data) {
+		GetOPSConfigResponse response = new GetOPSConfigResponse();
+		response.setDBHostName(data.getDBHostName());
+		response.setDBName(data.getDBName());
+		response.setDBPort(data.getDBPort());
 		
 		return response;
 	}

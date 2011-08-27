@@ -21,6 +21,7 @@ import nl.tudelft.stocktrader.dal.ConfigServiceDAO;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 import nl.tudelft.stocktrader.dal.configservice.BSConfig;
 import nl.tudelft.stocktrader.dal.configservice.ClientConfig;
+import nl.tudelft.stocktrader.dal.configservice.OPSConfig;
 
 public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
 {
@@ -59,8 +60,10 @@ public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
         return TypeFactory.toGetBSConfigResponse(configResponse);
     }
 
-    public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest param0) {
-        return null;
+    public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest request) {
+    	OPSConfig response = getConfigServiceDAO().getOPSConfig(request.getOPSName());
+        
+        return TypeFactory.toGetOPSConfigResponse(response);
     }
 
     public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest param0) {
