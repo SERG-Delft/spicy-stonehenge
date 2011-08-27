@@ -54,11 +54,9 @@ public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
     }
 
     public GetBSConfigResponse getBSConfig(GetBSConfigRequest request) {
-    	GetBSConfigResponse bsConfigResponse = new GetBSConfigResponse();
-    	
         BSConfig configResponse = getConfigServiceDAO().getBSConfig(request.getBSName());
-        bsConfigResponse.setGetBSConfigResult(configResponse);
-        return bsConfigResponse;
+        
+        return TypeFactory.toGetBSConfigResponse(configResponse);
     }
 
     public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest param0) {

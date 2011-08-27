@@ -47,22 +47,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetClientConfigResponse }
-     * 
-     */
-    public GetClientConfigResponse createGetClientConfigResponse() {
-        return new GetClientConfigResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetBSToOPSRequest }
-     * 
-     */
-    public SetBSToOPSRequest createSetBSToOPSRequest() {
-        return new SetBSToOPSRequest();
-    }
-
-    /**
      * Create an instance of {@link GetBSConfigResponse }
      * 
      */
@@ -71,19 +55,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetServiceLocationRequest }
+     * Create an instance of {@link GetClientConfigRequest }
      * 
      */
-    public SetServiceLocationRequest createSetServiceLocationRequest() {
-        return new SetServiceLocationRequest();
+    public GetClientConfigRequest createGetClientConfigRequest() {
+        return new GetClientConfigRequest();
     }
 
     /**
-     * Create an instance of {@link GetBSConfigRequest }
+     * Create an instance of {@link GetOPSConfigRequest }
      * 
      */
-    public GetBSConfigRequest createGetBSConfigRequest() {
-        return new GetBSConfigRequest();
+    public GetOPSConfigRequest createGetOPSConfigRequest() {
+        return new GetOPSConfigRequest();
     }
 
     /**
@@ -103,35 +87,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetOPSConfigRequest }
+     * Create an instance of {@link SetBSToOPSRequest }
      * 
      */
-    public GetOPSConfigRequest createGetOPSConfigRequest() {
-        return new GetOPSConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBSLocationsRequest }
-     * 
-     */
-    public GetBSLocationsRequest createGetBSLocationsRequest() {
-        return new GetBSLocationsRequest();
-    }
-
-    /**
-     * Create an instance of {@link SetClientToBSResponse }
-     * 
-     */
-    public SetClientToBSResponse createSetClientToBSResponse() {
-        return new SetClientToBSResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetClientToBSRequest }
-     * 
-     */
-    public SetClientToBSRequest createSetClientToBSRequest() {
-        return new SetClientToBSRequest();
+    public SetBSToOPSRequest createSetBSToOPSRequest() {
+        return new SetBSToOPSRequest();
     }
 
     /**
@@ -143,11 +103,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetClientConfigRequest }
+     * Create an instance of {@link SetServiceLocationRequest }
      * 
      */
-    public GetClientConfigRequest createGetClientConfigRequest() {
-        return new GetClientConfigRequest();
+    public SetServiceLocationRequest createSetServiceLocationRequest() {
+        return new SetServiceLocationRequest();
     }
 
     /**
@@ -156,6 +116,46 @@ public class ObjectFactory {
      */
     public GetOPSConfigResponse createGetOPSConfigResponse() {
         return new GetOPSConfigResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetBSLocationsRequest }
+     * 
+     */
+    public GetBSLocationsRequest createGetBSLocationsRequest() {
+        return new GetBSLocationsRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetClientConfigResponse }
+     * 
+     */
+    public GetClientConfigResponse createGetClientConfigResponse() {
+        return new GetClientConfigResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetBSConfigRequest }
+     * 
+     */
+    public GetBSConfigRequest createGetBSConfigRequest() {
+        return new GetBSConfigRequest();
+    }
+
+    /**
+     * Create an instance of {@link SetClientToBSRequest }
+     * 
+     */
+    public SetClientToBSRequest createSetClientToBSRequest() {
+        return new SetClientToBSRequest();
+    }
+
+    /**
+     * Create an instance of {@link SetClientToBSResponse }
+     * 
+     */
+    public SetClientToBSResponse createSetClientToBSResponse() {
+        return new SetClientToBSResponse();
     }
 
     /**

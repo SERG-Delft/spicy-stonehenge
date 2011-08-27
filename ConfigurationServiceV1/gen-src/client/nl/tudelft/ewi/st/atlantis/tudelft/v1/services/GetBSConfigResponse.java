@@ -25,7 +25,7 @@ import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
  *         &lt;element name="DBHostName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="DBName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="DBPort" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="OPS" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="OPS" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="OPSName" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="Sec" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
@@ -55,8 +55,8 @@ public class GetBSConfigResponse
     protected String dbName;
     @XmlElement(name = "DBPort")
     protected int dbPort;
-    @XmlElement(name = "OPS")
-    protected boolean ops;
+    @XmlElement(name = "OPS", required = true)
+    protected String ops;
     @XmlElement(name = "OPSName", required = true)
     protected String opsName;
     @XmlElement(name = "Sec")
@@ -129,16 +129,24 @@ public class GetBSConfigResponse
     /**
      * Gets the value of the ops property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public boolean isOPS() {
+    public String getOPS() {
         return ops;
     }
 
     /**
      * Sets the value of the ops property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setOPS(boolean value) {
+    public void setOPS(String value) {
         this.ops = value;
     }
 

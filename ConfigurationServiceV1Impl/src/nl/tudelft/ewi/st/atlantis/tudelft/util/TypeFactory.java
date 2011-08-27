@@ -1,8 +1,5 @@
 package nl.tudelft.ewi.st.atlantis.tudelft.util;
 
-import java.math.BigDecimal;
-import java.util.Calendar;
-
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
 import nl.tudelft.stocktrader.dal.configservice.BSConfig;
@@ -25,7 +22,8 @@ public class TypeFactory {
 		response.setDBName(data.getDBName());
 		response.setDBPort(data.getDBPort());
 		response.setOPS(data.getOPS());
-		
+		response.setOPSName(data.getOPSName());
+		response.setSec(data.isSec());
 		
 		return response;
 	}
