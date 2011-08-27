@@ -43,20 +43,6 @@
         /**
          * Auto generated method signature
          * Documentation goes here.
-                                    * @param getOPSConfigRequest
-         */
-
-        
-                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse getOPSConfig
-                (
-                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest getOPSConfigRequest
-                 )
-            ;
-        
-         
-        /**
-         * Auto generated method signature
-         * Documentation goes here.
                                     * @param getClientConfigRequest
          */
 

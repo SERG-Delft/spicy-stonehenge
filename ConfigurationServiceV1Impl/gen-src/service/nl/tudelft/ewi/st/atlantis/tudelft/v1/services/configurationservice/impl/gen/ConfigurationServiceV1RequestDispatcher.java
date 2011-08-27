@@ -7,8 +7,6 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSRequest;
@@ -36,7 +34,6 @@ public class ConfigurationServiceV1RequestDispatcher
         addSupportedOperation("getClientConfig", new Class[] {GetClientConfigRequest.class }, new Class[] {GetClientConfigResponse.class });
         addSupportedOperation("setServiceLocation", new Class[] {SetServiceLocationRequest.class }, new Class[] {SetServiceLocationResponse.class });
         addSupportedOperation("getBSConfig", new Class[] {GetBSConfigRequest.class }, new Class[] {GetBSConfigResponse.class });
-        addSupportedOperation("getOPSConfig", new Class[] {GetOPSConfigRequest.class }, new Class[] {GetOPSConfigResponse.class });
         addSupportedOperation("setBSToOPS", new Class[] {SetBSToOPSRequest.class }, new Class[] {SetBSToOPSResponse.class });
         addSupportedOperation("setClientToBS", new Class[] {SetClientToBSRequest.class }, new Class[] {SetClientToBSResponse.class });
         addSupportedOperation("getBSLocations", new Class[] {GetBSLocationsRequest.class }, new Class[] {GetBSLocationsResponse.class });
@@ -79,18 +76,6 @@ public class ConfigurationServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetBSConfigResponse result = service.getBSConfig(param2);
-                responseMsg.setParam(0, result);
-            } catch (Throwable th) {
-                handleServiceException(msgCtx, th);
-            }
-            return true;
-        }
-        else 
-        if ("getOPSConfig".equals(operationName)) {
-            GetOPSConfigRequest param2 = ((GetOPSConfigRequest) requestMsg.getParam(0));
-            try {
-                Message responseMsg = msgCtx.getResponseMessage();
-                GetOPSConfigResponse result = service.getOPSConfig(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

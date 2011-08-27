@@ -30,14 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorData }
-     * 
-     */
-    public ErrorData createErrorData() {
-        return new ErrorData();
-    }
-
-    /**
      * Create an instance of {@link ExtensionType }
      * 
      */
@@ -59,6 +51,14 @@ public class ObjectFactory {
      */
     public ErrorParameter createErrorParameter() {
         return new ErrorParameter();
+    }
+
+    /**
+     * Create an instance of {@link ErrorData }
+     * 
+     */
+    public ErrorData createErrorData() {
+        return new ErrorData();
     }
 
     /**

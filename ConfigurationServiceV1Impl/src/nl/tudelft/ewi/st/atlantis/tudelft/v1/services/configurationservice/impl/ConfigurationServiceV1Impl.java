@@ -23,69 +23,69 @@ import nl.tudelft.stocktrader.dal.configservice.BSConfig;
 import nl.tudelft.stocktrader.dal.configservice.ClientConfig;
 import nl.tudelft.stocktrader.dal.configservice.OPSConfig;
 
-public class ConfigurationServiceV1Impl implements ConfigurationServiceV1
-{
+public class ConfigurationServiceV1Impl
+    implements ConfigurationServiceV1
+    {
 
-	private final DAOFactory factory;
+    	private final DAOFactory factory;
 
-	public ConfigurationServiceV1Impl() {
-		factory = DAOFactory.getFactory();
-	}
-	
-    public ConfigServiceDAO getConfigServiceDAO() {
-        return factory.getConfigServiceDAO();
-    }
-    
-    public GetClientConfigResponse getClientConfig(GetClientConfigRequest request) {
-        String clientName = request.getClientName();
-        ClientConfig config = getConfigServiceDAO().getClientConfig(clientName);
-        
-        return TypeFactory.toGetClientConfigResponse(config);
-    }
-
-    public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest request) {
-    	String serviceName = request.getLocation().getServiceName();
-        String serviceUrl = request.getLocation().getServiceURL();
-        Boolean isSec = request.getLocation().isSec();
-        
-        if (getConfigServiceDAO().setServiceLocation(serviceName, serviceUrl, isSec)) {
-            return new SetServiceLocationResponse();
+    	public ConfigurationServiceV1Impl() {
+    		factory = DAOFactory.getFactory();
+    	}
+    	
+        public ConfigServiceDAO getConfigServiceDAO() {
+            return factory.getConfigServiceDAO();
         }
-        return null;
-    }
-
-    public GetBSConfigResponse getBSConfig(GetBSConfigRequest request) {
-        BSConfig configResponse = getConfigServiceDAO().getBSConfig(request.getBSName());
         
-        return TypeFactory.toGetBSConfigResponse(configResponse);
-    }
-
-    public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest request) {
-    	OPSConfig response = getConfigServiceDAO().getOPSConfig(request.getOPSName());
-        
-        return TypeFactory.toGetOPSConfigResponse(response);
-    }
-
-    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest request) {
-        if (getConfigServiceDAO().setBSToOPS(request.getBs(), request.getOps())) {
-            return new SetBSToOPSResponse();
+        public GetClientConfigResponse getClientConfig(GetClientConfigRequest request) {
+            String clientName = request.getClientName();
+            ClientConfig config = getConfigServiceDAO().getClientConfig(clientName);
+            
+            return TypeFactory.toGetClientConfigResponse(config);
         }
-        return null;
-    }
 
-    public SetClientToBSResponse setClientToBS(SetClientToBSRequest request) {
-        if (getConfigServiceDAO().setClientToBS(request.getClient(), request.getBs())) {
-            return new SetClientToBSResponse();
+        public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest request) {
+        	String serviceName = request.getLocation().getServiceName();
+            String serviceUrl = request.getLocation().getServiceURL();
+            Boolean isSec = request.getLocation().isSec();
+            
+            if (getConfigServiceDAO().setServiceLocation(serviceName, serviceUrl, isSec)) {
+                return new SetServiceLocationResponse();
+            }
+            return null;
         }
-        return null;
-    }
 
-    public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest request) {
-    	GetBSLocationsResponse getBSLocationsResponse = new GetBSLocationsResponse();
-    	getBSLocationsResponse.getLocations()
-    				.addAll(TypeFactory.toRemoteServiceLocationList(
-    						getConfigServiceDAO().getBSLocations()));
-    	return getBSLocationsResponse;
-    }
+        public GetBSConfigResponse getBSConfig(GetBSConfigRequest request) {
+            BSConfig configResponse = getConfigServiceDAO().getBSConfig(request.getBSName());
+            
+            return TypeFactory.toGetBSConfigResponse(configResponse);
+        }
 
+        public GetOPSConfigResponse getOPSConfig(GetOPSConfigRequest request) {
+        	OPSConfig response = getConfigServiceDAO().getOPSConfig(request.getOPSName());
+            
+            return TypeFactory.toGetOPSConfigResponse(response);
+        }
+
+        public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest request) {
+            if (getConfigServiceDAO().setBSToOPS(request.getBs(), request.getOps())) {
+                return new SetBSToOPSResponse();
+            }
+            return null;
+        }
+
+        public SetClientToBSResponse setClientToBS(SetClientToBSRequest request) {
+            if (getConfigServiceDAO().setClientToBS(request.getClient(), request.getBs())) {
+                return new SetClientToBSResponse();
+            }
+            return null;
+        }
+
+        public GetBSLocationsResponse getBSLocations(GetBSLocationsRequest request) {
+        	GetBSLocationsResponse getBSLocationsResponse = new GetBSLocationsResponse();
+        	getBSLocationsResponse.getLocations()
+        				.addAll(TypeFactory.toRemoteServiceLocationList(
+        						getConfigServiceDAO().getBSLocations()));
+        	return getBSLocationsResponse;
+        }
 }
