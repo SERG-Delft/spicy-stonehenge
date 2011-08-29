@@ -3,7 +3,7 @@
  * ConfigurationServiceV1.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6-wso2v2  Built on : Oct 25, 2010 (02:27:59 MST)
+ * by the Apache Axis2 version: 1.6-wso2v4  Built on : Jan 03, 2011 (12:16:01 UTC)
  */
     package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.configurationservice;
     /**
@@ -106,6 +106,20 @@
                 public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse getBSLocations
                 (
                   nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest getBSLocationsRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * 
+                                    * @param getOPSLocationsRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse getOPSLocations
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest getOPSLocationsRequest
                  )
             ;
         

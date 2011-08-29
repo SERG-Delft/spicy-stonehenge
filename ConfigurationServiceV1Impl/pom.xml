@@ -2,14 +2,14 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.ebayopensource.turmeric.impl</groupId>
+  <groupId>nl.tudelft.ewi.st.atlantis.tudelft.impl</groupId>
   <artifactId>ConfigurationServiceV1Impl</artifactId>
   <version>1.0.0</version>
   <name>ConfigurationServiceV1Impl</name>
   <properties>
     <requiredServices></requiredServices>
     <serviceName>ConfigurationServiceV1</serviceName>
-    <serviceGroupID>org.ebayopensource.turmeric.intf</serviceGroupID>
+    <serviceGroupID>nl.tudelft.ewi.st.atlantis.tudelft.intf</serviceGroupID>
   </properties>
   <dependencies>
     <dependency>
@@ -29,7 +29,7 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.ebayopensource.turmeric.intf</groupId>
+      <groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
       <artifactId>ConfigurationServiceV1</artifactId>
       <version>1.0.0</version>
     </dependency>

@@ -36,7 +36,7 @@ import java.util.Calendar;
 
 public class MySQLOrderDAO extends AbstractMySQLDAO implements OrderDAO {
 	private static Log logger = LogFactory.getLog(MySQLOrderDAO.class);
-
+ 
 	private static final String SQL_GET_ACCOUNTID_ORDER = "SELECT account_accountid FROM orders WHERE orderid = ?";
 	private static final String SQL_INSERT_HOLDING = "INSERT INTO holding (purchaseprice, quantity, purchasedate, account_accountid, quote_symbol, holdingid) VALUES (?, ?, ?, ?, ?, null)";
 	private static final String SQL_UPDATE_HOLDING = "UPDATE holding SET quantity =quantity - ? WHERE holdingid = ?";

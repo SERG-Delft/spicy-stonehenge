@@ -9,6 +9,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSRequest;
@@ -40,6 +42,7 @@ public class ConfigurationServiceV1RequestDispatcher
         addSupportedOperation("setBSToOPS", new Class[] {SetBSToOPSRequest.class }, new Class[] {SetBSToOPSResponse.class });
         addSupportedOperation("setClientToBS", new Class[] {SetClientToBSRequest.class }, new Class[] {SetClientToBSResponse.class });
         addSupportedOperation("getBSLocations", new Class[] {GetBSLocationsRequest.class }, new Class[] {GetBSLocationsResponse.class });
+        addSupportedOperation("getOPSLocations", new Class[] {GetOPSLocationsRequest.class }, new Class[] {GetOPSLocationsResponse.class });
     }
 
     public boolean dispatch(MessageContext param0, ConfigurationServiceV1 param1)
@@ -127,6 +130,18 @@ public class ConfigurationServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetBSLocationsResponse result = service.getBSLocations(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getOPSLocations".equals(operationName)) {
+            GetOPSLocationsRequest param2 = ((GetOPSLocationsRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetOPSLocationsResponse result = service.getOPSLocations(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

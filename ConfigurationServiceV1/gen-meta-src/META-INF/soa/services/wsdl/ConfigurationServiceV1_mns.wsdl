@@ -237,7 +237,27 @@
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
-		</xs:schema>
+			<xs:element name="getOPSLocations">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element name="in" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOPSLocationsResponse">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element maxOccurs="unbounded" minOccurs="1" name="locations" type="types:ServiceLocation"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="getOPSLocationsRequest" type="tns:getOPSLocationsRequest">
+			</xs:element>
+			
+            <xs:complexType name="getOPSLocationsRequest"/>
+        </xs:schema>
 	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
 <xs:complexType name="ServiceLocation">
 				<xs:annotation>
@@ -557,6 +577,12 @@
 	<wsdl:message name="setServiceLocationResponse">
 		<wsdl:part element="tns:setServiceLocationResponse" name="params"/>
 	</wsdl:message>
+	<wsdl:message name="getOPSLocationsRequest">
+		<wsdl:part element="tns:getOPSLocationsRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getOPSLocationsResponse">
+		<wsdl:part element="tns:getOPSLocationsResponse" name="parameters"/>
+	</wsdl:message>
 	<wsdl:portType name="ConfigurationServicePort">
 		<wsdl:operation name="getClientConfig">
 			<wsdl:documentation>
@@ -606,6 +632,10 @@
 			</wsdl:documentation>
 			<wsdl:input message="tns:setServiceLocationRequest"/>
 			<wsdl:output message="tns:setServiceLocationResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getOPSLocations">
+			<wsdl:input message="tns:getOPSLocationsRequest"/>
+			<wsdl:output message="tns:getOPSLocationsResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ConfigurationServiceHttpBinding" type="tns:ConfigurationServicePort">
@@ -673,6 +703,16 @@
 				<mime:content type="text/xml"/>
 			</wsdl:output>
 		</wsdl:operation>
+		<wsdl:operation name="getOPSLocations">
+			<http:operation location="/getOPSLocations"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded">
+				</mime:content>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="ConfigurationServiceSOAPBinding" type="tns:ConfigurationServicePort">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -732,6 +772,16 @@
 		</wsdl:operation>
 		<wsdl:operation name="setServiceLocation">
 			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/setServiceLocation"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getOPSLocations">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getOPSLocations">
+			</soap:operation>
 			<wsdl:input>
 				<soap:body use="literal"/>
 			</wsdl:input>

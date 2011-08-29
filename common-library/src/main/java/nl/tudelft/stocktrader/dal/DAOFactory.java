@@ -39,7 +39,7 @@ public abstract class DAOFactory {
     public static final String PROP_DB_TYPE = "org.apache.stonehenge.stocktrader.database.type";
 
     public static Properties prop = null;
-
+ 
     private static ConnectionProvider connectionProvider;
     
     public abstract CustomerDAO getCustomerDAO() throws DAOException;
@@ -66,6 +66,11 @@ public abstract class DAOFactory {
     }
     
     private ConfigServiceDAOImpl configServiceDAO;
+    
+    public DAOFactory() {
+        configServiceDAO = new ConfigServiceDAOImpl();
+        loadProperties();
+    }
     
     public ConfigServiceDAO getConfigServiceDAO() {
         if ("mysql".equals(prop.getProperty(PROP_DB_TYPE))) {
