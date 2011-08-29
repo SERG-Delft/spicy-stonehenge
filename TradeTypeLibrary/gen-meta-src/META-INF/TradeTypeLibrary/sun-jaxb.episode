@@ -7,6 +7,9 @@
 <bindings if-exists="true" scd="~tns:OrderData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData"/>
     </bindings>
+<bindings if-exists="true" scd="~tns:ServiceLocation">
+      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation"/>
+    </bindings>
 </bindings>
 <!--Turmeric end COMMENT . Don't delete or modify this line.-->
 </bindings>
