@@ -1,0 +1,5 @@
+#surefire
+#Mon Aug 29 11:53:16 CEST 2011
+user.dir=/home/tiago/apps/eclipse_workspaces/eclipse36SDK_turmericNew/configuration-service-war
+localRepository=/home/tiago/.m2/repository
+basedir=/home/tiago/apps/eclipse_workspaces/eclipse36SDK_turmericNew/configuration-service-war
