@@ -33,7 +33,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class MySQLDAOFactory extends DAOFactory {
-
+ 
 	private static Log logger = LogFactory.getLog(MySQLDAOFactory.class);
 	private static MySQLDAOFactory self = null;
 
