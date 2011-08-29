@@ -43,6 +43,20 @@
         /**
          * Auto generated method signature
          * Documentation goes here.
+                                    * @param getOPSConfigRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse getOPSConfig
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest getOPSConfigRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * Documentation goes here.
                                     * @param getClientConfigRequest
          */
 
@@ -92,6 +106,20 @@
                 public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse getBSLocations
                 (
                   nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest getBSLocationsRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * 
+                                    * @param getOPSLocationsRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse getOPSLocations
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest getOPSLocationsRequest
                  )
             ;
         

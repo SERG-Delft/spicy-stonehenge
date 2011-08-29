@@ -5,6 +5,8 @@ import junit.framework.TestCase;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationResponse;
@@ -75,6 +77,19 @@ public class ConfigurationServiceV1Test
         assertTrue(false);
     }
 
+    public void testGetOPSConfig()
+        throws Exception
+    {
+        GetOPSConfigResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getOPSConfig(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
     public void testSetBSToOPS()
         throws Exception
     {
@@ -107,6 +122,19 @@ public class ConfigurationServiceV1Test
         GetBSLocationsResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getBSLocations(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testGetOPSLocations()
+        throws Exception
+    {
+        GetOPSLocationsResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getOPSLocations(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

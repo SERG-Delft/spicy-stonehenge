@@ -192,12 +192,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link GetOPSLocationsRequest }
+     * 
+     */
+    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
+        return new GetOPSLocationsRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetOPSLocationsRequest }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getOPSLocationsRequest")
-    public JAXBElement<String> createGetOPSLocationsRequest(String value) {
-        return new JAXBElement<String>(_GetOPSLocationsRequest_QNAME, String.class, null, value);
+    public JAXBElement<GetOPSLocationsRequest> createGetOPSLocationsRequest(GetOPSLocationsRequest value) {
+        return new JAXBElement<GetOPSLocationsRequest>(_GetOPSLocationsRequest_QNAME, GetOPSLocationsRequest.class, null, value);
     }
 
     /**
