@@ -1,0 +1,229 @@
+
+package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl.gen;
+
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.BuyRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.BuyResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetMarketSummaryRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetMarketSummaryResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
+import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
+import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
+import org.ebayopensource.turmeric.runtime.common.pipeline.MessageContext;
+import org.ebayopensource.turmeric.runtime.spf.impl.internal.pipeline.BaseServiceRequestDispatcher;
+
+
+/**
+ * Note : Generated file, any changes will be lost upon regeneration.
+ * 
+ */
+public class BusinessServiceV1RequestDispatcher
+    extends BaseServiceRequestDispatcher<BusinessServiceV1>
+{
+
+
+    public BusinessServiceV1RequestDispatcher() {
+        super(BusinessServiceV1 .class);
+        addSupportedOperation("getQuote", new Class[] {GetQuoteRequest.class }, new Class[] {GetQuoteResponse.class });
+        addSupportedOperation("getMarketSummary", new Class[] {GetMarketSummaryRequest.class }, new Class[] {GetMarketSummaryResponse.class });
+        addSupportedOperation("buy", new Class[] {BuyRequest.class }, new Class[] {BuyResponse.class });
+        addSupportedOperation("getAccountData", new Class[] {GetAccountDataRequest.class }, new Class[] {GetAccountDataResponse.class });
+        addSupportedOperation("getHolding", new Class[] {GetHoldingRequest.class }, new Class[] {GetHoldingResponse.class });
+        addSupportedOperation("sellEnhanced", new Class[] {SellEnhancedRequest.class }, new Class[] {SellEnhancedResponse.class });
+        addSupportedOperation("updateAccountProfile", new Class[] {UpdateAccountProfileRequest.class }, new Class[] {UpdateAccountProfileResponse.class });
+        addSupportedOperation("getTopOrders", new Class[] {GetTopOrdersRequest.class }, new Class[] {GetTopOrdersResponse.class });
+        addSupportedOperation("getAccountProfileData", new Class[] {GetAccountProfileDataRequest.class }, new Class[] {GetAccountProfileDataResponse.class });
+        addSupportedOperation("sell", new Class[] {SellRequest.class }, new Class[] {SellResponse.class });
+        addSupportedOperation("getOrders", new Class[] {GetOrdersRequest.class }, new Class[] {GetOrdersResponse.class });
+        addSupportedOperation("getHoldings", new Class[] {GetHoldingsRequest.class }, new Class[] {GetHoldingsResponse.class });
+        addSupportedOperation("getClosedOrders", new Class[] {GetClosedOrdersRequest.class }, new Class[] {GetClosedOrdersResponse.class });
+    }
+
+    public boolean dispatch(MessageContext param0, BusinessServiceV1 param1)
+        throws ServiceException
+    {
+        MessageContext msgCtx = param0;
+        BusinessServiceV1 service = param1;
+        String operationName = msgCtx.getOperationName();
+        Message requestMsg = msgCtx.getRequestMessage();
+         
+        if ("getQuote".equals(operationName)) {
+            GetQuoteRequest param2 = ((GetQuoteRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetQuoteResponse result = service.getQuote(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getMarketSummary".equals(operationName)) {
+            GetMarketSummaryRequest param2 = ((GetMarketSummaryRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetMarketSummaryResponse result = service.getMarketSummary(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("buy".equals(operationName)) {
+            BuyRequest param2 = ((BuyRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                BuyResponse result = service.buy(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getAccountData".equals(operationName)) {
+            GetAccountDataRequest param2 = ((GetAccountDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetAccountDataResponse result = service.getAccountData(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getHolding".equals(operationName)) {
+            GetHoldingRequest param2 = ((GetHoldingRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetHoldingResponse result = service.getHolding(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("sellEnhanced".equals(operationName)) {
+            SellEnhancedRequest param2 = ((SellEnhancedRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                SellEnhancedResponse result = service.sellEnhanced(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("updateAccountProfile".equals(operationName)) {
+            UpdateAccountProfileRequest param2 = ((UpdateAccountProfileRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                UpdateAccountProfileResponse result = service.updateAccountProfile(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getTopOrders".equals(operationName)) {
+            GetTopOrdersRequest param2 = ((GetTopOrdersRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetTopOrdersResponse result = service.getTopOrders(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getAccountProfileData".equals(operationName)) {
+            GetAccountProfileDataRequest param2 = ((GetAccountProfileDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetAccountProfileDataResponse result = service.getAccountProfileData(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("sell".equals(operationName)) {
+            SellRequest param2 = ((SellRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                SellResponse result = service.sell(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getOrders".equals(operationName)) {
+            GetOrdersRequest param2 = ((GetOrdersRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetOrdersResponse result = service.getOrders(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getHoldings".equals(operationName)) {
+            GetHoldingsRequest param2 = ((GetHoldingsRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetHoldingsResponse result = service.getHoldings(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getClosedOrders".equals(operationName)) {
+            GetClosedOrdersRequest param2 = ((GetClosedOrdersRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetClosedOrdersResponse result = service.getClosedOrders(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        return false;
+    }
+
+}

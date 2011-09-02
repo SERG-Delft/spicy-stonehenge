@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2006-2010 eBay Inc. All Rights Reserved.
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at 
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"
+	version="1.0.0">
+	<xs:complexType name="QuoteData">
+		<xs:annotation>
+			<xs:documentation />
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="volume"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="change"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="high"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="low"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="open"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="price"
+				type="xs:double" />
+			<xs:element maxOccurs="1" minOccurs="1" name="companyName"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="symbol"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+

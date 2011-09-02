@@ -11,5 +11,10 @@
   		<artifactId>org.apache.commons.logging</artifactId>
   		<version>1.0.4.v200706111724</version>
   	</dependency>
+  	<dependency>
+  		<groupId>org.ebayopensource.turmeric.typelib</groupId>
+  		<artifactId>TradeTypeLibrary</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
   </dependencies>
 </project>
