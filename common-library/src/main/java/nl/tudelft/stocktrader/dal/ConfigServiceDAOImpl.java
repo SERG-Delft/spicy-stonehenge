@@ -59,6 +59,65 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     private static final String SQL_SELECT_SERVICE = "SELECT * FROM SERVICE WHERE SERVICENAME = ?;";
     private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO SERVICE VALUES (?,?,?);";
 
+    private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT URL FROM CONFIGSERVICE WHERE NAME LIKE 'CONFIG_SERVICE'";
+    private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE CONFIGSERVICE SET URL=? WHERE NAME LIKE 'CONFIG_SERVICE'";
+    
+    public boolean updateConfigService(String url) {
+        int updateStatus;
+        try {
+            PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_URL_INTO_CONFIGSERVICE);
+            statement.setObject(1, url);
+            updateStatus = statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (connection != null && !connection.isClosed()) {
+                    try {
+                        connection.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                logger.error(e, e);
+            }
+        }
+        return updateStatus > 0;
+    }
+    
+    public String getConfigService() {
+        String configServiceUrl = null;
+        ResultSet rs = null;
+        try {
+            PreparedStatement statement = connection.prepareStatement(SQL_SELECT_URL_FROM_CONFIGSERVICE);
+            rs = statement.executeQuery();
+            while (rs.next()) {
+                configServiceUrl = rs.getString("url");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            } catch (SQLException exception) {
+                logger.error(exception, exception);
+            }
+        }
+        return configServiceUrl;
+    }
+
     public List<ServiceLocation> getBSLocations() {
         return (List<ServiceLocation>) executeQuery(new SimpleStatementPopulator(SQL_SELECT_BSLOCATION_FROM_SERVICE),
                 new ServiceResultSetExtractor());

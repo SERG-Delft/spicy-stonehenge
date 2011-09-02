@@ -40,4 +40,9 @@ public interface ConfigServiceDAO {
     OPSConfig getOPSConfig(String opsName);
 
     boolean setServiceLocation(String serviceName, String serviceUrl, Boolean isSec);
+    
+    // These methods came from a different class with the same name
+    boolean updateConfigService(String url);
+    
+    String getConfigService();
 }

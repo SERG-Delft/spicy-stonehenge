@@ -66,7 +66,7 @@ public abstract class DAOFactory {
     }
     
     private ConfigServiceDAOImpl configServiceDAO;
-    
+
     public DAOFactory() {
         configServiceDAO = new ConfigServiceDAOImpl();
         loadProperties();

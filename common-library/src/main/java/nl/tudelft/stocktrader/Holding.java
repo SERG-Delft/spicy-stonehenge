@@ -57,7 +57,11 @@ public class Holding {
 		return holdingId;
 	}
 	
-	// Forgive me God.
+	/**
+	 * Alias of getHoldingId() (lowercase d)
+	 * Forgive me God. - Tiago	
+	 * @return getHoldingId()
+	 */
 	public int getHoldingID() {
 		return getHoldingId();
 	}
