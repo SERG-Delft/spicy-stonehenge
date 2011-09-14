@@ -139,6 +139,11 @@ public class TraderServiceManager {
 		return marketSummaryDAO.getQuote(symbol);
 	}
 
+	public List<Quote> getAllQuotes() throws DAOException {
+		MarketSummaryDAO marketSummaryDAO = factory.getMarketSummaryDAO();
+		return marketSummaryDAO.getAllQuotes();	
+	}
+	
 	public Order buy(String userID, String symbol, double quantity)
 			throws DAOException {
 		return placeOrder(StockTraderUtility.ORDER_TYPE_BUY, userID, 0, symbol,

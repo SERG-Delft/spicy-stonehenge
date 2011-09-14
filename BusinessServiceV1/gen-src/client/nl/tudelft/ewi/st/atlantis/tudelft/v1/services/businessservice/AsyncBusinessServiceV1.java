@@ -11,6 +11,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
@@ -25,6 +27,10 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -65,6 +71,10 @@ public interface AsyncBusinessServiceV1
 
     public Response<UpdateAccountProfileResponse> updateAccountProfileAsync(UpdateAccountProfileRequest param0);
 
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> handler);
+
+    public Response<LogoutResponse> logoutAsync(LogoutRequest param0);
+
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> handler);
 
     public Response<GetTopOrdersResponse> getTopOrdersAsync(GetTopOrdersRequest param0);
@@ -73,6 +83,10 @@ public interface AsyncBusinessServiceV1
 
     public Response<GetAccountProfileDataResponse> getAccountProfileDataAsync(GetAccountProfileDataRequest param0);
 
+    public Future<?> getAllQuotesAsync(GetAllQuotesRequest param0, AsyncHandler<GetAllQuotesResponse> handler);
+
+    public Response<GetAllQuotesResponse> getAllQuotesAsync(GetAllQuotesRequest param0);
+
     public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> handler);
 
     public Response<SellResponse> sellAsync(SellRequest param0);
@@ -80,6 +94,10 @@ public interface AsyncBusinessServiceV1
     public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> handler);
 
     public Response<GetOrdersResponse> getOrdersAsync(GetOrdersRequest param0);
+
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> handler);
+
+    public Response<LoginResponse> loginAsync(LoginRequest param0);
 
     public Future<?> getHoldingsAsync(GetHoldingsRequest param0, AsyncHandler<GetHoldingsResponse> handler);
 

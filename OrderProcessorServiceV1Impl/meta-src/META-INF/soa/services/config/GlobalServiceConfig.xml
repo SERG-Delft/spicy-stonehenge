@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<global-service-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
+<global-service-config group="MonitorableService" xmlns="http://www.ebayopensource.org/turmeric/common/config">
 	<monitor-config>
 		<storage-provider name="DAOMetricsStorageProvider">
             <class-name>org.ebayopensource.turmeric.monitoring.storage.DAOMetricsStorageProvider</class-name>
@@ -41,10 +41,11 @@
 	        </protocol-processor> 
 		</service-config>
 	</service-group>
-</service-config-groups>
+	</service-config-groups>
 
-	<service-layer-config><layer-name>COMMON</layer-name>
-<layer-name>INTERMEDIATE</layer-name>
-<layer-name>BUSINESS</layer-name>
-</service-layer-config>
+	<service-layer-config>
+		<layer-name>COMMON</layer-name>
+		<layer-name>INTERMEDIATE</layer-name>
+		<layer-name>BUSINESS</layer-name>
+	</service-layer-config>
 </global-service-config>

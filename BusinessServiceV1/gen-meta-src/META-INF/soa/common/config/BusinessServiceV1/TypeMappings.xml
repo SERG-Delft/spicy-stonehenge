@@ -140,6 +140,25 @@
                 <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
+        <operation name="logout">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest</java-type-name>
+                <xml-type-name>LogoutRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}logoutRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse</java-type-name>
+                <xml-type-name>LogoutResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}logoutResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
         <operation name="getTopOrders">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest</java-type-name>
@@ -178,6 +197,25 @@
                 <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
+        <operation name="getAllQuotes">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest</java-type-name>
+                <xml-type-name>getAllQuotesRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getAllQuotesRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse</java-type-name>
+                <xml-type-name>getAllQuotesResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getAllQuotesResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
         <operation name="sell">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest</java-type-name>
@@ -208,6 +246,25 @@
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse</java-type-name>
                 <xml-type-name>GetOrdersResponse</xml-type-name>
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getOrdersResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
+        <operation name="login">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest</java-type-name>
+                <xml-type-name>LoginRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse</java-type-name>
+                <xml-type-name>LoginResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginResponse</xml-element-name>
                 <has-attachment>false</has-attachment>
             </response-message>
             <error-message>
@@ -262,6 +319,9 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotes</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest</java-type-name>
@@ -276,6 +336,12 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.Login</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.Logout</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest</java-type-name>

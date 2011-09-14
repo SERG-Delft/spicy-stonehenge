@@ -1,5 +1,7 @@
 package nl.tudelft.stocktrader.dal;
 
+import java.util.List;
+
 import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Quote;
 /*
@@ -22,6 +24,10 @@ import nl.tudelft.stocktrader.Quote;
 
 public interface MarketSummaryDAO {
 
+	public List<Quote> getAllQuotesWithLimit(int start, int size) throws DAOException;
+	
+	public List<Quote> getAllQuotes() throws DAOException;
+	
 	public Quote getQuote(String symbol) throws DAOException;
 	
 	public Quote getQuoteForUpdate(String symbol) throws DAOException;

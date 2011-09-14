@@ -13,6 +13,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
@@ -27,6 +29,10 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -137,6 +143,18 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("logout");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<LogoutResponse> logoutAsync(LogoutRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("logout");
+        Response<LogoutResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getTopOrders");
         Future<?> result = dispatch.invokeAsync(param0, param1);
@@ -161,6 +179,18 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> getAllQuotesAsync(GetAllQuotesRequest param0, AsyncHandler<GetAllQuotesResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getAllQuotes");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetAllQuotesResponse> getAllQuotesAsync(GetAllQuotesRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getAllQuotes");
+        Response<GetAllQuotesResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
     public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("sell");
         Future<?> result = dispatch.invokeAsync(param0, param1);
@@ -182,6 +212,18 @@ public class BusinessServiceV1Proxy
     public Response<GetOrdersResponse> getOrdersAsync(GetOrdersRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getOrders");
         Response<GetOrdersResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("login");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<LoginResponse> loginAsync(LoginRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("login");
+        Response<LoginResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -306,6 +348,19 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public LogoutResponse logout(LogoutRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("logout", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        LogoutResponse result = ((LogoutResponse) returnParamList.get(0));
+        return result;
+    }
+
     public GetTopOrdersResponse getTopOrders(GetTopOrdersRequest param0) {
         Object[] params = new Object[ 1 ] ;
         params[ 0 ] = param0;
@@ -332,6 +387,19 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public GetAllQuotesResponse getAllQuotes(GetAllQuotesRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("getAllQuotes", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        GetAllQuotesResponse result = ((GetAllQuotesResponse) returnParamList.get(0));
+        return result;
+    }
+
     public SellResponse sell(SellRequest param0) {
         Object[] params = new Object[ 1 ] ;
         params[ 0 ] = param0;
@@ -355,6 +423,19 @@ public class BusinessServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetOrdersResponse result = ((GetOrdersResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public LoginResponse login(LoginRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("login", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        LoginResponse result = ((LoginResponse) returnParamList.get(0));
         return result;
     }
 
