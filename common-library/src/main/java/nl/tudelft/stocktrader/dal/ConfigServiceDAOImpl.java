@@ -44,23 +44,23 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
         this.connection = connection;
     }
 
-    private static final String SQL_SELECT_BSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM SERVICE WHERE SERVICENAME LIKE '%_BS%'";
-    private static final String SQL_SELECT_OPSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM SERVICE WHERE SERVICENAME LIKE '%_OPS%'";
-    private static final String SQL_INSERT_VALUE_INTO_CLIENT_TO_BS = "INSERT INTO CLIENTTOBS (CLIENT , BS) VALUES (?,?);";
-    private static final String SQL_UPDATE_CLIENT_TO_BS = "UPDATE CLIENTTOBS SET BS=? WHERE CLIENT = ?;";
-    private static final String SQL_INSERT_VALUE_INTO_BS_TO_OPS = "INSERT INTO BSTOOPS (BS, OPS) VALUES (?,?);";
-    private static final String SQL_UPDATE_BS_TO_OPS = "UPDATE BSTOOPS SET OPS=? WHERE BS  = ?;";
-    private static final String SQL_SELECT_BSSERVICE_ADDRESS_BY_ClIENTNAME = "SELECT servicename,url,sec FROM SERVICE INNER JOIN CLIENTTOBS ON SERVICE.SERVICENAME = CLIENTTOBS.BS  WHERE CLIENT=?";
-    private static final String SQL_SELECT_OPSSERVICE_ADDRESS_BY_CLIENTNAME = "SELECT servicename,url,sec,DBNAME, HOSTNAME,PORT FROM SERVICE INNER JOIN BSTOOPS ON SERVICE.SERVICENAME = BSTOOPS.OPS CROSS JOIN DBCONFIG WHERE BSTOOPS.BS=?";
-    private static final String SQL_SELECT_FROM_CLIENTTOBS = "SELECT * FROM CLIENTTOBS WHERE CLIENT = ?;";
-    private static final String SQL_SELECT_FROM_BSTOOPS = "SELECT * FROM BSTOOPS WHERE BS = ?;";
-    private static final String SQL_SELECT_OPS_CONFIG = "SELECT * FROM DBCONFIG;";
-    private static final String SQL_UPDATE_SERVICE = "UPDATE SERVICE SET URL = ?, SEC = ? WHERE SERVICENAME = ?;";
-    private static final String SQL_SELECT_SERVICE = "SELECT * FROM SERVICE WHERE SERVICENAME = ?;";
-    private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO SERVICE VALUES (?,?,?);";
+    private static final String SQL_SELECT_BSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_BS%'";
+    private static final String SQL_SELECT_OPSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_OPS%'";
+    private static final String SQL_INSERT_VALUE_INTO_CLIENT_TO_BS = "INSERT INTO clienttobs (client , bs) VALUES (?,?);";
+    private static final String SQL_UPDATE_CLIENT_TO_BS = "UPDATE clienttobs SET bs=? WHERE client = ?;";
+    private static final String SQL_INSERT_VALUE_INTO_BS_TO_OPS = "INSERT INTO bstoops (bs, ops) VALUES (?,?);";
+    private static final String SQL_UPDATE_BS_TO_OPS = "UPDATE bstoops SET ops=? WHERE bs  = ?;";
+    private static final String SQL_SELECT_BSSERVICE_ADDRESS_BY_ClIENTNAME = "SELECT servicename,url,sec FROM service INNER JOIN clienttobs ON service.servicename = clienttobs.bs  WHERE client=?";
+    private static final String SQL_SELECT_OPSSERVICE_ADDRESS_BY_CLIENTNAME = "SELECT servicename,url,sec,dbname, hostname,port FROM service INNER JOIN bstoops ON service.servicename = bstoops.ops CROSS JOIN dbconfig WHERE bstoops.bs=?";
+    private static final String SQL_SELECT_FROM_CLIENTTOBS = "SELECT * FROM clienttobs WHERE client = ?;";
+    private static final String SQL_SELECT_FROM_BSTOOPS = "SELECT * FROM bstoops WHERE bs = ?;";
+    private static final String SQL_SELECT_OPS_CONFIG = "SELECT * FROM dbconfig;";
+    private static final String SQL_UPDATE_SERVICE = "UPDATE service SET url = ?, sec = ? WHERE servicename = ?;";
+    private static final String SQL_SELECT_SERVICE = "SELECT * FROM service WHERE servicename = ?;";
+    private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO service VALUES (?,?,?);";
 
-    private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT URL FROM CONFIGSERVICE WHERE NAME LIKE 'CONFIG_SERVICE'";
-    private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE CONFIGSERVICE SET URL=? WHERE NAME LIKE 'CONFIG_SERVICE'";
+    private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT url FROM configservice WHERE name LIKE 'CONFIG_SERVICE'";
+    private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE configservice SET url=? WHERE name LIKE 'CONFIG_SERVICE'";
     
     public boolean updateConfigService(String url) {
         int updateStatus;

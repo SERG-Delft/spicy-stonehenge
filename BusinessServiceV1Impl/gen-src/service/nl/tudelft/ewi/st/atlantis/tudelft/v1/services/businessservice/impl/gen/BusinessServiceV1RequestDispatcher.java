@@ -7,6 +7,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
@@ -21,6 +23,10 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -52,10 +58,13 @@ public class BusinessServiceV1RequestDispatcher
         addSupportedOperation("getHolding", new Class[] {GetHoldingRequest.class }, new Class[] {GetHoldingResponse.class });
         addSupportedOperation("sellEnhanced", new Class[] {SellEnhancedRequest.class }, new Class[] {SellEnhancedResponse.class });
         addSupportedOperation("updateAccountProfile", new Class[] {UpdateAccountProfileRequest.class }, new Class[] {UpdateAccountProfileResponse.class });
+        addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
         addSupportedOperation("getTopOrders", new Class[] {GetTopOrdersRequest.class }, new Class[] {GetTopOrdersResponse.class });
         addSupportedOperation("getAccountProfileData", new Class[] {GetAccountProfileDataRequest.class }, new Class[] {GetAccountProfileDataResponse.class });
+        addSupportedOperation("getAllQuotes", new Class[] {GetAllQuotesRequest.class }, new Class[] {GetAllQuotesResponse.class });
         addSupportedOperation("sell", new Class[] {SellRequest.class }, new Class[] {SellResponse.class });
         addSupportedOperation("getOrders", new Class[] {GetOrdersRequest.class }, new Class[] {GetOrdersResponse.class });
+        addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
         addSupportedOperation("getHoldings", new Class[] {GetHoldingsRequest.class }, new Class[] {GetHoldingsResponse.class });
         addSupportedOperation("getClosedOrders", new Class[] {GetClosedOrdersRequest.class }, new Class[] {GetClosedOrdersResponse.class });
     }
@@ -152,6 +161,18 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
+        if ("logout".equals(operationName)) {
+            LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                LogoutResponse result = service.logout(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
         if ("getTopOrders".equals(operationName)) {
             GetTopOrdersRequest param2 = ((GetTopOrdersRequest) requestMsg.getParam(0));
             try {
@@ -176,6 +197,18 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
+        if ("getAllQuotes".equals(operationName)) {
+            GetAllQuotesRequest param2 = ((GetAllQuotesRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetAllQuotesResponse result = service.getAllQuotes(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
         if ("sell".equals(operationName)) {
             SellRequest param2 = ((SellRequest) requestMsg.getParam(0));
             try {
@@ -193,6 +226,18 @@ public class BusinessServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetOrdersResponse result = service.getOrders(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("login".equals(operationName)) {
+            LoginRequest param2 = ((LoginRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                LoginResponse result = service.login(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

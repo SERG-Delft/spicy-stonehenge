@@ -112,6 +112,20 @@
          
         /**
          * Auto generated method signature
+         * 
+                                    * @param logoutRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse logout
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest logoutRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
          * Documentation goes here.
                                     * @param getTopOrdersRequest
          */
@@ -140,6 +154,20 @@
          
         /**
          * Auto generated method signature
+         * 
+                                    * @param getAllQuotesRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse getAllQuotes
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest getAllQuotesRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
          * Documentation goes here.
                                     * @param sellRequest
          */
@@ -162,6 +190,20 @@
                 public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse getOrders
                 (
                   nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersRequest getOrdersRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * 
+                                    * @param loginRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse login
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest loginRequest
                  )
             ;
         

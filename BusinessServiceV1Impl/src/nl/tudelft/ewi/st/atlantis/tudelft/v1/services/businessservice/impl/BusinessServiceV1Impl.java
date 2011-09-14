@@ -12,6 +12,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
@@ -26,6 +28,10 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -130,7 +136,7 @@ public class BusinessServiceV1Impl
 		} catch (DAOException e) {
 			logger.debug("", e);
 		}
-		
+
 		SellEnhancedResponse response = new SellEnhancedResponse();
 		
 		response.setOrderData(TypeFactory.toOrderData(o));
@@ -245,5 +251,45 @@ public class BusinessServiceV1Impl
 		
 		return response;
     }
+
+	public LogoutResponse logout(LogoutRequest logoutRequest) {
+		try {
+			mgr.logout(logoutRequest.getUserID());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		LogoutResponse response = new LogoutResponse();
+		
+		return response;
+	}
+
+	public LoginResponse login(LoginRequest loginRequest) {
+		Account a = null;
+		try {
+			a = mgr.login(loginRequest.getUserID(), loginRequest.getPassword());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		LoginResponse response = new LoginResponse();
+		response.setAccount(TypeFactory.toAccountData(a));
+		
+		return response;
+	}
+
+	public GetAllQuotesResponse getAllQuotes(GetAllQuotesRequest getAllQuotesRequest) {
+		List<Quote> quotes = null;
+		try {
+			quotes = mgr.getAllQuotes();
+		} catch (DAOException e) {
+			logger.debug("",e);
+		}
+		
+		GetAllQuotesResponse response = new GetAllQuotesResponse();
+		response.getQuotes().addAll(TypeFactory.toListQuoteData(quotes));
+
+		return response;
+	}
 
 }

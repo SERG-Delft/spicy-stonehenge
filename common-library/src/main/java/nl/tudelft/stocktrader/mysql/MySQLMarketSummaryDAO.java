@@ -38,6 +38,8 @@ import org.apache.commons.logging.LogFactory;
 public class MySQLMarketSummaryDAO extends AbstractMySQLDAO implements MarketSummaryDAO {
 	private static final Log logger = LogFactory.getLog(MySQLMarketSummaryDAO.class);
 
+	private static final String SQL_SELECT_ALL_QUOTES = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote";
+	
 	private static final String SQL_SELECT_QUOTE = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote WHERE symbol = ?";
 	private static final String SQL_SELECT_QUOTE_NOLOCK = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote WHERE symbol = ?";
 	private static final String SQL_UPDATE_STOCKPRICEVOLUME = "UPDATE quote SET price = ?, low = ?, high = ?, change1 = ? - open1, volume = volume + ? WHERE symbol = ?";
@@ -52,6 +54,60 @@ public class MySQLMarketSummaryDAO extends AbstractMySQLDAO implements MarketSum
 		super(sqlConnection);
 	}
 
+	public List<Quote> getAllQuotes() throws DAOException {
+		if (logger.isDebugEnabled()) {
+			logger.debug("MarketSummaryDAO.getAllQuotes()");
+		}
+		PreparedStatement selectQuote = null;
+		try {
+			selectQuote = sqlConnection.prepareStatement(SQL_SELECT_ALL_QUOTES);
+			ResultSet rs = selectQuote.executeQuery();
+
+			try {
+				ArrayList<Quote> quotes = new ArrayList<Quote>();
+				while (rs.next()) {
+					Quote quote = new Quote(
+                            		rs.getString(1),
+		                            rs.getString(2),
+		                            rs.getDouble(3),
+									rs.getBigDecimal(4),
+		                            rs.getBigDecimal(5),
+		                            rs.getBigDecimal(6),
+		                            rs.getBigDecimal(7),
+		                            rs.getDouble(8));
+					
+					quotes.add(quote);
+				}
+				return quotes;
+			} finally {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					logger.debug("", e);
+				}
+			}
+		} catch (SQLException e) {
+			throw new DAOException("", e);
+		} finally {
+			try {
+				if (selectQuote != null) {
+					selectQuote.close();
+				}
+			} catch (SQLException e) {
+				logger.debug("", e);
+			}
+		}
+		
+	}
+	
+	public List<Quote> getAllQuotesWithLimit(int start, int limit) throws DAOException {
+		if (logger.isDebugEnabled()) {
+			logger.debug("MarketSummaryDAO.getAllQuotesWithLimit(int, int)");
+		}
+		
+		throw new DAOException("NOT YET IMPLEMENTED");
+	}
+	
 	public Quote getQuote(String symbol) throws DAOException {
 		if (logger.isDebugEnabled()) {
 			logger.debug("MarketSummaryDAO.getQouteForUpdate(String)\nSymbol :"+ symbol);

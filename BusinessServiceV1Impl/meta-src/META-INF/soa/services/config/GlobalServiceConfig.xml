@@ -9,7 +9,7 @@
                 <option name="storeServiceMetrics">false</option>
             </storage-options>
         </storage-provider>
-		<snapshot-interval>60</snapshot-interval>
+        <snapshot-interval>60</snapshot-interval>
 	</monitor-config>
 	<service-config-groups>
 	<service-group name="CommonSOAServiceGroup">

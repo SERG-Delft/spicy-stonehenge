@@ -13,6 +13,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest;
@@ -27,6 +29,10 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -316,6 +322,28 @@ public class SharedBusinessServiceV1Consumer
         return result;
     }
 
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.logoutAsync(param0, param1);
+        return result;
+    }
+
+    public Response<LogoutResponse> logoutAsync(LogoutRequest param0) {
+        Response<LogoutResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.logoutAsync(param0);
+        return result;
+    }
+
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> param1) {
         Future<?> result = null;
         try {
@@ -360,6 +388,28 @@ public class SharedBusinessServiceV1Consumer
         return result;
     }
 
+    public Future<?> getAllQuotesAsync(GetAllQuotesRequest param0, AsyncHandler<GetAllQuotesResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.getAllQuotesAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetAllQuotesResponse> getAllQuotesAsync(GetAllQuotesRequest param0) {
+        Response<GetAllQuotesResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.getAllQuotesAsync(param0);
+        return result;
+    }
+
     public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
         Future<?> result = null;
         try {
@@ -401,6 +451,28 @@ public class SharedBusinessServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.getOrdersAsync(param0);
+        return result;
+    }
+
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.loginAsync(param0, param1);
+        return result;
+    }
+
+    public Response<LoginResponse> loginAsync(LoginRequest param0) {
+        Response<LoginResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.loginAsync(param0);
         return result;
     }
 
@@ -538,6 +610,17 @@ public class SharedBusinessServiceV1Consumer
         return result;
     }
 
+    public LogoutResponse logout(LogoutRequest param0) {
+        LogoutResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.logout(param0);
+        return result;
+    }
+
     public GetTopOrdersResponse getTopOrders(GetTopOrdersRequest param0) {
         GetTopOrdersResponse result = null;
         try {
@@ -560,6 +643,17 @@ public class SharedBusinessServiceV1Consumer
         return result;
     }
 
+    public GetAllQuotesResponse getAllQuotes(GetAllQuotesRequest param0) {
+        GetAllQuotesResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.getAllQuotes(param0);
+        return result;
+    }
+
     public SellResponse sell(SellRequest param0) {
         SellResponse result = null;
         try {
@@ -579,6 +673,17 @@ public class SharedBusinessServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.getOrders(param0);
+        return result;
+    }
+
+    public LoginResponse login(LoginRequest param0) {
+        LoginResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.login(param0);
         return result;
     }
 

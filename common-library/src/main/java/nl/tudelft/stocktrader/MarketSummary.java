@@ -21,6 +21,7 @@ public class MarketSummary {
 		setVolume(volume);
 		setTopGainers(topGainers);
 		setTopLosers(topLosers);
+		setSummaryDate(Calendar.getInstance());
 	}
 
 	private void setTopGainers(List<Quote> topGainers) {

@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.BuyResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAccountProfileDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetAllQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClosedOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsResponse;
@@ -12,6 +13,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetMarketSummaryResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
@@ -134,6 +137,19 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
+    public void testLogout()
+        throws Exception
+    {
+        LogoutResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().logout(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
     public void testGetTopOrders()
         throws Exception
     {
@@ -160,6 +176,19 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
+    public void testGetAllQuotes()
+        throws Exception
+    {
+        GetAllQuotesResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getAllQuotes(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
     public void testSell()
         throws Exception
     {
@@ -179,6 +208,19 @@ public class BusinessServiceV1Test
         GetOrdersResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getOrders(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testLogin()
+        throws Exception
+    {
+        LoginResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().login(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

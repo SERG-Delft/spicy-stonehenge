@@ -159,6 +159,16 @@ public class TypeFactory {
 		return ret;
 	}
 	
+	public static List<QuoteData> toListQuoteData(List<Quote> quotes) {
+		List<QuoteData> quoteData = new ArrayList<QuoteData>(quotes.size());
+		
+		for(Quote q : quotes) {
+			quoteData.add(toQuoteData(q));
+		}
+		
+		return quoteData;
+	}
+	
 	public static QuoteData toQuoteData(Quote q) {
 		QuoteData ret = new QuoteData();
 		
