@@ -495,6 +495,37 @@
             		<xs:element maxOccurs="1" minOccurs="0" name="limit" type="xs:int"/>
             	</xs:sequence>
             </xs:complexType>
+            <xs:element name="register">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="in" type="xs:string"/>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="registerResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="out" type="xs:string"/>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="registerRequest]" type="xs:string"/>
+            <xs:element name="registerRequest" type="tns:registerRequest">
+            </xs:element>
+            
+            <xs:complexType name="registerRequest">
+            	<xs:sequence>
+            		<xs:element name="userID" type="xs:string"/>
+            		<xs:element name="password" type="xs:string"/>
+            		<xs:element name="fullname" type="xs:string"/>
+            		<xs:element name="address" type="xs:string"/>
+            		<xs:element name="email" type="xs:string"/>
+            		<xs:element name="creditcard" type="xs:string"/>
+            		<xs:element name="openBalance" type="xs:string"/>
+            	</xs:sequence>
+            </xs:complexType>
 		</xs:schema>
 	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
 <xs:complexType name="AccountData">
@@ -960,6 +991,12 @@
 	<wsdl:message name="getAllQuotesResponse">
 		<wsdl:part element="tns:getAllQuotesResponse" name="parameters"/>
 	</wsdl:message>
+	<wsdl:message name="registerRequest">
+		<wsdl:part element="tns:registerRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="registerResponse">
+		<wsdl:part element="tns:registerResponse" name="parameters"/>
+	</wsdl:message>
 	<wsdl:portType name="BusinessServicePort">
 		<wsdl:operation name="getOrders">
 			<wsdl:documentation>
@@ -1063,6 +1100,10 @@
 		<wsdl:operation name="getAllQuotes">
 			<wsdl:input message="tns:getAllQuotesRequest"/>
 			<wsdl:output message="tns:getAllQuotesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="register">
+			<wsdl:input message="tns:registerRequest"/>
+			<wsdl:output message="tns:registerResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="BusinessServiceHttpBinding" type="tns:BusinessServicePort">
