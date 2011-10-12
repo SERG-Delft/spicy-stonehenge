@@ -177,7 +177,7 @@ public class TraderServiceManager {
 			order = createOrder(orderType, userID, holdingID, symbol, quantity,
 					holding);
 
-			SharedOrderProcessorServiceV1Consumer asynClient = new SharedOrderProcessorServiceV1Consumer("TraderService");
+			SharedOrderProcessorServiceV1Consumer asynClient = new SharedOrderProcessorServiceV1Consumer("BusinessService","production");
 			
 			SubmitOrderRequest request = new SubmitOrderRequest();
 			request.setData(TypeFactory.toOrderData(order));

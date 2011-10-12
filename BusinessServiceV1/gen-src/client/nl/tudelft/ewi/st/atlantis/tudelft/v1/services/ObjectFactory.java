@@ -27,6 +27,7 @@ public class ObjectFactory {
     private final static QName _GetTopOrdersResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getTopOrdersResponse");
     private final static QName _LogoutResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "logoutResponse");
     private final static QName _GetAccountProfileDataRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getAccountProfileDataRequest");
+    private final static QName _RegisterRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "registerRequest");
     private final static QName _SellEnhancedResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "sellEnhancedResponse");
     private final static QName _UpdateAccountProfileRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "updateAccountProfileRequest");
     private final static QName _GetOrdersResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOrdersResponse");
@@ -49,6 +50,7 @@ public class ObjectFactory {
     private final static QName _BuyResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "buyResponse");
     private final static QName _SellRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "sellRequest");
     private final static QName _LogoutRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "logoutRequest");
+    private final static QName _RegisterRequest_005d_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "registerRequest]");
     private final static QName _GetMarketSummaryRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getMarketSummaryRequest");
     private final static QName _GetQuoteResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getQuoteResponse");
     private final static QName _LoginResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "loginResponse");
@@ -64,166 +66,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SellEnhancedResponse }
-     * 
-     */
-    public SellEnhancedResponse createSellEnhancedResponse() {
-        return new SellEnhancedResponse();
-    }
-
-    /**
-     * Create an instance of {@link SellEnhancedRequest }
-     * 
-     */
-    public SellEnhancedRequest createSellEnhancedRequest() {
-        return new SellEnhancedRequest();
-    }
-
-    /**
-     * Create an instance of {@link Logout }
-     * 
-     */
-    public Logout createLogout() {
-        return new Logout();
-    }
-
-    /**
-     * Create an instance of {@link SellResponse }
-     * 
-     */
-    public SellResponse createSellResponse() {
-        return new SellResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetClosedOrdersResponse }
-     * 
-     */
-    public GetClosedOrdersResponse createGetClosedOrdersResponse() {
-        return new GetClosedOrdersResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOrdersResponse }
-     * 
-     */
-    public GetOrdersResponse createGetOrdersResponse() {
-        return new GetOrdersResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetClosedOrdersRequest }
-     * 
-     */
-    public GetClosedOrdersRequest createGetClosedOrdersRequest() {
-        return new GetClosedOrdersRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetAllQuotes }
-     * 
-     */
-    public GetAllQuotes createGetAllQuotes() {
-        return new GetAllQuotes();
-    }
-
-    /**
-     * Create an instance of {@link GetTopOrdersRequest }
-     * 
-     */
-    public GetTopOrdersRequest createGetTopOrdersRequest() {
-        return new GetTopOrdersRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetHoldingResponse }
-     * 
-     */
-    public GetHoldingResponse createGetHoldingResponse() {
-        return new GetHoldingResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateAccountProfileRequest }
-     * 
-     */
-    public UpdateAccountProfileRequest createUpdateAccountProfileRequest() {
-        return new UpdateAccountProfileRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetMarketSummaryResponse }
-     * 
-     */
-    public GetMarketSummaryResponse createGetMarketSummaryResponse() {
-        return new GetMarketSummaryResponse();
-    }
-
-    /**
-     * Create an instance of {@link SellRequest }
-     * 
-     */
-    public SellRequest createSellRequest() {
-        return new SellRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetHoldingsResponse }
-     * 
-     */
-    public GetHoldingsResponse createGetHoldingsResponse() {
-        return new GetHoldingsResponse();
-    }
-
-    /**
-     * Create an instance of {@link LoginRequest }
-     * 
-     */
-    public LoginRequest createLoginRequest() {
-        return new LoginRequest();
-    }
-
-    /**
-     * Create an instance of {@link Login }
-     * 
-     */
-    public Login createLogin() {
-        return new Login();
-    }
-
-    /**
-     * Create an instance of {@link GetAllQuotesResponse }
-     * 
-     */
-    public GetAllQuotesResponse createGetAllQuotesResponse() {
-        return new GetAllQuotesResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateAccountProfileResponse }
-     * 
-     */
-    public UpdateAccountProfileResponse createUpdateAccountProfileResponse() {
-        return new UpdateAccountProfileResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOrdersRequest }
-     * 
-     */
-    public GetOrdersRequest createGetOrdersRequest() {
-        return new GetOrdersRequest();
-    }
-
-    /**
-     * Create an instance of {@link BuyRequest }
-     * 
-     */
-    public BuyRequest createBuyRequest() {
-        return new BuyRequest();
-    }
-
-    /**
      * Create an instance of {@link GetAccountProfileDataRequest }
      * 
      */
@@ -232,67 +74,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuoteResponse }
+     * Create an instance of {@link RegisterRequest }
      * 
      */
-    public GetQuoteResponse createGetQuoteResponse() {
-        return new GetQuoteResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAllQuotesRequest }
-     * 
-     */
-    public GetAllQuotesRequest createGetAllQuotesRequest() {
-        return new GetAllQuotesRequest();
-    }
-
-    /**
-     * Create an instance of {@link LogoutRequest }
-     * 
-     */
-    public LogoutRequest createLogoutRequest() {
-        return new LogoutRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetHoldingsRequest }
-     * 
-     */
-    public GetHoldingsRequest createGetHoldingsRequest() {
-        return new GetHoldingsRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetAccountDataResponse }
-     * 
-     */
-    public GetAccountDataResponse createGetAccountDataResponse() {
-        return new GetAccountDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link LoginResponse }
-     * 
-     */
-    public LoginResponse createLoginResponse() {
-        return new LoginResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAccountDataRequest }
-     * 
-     */
-    public GetAccountDataRequest createGetAccountDataRequest() {
-        return new GetAccountDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetQuoteRequest }
-     * 
-     */
-    public GetQuoteRequest createGetQuoteRequest() {
-        return new GetQuoteRequest();
+    public RegisterRequest createRegisterRequest() {
+        return new RegisterRequest();
     }
 
     /**
@@ -304,11 +90,99 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetTopOrdersResponse }
+     * Create an instance of {@link UpdateAccountProfileResponse }
      * 
      */
-    public GetTopOrdersResponse createGetTopOrdersResponse() {
-        return new GetTopOrdersResponse();
+    public UpdateAccountProfileResponse createUpdateAccountProfileResponse() {
+        return new UpdateAccountProfileResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetClosedOrdersResponse }
+     * 
+     */
+    public GetClosedOrdersResponse createGetClosedOrdersResponse() {
+        return new GetClosedOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllQuotesResponse }
+     * 
+     */
+    public GetAllQuotesResponse createGetAllQuotesResponse() {
+        return new GetAllQuotesResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateAccountProfileRequest }
+     * 
+     */
+    public UpdateAccountProfileRequest createUpdateAccountProfileRequest() {
+        return new UpdateAccountProfileRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetAccountDataRequest }
+     * 
+     */
+    public GetAccountDataRequest createGetAccountDataRequest() {
+        return new GetAccountDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingsResponse }
+     * 
+     */
+    public GetHoldingsResponse createGetHoldingsResponse() {
+        return new GetHoldingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link SellResponse }
+     * 
+     */
+    public SellResponse createSellResponse() {
+        return new SellResponse();
+    }
+
+    /**
+     * Create an instance of {@link RegisterResponse }
+     * 
+     */
+    public RegisterResponse createRegisterResponse() {
+        return new RegisterResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetMarketSummaryResponse }
+     * 
+     */
+    public GetMarketSummaryResponse createGetMarketSummaryResponse() {
+        return new GetMarketSummaryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingRequest }
+     * 
+     */
+    public GetHoldingRequest createGetHoldingRequest() {
+        return new GetHoldingRequest();
+    }
+
+    /**
+     * Create an instance of {@link Login }
+     * 
+     */
+    public Login createLogin() {
+        return new Login();
+    }
+
+    /**
+     * Create an instance of {@link BuyRequest }
+     * 
+     */
+    public BuyRequest createBuyRequest() {
+        return new BuyRequest();
     }
 
     /**
@@ -320,11 +194,67 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetAccountDataResponse }
+     * 
+     */
+    public GetAccountDataResponse createGetAccountDataResponse() {
+        return new GetAccountDataResponse();
+    }
+
+    /**
      * Create an instance of {@link GetAccountProfileDataResponse }
      * 
      */
     public GetAccountProfileDataResponse createGetAccountProfileDataResponse() {
         return new GetAccountProfileDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link LoginResponse }
+     * 
+     */
+    public LoginResponse createLoginResponse() {
+        return new LoginResponse();
+    }
+
+    /**
+     * Create an instance of {@link SellEnhancedResponse }
+     * 
+     */
+    public SellEnhancedResponse createSellEnhancedResponse() {
+        return new SellEnhancedResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetClosedOrdersRequest }
+     * 
+     */
+    public GetClosedOrdersRequest createGetClosedOrdersRequest() {
+        return new GetClosedOrdersRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingResponse }
+     * 
+     */
+    public GetHoldingResponse createGetHoldingResponse() {
+        return new GetHoldingResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetTopOrdersRequest }
+     * 
+     */
+    public GetTopOrdersRequest createGetTopOrdersRequest() {
+        return new GetTopOrdersRequest();
+    }
+
+    /**
+     * Create an instance of {@link LoginRequest }
+     * 
+     */
+    public LoginRequest createLoginRequest() {
+        return new LoginRequest();
     }
 
     /**
@@ -336,11 +266,107 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetHoldingRequest }
+     * Create an instance of {@link LogoutRequest }
      * 
      */
-    public GetHoldingRequest createGetHoldingRequest() {
-        return new GetHoldingRequest();
+    public LogoutRequest createLogoutRequest() {
+        return new LogoutRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetAllQuotesRequest }
+     * 
+     */
+    public GetAllQuotesRequest createGetAllQuotesRequest() {
+        return new GetAllQuotesRequest();
+    }
+
+    /**
+     * Create an instance of {@link Register }
+     * 
+     */
+    public Register createRegister() {
+        return new Register();
+    }
+
+    /**
+     * Create an instance of {@link GetQuoteResponse }
+     * 
+     */
+    public GetQuoteResponse createGetQuoteResponse() {
+        return new GetQuoteResponse();
+    }
+
+    /**
+     * Create an instance of {@link SellEnhancedRequest }
+     * 
+     */
+    public SellEnhancedRequest createSellEnhancedRequest() {
+        return new SellEnhancedRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetTopOrdersResponse }
+     * 
+     */
+    public GetTopOrdersResponse createGetTopOrdersResponse() {
+        return new GetTopOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetOrdersRequest }
+     * 
+     */
+    public GetOrdersRequest createGetOrdersRequest() {
+        return new GetOrdersRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetQuoteRequest }
+     * 
+     */
+    public GetQuoteRequest createGetQuoteRequest() {
+        return new GetQuoteRequest();
+    }
+
+    /**
+     * Create an instance of {@link SellRequest }
+     * 
+     */
+    public SellRequest createSellRequest() {
+        return new SellRequest();
+    }
+
+    /**
+     * Create an instance of {@link Logout }
+     * 
+     */
+    public Logout createLogout() {
+        return new Logout();
+    }
+
+    /**
+     * Create an instance of {@link GetOrdersResponse }
+     * 
+     */
+    public GetOrdersResponse createGetOrdersResponse() {
+        return new GetOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllQuotes }
+     * 
+     */
+    public GetAllQuotes createGetAllQuotes() {
+        return new GetAllQuotes();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingsRequest }
+     * 
+     */
+    public GetHoldingsRequest createGetHoldingsRequest() {
+        return new GetHoldingsRequest();
     }
 
     /**
@@ -368,6 +394,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getAccountProfileDataRequest")
     public JAXBElement<GetAccountProfileDataRequest> createGetAccountProfileDataRequest(GetAccountProfileDataRequest value) {
         return new JAXBElement<GetAccountProfileDataRequest>(_GetAccountProfileDataRequest_QNAME, GetAccountProfileDataRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegisterRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "registerRequest")
+    public JAXBElement<RegisterRequest> createRegisterRequest(RegisterRequest value) {
+        return new JAXBElement<RegisterRequest>(_RegisterRequest_QNAME, RegisterRequest.class, null, value);
     }
 
     /**
@@ -566,6 +601,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "logoutRequest")
     public JAXBElement<LogoutRequest> createLogoutRequest(LogoutRequest value) {
         return new JAXBElement<LogoutRequest>(_LogoutRequest_QNAME, LogoutRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "registerRequest]")
+    public JAXBElement<String> createRegisterRequest_005d(String value) {
+        return new JAXBElement<String>(_RegisterRequest_005d_QNAME, String.class, null, value);
     }
 
     /**

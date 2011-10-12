@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<global-client-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
+	<monitor-config>
+		<storage-provider name="DAOMetricsStorageProvider">
+            <class-name>org.ebayopensource.turmeric.monitoring.storage.DAOMetricsStorageProvider</class-name>
+            <storage-options>
+                <option name="persistenceUnitName">metrics</option>
+                <option name="metricsDAOClassName">org.ebayopensource.turmeric.monitoring.MetricsDAOImpl</option>
+                <option name="storeServiceMetrics">false</option>
+            </storage-options>
+        </storage-provider>
+        <snapshot-interval>60</snapshot-interval>
+    </monitor-config>
+	<client-config-groups>
+	<client-group name="CommonClientGroup">
+		<client-config>
+			<pipeline-config>
+				<request-handlers>
+					<handler name="MessageContextHandler" presence="Replaceable">
+						<class-name>org.ebayopensource.turmeric.runtime.sif.impl.handlers.MessageContextHandler</class-name>
+					</handler>
+				</request-handlers>
+				<logging-handler>
+					<class-name>org.ebayopensource.turmeric.runtime.sif.impl.pipeline.ClientLoggingHandler</class-name>
+				</logging-handler>
+			</pipeline-config>
+		</client-config>
+	</client-group>
+</client-config-groups>
+
+
+</global-client-config>
