@@ -511,7 +511,7 @@
             		</xs:sequence>
             	</xs:complexType>
             </xs:element>
-            <xs:element name="registerRequest]" type="xs:string"/>
+            <xs:element name="registerRequest" type="xs:string"/>
             <xs:element name="registerRequest" type="tns:registerRequest">
             </xs:element>
             
