@@ -38,19 +38,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link QuoteData }
+     * Create an instance of {@link OrderData }
      * 
      */
-    public QuoteData createQuoteData() {
-        return new QuoteData();
-    }
-
-    /**
-     * Create an instance of {@link MarketSummaryData }
-     * 
-     */
-    public MarketSummaryData createMarketSummaryData() {
-        return new MarketSummaryData();
+    public OrderData createOrderData() {
+        return new OrderData();
     }
 
     /**
@@ -62,19 +54,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrderData }
-     * 
-     */
-    public OrderData createOrderData() {
-        return new OrderData();
-    }
-
-    /**
      * Create an instance of {@link AccountData }
      * 
      */
     public AccountData createAccountData() {
         return new AccountData();
+    }
+
+    /**
+     * Create an instance of {@link MarketSummaryData }
+     * 
+     */
+    public MarketSummaryData createMarketSummaryData() {
+        return new MarketSummaryData();
+    }
+
+    /**
+     * Create an instance of {@link QuoteData }
+     * 
+     */
+    public QuoteData createQuoteData() {
+        return new QuoteData();
     }
 
 }

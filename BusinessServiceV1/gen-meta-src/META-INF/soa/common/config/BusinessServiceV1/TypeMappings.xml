@@ -342,6 +342,9 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.Logout</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.Register</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest</java-type-name>

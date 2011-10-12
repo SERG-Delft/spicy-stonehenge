@@ -23,8 +23,8 @@ import java.util.Properties;
 import java.io.InputStream;
 import java.io.IOException;
 
-import nl.tudelft.stocktrader.mysql.MySQLConnectionProvider;
-import nl.tudelft.stocktrader.mysql.MySQLDAOFactory;
+import nl.tudelft.stocktrader.derby.DerbyConnectionProvider;
+import nl.tudelft.stocktrader.derby.DerbyDAOFactory;
 import nl.tudelft.stocktrader.util.StockTraderUtility;
 
 import org.apache.commons.logging.Log;
@@ -52,14 +52,18 @@ public abstract class DAOFactory {
         DAOFactory factory;
         loadProperties();
         if ("mysql".equals(prop.getProperty(PROP_DB_TYPE))) {
-            factory = MySQLDAOFactory.getInstance();
-            return factory;
+            //factory = MySQLDAOFactory.getInstance();
+            //return factory;
+        	throw new IllegalArgumentException("Disabling MySQL");
         } else if ("mssql".equals(prop.getProperty(PROP_DB_TYPE))) {
         	//TIAGO: Disabled for now.
         	System.out.println("TIAGO: DISABLED FOR NOW");
         	return null;
 //            factory = MSSQLDAOFactory.getInstance();
 //            return factory;
+        } else if ("derby".equals(prop.getProperty(PROP_DB_TYPE))) {
+        	factory = DerbyDAOFactory.getInstance();
+        	return factory;
         } else {
             throw new IllegalArgumentException("Unknown Database type " + prop.getProperty(PROP_DB_TYPE));
         }
@@ -74,12 +78,15 @@ public abstract class DAOFactory {
     
     public ConfigServiceDAO getConfigServiceDAO() {
         if ("mysql".equals(prop.getProperty(PROP_DB_TYPE))) {
-            connectionProvider = new MySQLConnectionProvider();
+            //connectionProvider = new MySQLConnectionProvider();
+        	throw new IllegalArgumentException("Disabling MySQL");
         } else if ("mssql".equals(prop.getProperty(PROP_DB_TYPE))) {
             // Tiago: Disabled for now!
         	System.out.println("Disabled MSSQL for now! Check DAOFactory if enabling it.");
         	connectionProvider = null;
         	//connectionProvider = new MSSQLConnectionProvider();
+        } else if ("derby".equals(prop.getProperty(PROP_DB_TYPE))) {
+        	connectionProvider = new DerbyConnectionProvider();
         } else {
             throw new IllegalArgumentException("Unknown Database type " + prop.getProperty(PROP_DB_TYPE));
         }
