@@ -37,6 +37,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link IsOnlineResponse }
+     * 
+     */
+    public IsOnlineResponse createIsOnlineResponse() {
+        return new IsOnlineResponse();
+    }
+
+    /**
+     * Create an instance of {@link SubmitOrderResponse }
+     * 
+     */
+    public SubmitOrderResponse createSubmitOrderResponse() {
+        return new SubmitOrderResponse();
+    }
+
+    /**
      * Create an instance of {@link SubmitOrderRequest }
      * 
      */
@@ -50,22 +66,6 @@ public class ObjectFactory {
      */
     public IsOnlineRequest createIsOnlineRequest() {
         return new IsOnlineRequest();
-    }
-
-    /**
-     * Create an instance of {@link SubmitOrderResponse }
-     * 
-     */
-    public SubmitOrderResponse createSubmitOrderResponse() {
-        return new SubmitOrderResponse();
-    }
-
-    /**
-     * Create an instance of {@link IsOnlineResponse }
-     * 
-     */
-    public IsOnlineResponse createIsOnlineResponse() {
-        return new IsOnlineResponse();
     }
 
     /**

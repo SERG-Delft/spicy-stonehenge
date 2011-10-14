@@ -48,19 +48,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetOPSConfigRequest }
+     * Create an instance of {@link SetBSToOPSRequest }
      * 
      */
-    public GetOPSConfigRequest createGetOPSConfigRequest() {
-        return new GetOPSConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSLocationsResponse }
-     * 
-     */
-    public GetOPSLocationsResponse createGetOPSLocationsResponse() {
-        return new GetOPSLocationsResponse();
+    public SetBSToOPSRequest createSetBSToOPSRequest() {
+        return new SetBSToOPSRequest();
     }
 
     /**
@@ -72,27 +64,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetBSConfigRequest }
+     * Create an instance of {@link GetOPSConfigRequest }
      * 
      */
-    public GetBSConfigRequest createGetBSConfigRequest() {
-        return new GetBSConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSLocationsRequest }
-     * 
-     */
-    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
-        return new GetOPSLocationsRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSConfigResponse }
-     * 
-     */
-    public GetOPSConfigResponse createGetOPSConfigResponse() {
-        return new GetOPSConfigResponse();
+    public GetOPSConfigRequest createGetOPSConfigRequest() {
+        return new GetOPSConfigRequest();
     }
 
     /**
@@ -104,27 +80,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetClientConfigRequest }
+     * Create an instance of {@link GetOPSConfigResponse }
      * 
      */
-    public GetClientConfigRequest createGetClientConfigRequest() {
-        return new GetClientConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBSConfigResponse }
-     * 
-     */
-    public GetBSConfigResponse createGetBSConfigResponse() {
-        return new GetBSConfigResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetServiceLocationResponse }
-     * 
-     */
-    public SetServiceLocationResponse createSetServiceLocationResponse() {
-        return new SetServiceLocationResponse();
+    public GetOPSConfigResponse createGetOPSConfigResponse() {
+        return new GetOPSConfigResponse();
     }
 
     /**
@@ -144,11 +104,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetBSLocationsRequest }
+     * Create an instance of {@link GetBSConfigRequest }
      * 
      */
-    public GetBSLocationsRequest createGetBSLocationsRequest() {
-        return new GetBSLocationsRequest();
+    public GetBSConfigRequest createGetBSConfigRequest() {
+        return new GetBSConfigRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetBSLocationsResponse }
+     * 
+     */
+    public GetBSLocationsResponse createGetBSLocationsResponse() {
+        return new GetBSLocationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetOPSLocationsResponse }
+     * 
+     */
+    public GetOPSLocationsResponse createGetOPSLocationsResponse() {
+        return new GetOPSLocationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetOPSLocationsRequest }
+     * 
+     */
+    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
+        return new GetOPSLocationsRequest();
     }
 
     /**
@@ -160,6 +144,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetBSConfigResponse }
+     * 
+     */
+    public GetBSConfigResponse createGetBSConfigResponse() {
+        return new GetBSConfigResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetClientConfigRequest }
+     * 
+     */
+    public GetClientConfigRequest createGetClientConfigRequest() {
+        return new GetClientConfigRequest();
+    }
+
+    /**
+     * Create an instance of {@link SetServiceLocationResponse }
+     * 
+     */
+    public SetServiceLocationResponse createSetServiceLocationResponse() {
+        return new SetServiceLocationResponse();
+    }
+
+    /**
      * Create an instance of {@link SetServiceLocationRequest }
      * 
      */
@@ -168,19 +176,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetBSToOPSRequest }
+     * Create an instance of {@link GetBSLocationsRequest }
      * 
      */
-    public SetBSToOPSRequest createSetBSToOPSRequest() {
-        return new SetBSToOPSRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBSLocationsResponse }
-     * 
-     */
-    public GetBSLocationsResponse createGetBSLocationsResponse() {
-        return new GetBSLocationsResponse();
+    public GetBSLocationsRequest createGetBSLocationsRequest() {
+        return new GetBSLocationsRequest();
     }
 
     /**

@@ -38,11 +38,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CommonErrorData }
+     * Create an instance of {@link ErrorData }
      * 
      */
-    public CommonErrorData createCommonErrorData() {
-        return new CommonErrorData();
+    public ErrorData createErrorData() {
+        return new ErrorData();
     }
 
     /**
@@ -62,11 +62,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorData }
+     * Create an instance of {@link CommonErrorData }
      * 
      */
-    public ErrorData createErrorData() {
-        return new ErrorData();
+    public CommonErrorData createCommonErrorData() {
+        return new CommonErrorData();
     }
 
 }
