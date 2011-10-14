@@ -21,11 +21,9 @@
 
 		<properties>
 			<property name="hibernate.connection.provider_class" value="com.jolbox.bonecp.provider.BoneCPConnectionProvider"/>		
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/turmericdb" />
-			<property name="hibernate.connection.username" value="turmeric" />
-			<property name="hibernate.connection.password" value="turmeric" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/turmericdb" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 
@@ -47,16 +45,13 @@
         <class>org.ebayopensource.turmeric.policyservice.model.AuditHistory</class>
 	<class>org.ebayopensource.turmeric.policyservice.model.BasicAuth</class>        
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
-
-		<properties>
-			<property name="hibernate.connection.provider_class" value="com.jolbox.bonecp.provider.BoneCPConnectionProvider"/>		
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/turmericdb" />
-			<property name="hibernate.connection.username" value="turmeric" />
-			<property name="hibernate.connection.password" value="turmeric" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-		</properties>
+<properties>
+                        <property name="hibernate.connection.provider_class" value="com.jolbox.bonecp.provider.BoneCPConnectionProvider"/>
+                        <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
+                        <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/turmericdb" />
+                        <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+                        <property name="hibernate.hbm2ddl.auto" value="update" />
+                </properties>
     </persistence-unit>
 
 	<persistence-unit name="errors" transaction-type="RESOURCE_LOCAL">
@@ -66,13 +61,12 @@
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
-			<property name="hibernate.connection.provider_class" value="com.jolbox.bonecp.provider.BoneCPConnectionProvider"/>		
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/turmericdb" />
-			<property name="hibernate.connection.username" value="turmeric" />
-			<property name="hibernate.connection.password" value="turmeric" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-		</properties>
+                        <property name="hibernate.connection.provider_class" value="com.jolbox.bonecp.provider.BoneCPConnectionProvider"/>
+                        <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
+                        <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/turmericdb" />
+                        <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+                        <property name="hibernate.hbm2ddl.auto" value="update" />
+                </properties>
+
 	    </persistence-unit>
 </persistence>
