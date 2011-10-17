@@ -71,18 +71,22 @@ public class TypeFactory {
 			System.err.println("COULD NOT GET A DATATYPEFACTORY!");
 		}
 		
-		AccountData ret = new AccountData();
-		
-		ret.setAccountID(account.getAccountID());
-		ret.setBalance(account.getBalance().doubleValue());
-		ret.setCreationDate(dtf.newXMLGregorianCalendar((GregorianCalendar)account.getCreationDate()));
-		ret.setLastLogin(dtf.newXMLGregorianCalendar((GregorianCalendar)account.getLastLogin()));
-		ret.setLoginCount(account.getLoginCount());
-		ret.setLogoutCount(account.getLogoutCount());
-		ret.setOpenBalance(account.getOpenBalance().doubleValue());
-		ret.setProfileID(account.getProfileID());
-		
-		return ret;
+		try {
+			AccountData ret = new AccountData();
+			
+			ret.setAccountID(account.getAccountID());
+			ret.setBalance(account.getBalance().doubleValue());
+			ret.setCreationDate(dtf.newXMLGregorianCalendar((GregorianCalendar)account.getCreationDate()));
+			ret.setLastLogin(dtf.newXMLGregorianCalendar((GregorianCalendar)account.getLastLogin()));
+			ret.setLoginCount(account.getLoginCount());
+			ret.setLogoutCount(account.getLogoutCount());
+			ret.setOpenBalance(account.getOpenBalance().doubleValue());
+			ret.setProfileID(account.getProfileID());
+			
+			return ret;
+		} catch (NullPointerException e) {
+			return null;
+		}
 	}
 	
 	public static HoldingData toHoldingData(Holding holding, DatatypeFactory dtf) {
