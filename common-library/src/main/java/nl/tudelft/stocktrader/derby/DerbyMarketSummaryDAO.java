@@ -235,7 +235,7 @@ public class DerbyMarketSummaryDAO extends AbstractDerbyDAO implements MarketSum
 	public MarketSummary getCustomMarketSummary() throws DAOException {
 		BigDecimal tSIA = (BigDecimal) StockTraderSQLUtil.executeScalarNoParm(SQL_SELECT_MARKETSUMMARY_TSIA, sqlConnection);
 		BigDecimal openTSIA = (BigDecimal) StockTraderSQLUtil.executeScalarNoParm(SQL_SELECT_MARKETSUMMARY_OPENTSIA, sqlConnection);
-		double totalVolume = ((Double) StockTraderSQLUtil.executeScalarNoParm(SQL_SELECT_MARKETSUMMARY_VOLUME, sqlConnection)).doubleValue();
+		double totalVolume = ((Float) StockTraderSQLUtil.executeScalarNoParm(SQL_SELECT_MARKETSUMMARY_VOLUME, sqlConnection)).doubleValue();
 
 		List<Quote> topGainers = new ArrayList<Quote>();
 		PreparedStatement gainers = null;

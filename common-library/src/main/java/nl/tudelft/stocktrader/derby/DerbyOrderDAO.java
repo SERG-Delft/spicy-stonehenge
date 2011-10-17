@@ -45,11 +45,11 @@ public class DerbyOrderDAO extends AbstractDerbyDAO implements OrderDAO {
 	private static final String SQL_UPDATE_ORDER = "UPDATE orders SET quantity = ? WHERE orderid = ?";
 	private static final String SQL_CLOSE_ORDER = "UPDATE orders SET orderstatus = ?, completiondate = current_timestamp, holding_holdingid = ?, price = ? WHERE orderid = ?";
 	private static final String SQL_GET_ACCOUNTID = "SELECT accountid FROM account  WHERE profile_userid = ?";
-    private static final String SQL_GET_LAST_INSERT_ID = "SELECT LAST_INSERT_ID()";
+    private static final String SQL_GET_LAST_INSERT_ID = "SELECT IDENTITY_VAL_LOCAL()";
 
 	// CHECKME
 	private static final String SQL_INSERT_ORDER = "INSERT INTO orders (opendate, orderfee, price, quote_symbol, quantity, ordertype, orderstatus, account_accountid, holding_holdingid) VALUES (current_timestamp, ?, ?, ?, ?, ?, 'open', ?, ?)";
-	private static final String SQL_SELECT_ORDER_ID = "SELECT LAST_INSERT_ID() FROM orders WHERE orderfee = ? AND price = ? AND quote_symbol = ? AND quantity = ? AND ordertype = ? AND orderstatus = ? AND account_accountid = ? AND holding_holdingid = ?";
+	private static final String SQL_SELECT_ORDER_ID = "SELECT IDENTITY_VAL_LOCAL() FROM orders WHERE orderfee = ? AND price = ? AND quote_symbol = ? AND quantity = ? AND ordertype = ? AND orderstatus = ? AND account_accountid = ? AND holding_holdingid = ?";
 
 	public DerbyOrderDAO(Connection sqlConnection) throws DAOException {
 		super(sqlConnection);

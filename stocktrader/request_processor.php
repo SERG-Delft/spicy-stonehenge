@@ -125,7 +125,7 @@ function GetUserAccountSummary($ordersReturn)
 		{
 			$sells = $sells +  (($order->price) * 
 				($order->quantity)) - 
-				($ordersReturn[$index]->orderFee);
+				($order->orderFee);
 		}
 		$tax = $tax + $order->orderFee;
 	}
@@ -154,26 +154,31 @@ function GetHoldingInformation($holdings)
         	return $holdingInfo;
 	}
 
+	$holdingInfo = new holdingInformation();
+
 	$holdingsReturn = $holdings;
-	$index = 0;
 	$totalHoldings= 0;
 	$marketValue = 0;
-	while($holdingsReturn->HoldingDataBean[$index])
-	{
-			$bean = $holdingsReturn->HoldingDataBean[$index];
-			if (!$quoteInfo[$bean->quoteID])
-			{
-				$quotes = GetQuote($bean->quoteID);
-				if ($quotes)
-					$quotesReturn = $quotes->getQuoteReturn;
-				$quoteInfo[$bean->quoteID] = $quotesReturn->price;
-			}
-			$marketValue = $marketValue + ($quoteInfo[$bean->quoteID]) * ($bean->quantity); 
 
-		$totalHoldings = $totalHoldings + $holdingsReturn->HoldingDataBean[$index]->quantity *
-			$holdingsReturn->HoldingDataBean[$index]->purchasePrice;
-		$index ++;
+	$quoteInfo = array();
+	foreach($holdingsReturn as $bean)
+	{
+		if (!isset($quoteInfo[$bean->quoteID]))
+		{
+			$quotes = GetQuote($bean->quoteID);
+			if ($quotes)
+				$quotesReturn = $quotes;
+			$quoteInfo[$bean->quoteID] = $quotesReturn->price;
+		}
+		$marketValue = $marketValue + ($quoteInfo[$bean->quoteID]) * ($bean->quantity); 
+		$totalHoldings = $totalHoldings + $bean->quantity * $bean->purchasePrice;
+		
+		$holdingInfo->noOfHoldings++;
 	}
+
+	$holdingInfo->totalHoldings = $totalHoldings;
+
+	return $holdingInfo;
 }
 
 /**
@@ -289,6 +294,10 @@ function Login($userid, $password)
 	$input->userID = $userid;
 	$input->password = $password;
 	$response = $proxy->login($input);
+
+	if ($response->account == NULL) {
+		return false;
+	}
 
 	return $response->account->profileID;
 }
@@ -406,8 +415,8 @@ function GetAllQuotes()
 
 function SellEnhanced($userID, $holdingID, $quantity)
 {
-	$proxy = GetProxy();
-    $input = new sellEnhanced();
+	$proxy = GetProxy("sellEnhanced", BUSINESS_CLASSMAP);
+	$input = new sellEnhancedRequest();
 	$input->userID = $userID;
 	$input->holdingID = $holdingID;
 	$input->quantity = $quantity;
