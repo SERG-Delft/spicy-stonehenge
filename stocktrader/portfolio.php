@@ -115,16 +115,14 @@ else
 					$purchaseBasis = 0;
 					$marketValue = 0;
 					$gain = 0;
+					$quoteInfo = array();
 
-					while ($holdingsReturn->HoldingDataBean[$index])
-					{
-						$bean = $holdingsReturn->HoldingDataBean[$index];
-
-						if (!$quoteInfo[$bean->quoteID])
+					foreach($holdingsReturn as $bean) {
+						if (!isset($quoteInfo[$bean->quoteID]))
 						{
 							$quotes = GetQuote($bean->quoteID);
 							if ($quotes)
-								$quotesReturn = $quotes->getQuoteReturn;
+								$quotesReturn = $quotes;
 							$quoteInfo[$bean->quoteID] = $quotesReturn->price;
 						}
 
