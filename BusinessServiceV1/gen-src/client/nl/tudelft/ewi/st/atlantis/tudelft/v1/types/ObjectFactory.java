@@ -38,14 +38,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrderData }
-     * 
-     */
-    public OrderData createOrderData() {
-        return new OrderData();
-    }
-
-    /**
      * Create an instance of {@link HoldingData }
      * 
      */
@@ -54,19 +46,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AccountData }
-     * 
-     */
-    public AccountData createAccountData() {
-        return new AccountData();
-    }
-
-    /**
      * Create an instance of {@link MarketSummaryData }
      * 
      */
     public MarketSummaryData createMarketSummaryData() {
         return new MarketSummaryData();
+    }
+
+    /**
+     * Create an instance of {@link OrderData }
+     * 
+     */
+    public OrderData createOrderData() {
+        return new OrderData();
     }
 
     /**

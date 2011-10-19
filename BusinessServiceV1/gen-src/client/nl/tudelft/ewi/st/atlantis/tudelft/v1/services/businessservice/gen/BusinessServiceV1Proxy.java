@@ -59,6 +59,12 @@ public class BusinessServiceV1Proxy
         super(service);
     }
 
+    public List<Response<?>> poll(boolean block, boolean partial)
+        throws InterruptedException
+    {
+        return m_service.poll(block, partial);
+    }
+
     public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getQuote");
         Future<?> result = dispatch.invokeAsync(param0, param1);
@@ -249,12 +255,6 @@ public class BusinessServiceV1Proxy
         Dispatch dispatch = m_service.createDispatch("getClosedOrders");
         Response<GetClosedOrdersResponse> result = dispatch.invokeAsync(param0);
         return result;
-    }
-
-    public List<Response<?>> poll(boolean block, boolean partial)
-        throws InterruptedException
-    {
-        return m_service.poll(block, partial);
     }
 
     public GetQuoteResponse getQuote(GetQuoteRequest param0) {

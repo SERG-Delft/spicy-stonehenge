@@ -5,7 +5,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
+
 import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
 
 
@@ -23,7 +25,7 @@ import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.ebayopensource.org/turmeric/common/v1/types}BaseResponse">
  *       &lt;sequence>
- *         &lt;element name="accountData" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types}AccountData"/>
+ *         &lt;element name="accountData" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}AccountData"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>

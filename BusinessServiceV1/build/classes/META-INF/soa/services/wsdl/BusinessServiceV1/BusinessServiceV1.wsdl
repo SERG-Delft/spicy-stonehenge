@@ -23,28 +23,25 @@
 			<xs:complexType name="AccountData">
 				<xs:annotation>
 					<xs:documentation />
-					<xs:appinfo>
-						<typeLibrarySource library="TradeTypeLibrary"
-							namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" />
-					</xs:appinfo>
 				</xs:annotation>
 				<xs:sequence>
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="profileID" type="xs:string" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="openBalance" type="xs:double" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="balance" type="xs:double" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="creationDate" type="xs:dateTime" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="lastLogin" type="xs:dateTime" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="logoutCount" type="xs:int" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="loginCount" type="xs:int" />
-					<xs:element maxOccurs="1" minOccurs="1"
-						name="accountID" type="xs:int" />
+					<xs:element maxOccurs="1" minOccurs="1" name="profileID"
+						type="xs:string" />
+					<xs:element maxOccurs="1" minOccurs="1" name="openBalance"
+						type="xs:double" />
+					<xs:element maxOccurs="1" minOccurs="1" name="balance"
+						type="xs:double" />
+					<xs:element maxOccurs="1" minOccurs="1" name="creationDate"
+						type="xs:dateTime" />
+					<xs:element maxOccurs="1" minOccurs="1" name="lastLogin"
+						type="xs:dateTime" />
+					<xs:element maxOccurs="1" minOccurs="1" name="logoutCount"
+						type="xs:int" />
+					<xs:element maxOccurs="1" minOccurs="1" name="loginCount"
+						type="xs:int" />
+					<xs:element maxOccurs="1" minOccurs="1" name="accountID"
+						type="xs:int" />
+					<xs:element name="currencyType" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
 				</xs:sequence>
 			</xs:complexType>
 			<xs:complexType name="AccountProfileData">
@@ -1001,7 +998,6 @@
             		</xs:sequence>
             	</xs:complexType>
             </xs:element>
-            <xs:element name="registerRequest" type="xs:string"></xs:element>
             <xs:element name="registerRequest"
             	type="tns:registerRequest">
             </xs:element>
