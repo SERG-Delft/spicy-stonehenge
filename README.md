@@ -53,7 +53,9 @@ Before actually moving onto the deployment of the database, we must start by dow
 In this tool (after the server is started), the following commands should be issued:
 
 > connect ‘jdbc:derby://localhost:1527/stonehenge;create=true’;
+> 
 > disconnect;
+> 
 > connect ‘jdbc:derby://localhost:1527/turmericdb;create=true’;
 
 After executing these commands, if no error is shown, the two databases will have been created.
