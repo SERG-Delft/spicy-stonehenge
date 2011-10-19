@@ -81,7 +81,11 @@ After the web application is setup, all that is left to do is copy the contents 
 If you should require more in-depth guidance to go through any of these steps, feel free to e-mail me at t.a.espinha [at] tudelft [dot] nl.
 
 [1] - http://incubator.apache.org/stonehenge/
+
 [2] - https://www.ebayopensource.org/index.php/Turmeric/HomePage
+
 [3] - https://www.ebayopensource.org/forum/
+
 [4] - http://ant.apache.org/
+
 [5] - http://wso2.com/products/web-services-framework/php/
