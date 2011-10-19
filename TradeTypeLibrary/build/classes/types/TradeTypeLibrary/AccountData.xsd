@@ -34,6 +34,7 @@
 				type="xs:int" />
 			<xs:element maxOccurs="1" minOccurs="1" name="accountID"
 				type="xs:int" />
+			<xs:element name="currencyType" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
