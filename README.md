@@ -65,7 +65,9 @@ At this point, an additional step is needed to load the skeleton and stub data i
 To do so, we require another tool called Apache DdlUtils. This tool allows us to load data into all types of databases, just as long as they provide a JDBC connector. This tool, as well as the configuration files to make it work, is provided in the git repository under the folder database.
 
 The only step necessary to use DdlUtils is to invoke the ant target for data import, by executing the following command:
-ant import-target-db
+
+> ant import-target-db
+
 (**Note:** This walkthrough assumes you have a working installation of Apache Ant. More info at [4])
 
 After this step completes successfully, you will have loaded the database structure and data for the stonehenge database.
