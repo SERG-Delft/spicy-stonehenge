@@ -51,9 +51,9 @@ Deploying the Spicy Stonehenge project involves two databases. One contains all 
 Before actually moving onto the deployment of the database, we must start by downloading Apache Derby from http://db.apache.org/derby/derby_downloads.html. After unpacking it, we must first start Derby as a network server and then create the two databases. This can be achieved by first executing the startNetworkServer(.bat if on Windows) and then using the tool `ij` under the <derby>/bin/ folder.
 
 In this tool (after the server is started), the following commands should be issued:
-connect ‘jdbc:derby://localhost:1527/stonehenge;create=true’;
-disconnect;
-connect ‘jdbc:derby://localhost:1527/turmericdb;create=true’;
+> connect ‘jdbc:derby://localhost:1527/stonehenge;create=true’;
+> disconnect;
+> connect ‘jdbc:derby://localhost:1527/turmericdb;create=true’;
 
 After executing these commands, if no error is shown, the two databases will have been created.
 
