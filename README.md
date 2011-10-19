@@ -7,9 +7,9 @@ Spicy Stonehenge is an implementation of Apache Stonehenge [1] built on top of t
 The Stonehenge system is composed of 3 web services, 1 web application and 1 database.
 
 The services are described as follows:
-- *Business Service* - Provides the business logic required for the web application to operate.
-- *Configuration Service* - Acts as a directory where references to all the instances of the web services are kept. Whenever the trader client wants to perform an action, it must first ask the configuration service for an endpoint.
-- *Order Processing Service* - Whenever a buy or sell order is made, the business service will interact with the Order Processing Service to make the order final.
+- **Business Service** - Provides the business logic required for the web application to operate.
+- **Configuration Service** - Acts as a directory where references to all the instances of the web services are kept. Whenever the trader client wants to perform an action, it must first ask the configuration service for an endpoint.
+- **Order Processing Service** - Whenever a buy or sell order is made, the business service will interact with the Order Processing Service to make the order final.
 
 In this project, it’s common to see the abbreviations BS and OPS, these refer to the Business and Order Processing services respectively.
 
