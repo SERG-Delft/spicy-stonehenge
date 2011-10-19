@@ -80,6 +80,8 @@ After the web application is setup, all that is left to do is copy the contents 
 
 If you should require more in-depth guidance to go through any of these steps, feel free to e-mail me at t.a.espinha [at] tudelft [dot] nl.
 
+### References
+
 [1] - http://incubator.apache.org/stonehenge/
 
 [2] - https://www.ebayopensource.org/index.php/Turmeric/HomePage
