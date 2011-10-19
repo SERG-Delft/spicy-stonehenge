@@ -18,34 +18,33 @@ The database runs off an Apache Derby server and a skeleton of it is also provid
 
 The web application is built using PHP and most of the code is reused from the original project. Some minor changes have been made to accommodate the new, Turmeric-powered web services.
 
-Deploying Spicy Stonehenge
+# Deploying Spicy Stonehenge
 
 In this section we’ll cover how to deploy Spicy Stonehenge on Turmeric SOA with the Turmeric monitoring enabled. This is merely a walkthrough of how to go from source code to a running system. For any questions of how and why it works, please feel free to ask your question at Turmeric SOA’s forums [3] or directly contact me at t.a.espinha [at] tudelft [dot] nl if the question is about this implementation of Stonehenge.
 
+## Walkthrough
 
-Walkthrough
+### Setting up Jetty with the web services
 
-Setting up Jetty with the web services
+1. Start by cloning the git repository from https://github.com/etiago/spicy-stonehenge
 
-Start by cloning the git repository from https://github.com/etiago/spicy-stonehenge
+2. The projects must be compiled with Maven (or m2e if you prefer) and you should start by compiling the TradeTypeLibrary and the common-library.
 
-The projects must be compiled with Maven (or m2e if you prefer) and you should start by compiling the TradeTypeLibrary and the common-library.
-
-After these two projects have been compiled, you can proceed to compile the remaining projects always making sure you compile first the <project-name> and afterwards the <project-name>Impl.
+3. After these two projects have been compiled, you can proceed to compile the remaining projects always making sure you compile first the <project-name> and afterwards the <project-name>Impl.
 Just for reference, <project-name> projects describe web service interfaces for Turmeric SOA.
 <project-name>Impl projects describe web service implementations, which rely on the interfaces for its implementation.
 
-When all the projects have been compiled, inside each project there is a target/ folder which contains a JAR file. This JAR file should be decompressed and it should result in a folder per service. The next step involves setting up Jetty, the application server.
+4. When all the projects have been compiled, inside each project there is a target/ folder which contains a JAR file. This JAR file should be decompressed and it should result in a folder per service. The next step involves setting up Jetty, the application server.
 
-At this point we should have all the folders resulting from the decompression of the web service JARs. We then need to proceed to download and unzip Jetty from http://docs.codehaus.org/display/JETTY/Downloading+Jetty
+5. At this point we should have all the folders resulting from the decompression of the web service JARs. We then need to proceed to download and unzip Jetty from http://docs.codehaus.org/display/JETTY/Downloading+Jetty
 
-After unzipping Jetty, it is ready to run but before we start it, we must copy all the folders mentioned in 4. and 5. to the folder <jetty>/webapps/
+6. After unzipping Jetty, it is ready to run but before we start it, we must copy all the folders mentioned in 4. and 5. to the folder <jetty>/webapps/
 
-Additionally, both security and console services for Turmeric should be downloaded from https://www.ebayopensource.org/index.php/Turmeric/Downloads and deployed similarly alongside the ones mentioned in step 6. Remember to deploy these services as a folder and NOT as a WAR file!
+7. Additionally, both security and console services for Turmeric should be downloaded from https://www.ebayopensource.org/index.php/Turmeric/Downloads and deployed similarly alongside the ones mentioned in step 6. **Remember** to deploy these services as a folder and **NOT** as a WAR file!
 
-This completes setting up the web services.
+8. This completes setting up the web services.
 
-Setting up the database
+### Setting up the database
 
 Deploying the Spicy Stonehenge project involves two databases. One contains all the data required for the web application (in this tutorial called “stonehenge”) and the other stores the monitoring data collected by Turmeric SOA (in this tutorial called “turmericdb”).
 
@@ -64,10 +63,11 @@ To do so, we require another tool called Apache DdlUtils. This tool allows us to
 
 The only step necessary to use DdlUtils is to invoke the ant target for data import, by executing the following command:
 ant import-target-db
-(Note: This walkthrough assumes you have a working installation of Apache Ant. More info at [4])
+(**Note:** This walkthrough assumes you have a working installation of Apache Ant. More info at [4])
 
 After this step completes successfully, you will have loaded the database structure and data for the stonehenge database.
-Setting up the web application
+
+### Setting up the web application
 
 For this step, you are expected to have a working Apache + PHP installation. You are also required to have the WSO2 PHP library for web services installed in your Apache (more info at [5] - a DLL is provided for Windows and the library must be compiled manually for Linux).
 
