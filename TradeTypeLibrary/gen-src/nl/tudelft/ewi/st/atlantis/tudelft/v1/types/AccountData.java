@@ -3,10 +3,14 @@
 // See <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Any modifications to this file will be lost upon recompilation of the source schema. 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Generated on: 2011.10.13 at 10:58:35 AM CEST 
 =======
 // Generated on: 2011.10.19 at 01:32:31 PM CEST 
 >>>>>>> 7e817feaf0d511720a3ecb50826ac5751b2ab9ec
+=======
+// Generated on: 2011.10.17 at 11:48:32 AM CEST 
+>>>>>>> b2c60349d0d48061802fc14e3e8c1d893cbf7527
 //
 
 
