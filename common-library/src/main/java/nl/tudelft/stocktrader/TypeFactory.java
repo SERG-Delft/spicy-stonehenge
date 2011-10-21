@@ -82,6 +82,7 @@ public class TypeFactory {
 			ret.setLogoutCount(account.getLogoutCount());
 			ret.setOpenBalance(account.getOpenBalance().doubleValue());
 			ret.setProfileID(account.getProfileID());
+			ret.setCurrencyType("CURRENCY");
 			
 			return ret;
 		} catch (NullPointerException e) {

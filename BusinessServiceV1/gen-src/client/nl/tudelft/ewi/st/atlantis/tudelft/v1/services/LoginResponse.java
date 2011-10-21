@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
 
 
@@ -18,7 +19,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="account" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types}AccountData"/>
+ *         &lt;element name="account" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}AccountData"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
