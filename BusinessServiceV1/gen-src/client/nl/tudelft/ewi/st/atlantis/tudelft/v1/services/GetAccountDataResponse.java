@@ -5,9 +5,6 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
-
 import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
 
 
