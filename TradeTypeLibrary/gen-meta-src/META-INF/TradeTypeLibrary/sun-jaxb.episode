@@ -10,33 +10,17 @@
 <bindings if-exists="true" scd="~tns:AccountProfileData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountProfileData"/>
     </bindings>
-<<<<<<< HEAD
 <bindings if-exists="true" scd="~tns:HoldingData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData"/>
-=======
-<bindings if-exists="true" scd="~tns:OrderData">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData"/>
->>>>>>> 7e817feaf0d511720a3ecb50826ac5751b2ab9ec
     </bindings>
-<bindings if-exists="true" scd="~tns:HoldingData">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData"/>
+<bindings if-exists="true" scd="~tns:QuoteData">
+      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData"/>
     </bindings>
 <bindings if-exists="true" scd="~tns:MarketSummaryData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData"/>
     </bindings>
-<<<<<<< HEAD
 <bindings if-exists="true" scd="~tns:OrderData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData"/>
-=======
-<bindings if-exists="true" scd="~tns:QuoteData">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData"/>
-    </bindings>
-<bindings if-exists="true" scd="~tns:AccountData">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData"/>
-    </bindings>
-<bindings if-exists="true" scd="~tns:ServiceLocation">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation"/>
->>>>>>> 7e817feaf0d511720a3ecb50826ac5751b2ab9ec
     </bindings>
 <bindings if-exists="true" scd="~tns:ServiceLocation">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation"/>

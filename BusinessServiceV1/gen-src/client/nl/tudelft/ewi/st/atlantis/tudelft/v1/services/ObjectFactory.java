@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
+
 
 /**
  * This object contains factory methods for each 

@@ -6,6 +6,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
+
 
 /**
  * <p>Java class for LoginResponse complex type.
