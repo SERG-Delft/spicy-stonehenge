@@ -3,10 +3,10 @@
 define("CONFIG_CLASSMAP",0);
 define("BUSINESS_CLASSMAP",1);
 
-define("CONFIG_WSDL","http://atlantis.st.ewi.tudelft.nl:8080/configuration/ConfigurationServiceV1?wsdl");
-define("BUSINESS_WSDL","http://atlantis.st.ewi.tudelft.nl:8080/businessservice/BusinessServiceV1?wsdl");
+define("CONFIG_WSDL","http://localhost:8080/configuration-service-war/ConfigurationServiceV1?wsdl");
+define("BUSINESS_WSDL","http://localhost:8080/business-service-war-exch/BusinessServiceV1?wsdl");
 
-define("CONFIG_DEFAULT_ENDPOINT", "http://atlantis.st.ewi.tudelft.nl:8080/configuration/ConfigurationServiceV1");
+define("CONFIG_DEFAULT_ENDPOINT", "http://localhost:8080/configuration-service-war/ConfigurationServiceV1");
 
 define ("CLIENT_NAME", "PHP_CLIENT");
 
