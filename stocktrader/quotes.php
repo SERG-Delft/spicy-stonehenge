@@ -41,9 +41,7 @@ else if (isset($_POST['BUY']) || isset($_POST['SELL']))
 	$isBuy = FALSE;
 	$isSell = FALSE;
 
-	$buyReturn = null;
-	
-	if (isset($_POST['BUY']))
+	if ($_POST['BUY'])
 	{
 		$mode = 0;
 		$isBuy = TRUE;
@@ -60,14 +58,14 @@ else if (isset($_POST['BUY']) || isset($_POST['SELL']))
 			$response = NULL;
 		}
 	}
-	else if(isset($_POST['SELL']))
+	else if($_POST['SELL'])
 	{
 		$isSell = TRUE;
 		$holdingID = $_POST['HOLDINGID'];
 		$response = SellEnhanced($userID, $holdingID, $quantity);
-		if ($response != null)
+		if ($response->sellEnhancedReturn->orderID)
 		{
-			$sellEnhancedReturn = $response;
+			$sellEnhancedReturn = $response->sellEnhancedReturn;
 			$isReply = TRUE;
 		}
 		else
@@ -161,31 +159,13 @@ else
 
 				if ($isReply == TRUE)
 				{
-					if ($isBuy) {
-						$orderID = $buyReturn->orderID;
-						$quantity = $buyReturn->quantity;
-						$strOperation = "buy";
-						$orderStatus = $buyReturn->orderStatus;
-						$openDate = $buyReturn->openDate;
-						$orderType = $buyReturn->orderType;
-						$symbol = $buyReturn->symbol;
-						$orderFee = $buyReturn->orderFee;
-					} elseif ($isSell) {
-						$orderID = $sellEnhancedReturn->orderData->orderID;
-                                                $quantity = $sellEnhancedReturn->orderData->quantity;
-                                                $strOperation = "sell";
-                                                $orderStatus = $sellEnhancedReturn->orderData->orderStatus;
-                                                $openDate = $sellEnhancedReturn->orderData->openDate;
-                                                $orderType = $sellEnhancedReturn->orderData->orderType;
-						$symbol = $sellEnhancedReturn->orderData->symbol;
-						$orderFee = $sellEnhancedReturn->orderData->orderFee;
-					}
-
 					/*Check whether the user has requested to buy or sell some quote.*/
 					print ("<div class=\"main-title\"><h1>New Order</h1>
 						<script type=\"text/javascript\">var thisdate = new Date();
 					document.writeln(thisdate.toLocaleString());</script></div>");
-					print ("<p align=\"center\">Order ".$orderID." to ".$strOperation." ".$quantity." shares of ".$symbol." has been submitted for processing.</p>");
+					print ("<p align=\"center\">Order ".$buyReturn->orderID." to 
+						".(($buyReturn->quantity) ? "buy ".($buyReturn->quantity):
+						"sell ".($sellReturn->quantity))." shares of s:0 has been submitted for processing.</p>");
 					print ("<p align=\"center\">Order Details:</p>");
 					print ("<table class=\"table-outer\" cellspacing=\"0\" align=\"center\"><thead><tr>
 						<th>Order ID</th><th>Order Status</th><th>Creation Date</th>
@@ -193,10 +173,20 @@ else
 							<th>Quantity</th></tr></thead>
 							<tbody>");
 
-					print ("<tr><td>".$orderID."</td><td>".$orderStatus.
-						"</td><td>".date("m/d/Y h:i:s A", $openDate)."</td><td>Pending".
-						"</td><td>$".$orderFee."</td><td>".$orderType.
-						"</td><td>".$symbol."</td><td>".$quantity."</td></tr>");
+					if ($isBuy == TRUE)
+					{
+						print ("<tr><td>".$buyReturn->orderID."</td><td>".$buyReturn->orderStatus.
+							"</td><td>".date("m/d/Y h:i:s A", $buyReturn->openDate)."</td><td>Pending".
+							"</td><td>$".$buyReturn->orderFee."</td><td>".$buyReturn->orderType.
+							"</td><td>".$buyReturn->symbol."</td><td>".$buyReturn->quantity."</td></tr>");
+					}
+					else if ($isSell == TRUE)
+					{
+						print ("<tr><td>".$sellEnhancedReturn->orderID."</td><td>".$sellEnhancedReturn->orderStatus.
+							"</td><td>".date("m/d/Y h:i:s A", $sellEnhancedReturn->openDate)."</td><td>Pending".
+							"</td><td>$".$sellEnhancedReturn->orderFee."</td><td>".$sellEnhancedReturn->orderType.
+							"</td><td>".$sellEnhancedReturn->symbol."</td><td>".$sellEnhancedReturn->quantity."</td></tr>");
+					}
 					print ("</tbody></table>");
 				}
 
