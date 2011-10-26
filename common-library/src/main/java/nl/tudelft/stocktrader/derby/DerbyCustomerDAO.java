@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+//import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
@@ -47,7 +48,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_UPDATE_CUSTOMER_LOGIN = "UPDATE account SET logincount = logincount + 1, lastlogin = current_timestamp where profile_userid = ?";
     private static final String SQL_SELECT_CUSTOMER_LOGIN = "SELECT accountid, creationdate, openbalance, logoutcount, balance, lastlogin, logincount FROM account WHERE profile_userid = ?";
     private static final String SQL_UPDATE_LOGOUT = "UPDATE account SET logoutcount = logoutcount + 1 WHERE profile_userid = ?";
-    private static final String SQL_SELECT_GET_CUSTOMER_BY_USERID = "SELECT account.ACCOUNTID, account.PROFILE_USERID, account.CREATIONDATE, account.OPENBALANCE, account.LOGOUTCOUNT, account.BALANCE, account.LASTLOGIN, account.LOGINCOUNT FROM account WHERE account.PROFILE_USERID = ?";
+    private static final String SQL_SELECT_GET_CUSTOMER_BY_USERID = "SELECT account.ACCOUNTID, account.PROFILE_USERID, account.CREATIONDATE, account.OPENBALANCE, account.LOGOUTCOUNT, account.BALANCE, account.LASTLOGIN, account.LOGINCOUNT, account.CURRENCY FROM account WHERE account.PROFILE_USERID = ?";
     private static final String SQL_SELECT_ORDERS_BY_ID = " o.orderid, o.ordertype, o.orderstatus, o.opendate, o.completiondate, o.quantity, o.price, o.orderfee, o.quote_symbol FROM orders o WHERE o.account_accountid = (SELECT a.accountid FROM account a WHERE a.profile_userid = ?) ORDER BY o.orderid DESC";
     private static final String SQL_SELECT_CLOSED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'closed'";
     private static final String SQL_UPDATE_CLOSED_ORDERS = "UPDATE orders SET orderstatus = 'completed' WHERE orderstatus = 'closed' AND account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?)";
@@ -290,7 +291,8 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                             rs.getInt(5),
                             rs.getBigDecimal(6),
                             StockTraderUtility.convertToCalendar(rs.getDate(7)),
-                            rs.getInt(8));
+                            rs.getInt(8),
+                            rs.getString(9));
                     return bean;
                 } finally {
                     try {

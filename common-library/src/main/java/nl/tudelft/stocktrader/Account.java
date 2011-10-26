@@ -13,6 +13,9 @@ public class Account {
     protected BigDecimal balance;
     protected BigDecimal openBalance;
     protected String profileID;
+    protected String currencyType;
+
+
 
 	public Account() {
 	}
@@ -29,6 +32,20 @@ public class Account {
 		setLastLogin(lastLogIn);
 		setLoginCount(loginCount);
 		setLogoutCount(logoutCount);
+	}
+	public Account(int accountId, String profileId,
+			Calendar creationDate, BigDecimal openBalance, int logoutCount,
+			BigDecimal balance, Calendar lastLogIn, int loginCount, String currencyType) {
+		setAccountID(accountId);
+		setProfileID(profileId);
+		setCreationDate(creationDate);
+		setOpenBalance(openBalance);
+		setLogoutCount(logoutCount);
+		setBalance(balance);
+		setLastLogin(lastLogIn);
+		setLoginCount(loginCount);
+		setLogoutCount(logoutCount);
+		setCurrencyType(currencyType);
 	}
 
 	public String getUserID() {
@@ -102,4 +119,11 @@ public class Account {
     public void setProfileID(String profileID) {
         this.profileID = profileID;
     }
+	public String getCurrencyType() {
+		return currencyType;
+	}
+
+	public void setCurrencyType(String currencyType) {
+		this.currencyType = currencyType;
+	}
 }
