@@ -36,6 +36,8 @@ if (isset($_POST['REGISTERUSER']))
 	$password = $_POST['PASSWORD'];
 	$creditcard = $_POST['CREDITCARD'];
 	$confpassword = $_POST['CONFIRMATIONPASSWORD'];
+	/*add currency type*/
+	$currencytype = $_POST['CURRENCYTYPE'];
 
 	if ($userID == NULL || $password != $confpassword)
 	{
@@ -44,7 +46,7 @@ if (isset($_POST['REGISTERUSER']))
 	else
 	{
 		$response = RegisterUser($userID, $password, $fullname, 
-			$address, $email, $creditcard, $openBalance);
+			$address, $email, $creditcard, $openBalance, $currencytype);
 		if ($response)
 		{
 			$successfulRegistration = TRUE;
@@ -144,8 +146,17 @@ if (isset($_POST['REGISTERUSER']))
 								<tr>
 									<td>Requested ID:</td>
 									<td><input name=\"REQUESTEDID\" type=\"text\" id=\"\" size=\"25\"/></td>
+								</tr>
+								<tr>
 									<td>Opening Balance:</td>
 									<td><input type=\"text\" name=\"OPENBALANCE\" value=\"100000\" id=\"\" size=\"25\"/></td>
+									<td>Currency Type:</td>
+									<td><select name=\"CURRENCYTYPE\" align=\"center\">
+										<option value=\"€\">EUR</option>
+										<option value=\"$\">USD</option>
+										<option value=\"￥\">RMB</option>
+									</select></td>
+
 								</tr>
 								<tr>
 									<td>Full Name:</td>
@@ -170,19 +181,22 @@ if (isset($_POST['REGISTERUSER']))
 										<input type=\"submit\" name=\"REGISTERUSER\" value=\"Register\" class=\"button\"/>
 									</td>
 								</tr>
+								
 							</table>
 							</form>	
+
 						</td>
 					</tr>
 					</tbody>
 					</table>");
 				}
-			?>
+			?>   
 			</div>
 			<div id="footer">
 				<div style="float:right;">Powered by 
 				<a href="http://wso2.org/projects/wsf/php"><img align="top" src="images/powered-by-logo.gif" style="margin-top:-3px; margin-left: 0px;"/></a></div>
 			</div>
+
 		</div>
 	</body>
 

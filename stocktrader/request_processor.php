@@ -21,6 +21,7 @@ ini_set('display_errors', 1);
 //require_once('configservice.classmap.php');
 require_once('classes/BusinessService.datamodel.php');
 require_once('utils/wsclient.util.php');
+require_once('classes/ExchangeService.datamodel.php');
 
 define ("STATUS_SUCCESS", 1);
 define ("STATUS_FAILURE", 0);
@@ -273,7 +274,23 @@ function GetEndpoint()
  * Gets proxy object to make communication with business service
  */
 
+// for exchange service
+/**
+ * Service function exchangeCurrency
+ * @param object of exchangeCurrencyRequest $input 
+ * @return object of exchangeCurrencyResponse 
+ */
+function ExchangeCurrency($baseCurrency, $aimCurrency, $exchAmount) {
+	$proxy = GetProxy("exchangeCurrency", EXCHANGE_CLASSMAP);
+	$input = new exchangeCurrencyRequest();
+	$input->baseCurrency = $baseCurrency;
+	$input->aimCurrency = $aimCurrency;
+	$input->exchAmount = $exchAmount;
+	$response = $proxy->exchangeCurrency($input);
+   // var_dump($proxy);
+	return $response->exchResult;
 
+}
 
 /**
  * Sends login request to verify whether current user is authorized

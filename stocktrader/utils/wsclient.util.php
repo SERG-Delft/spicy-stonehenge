@@ -2,9 +2,13 @@
 
 define("CONFIG_CLASSMAP",0);
 define("BUSINESS_CLASSMAP",1);
+/*for exchange service*/
+define("EXCHANGE_CLASSMAP",2);
 
 define("CONFIG_WSDL","http://localhost:8080/configuration-service-war/ConfigurationServiceV1?wsdl");
-define("BUSINESS_WSDL","http://localhost:8080/business-service-war-exch/BusinessServiceV1?wsdl");
+define("BUSINESS_WSDL","http://localhost:8080/business-service-war/BusinessServiceV1?wsdl");
+/*for exchange service*/
+define("EXCHANGE_WSDL","http://localhost:8080/exchange-service-war/ExchangeServiceV1?wsdl");
 
 define("CONFIG_DEFAULT_ENDPOINT", "http://localhost:8080/configuration-service-war/ConfigurationServiceV1");
 
@@ -12,16 +16,22 @@ define ("CLIENT_NAME", "PHP_CLIENT");
 
 require_once("classes/ConfigService.datamodel.php");
 require_once("classes/BusinessService.datamodel.php");
+/*for exchange service*/
+require_once("classes/ExchangeService.datamodel.php");
 
+
+/*for exchange service*/
 function GetProxy($methodName, $constClassmap)
 {
-	$aWSDL = array(CONFIG_CLASSMAP => CONFIG_WSDL, BUSINESS_CLASSMAP => BUSINESS_WSDL);
+	$aWSDL = array(CONFIG_CLASSMAP => CONFIG_WSDL, BUSINESS_CLASSMAP => BUSINESS_WSDL, EXCHANGE_CLASSMAP => EXCHANGE_WSDL);
 
 	$sEndpoint = null;
 	if ($constClassmap == CONFIG_CLASSMAP) {
 		$sEndpoint = CONFIG_DEFAULT_ENDPOINT;
 	} else if ($constClassmap == BUSINESS_CLASSMAP) {
 		$sEndpoint = GetBSEndPoint();
+	} else if ($constClassmap == EXCHANGE_CLASSMAP) {
+		$sEndpoint = "http://localhost:8080/exchange-service-war/ExchangeServiceV1";
 	}
 
 	/*define the class map */
@@ -135,8 +145,21 @@ function GetClassMap($constWS) {
 	    "logoutResponse" => "logoutResponse",
 	    "getAllQuotesRequest" => "getAllQuotesRequest",
 	    "getAllQuotesResponse" => "getAllQuotesResponse");
+		
+		/*for exchange service*/
+	$aExchange = array(
+    "BaseRequest" => "BaseRequest",
+    "ExtensionType" => "ExtensionType",
+    "exchangeCurrencyRequest" => "exchangeCurrencyRequest",
+    "BaseResponse" => "BaseResponse",
+    "ErrorMessage" => "ErrorMessage",
+    "ErrorData" => "ErrorData",
+    "CommonErrorData" => "CommonErrorData",
+    "exchangeCurrencyResponse" => "exchangeCurrencyResponse");	
+		
 
-	$aClassmap = array(CONFIG_CLASSMAP => $aConfig, BUSINESS_CLASSMAP => $aBusiness);
+		/*for exchange service*/
+	$aClassmap = array(CONFIG_CLASSMAP => $aConfig, BUSINESS_CLASSMAP => $aBusiness, EXCHANGE_CLASSMAP => $aExchange);
 
 	return $aClassmap[$constWS];
 }
