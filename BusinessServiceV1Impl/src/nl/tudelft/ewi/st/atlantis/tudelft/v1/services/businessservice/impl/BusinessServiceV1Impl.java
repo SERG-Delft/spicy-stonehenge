@@ -1,6 +1,7 @@
 
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -32,6 +33,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -289,6 +292,25 @@ public class BusinessServiceV1Impl
 		GetAllQuotesResponse response = new GetAllQuotesResponse();
 		response.getQuotes().addAll(TypeFactory.toListQuoteData(quotes));
 
+		return response;
+	}
+
+	@Override
+	public RegisterResponse register(RegisterRequest registerRequest) {
+		// TODO Auto-generated method stub
+		String registerResult = null;
+		
+		try {
+			registerResult = mgr.register(registerRequest.getUserID(), registerRequest.getPassword(), 
+					registerRequest.getFullname(), registerRequest.getAddress(), 
+					registerRequest.getEmail(), registerRequest.getCreditcard(), 
+					BigDecimal.valueOf(registerRequest.getOpenBalance()), registerRequest.getCurrencyType());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		RegisterResponse response = new RegisterResponse();
+		response.setOut(registerResult);
+		
 		return response;
 	}
 

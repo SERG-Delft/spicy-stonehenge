@@ -30,6 +30,7 @@ import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.util.StockTraderUtility;
@@ -603,4 +604,10 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
             }
         }
     }
+
+	public boolean insertWallet(Wallet wallet) throws DAOException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -39,6 +39,7 @@ import nl.tudelft.stocktrader.util.StockTraderUtility;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.omg.CORBA.portable.CustomValue;
 
 public class TraderServiceManager {
 
@@ -104,10 +105,31 @@ public class TraderServiceManager {
 		return customerDAO.getClosedOrders(userId);
 	}
 
-	public Account register(String userId, String password,
+	public String register(String userId, String password,
 			String fullName, String address, String email, String creditcard,
-			BigDecimal openBalance) throws DAOException {
-		throw new UnsupportedOperationException();
+			BigDecimal openBalance, String currencyType) throws DAOException {
+		
+		String result;
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		if(customerDAO.getAccountProfileData(userId)==null){
+			Account a = new Account();
+			a.setUserID(userId);
+			a.setOpenBalance(openBalance);
+			a.setBalance(openBalance);
+			a.setCurrencyType(currencyType);
+			a.setLogoutCount(0);			
+			customerDAO.insertAccount(a);
+			customerDAO.insertAccountProfile(new AccountProfile(userId, password, 
+											fullName, address, email, creditcard));	
+			//also need to insert wallet
+			
+			
+			
+			result = "Success";
+		}else
+			result = "UserExist";	
+
+		return result;
 	}
 
 //	public CustomAccountBean addNewRegisteredUser(String userId,

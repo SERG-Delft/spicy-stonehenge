@@ -1010,9 +1010,63 @@
             		<xs:element name="address" type="xs:string"></xs:element>
             		<xs:element name="email" type="xs:string"></xs:element>
             		<xs:element name="creditcard" type="xs:string"></xs:element>
-            		<xs:element name="openBalance" type="xs:string"></xs:element>
+            		<xs:element name="openBalance" type="xs:double"></xs:element>
+            		<xs:element name="currencyType" type="xs:string"></xs:element>
             	</xs:sequence>
             </xs:complexType>
+            <xs:element name="exchange">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="in" type="xs:string"></xs:element>
+            			<xs:element name="base" type="xs:string">
+            			</xs:element>
+            			<xs:element name="ac"
+            				type="xs:int">
+            			</xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="exchangeResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="out" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="exchange">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="in" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="exchangeResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="out" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="NewOperation">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="in" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="NewOperationResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="out" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
 		</xs:schema>
 	</wsdl:types>
 	<wsdl:message name="getOrdersRequest">
@@ -1120,6 +1174,18 @@
 	</wsdl:message>
 	<wsdl:message name="registerResponse">
 		<wsdl:part name="parameters" element="tns:registerResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="exchangeRequest">
+		<wsdl:part name="parameters" element="tns:exchange"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="exchangeResponse">
+		<wsdl:part name="parameters" element="tns:exchangeResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="NewOperationRequest">
+		<wsdl:part name="parameters" element="tns:NewOperation"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="NewOperationResponse">
+		<wsdl:part name="parameters" element="tns:NewOperationResponse"></wsdl:part>
 	</wsdl:message>
 	<wsdl:portType name="BusinessServicePort">
 		<wsdl:operation name="getOrders">
@@ -1229,382 +1295,548 @@
 			<wsdl:input message="tns:registerRequest"></wsdl:input>
 			<wsdl:output message="tns:registerResponse"></wsdl:output>
 		</wsdl:operation>
+
 	</wsdl:portType>
 	<wsdl:binding name="BusinessServiceHttpBinding"
 		type="tns:BusinessServicePort">
+
 		<http:binding verb="POST" />
 		<wsdl:operation name="getOrders">
+
 			<http:operation location="/getOrders" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAccountData">
+
 			<http:operation location="/getAccountData" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAccountProfileData">
+
 			<http:operation location="/getAccountProfileData" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="updateAccountProfile">
+
 			<http:operation location="/updateAccountProfile" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="buy">
+
 			<http:operation location="/buy" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="sell">
+
 			<http:operation location="/sell" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getHoldings">
+
 			<http:operation location="/getHoldings" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getClosedOrders">
+
 			<http:operation location="/getClosedOrders" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getMarketSummary">
+
 			<http:operation location="/getMarketSummary" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getQuote">
+
 			<http:operation location="/getQuote" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getHolding">
+
 			<http:operation location="/getHolding" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getTopOrders">
+
 			<http:operation location="/getTopOrders" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="sellEnhanced">
+
 			<http:operation location="/sellEnhanced" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="login">
-			<http:operation location="/login"></http:operation>
+
+			<http:operation location="/login" />
 			<wsdl:input>
-				<mime:content
-					type="application/x-www-form-urlencoded">
-				</mime:content>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
-				<mime:content type="text/xml"></mime:content>
+				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="logout">
-			<http:operation location="/logout"></http:operation>
+
+			<http:operation location="/logout" />
 			<wsdl:input>
-				<mime:content
-					type="application/x-www-form-urlencoded">
-				</mime:content>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
-				<mime:content type="text/xml"></mime:content>
+				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAllQuotes">
-			<http:operation location="/getAllQuotes"></http:operation>
+
+			<http:operation location="/getAllQuotes" />
 			<wsdl:input>
-				<mime:content
-					type="application/x-www-form-urlencoded">
-				</mime:content>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
-				<mime:content type="text/xml"></mime:content>
+				<mime:content type="text/xml" />
+
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
+		<wsdl:operation name="register">
+
+			<http:operation location="/register" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+
+
+
+
+			</wsdl:output>
+		</wsdl:operation>
+
 	</wsdl:binding>
 	<wsdl:binding name="BusinessServiceSOAPBinding"
 		type="tns:BusinessServicePort">
 
 		<soap:binding style="document"
-			transport="http://schemas.xmlsoap.org/soap/http">
-		</soap:binding>
+			transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="getOrders">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getOrders">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getOrders" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAccountData">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAccountData">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAccountData" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAccountProfileData">
 
+
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAccountProfileData">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAccountProfileData" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="updateAccountProfile">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/updateAccountProfile">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/updateAccountProfile" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="buy">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/buy">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/buy" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="sell">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/sell">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/sell" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getHoldings">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getHoldings">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getHoldings" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getClosedOrders">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getClosedOrders">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getClosedOrders" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getMarketSummary">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getMarketSummary">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getMarketSummary" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getQuote">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getQuote">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getQuote" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getHolding">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getHolding">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getHolding" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getTopOrders">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getTopOrders">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getTopOrders" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="sellEnhanced">
 
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/sellEnhanced">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/sellEnhanced" />
 			<wsdl:input>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
 
-				<soap:body use="literal"></soap:body>
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="login">
+
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/login">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/login" />
 			<wsdl:input>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="logout">
+
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/logout">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/logout" />
 			<wsdl:input>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="getAllQuotes">
+
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAllQuotes">
-			</soap:operation>
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getAllQuotes" />
 			<wsdl:input>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
-				<soap:body use="literal"></soap:body>
+
+				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>
+		<wsdl:operation name="register">
+
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/register" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
 	</wsdl:binding>
 	<wsdl:service name="BusinessService">
 		<wsdl:documentation>

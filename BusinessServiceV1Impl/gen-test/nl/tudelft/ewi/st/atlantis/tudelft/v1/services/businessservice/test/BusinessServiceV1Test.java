@@ -15,6 +15,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
@@ -44,6 +45,19 @@ public class BusinessServiceV1Test
             m_proxy = service.getProxy();
         }
         return m_proxy;
+    }
+
+    public void testRegister()
+        throws Exception
+    {
+        RegisterResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().register(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
     }
 
     public void testLogout()

@@ -27,6 +27,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
@@ -51,6 +53,7 @@ public class BusinessServiceV1RequestDispatcher
 
     public BusinessServiceV1RequestDispatcher() {
         super(BusinessServiceV1 .class);
+        addSupportedOperation("register", new Class[] {RegisterRequest.class }, new Class[] {RegisterResponse.class });
         addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
         addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
         addSupportedOperation("getQuote", new Class[] {GetQuoteRequest.class }, new Class[] {GetQuoteResponse.class });
@@ -77,6 +80,18 @@ public class BusinessServiceV1RequestDispatcher
         String operationName = msgCtx.getOperationName();
         Message requestMsg = msgCtx.getRequestMessage();
          
+        if ("register".equals(operationName)) {
+            RegisterRequest param2 = ((RegisterRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                RegisterResponse result = service.register(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
         if ("logout".equals(operationName)) {
             LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
             try {
