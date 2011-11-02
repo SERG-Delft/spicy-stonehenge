@@ -254,6 +254,8 @@ function FormatDate($date) {
 						}	
 						print("<td class=\"left\">Total Logouts:</td>
 							<td>".$userAccountDataReturn->logoutCount."</td></tr>");
+						print("<td class=\"left\">Currency Type:</td>
+							<td>".$userAccountDataReturn->currencyType."</td></tr>");
 						print("</tbody></table>");
 					}
 					print("</td></tr></tbody></table>");

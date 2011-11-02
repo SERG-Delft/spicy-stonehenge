@@ -154,6 +154,11 @@ class AccountData {
      * @var int
      */
     public $accountID;
+	
+	/**
+     * @var string
+     */
+    public $currencyType;
 
 }
 

@@ -30,6 +30,22 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
+     * Create an instance of {@link ExtensionType }
+     * 
+     */
+    public ExtensionType createExtensionType() {
+        return new ExtensionType();
+=======
+     * Create an instance of {@link ErrorParameter }
+     * 
+     */
+    public ErrorParameter createErrorParameter() {
+        return new ErrorParameter();
+>>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
+    }
+
+    /**
      * Create an instance of {@link ErrorMessage }
      * 
      */
@@ -38,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CommonErrorData }
+     * Create an instance of {@link ErrorData }
      * 
      */
-    public CommonErrorData createCommonErrorData() {
-        return new CommonErrorData();
+    public ErrorData createErrorData() {
+        return new ErrorData();
     }
 
     /**
@@ -54,19 +70,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorParameter }
+<<<<<<< HEAD
+     * Create an instance of {@link CommonErrorData }
      * 
      */
-    public ErrorParameter createErrorParameter() {
-        return new ErrorParameter();
-    }
-
-    /**
-     * Create an instance of {@link ErrorData }
+    public CommonErrorData createCommonErrorData() {
+        return new CommonErrorData();
+=======
+     * Create an instance of {@link ErrorMessage }
      * 
      */
-    public ErrorData createErrorData() {
-        return new ErrorData();
+    public ErrorMessage createErrorMessage() {
+        return new ErrorMessage();
+>>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
     }
 
 }
