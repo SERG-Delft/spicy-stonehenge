@@ -39,7 +39,6 @@ import nl.tudelft.stocktrader.util.StockTraderUtility;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.omg.CORBA.portable.CustomValue;
 
 public class TraderServiceManager {
 

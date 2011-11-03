@@ -16,11 +16,11 @@
 <bindings if-exists="true" scd="~tns:HoldingData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData"/>
     </bindings>
-<bindings if-exists="true" scd="~tns:MarketSummaryData">
-      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData"/>
-    </bindings>
 <bindings if-exists="true" scd="~tns:QuoteData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData"/>
+    </bindings>
+<bindings if-exists="true" scd="~tns:MarketSummaryData">
+      <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData"/>
     </bindings>
 <bindings if-exists="true" scd="~tns:OrderData">
       <class ref="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData"/>
