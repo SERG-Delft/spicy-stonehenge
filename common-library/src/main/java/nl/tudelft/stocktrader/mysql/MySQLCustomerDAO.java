@@ -610,4 +610,15 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
 		return false;
 	}
 
+	public Wallet getWallet(String userID) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Wallet updateWallet(Wallet wallet) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

@@ -35,19 +35,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExchangeCurrencyResponse }
-     * 
-     */
-    public ExchangeCurrencyResponse createExchangeCurrencyResponse() {
-        return new ExchangeCurrencyResponse();
-    }
-
-    /**
      * Create an instance of {@link ExchangeCurrencyRequest }
      * 
      */
     public ExchangeCurrencyRequest createExchangeCurrencyRequest() {
         return new ExchangeCurrencyRequest();
+    }
+
+    /**
+     * Create an instance of {@link ExchangeCurrencyResponse }
+     * 
+     */
+    public ExchangeCurrencyResponse createExchangeCurrencyResponse() {
+        return new ExchangeCurrencyResponse();
     }
 
     /**

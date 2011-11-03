@@ -59,13 +59,19 @@ public interface CustomerDAO {
 	public void insertAccount(Account accountBean)
 			throws DAOException;
 
-	public AccountProfile update(
-			AccountProfile customAccountProfile) throws DAOException;
+	public AccountProfile update(AccountProfile customAccountProfile) 
+			throws DAOException;
 
 	public List<Holding> getHoldings(String userID)
 			throws DAOException;
 
 	public boolean insertWallet(Wallet wallet)
 			throws DAOException;
-
+	
+	public Wallet getWallet(String userID)
+			throws DAOException;
+	
+	public Wallet updateWallet(Wallet wallet)
+			throws DAOException;
+	
 }

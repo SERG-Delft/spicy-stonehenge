@@ -13,7 +13,6 @@
 		<xs:schema xmlns:Q1="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 <xs:import namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
 <xs:import namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"/>
-            <xs:import namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" schemaLocation="../../../../../../../TradeTypeLibrary/meta-src/types/TradeTypeLibrary/WalletData.xsd"/>
             <xs:complexType name="AccountData">
 				<xs:annotation>
 					<xs:documentation/>
@@ -542,82 +541,27 @@
             		<xs:element name="currencyType" type="xs:string"/>
             	</xs:sequence>
             </xs:complexType>
-            <xs:element name="exchange">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="in" type="xs:string"/>
-            			<xs:element name="base" type="xs:string">
-            			</xs:element>
-            			<xs:element name="ac" type="xs:int">
-            			</xs:element>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
-            <xs:element name="exchangeResponse">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="out" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
-            <xs:element name="exchange">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="in" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
-            <xs:element name="exchangeResponse">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="out" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
             <xs:element name="getWallet">
             	<xs:complexType>
             		<xs:sequence>
 
-            			<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
+            			<xs:element maxOccurs="1" minOccurs="1" name="userID" type="tns:TestType"/>
             		</xs:sequence>
             	</xs:complexType>
             </xs:element>
-            <xs:element name="NewOperationResponse">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="out" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
+            
+		
+        
+        
+            
+            <xs:element name="getWalletRequest" type="tns:GetWalletRequest">
             </xs:element>
-            <xs:element name="getWalletResponse1">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element maxOccurs="1" minOccurs="1" name="walletData" type="Q1:WalletData"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
-            <xs:element name="getWallet">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
-            <xs:element name="getWalletResponse1">
-            	<xs:complexType>
-            		<xs:sequence>
-
-            			<xs:element name="out" type="xs:string"/>
-            		</xs:sequence>
-            	</xs:complexType>
-            </xs:element>
+            
+            <xs:complexType name="GetWalletRequest">
+            	<xs:sequence>
+            		<xs:element name="request" type="xs:string"/>
+            	</xs:sequence>
+            </xs:complexType>
 		</xs:schema>
 	<xs:schema xmlns:Q1="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
 <xs:complexType name="AccountProfileData">
@@ -1071,14 +1015,8 @@
 	<wsdl:message name="registerResponse">
 		<wsdl:part element="tns:registerResponse" name="parameters"/>
 	</wsdl:message>
-	<wsdl:message name="exchangeRequest">
-		<wsdl:part element="tns:exchange" name="parameters"/>
-	</wsdl:message>
-	<wsdl:message name="exchangeResponse">
-		<wsdl:part element="tns:exchangeResponse" name="parameters"/>
-	</wsdl:message>
 	<wsdl:message name="getWalletRequest">
-		<wsdl:part element="tns:getWallet" name="parameters"/>
+		<wsdl:part element="tns:getWalletRequest" name="parameters"/>
 	</wsdl:message>
 	<wsdl:message name="getWalletResponse1">
 		<wsdl:part element="tns:getWalletResponse1" name="parameters"/>
@@ -1210,9 +1148,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1230,9 +1174,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1250,9 +1200,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1270,9 +1226,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1290,9 +1252,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1310,9 +1278,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1330,9 +1304,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1350,9 +1330,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1370,9 +1356,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1390,9 +1382,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1410,9 +1408,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1430,9 +1434,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1450,9 +1460,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1470,9 +1486,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1490,9 +1512,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1510,9 +1538,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1530,9 +1564,15 @@
 
 
 
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 
 
 
@@ -1542,15 +1582,22 @@
 		</wsdl:operation>
 
 		<wsdl:operation name="getWallet">
+
 			<http:operation location="/getWallet"/>
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded"/>
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
 			</wsdl:output>
 		</wsdl:operation>
-    </wsdl:binding>
+	</wsdl:binding>
 	<wsdl:binding name="BusinessServiceSOAPBinding" type="tns:BusinessServicePort">
 
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -1761,11 +1808,14 @@
 		</wsdl:operation>
 
 		<wsdl:operation name="getWallet">
+
 			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getWallet"/>
 			<wsdl:input>
+
 				<soap:body use="literal"/>
 			</wsdl:input>
 			<wsdl:output>
+
 				<soap:body use="literal"/>
 			</wsdl:output>
 		</wsdl:operation>

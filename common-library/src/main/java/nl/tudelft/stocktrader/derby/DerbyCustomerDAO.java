@@ -58,9 +58,12 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_UPDATE_ACCOUNT_PROFILE = "UPDATE accountprofile SET address = ?, password = ?, email = ?, creditcard = ?, fullname = ? WHERE userid = ?";
     private static final String SQL_SELECT_HOLDINGS = "SELECT holdingid, quantity, purchaseprice, purchasedate, quote_symbol, account_accountid FROM holding WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) ORDER BY holdingid DESC";
     //for register
-    private static final String SQL_SELECT_USER_LIST = "SELECT userid FROM accountprofile";
+//    private static final String SQL_SELECT_USER_LIST = "SELECT userid FROM accountprofile";
     private static final String SQL_INSERT_WALLET = "INSERT INTO wallet (userid, usd, eur, gbp, cny, inr) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String SQL_SELECT_WALLET = "SELECT userid, usd, eur, gbp, cny, inr FROM wallet where userid = ?";
+    private static final String SQL_UPDATE_WALLET = "UPDATE wallet SET userid = ?, usd = ?, eur = ?, gbp = ?, cny =, inr = ? WHERE userid = ?";
 
+ 
     
     public DerbyCustomerDAO(Connection sqlConnection) throws DAOException {
         super(sqlConnection);
@@ -640,6 +643,74 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
         return insertSuccess;
 	}
+
+	public Wallet getWallet(String userID) throws DAOException {
+		PreparedStatement selectWallet = null;
+        try {
+            selectWallet = sqlConnection.prepareStatement(SQL_SELECT_WALLET);
+            selectWallet.setString(1, userID);
+            ResultSet rs = selectWallet.executeQuery();
+            try {
+                while (rs.next()) {
+            		Wallet wallet = new Wallet(
+            				rs.getString(1),
+            				rs.getBigDecimal(2),
+            				rs.getBigDecimal(3),
+            				rs.getBigDecimal(4),
+            				rs.getBigDecimal(5),
+            				rs.getBigDecimal(6)
+            			); 
+                    return wallet;
+                }
+            } finally {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        } catch (SQLException e) {
+            throw new DAOException("", e);
+        } finally {
+            if (selectWallet != null) {
+                try {
+                    selectWallet.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        }
+        return null;
+	}
+
+	//userid, usd, eur, gbp, cny, inr
+	public Wallet updateWallet(Wallet wallet) throws DAOException {
+		PreparedStatement updateWallet = null;
+        try {
+            updateWallet = sqlConnection.prepareStatement(SQL_UPDATE_WALLET);
+            updateWallet.setString(1, wallet.getUserID());
+            updateWallet.setBigDecimal(2, wallet.getUsd());
+            updateWallet.setBigDecimal(3, wallet.getEur());
+            updateWallet.setBigDecimal(4, wallet.getGbp());
+            updateWallet.setBigDecimal(5, wallet.getCny());
+            updateWallet.setBigDecimal(6, wallet.getInr());
+            updateWallet.executeUpdate();
+            return wallet;
+        } catch (SQLException e) {
+            throw new DAOException("", e);
+        } finally {
+            if (updateWallet != null) {
+                try {
+                    updateWallet.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        }
+	}
+
+	
+	
 
 //	public List<String> getUserList() throws DAOException {	
 //		PreparedStatement selectUserList = null;
