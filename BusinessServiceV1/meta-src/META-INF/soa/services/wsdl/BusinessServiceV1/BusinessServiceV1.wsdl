@@ -1010,8 +1010,8 @@
             
             <xs:complexType name="GetWalletRequest">
             	<xs:sequence>
-                    <xs:element name="request" type="tns:WalletData"></xs:element>
-                </xs:sequence>
+            		<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+            	</xs:sequence>
             </xs:complexType>
 		<xs:complexType name="WalletData">
 		<xs:annotation>
@@ -1031,7 +1031,7 @@
 		</xs:element>
 		<xs:complexType name="GetWalletResponse">
 			<xs:sequence>
-				<xs:element name="NewElement" type="xs:string"></xs:element>
+				<xs:element name="wallet" type="tns:WalletData" maxOccurs="1" minOccurs="1"></xs:element>
 			</xs:sequence>
 		</xs:complexType>
 		<xs:complexType name="AccountData">

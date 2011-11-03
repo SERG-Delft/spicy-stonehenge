@@ -61,7 +61,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
 //    private static final String SQL_SELECT_USER_LIST = "SELECT userid FROM accountprofile";
     private static final String SQL_INSERT_WALLET = "INSERT INTO wallet (userid, usd, eur, gbp, cny, inr) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SQL_SELECT_WALLET = "SELECT userid, usd, eur, gbp, cny, inr FROM wallet where userid = ?";
-    private static final String SQL_UPDATE_WALLET = "UPDATE wallet SET userid = ?, usd = ?, eur = ?, gbp = ?, cny =, inr = ? WHERE userid = ?";
+    private static final String SQL_UPDATE_WALLET = "UPDATE wallet SET usd = ?, eur = ?, gbp = ?, cny = ?, inr = ? WHERE userid = ?";
 
  
     
@@ -643,7 +643,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
         return insertSuccess;
 	}
-
+	//userid, usd, eur, gbp, cny, inr
 	public Wallet getWallet(String userID) throws DAOException {
 		PreparedStatement selectWallet = null;
         try {
@@ -688,12 +688,12 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
 		PreparedStatement updateWallet = null;
         try {
             updateWallet = sqlConnection.prepareStatement(SQL_UPDATE_WALLET);
-            updateWallet.setString(1, wallet.getUserID());
-            updateWallet.setBigDecimal(2, wallet.getUsd());
-            updateWallet.setBigDecimal(3, wallet.getEur());
-            updateWallet.setBigDecimal(4, wallet.getGbp());
-            updateWallet.setBigDecimal(5, wallet.getCny());
-            updateWallet.setBigDecimal(6, wallet.getInr());
+            updateWallet.setBigDecimal(1, wallet.getUsd());
+            updateWallet.setBigDecimal(2, wallet.getEur());
+            updateWallet.setBigDecimal(3, wallet.getGbp());
+            updateWallet.setBigDecimal(4, wallet.getCny());
+            updateWallet.setBigDecimal(5, wallet.getInr());
+            updateWallet.setString(6, wallet.getUserID());
             updateWallet.executeUpdate();
             return wallet;
         } catch (SQLException e) {

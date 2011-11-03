@@ -29,6 +29,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
@@ -312,6 +314,12 @@ public class BusinessServiceV1Impl
 		response.setOut(registerResult);
 		
 		return response;
+	}
+
+	@Override
+	public GetWalletResponse getWallet(GetWalletRequest getWalletRequest) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
