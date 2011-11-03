@@ -19,8 +19,9 @@
 	<wsdl:types>
 		<xs:schema attributeFormDefault="unqualified"
 			elementFormDefault="qualified"
-			targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
-			<xs:complexType name="AccountData">
+			targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" xmlns:Q1="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
+            <xs:import schemaLocation="../../../../../../../TradeTypeLibrary/meta-src/types/TradeTypeLibrary/WalletData.xsd" namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"></xs:import>
+            <xs:complexType name="AccountData">
 				<xs:annotation>
 					<xs:documentation />
 				</xs:annotation>
@@ -1051,15 +1052,39 @@
             		</xs:sequence>
             	</xs:complexType>
             </xs:element>
-            <xs:element name="NewOperation">
+            <xs:element name="getWallet">
             	<xs:complexType>
             		<xs:sequence>
 
-            			<xs:element name="in" type="xs:string"></xs:element>
+            			<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
             		</xs:sequence>
             	</xs:complexType>
             </xs:element>
             <xs:element name="NewOperationResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="out" type="xs:string"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="getWalletResponse1">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="walletData" type="Q1:WalletData" maxOccurs="1" minOccurs="1"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="getWallet">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+            <xs:element name="getWalletResponse1">
             	<xs:complexType>
             		<xs:sequence>
 
@@ -1181,11 +1206,11 @@
 	<wsdl:message name="exchangeResponse">
 		<wsdl:part name="parameters" element="tns:exchangeResponse"></wsdl:part>
 	</wsdl:message>
-	<wsdl:message name="NewOperationRequest">
-		<wsdl:part name="parameters" element="tns:NewOperation"></wsdl:part>
+	<wsdl:message name="getWalletRequest">
+		<wsdl:part name="parameters" element="tns:getWallet"></wsdl:part>
 	</wsdl:message>
-	<wsdl:message name="NewOperationResponse">
-		<wsdl:part name="parameters" element="tns:NewOperationResponse"></wsdl:part>
+	<wsdl:message name="getWalletResponse1">
+		<wsdl:part name="parameters" element="tns:getWalletResponse1"></wsdl:part>
 	</wsdl:message>
 	<wsdl:portType name="BusinessServicePort">
 		<wsdl:operation name="getOrders">
@@ -1296,6 +1321,10 @@
 			<wsdl:output message="tns:registerResponse"></wsdl:output>
 		</wsdl:operation>
 
+		<wsdl:operation name="getWallet">
+			<wsdl:input message="tns:getWalletRequest"></wsdl:input>
+			<wsdl:output message="tns:getWalletResponse1"></wsdl:output>
+		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="BusinessServiceHttpBinding"
 		type="tns:BusinessServicePort">
@@ -1310,9 +1339,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1328,9 +1359,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1346,9 +1379,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1364,9 +1399,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1382,9 +1419,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1400,9 +1439,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1418,9 +1459,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1436,9 +1479,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1454,9 +1499,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1472,9 +1519,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1490,9 +1539,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1508,9 +1559,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1526,9 +1579,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1544,9 +1599,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1562,9 +1619,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1580,9 +1639,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1598,6 +1659,7 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
@@ -1605,10 +1667,20 @@
 
 
 
+
 			</wsdl:output>
 		</wsdl:operation>
 
-	</wsdl:binding>
+		<wsdl:operation name="getWallet">
+			<http:operation location="/getWallet" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+			</wsdl:output>
+		</wsdl:operation>
+    </wsdl:binding>
 	<wsdl:binding name="BusinessServiceSOAPBinding"
 		type="tns:BusinessServicePort">
 
@@ -1837,6 +1909,16 @@
 			</wsdl:output>
 		</wsdl:operation>
 
+		<wsdl:operation name="getWallet">
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getWallet" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:service name="BusinessService">
 		<wsdl:documentation>
