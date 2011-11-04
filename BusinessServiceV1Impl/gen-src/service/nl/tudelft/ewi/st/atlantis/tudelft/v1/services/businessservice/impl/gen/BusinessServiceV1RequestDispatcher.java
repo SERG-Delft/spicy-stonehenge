@@ -37,6 +37,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
@@ -62,6 +64,7 @@ public class BusinessServiceV1RequestDispatcher
         addSupportedOperation("getMarketSummary", new Class[] {GetMarketSummaryRequest.class }, new Class[] {GetMarketSummaryResponse.class });
         addSupportedOperation("buy", new Class[] {BuyRequest.class }, new Class[] {BuyResponse.class });
         addSupportedOperation("getAccountData", new Class[] {GetAccountDataRequest.class }, new Class[] {GetAccountDataResponse.class });
+        addSupportedOperation("updateWallet", new Class[] {UpdateWallet.class }, new Class[] {UpdateWalletResponse.class });
         addSupportedOperation("getHolding", new Class[] {GetHoldingRequest.class }, new Class[] {GetHoldingResponse.class });
         addSupportedOperation("getWallet", new Class[] {GetWalletRequest.class }, new Class[] {GetWalletResponse.class });
         addSupportedOperation("sellEnhanced", new Class[] {SellEnhancedRequest.class }, new Class[] {SellEnhancedResponse.class });
@@ -160,6 +163,18 @@ public class BusinessServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetAccountDataResponse result = service.getAccountData(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("updateWallet".equals(operationName)) {
+            UpdateWallet param2 = ((UpdateWallet) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                UpdateWalletResponse result = service.updateWallet(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

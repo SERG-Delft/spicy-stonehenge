@@ -224,9 +224,7 @@ public class TypeFactory {
 	}
 	
 	public static Wallet toWallet(WalletData wd){
-		Wallet w = new Wallet();
-		
-		w.setUserID(wd.getUserID());
+		Wallet w = new Wallet(wd.getUserID());
 		w.setCny(BigDecimal.valueOf(wd.getCny()));
 		w.setEur(BigDecimal.valueOf(wd.getEur()));
 		w.setGbp(BigDecimal.valueOf(wd.getGbp()));

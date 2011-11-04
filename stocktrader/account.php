@@ -88,6 +88,9 @@ function FormatDate($date) {
 						<a href="quotes.php">Quotes/Trade</a>
 					</td>
 					<td>
+						<a href="exchange.php">Exchange</a>
+					</td>
+					<td>
 						<a href="glossary.php">Glossary</a>
 					</td>
 					<td>
@@ -258,6 +261,43 @@ function FormatDate($date) {
 							<td>".$userAccountDataReturn->currencyType."</td></tr>");
 						print("</tbody></table>");
 					}
+					
+					/*Display the wallet information of a the user*/
+					if ($userAccountDataReturn)	//set as wallet
+					{
+						print("<table align=\"center\" class=\"profile-content\" cellspacing=\"0\"><tbody>");
+						print ("<tr><td class=\"left\">User ID:</td>
+							<td>".$userAccountDataReturn->profileID."</td></tr>");
+						print ("<tr><td class=\"left\">EUR Balance:</td>
+							<td>".$userAccountDataReturn->openBalance."</td>
+							<td class=\"left\">USD Balance:</td>
+							<td>".$userAccountDataReturn->loginCount."</td></tr>");
+						print("<tr><td class=\"left\">GBP Balance:</td>");
+							
+						if ($userAccountDataReturn->balance > 0)
+						{
+							print("<td><span class=\"price-gain\">$".
+								$userAccountDataReturn->balance."</span></td>");
+						}
+						else if($userAccountDataReturn->balance < 0)
+						{
+							print("<td><span class=\"price-loss\">$".
+								(-1) * $userAccountDataReturn->balance."</span></td>");
+						}
+						else
+						{
+							print("<td>$".$userAccountDataReturn->balance."</td>");
+						}	
+						print("<td class=\"left\">CNY Balance:</td>
+							<td>".$userAccountDataReturn->logoutCount."</td></tr>");
+						print("<td class=\"left\">IBR Balance:</td>
+							<td>".$userAccountDataReturn->currencyType."</td></tr>");
+						print("</tbody></table>");
+					}
+					
+					
+					
+					
 					print("</td></tr></tbody></table>");
 				}
 			?>

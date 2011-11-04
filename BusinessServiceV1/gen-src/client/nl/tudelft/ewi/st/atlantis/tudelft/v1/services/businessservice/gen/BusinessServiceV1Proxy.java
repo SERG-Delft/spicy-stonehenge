@@ -43,6 +43,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.AsyncBusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceInvocationException;
 import org.ebayopensource.turmeric.runtime.sif.impl.internal.service.BaseServiceProxy;
@@ -153,6 +155,18 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Response<UpdateWalletResponse> updateWalletAsync(UpdateWallet param0) {
+        Dispatch dispatch = m_service.createDispatch("updateWallet");
+        Response<UpdateWalletResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> updateWalletAsync(UpdateWallet param0, AsyncHandler<UpdateWalletResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("updateWallet");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<GetHoldingResponse> getHoldingAsync(GetHoldingRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getHolding");
         Response<GetHoldingResponse> result = dispatch.invokeAsync(param0);
@@ -165,14 +179,20 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> getWalletAsync(GetWalletRequest param0, AsyncHandler<GetWalletResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getWallet");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<GetWalletResponse> getWalletAsync(GetWalletRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getWallet");
         Response<GetWalletResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> getWalletAsync(GetWalletRequest param0, AsyncHandler<GetWalletResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getWallet");
+    public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("sellEnhanced");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -183,8 +203,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("sellEnhanced");
+    public Future<?> updateAccountProfileAsync(UpdateAccountProfileRequest param0, AsyncHandler<UpdateAccountProfileResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("updateAccountProfile");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -195,21 +215,15 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> updateAccountProfileAsync(UpdateAccountProfileRequest param0, AsyncHandler<UpdateAccountProfileResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("updateAccountProfile");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
+    public Response<GetTopOrdersResponse> getTopOrdersAsync(GetTopOrdersRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getTopOrders");
+        Response<GetTopOrdersResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getTopOrders");
         Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
-    public Response<GetTopOrdersResponse> getTopOrdersAsync(GetTopOrdersRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("getTopOrders");
-        Response<GetTopOrdersResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -237,20 +251,14 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("sell");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
     public Response<SellResponse> sellAsync(SellRequest param0) {
         Dispatch dispatch = m_service.createDispatch("sell");
         Response<SellResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getOrders");
+    public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("sell");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -258,6 +266,12 @@ public class BusinessServiceV1Proxy
     public Response<GetOrdersResponse> getOrdersAsync(GetOrdersRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getOrders");
         Response<GetOrdersResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getOrders");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
@@ -373,6 +387,19 @@ public class BusinessServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetAccountDataResponse result = ((GetAccountDataResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public UpdateWalletResponse updateWallet(UpdateWallet param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("updateWallet", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        UpdateWalletResponse result = ((UpdateWalletResponse) returnParamList.get(0));
         return result;
     }
 

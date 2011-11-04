@@ -20,6 +20,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.sif.service.Service;
@@ -132,6 +133,19 @@ public class BusinessServiceV1Test
         GetAccountDataResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getAccountData(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testUpdateWallet()
+        throws Exception
+    {
+        UpdateWalletResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().updateWallet(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

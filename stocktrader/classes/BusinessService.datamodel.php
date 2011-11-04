@@ -595,4 +595,127 @@ class getAllQuotesResponse {
 
 }
 
+class registerRequest {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var string
+     */
+    public $password;
+
+    /**
+     * @var string
+     */
+    public $fullname;
+
+    /**
+     * @var string
+     */
+    public $address;
+
+    /**
+     * @var string
+     */
+    public $email;
+
+    /**
+     * @var string
+     */
+    public $creditcard;
+
+    /**
+     * @var double
+     */
+    public $openBalance;
+
+    /**
+     * @var string
+     */
+    public $currencyType;
+
+}
+
+class registerResponse {
+
+    /**
+     * @var string
+     */
+    public $out;
+
+}
+
+class getWalletRequest {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+}
+
+class getWalletResponse {
+
+    /**
+     * @var (object)WalletData
+     */
+    public $wallet;
+
+}
+
+class WalletData {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var double
+     */
+    public $eur;
+
+    /**
+     * @var double
+     */
+    public $usd;
+
+    /**
+     * @var double
+     */
+    public $gbp;
+
+    /**
+     * @var double
+     */
+    public $cny;
+
+    /**
+     * @var double
+     */
+    public $inr;
+
+}
+
+class updateWallet {
+
+    /**
+     * @var (object)WalletData
+     */
+    public $walletData;
+
+}
+
+class updateWalletResponse {
+
+    /**
+     * @var (object)WalletData
+     */
+    public $newWalletData;
+
+}
+
 ?>

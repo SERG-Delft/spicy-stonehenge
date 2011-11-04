@@ -1,16 +1,25 @@
 package nl.tudelft.stocktrader;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 
 public class Wallet {
 	protected String userID;
-    protected BigDecimal eur = BigDecimal.ZERO;
-    protected BigDecimal usd = BigDecimal.ZERO;
-    protected BigDecimal gbp = BigDecimal.ZERO;
-    protected BigDecimal cny = BigDecimal.ZERO;
-    protected BigDecimal inr = BigDecimal.ZERO;
+	HashMap<String, BigDecimal> money = new HashMap<String, BigDecimal>();
+//    protected BigDecimal eur = BigDecimal.ZERO;
+//    protected BigDecimal usd = BigDecimal.ZERO;
+//    protected BigDecimal gbp = BigDecimal.ZERO;
+//    protected BigDecimal cny = BigDecimal.ZERO;
+//    protected BigDecimal inr = BigDecimal.ZERO;
+//    protected static String currencyTypes[] = {"EUR","USD","GBP","CNY","INR"};
     
-    public Wallet(){
+    public Wallet(String userID){
+    	setUserID(userID);
+    	money.put("EUR", BigDecimal.ZERO);
+    	money.put("USD", BigDecimal.ZERO);
+    	money.put("GBP", BigDecimal.ZERO);
+    	money.put("CNY", BigDecimal.ZERO);
+    	money.put("INR", BigDecimal.ZERO);   	
     }
     
     public Wallet(String userID, BigDecimal usd, BigDecimal eur, BigDecimal gbp, BigDecimal cny, BigDecimal inr){
@@ -21,7 +30,10 @@ public class Wallet {
     	setCny(cny);
     	setInr(inr);    	
     }
-    
+   
+    public void addMoney(String currencyType, BigDecimal value){
+    	money.put(currencyType, value);
+    }
     
 	public String getUserID() {
 		return userID;
@@ -30,33 +42,33 @@ public class Wallet {
 		this.userID = userID;
 	}
 	public BigDecimal getEur() {
-		return eur;
+		return money.get("EUR");
 	}
 	public void setEur(BigDecimal eur) {
-		this.eur = eur;
+		money.put("EUR", eur);
 	}
 	public BigDecimal getUsd() {
-		return usd;
+		return money.get("USD");
 	}
 	public void setUsd(BigDecimal usd) {
-		this.usd = usd;
+		money.put("USD", usd);
 	}
 	public BigDecimal getGbp() {
-		return gbp;
+		return money.get("GBP");
 	}
 	public void setGbp(BigDecimal gbp) {
-		this.gbp = gbp;
+		money.put("GBP", gbp);
 	}
 	public BigDecimal getCny() {
-		return cny;
+		return money.get("CNY");
 	}
 	public void setCny(BigDecimal cny) {
-		this.cny = cny;
+		money.put("CNY", cny);
 	}
 	public BigDecimal getInr() {
-		return inr;
+		return money.get("INR");
 	}
 	public void setInr(BigDecimal inr) {
-		this.inr = inr;
+		money.put("INR", inr);
 	}
 }

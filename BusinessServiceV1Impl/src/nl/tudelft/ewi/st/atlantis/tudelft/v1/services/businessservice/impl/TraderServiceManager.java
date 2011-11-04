@@ -30,6 +30,7 @@ import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.TypeFactory;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.dal.DAOFactory;
@@ -121,8 +122,9 @@ public class TraderServiceManager {
 			customerDAO.insertAccountProfile(new AccountProfile(userId, password, 
 											fullName, address, email, creditcard));	
 			//also need to insert wallet
-			
-			
+			Wallet wallet = new Wallet(userId);
+			wallet.addMoney(currencyType, openBalance);
+			customerDAO.insertWallet(wallet);			
 			
 			result = "Success";
 		}else
@@ -271,6 +273,18 @@ public class TraderServiceManager {
 			throws DAOException {
 		CustomerDAO customerDAO = factory.getCustomerDAO();
 		return customerDAO.getHoldings(userID);
+	}
+	
+	public Wallet getWallet(String userID) 
+			throws DAOException {
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		return customerDAO.getWallet(userID);
+		
+	}
+	
+	public Wallet updateWallet(Wallet wallet) throws DAOException{
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		return customerDAO.updateWallet(wallet);
 	}
 
 }

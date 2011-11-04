@@ -41,6 +41,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
 
 public interface AsyncBusinessServiceV1
     extends BusinessServiceV1
@@ -74,6 +76,10 @@ public interface AsyncBusinessServiceV1
     public Future<?> getAccountDataAsync(GetAccountDataRequest param0, AsyncHandler<GetAccountDataResponse> handler);
 
     public Response<GetAccountDataResponse> getAccountDataAsync(GetAccountDataRequest param0);
+
+    public Future<?> updateWalletAsync(UpdateWallet param0, AsyncHandler<UpdateWalletResponse> handler);
+
+    public Response<UpdateWalletResponse> updateWalletAsync(UpdateWallet param0);
 
     public Future<?> getHoldingAsync(GetHoldingRequest param0, AsyncHandler<GetHoldingResponse> handler);
 

@@ -37,16 +37,20 @@ if (isset($_POST['REGISTERUSER']))
 	$creditcard = $_POST['CREDITCARD'];
 	$confpassword = $_POST['CONFIRMATIONPASSWORD'];
 	/*add currency type*/
-	$currencytype = $_POST['CURRENCYTYPE'];
+	$currencyType = $_POST['CURRENCYTYPE'];
 
 	if ($userID == NULL || $password != $confpassword)
 	{
+		print 
 		$invalidInformation = TRUE;
 	}
 	else
 	{
-		$response = RegisterUser($userID, $password, $fullname, 
-			$address, $email, $creditcard, $openBalance, $currencytype);
+		$response = register($userID, $password, $fullname, $address, 
+	$email, $creditcard, $openBalance, $currencyType);
+			
+			print $response->out;
+			
 		if ($response)
 		{
 			$successfulRegistration = TRUE;

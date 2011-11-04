@@ -149,6 +149,10 @@ public class BusinessServiceV1TypeDefsBuilder
         complexTypes.add(new FlatSchemaComplexTypeImpl());
         // Type #54 (<Anonymous>)
         complexTypes.add(new FlatSchemaComplexTypeImpl());
+        // Type #55 (<Anonymous>)
+        complexTypes.add(new FlatSchemaComplexTypeImpl());
+        // Type #56 (<Anonymous>)
+        complexTypes.add(new FlatSchemaComplexTypeImpl());
     }
 
     private void addComplexTypeElements0(ArrayList<FlatSchemaComplexTypeImpl> complexTypes) {
@@ -527,7 +531,7 @@ public class BusinessServiceV1TypeDefsBuilder
          
         // Type #51 (<Anonymous>)
         currType = complexTypes.get(51);
-        currType.addSimpleElement(new QName(NS2, "in"), 1);
+        currType.addComplexElement(new QName(NS2, "walletData"), complexTypes.get(38), 1);
          
         // Type #52 (<Anonymous>)
         currType = complexTypes.get(52);
@@ -539,6 +543,14 @@ public class BusinessServiceV1TypeDefsBuilder
          
         // Type #54 (<Anonymous>)
         currType = complexTypes.get(54);
+        currType.addSimpleElement(new QName(NS2, "in"), 1);
+         
+        // Type #55 (<Anonymous>)
+        currType = complexTypes.get(55);
+        currType.addComplexElement(new QName(NS2, "newWalletData"), complexTypes.get(38), 1);
+         
+        // Type #56 (<Anonymous>)
+        currType = complexTypes.get(56);
         currType.addComplexElement(new QName(NS2, "quotes"), complexTypes.get(39), -1);
     }
 
@@ -567,23 +579,25 @@ public class BusinessServiceV1TypeDefsBuilder
         rootElements.put(new QName(NS2, "getAllQuotesRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotesRequest"), complexTypes.get(34)));
         rootElements.put(new QName(NS2, "getQuoteRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteRequest"), complexTypes.get(15)));
         rootElements.put(new QName(NS2, "getMarketSummaryResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getMarketSummaryResponse"), complexTypes.get(35)));
-        rootElements.put(new QName(NS2, "getAllQuotesResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotesResponse"), complexTypes.get(54)));
+        rootElements.put(new QName(NS2, "getAllQuotesResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotesResponse"), complexTypes.get(56)));
         rootElements.put(new QName(NS2, "getHoldingsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingsResponse"), complexTypes.get(30)));
-        rootElements.put(new QName(NS2, "register"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "register"), complexTypes.get(52)));
+        rootElements.put(new QName(NS2, "updateWalletResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWalletResponse"), complexTypes.get(55)));
+        rootElements.put(new QName(NS2, "register"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "register"), complexTypes.get(53)));
         rootElements.put(new QName(NS2, "updateAccountProfileResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateAccountProfileResponse"), complexTypes.get(8)));
         rootElements.put(new QName(NS2, "buyResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "buyResponse"), complexTypes.get(4)));
-        rootElements.put(new QName(NS2, "logout"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logout"), complexTypes.get(53)));
+        rootElements.put(new QName(NS2, "logout"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logout"), complexTypes.get(54)));
         rootElements.put(new QName(NS2, "getWalletResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletResponse"), complexTypes.get(31)));
         rootElements.put(new QName(NS2, "sellRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellRequest"), complexTypes.get(24)));
         rootElements.put(new QName(NS2, "logoutRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logoutRequest"), complexTypes.get(18)));
-        rootElements.put(new QName(NS2, "getAllQuotes"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotes"), complexTypes.get(51)));
+        rootElements.put(new QName(NS2, "getAllQuotes"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotes"), complexTypes.get(52)));
+        rootElements.put(new QName(NS2, "getQuoteResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteResponse"), complexTypes.get(10)));
         rootElements.put(new QName(NS2, "getWalletRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletRequest"), complexTypes.get(22)));
         rootElements.put(new QName(NS2, "getMarketSummaryRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getMarketSummaryRequest"), complexTypes.get(29)));
-        rootElements.put(new QName(NS2, "getQuoteResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteResponse"), complexTypes.get(10)));
         rootElements.put(new QName(NS2, "loginResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "loginResponse"), complexTypes.get(19)));
         rootElements.put(new QName(NS2, "getClosedOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClosedOrdersRequest"), complexTypes.get(28)));
         rootElements.put(new QName(NS2, "getOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOrdersRequest"), complexTypes.get(7)));
         rootElements.put(new QName(NS2, "getAccountDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountDataRequest"), complexTypes.get(12)));
+        rootElements.put(new QName(NS2, "updateWallet"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWallet"), complexTypes.get(51)));
     }
 
 }

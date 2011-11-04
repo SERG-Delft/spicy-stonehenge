@@ -1051,7 +1051,22 @@
 			</xs:element>
 
 		</xs:sequence>
-	</xs:complexType></xs:schema>
+	</xs:complexType>
+		<xs:element name="updateWallet">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="walletData" type="tns:WalletData" maxOccurs="1" minOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="updateWalletResponse">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element name="newWalletData" type="tns:WalletData" maxOccurs="1" minOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element></xs:schema>
 	</wsdl:types>
 	<wsdl:message name="getOrdersRequest">
 		<wsdl:part element="tns:getOrdersRequest" name="params" />
@@ -1164,6 +1179,12 @@
 	</wsdl:message>
 	<wsdl:message name="getWalletResponse1">
 		<wsdl:part name="parameters" element="tns:getWalletResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateWalletRequest">
+		<wsdl:part name="parameters" element="tns:updateWallet"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateWalletResponse">
+		<wsdl:part name="parameters" element="tns:updateWalletResponse"></wsdl:part>
 	</wsdl:message>
 	<wsdl:portType name="BusinessServicePort">
 		<wsdl:operation name="getOrders">
@@ -1278,6 +1299,10 @@
 			<wsdl:input message="tns:getWalletRequest"></wsdl:input>
 			<wsdl:output message="tns:getWalletResponse1"></wsdl:output>
 		</wsdl:operation>
+		<wsdl:operation name="updateWallet">
+			<wsdl:input message="tns:updateWalletRequest"></wsdl:input>
+			<wsdl:output message="tns:updateWalletResponse"></wsdl:output>
+		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="BusinessServiceHttpBinding"
 		type="tns:BusinessServicePort">
@@ -1296,9 +1321,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1322,9 +1349,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1348,9 +1377,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1374,9 +1405,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1400,9 +1433,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1426,9 +1461,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1452,9 +1489,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1478,9 +1517,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1504,9 +1545,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1530,9 +1573,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1556,9 +1601,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1582,9 +1629,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1608,9 +1657,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1634,9 +1685,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1660,9 +1713,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1686,9 +1741,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1712,9 +1769,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
 
 
 
@@ -1734,12 +1793,23 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
 
 
 
+
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateWallet">
+			<http:operation location="/updateWallet" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
@@ -1981,6 +2051,16 @@
 			</wsdl:input>
 			<wsdl:output>
 
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateWallet">
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/updateWallet" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>

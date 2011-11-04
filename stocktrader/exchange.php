@@ -32,7 +32,7 @@ if (isset($_POST['EXCHANGEREQUEST']))
 	$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);
 	
 	//print $exchAmount;
-	//print $exchResult;
+	print $exchResult;
 }
 ?>
 

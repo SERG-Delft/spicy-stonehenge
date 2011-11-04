@@ -70,6 +70,20 @@
          
         /**
          * Auto generated method signature
+         * 
+                                    * @param updateWallet
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse updateWallet
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet updateWallet
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
          * Documentation goes here.
                                     * @param getHoldingRequest
          */

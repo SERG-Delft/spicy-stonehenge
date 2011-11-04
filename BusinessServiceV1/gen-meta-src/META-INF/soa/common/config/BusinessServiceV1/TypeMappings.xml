@@ -140,6 +140,25 @@
                 <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
+        <operation name="updateWallet">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet</java-type-name>
+                <xml-type-name>updateWallet</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWallet</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse</java-type-name>
+                <xml-type-name>updateWalletResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWalletResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
         <operation name="getHolding">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingRequest</java-type-name>
@@ -392,6 +411,8 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountProfileData</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData</java-type-name>

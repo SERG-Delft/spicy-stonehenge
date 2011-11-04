@@ -43,6 +43,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
@@ -51,6 +53,7 @@ import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.TypeFactory;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.DAOException;
 
 public class BusinessServiceV1Impl
@@ -318,8 +321,35 @@ public class BusinessServiceV1Impl
 
 	@Override
 	public GetWalletResponse getWallet(GetWalletRequest getWalletRequest) {
-		// TODO Auto-generated method stub
-		return null;
+		Wallet wallet = null;
+    	try {
+			wallet = mgr.getWallet(getWalletRequest.getUserID());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		GetWalletResponse response = new GetWalletResponse();
+		response.setWallet(TypeFactory.toWalletData(wallet));
+		
+		return response;
+	}
+
+	@Override
+	public UpdateWalletResponse updateWallet(UpdateWallet updateWallet) {
+
+		Wallet wallet = null;
+    	try {
+			wallet = mgr.updateWallet(
+					TypeFactory.toWallet(updateWallet.getWalletData()));
+			
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		UpdateWalletResponse response = new UpdateWalletResponse();
+		response.setNewWalletData(TypeFactory.toWalletData(wallet));
+		
+		return response;
 	}
 
 }
