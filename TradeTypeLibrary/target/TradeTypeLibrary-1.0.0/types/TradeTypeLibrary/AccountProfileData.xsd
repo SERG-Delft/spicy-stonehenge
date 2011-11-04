@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2006-2010 eBay Inc. All Rights Reserved.
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at 
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"
+	version="1.0.0">
+	<xs:complexType name="AccountProfileData">
+		<xs:annotation>
+			<xs:documentation />
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="creditCard"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="email"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="address"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="fullName"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="password"
+				type="xs:string" />
+			<xs:element maxOccurs="1" minOccurs="1" name="userID"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+
