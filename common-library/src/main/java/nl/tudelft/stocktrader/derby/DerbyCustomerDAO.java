@@ -54,7 +54,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_SELECT_CLOSED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'closed'";
     private static final String SQL_UPDATE_CLOSED_ORDERS = "UPDATE orders SET orderstatus = 'completed' WHERE orderstatus = 'closed' AND account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?)";
     private static final String SQL_INSERT_ACCOUNT_PROFILE = "INSERT INTO accountprofile VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, lastlogin, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?); SELECT LAST_INSERT_ID();";
+    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?)";//; SELECT LAST_INSERT_ID()
     private static final String SQL_UPDATE_ACCOUNT_PROFILE = "UPDATE accountprofile SET address = ?, password = ?, email = ?, creditcard = ?, fullname = ? WHERE userid = ?";
     private static final String SQL_SELECT_HOLDINGS = "SELECT holdingid, quantity, purchaseprice, purchasedate, quote_symbol, account_accountid FROM holding WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) ORDER BY holdingid DESC";
     //for register
@@ -523,18 +523,19 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
             }
         }
     }
+//  "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?); SELECT LAST_INSERT_ID();";
 
     public void insertAccount(Account accountBean) throws DAOException {
         PreparedStatement insertAccount = null;
         try {
             insertAccount = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT);
             insertAccount.setBigDecimal(1, accountBean.getOpenBalance());
-            insertAccount.setInt(2, accountBean.getLogoutCount());
-            insertAccount.setBigDecimal(3, accountBean.getBalance());
+            insertAccount.setInt(2, 0);
+            insertAccount.setBigDecimal(3, accountBean.getOpenBalance());
             //first insert: the user didn't exist before, no last login
 //            insertAccount.setDate(4, StockTraderUtility.convertToSqlDate(accountBean.getLastLogin()));
-            insertAccount.setInt(5, accountBean.getLoginCount());
-            insertAccount.setString(6, accountBean.getUserID());
+            insertAccount.setInt(4, 0);
+            insertAccount.setString(5, accountBean.getUserID());
             insertAccount.executeUpdate();
 
         } catch (SQLException e) {
