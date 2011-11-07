@@ -124,11 +124,13 @@ public class TraderServiceManager {
 			//also need to insert wallet
 			Wallet wallet = new Wallet(userId);
 			wallet.addMoney(currencyType, openBalance);
-			customerDAO.insertWallet(wallet);			
-			
-			result = "Success";
+			boolean insertOP = customerDAO.insertWallet(wallet);
+			if(insertOP)
+				result = "success";
+			else
+				result = "failed";
 		}else
-			result = "UserExist";	
+			result = "userexist";	
 
 		return result;
 	}

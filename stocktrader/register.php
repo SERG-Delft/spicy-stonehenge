@@ -23,7 +23,9 @@
 require_once ("request_processor.php");
 
 $successfulRegistration = false;
+$userExist = false;
 $invalidInformation = false;
+$failedRegistration = false;
 
 if (isset($_POST['REGISTERUSER']))
 {
@@ -41,7 +43,6 @@ if (isset($_POST['REGISTERUSER']))
 
 	if ($userID == NULL || $password != $confpassword)
 	{
-		print 
 		$invalidInformation = TRUE;
 	}
 	else
@@ -50,14 +51,19 @@ if (isset($_POST['REGISTERUSER']))
 	$email, $creditcard, $openBalance, $currencyType);
 			
 			print $response->out;
+			print $currencyType;
+			print $openBalance;
 			
-		if ($response)
+		if ($response->out == "success")
 		{
 			$successfulRegistration = TRUE;
 		}
-		else
+		else if($response->out == "userexist")
 		{
-			$invalidInformation = TRUE;
+			$userExist = TRUE;
+		}else if($response->out == "failed")
+		{
+			$failedRegistration = TRUE;
 		}
 	}
 }
@@ -124,11 +130,24 @@ if (isset($_POST['REGISTERUSER']))
 				}
 
 				else
-				{
+				{	
 					if ($invalidInformation)
 					{
-						print("<p style=\"color: red\" align=\"center\">Please enter valid information.</p>");
+						print("<p style=\"color: red\" align=\"center\">There was a problem with your request. Please check that your passwords match and try again.</p>");
 					}
+					
+					else if($userExist)
+					{
+						print("<p style=\"color: red\" align=\"center\">This user id already exists, please specify another one.</p>");					
+					}
+					else if($failedRegistration)
+					{
+						print("<p style=\"color: red\" align=\"center\">Sorry, register failed, please try again.</p>");
+					}
+					
+					
+					
+					
 					print ("<table class=\"profile\" cellspacing=\"0\" width=\"100%\">
 					<thead>
 					<tr>
@@ -153,12 +172,15 @@ if (isset($_POST['REGISTERUSER']))
 								</tr>
 								<tr>
 									<td>Opening Balance:</td>
-									<td><input type=\"text\" name=\"OPENBALANCE\" value=\"100000\" id=\"\" size=\"25\"/></td>
+									<td><input name=\"OPENBALANCE\" type=\"text\" id=\"\" size=\"25\"/></td>
 									<td>Currency Type:</td>
 									<td><select name=\"CURRENCYTYPE\" align=\"center\">
-										<option value=\"€\">EUR</option>
-										<option value=\"$\">USD</option>
-										<option value=\"￥\">RMB</option>
+										<option value=\"USD\">USD</option>
+										<option value=\"EUR\">EUR</option>
+										<option value=\"GBP\">GBP</option>
+										<option value=\"CNY\">CNY</option>
+										<option value=\"INR\">INR</option>
+										
 									</select></td>
 
 								</tr>

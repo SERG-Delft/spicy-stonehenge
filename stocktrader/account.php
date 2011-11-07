@@ -37,12 +37,19 @@ else
 		UpdateAccountProfile($userID, 
 			$fullName, $email, $address, $creditCard, $password);
 	}
+	if(isset($_POST['EXCHANGE']))
+	{
+		header("Location: exchange.php");
+	}
 	$ordersReturn = GetOrders(GetUserFromCookie())->orderData;
 	$accountSummary = GetUserAccountSummary($ordersReturn);
 	$userAccountDataReturn = 
 		GetAccountData(GetUserFromCookie());
 	$userAccountProfileDataReturn = 
 		GetAccountProfileData(GetUserFromCookie());
+		//for wallet
+	$userWalletDataReturn = 
+		GetWallet(GetUserFromCookie());
 }
 
 function FormatDate($date) {
@@ -236,64 +243,52 @@ function FormatDate($date) {
 							<td>".$userAccountDataReturn->profileID."</td><td class=\"left\">
 							Last Login:</td><td>".FormatDate($userAccountDataReturn->lastLogin)."</td></tr>");
 						print ("<tr><td class=\"left\">Opening Balance:</td>
-							<td>".$userAccountDataReturn->openBalance."</td>
+							<td>".$userAccountDataReturn->openBalance."".$userAccountDataReturn->currencyType."</td>
 							<td class=\"left\">Total Logins:</td>
 							<td>".$userAccountDataReturn->loginCount."</td></tr>");
 						print("<tr><td class=\"left\">Cash Balance:</td>");
 							
 						if ($userAccountDataReturn->balance > 0)
 						{
-							print("<td><span class=\"price-gain\">$".
-								$userAccountDataReturn->balance."</span></td>");
+							print("<td><span class=\"price-gain\">".
+								$userAccountDataReturn->balance."".$userAccountDataReturn->currencyType."</span></td>");
 						}
 						else if($userAccountDataReturn->balance < 0)
 						{
-							print("<td><span class=\"price-loss\">$".
-								(-1) * $userAccountDataReturn->balance."</span></td>");
+							print("<td><span class=\"price-loss\">".
+								(-1) * $userAccountDataReturn->balance."".$userAccountDataReturn->currencyType."</span></td>");
 						}
 						else
 						{
-							print("<td>$".$userAccountDataReturn->balance."</td>");
+							print("<td>".$userAccountDataReturn->balance."".$userAccountDataReturn->currencyType."</td>");
 						}	
 						print("<td class=\"left\">Total Logouts:</td>
 							<td>".$userAccountDataReturn->logoutCount."</td></tr>");
-						print("<td class=\"left\">Currency Type:</td>
-							<td>".$userAccountDataReturn->currencyType."</td></tr>");
+						//print("<td class=\"left\">Currency Type:</td>
+							//<td>".$userAccountDataReturn->currencyType."</td></tr>");
 						print("</tbody></table>");
 					}
 					
 					/*Display the wallet information of a the user*/
-					if ($userAccountDataReturn)	//set as wallet
+					if ($userWalletDataReturn)	//set as wallet
 					{
 						print("<table align=\"center\" class=\"profile-content\" cellspacing=\"0\"><tbody>");
 						print ("<tr><td class=\"left\">User ID:</td>
-							<td>".$userAccountDataReturn->profileID."</td></tr>");
-						print ("<tr><td class=\"left\">EUR Balance:</td>
-							<td>".$userAccountDataReturn->openBalance."</td>
+							<td>".$userWalletDataReturn->userID."</td>
 							<td class=\"left\">USD Balance:</td>
-							<td>".$userAccountDataReturn->loginCount."</td></tr>");
-						print("<tr><td class=\"left\">GBP Balance:</td>");
-							
-						if ($userAccountDataReturn->balance > 0)
-						{
-							print("<td><span class=\"price-gain\">$".
-								$userAccountDataReturn->balance."</span></td>");
-						}
-						else if($userAccountDataReturn->balance < 0)
-						{
-							print("<td><span class=\"price-loss\">$".
-								(-1) * $userAccountDataReturn->balance."</span></td>");
-						}
-						else
-						{
-							print("<td>$".$userAccountDataReturn->balance."</td>");
-						}	
-						print("<td class=\"left\">CNY Balance:</td>
-							<td>".$userAccountDataReturn->logoutCount."</td></tr>");
-						print("<td class=\"left\">IBR Balance:</td>
-							<td>".$userAccountDataReturn->currencyType."</td></tr>");
+							<td>".$userWalletDataReturn->usd."</td></tr>");
+						print ("<tr><td class=\"left\">EUR Balance:</td>
+							<td>".$userWalletDataReturn->eur."</td>
+							<td class=\"left\">GBP Balance:</td>
+							<td>".$userWalletDataReturn->gbp."</td>	</tr>");
+						print("<tr><td class=\"left\">CNY Balance:</td>
+							<td>".$userWalletDataReturn->cny."</td>
+							<td class=\"left\">IBR Balance:</td>
+							<td>".$userWalletDataReturn->inr."</td></tr>");						
 						print("</tbody></table>");
-					}
+						print ("<tr><td colspan=\"4\" class=\"button\"><input type=\"submit\" 
+						name=\"EXCHANGE\"value=\"Exchange\" class=\"button\"/></td></tr>");
+					}					
 					
 					
 					

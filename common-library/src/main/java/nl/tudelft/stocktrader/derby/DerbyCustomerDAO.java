@@ -620,7 +620,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     
 	public boolean insertWallet(Wallet wallet) throws DAOException {
 		PreparedStatement insertWallet = null;
-		boolean insertSuccess = true;
+		boolean insertSuccess = false;
         try {
             insertWallet = sqlConnection.prepareStatement(SQL_INSERT_WALLET);
             insertWallet.setString(1, wallet.getUserID());
@@ -630,6 +630,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
             insertWallet.setBigDecimal(5, wallet.getCny());
             insertWallet.setBigDecimal(6, wallet.getInr());
             insertWallet.executeUpdate();
+            insertSuccess = true;
         } catch (SQLException e) {
         	insertSuccess = false;
             throw new DAOException("", e);
