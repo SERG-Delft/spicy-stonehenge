@@ -13,14 +13,14 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetMarketSummaryResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.sif.service.Service;
@@ -140,19 +140,6 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testUpdateWallet()
-        throws Exception
-    {
-        UpdateWalletResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().updateWallet(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
     public void testGetHolding()
         throws Exception
     {
@@ -166,12 +153,12 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testGetWallet()
+    public void testUpdateWalletData()
         throws Exception
     {
-        GetWalletResponse result = null;
+        UpdateWalletDataResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().getWallet(null);
+        result = getProxy().updateWalletData(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -276,6 +263,19 @@ public class BusinessServiceV1Test
         GetHoldingsResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getHoldings(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testGetWalletData()
+        throws Exception
+    {
+        GetWalletDataResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getWalletData(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

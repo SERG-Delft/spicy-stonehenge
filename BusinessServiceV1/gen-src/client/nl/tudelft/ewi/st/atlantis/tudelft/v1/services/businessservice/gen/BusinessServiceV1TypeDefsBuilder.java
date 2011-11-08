@@ -49,60 +49,60 @@ public class BusinessServiceV1TypeDefsBuilder
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "SellResponse")));
         // Type #4 (BuyResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "BuyResponse")));
-        // Type #5 (GetAccountProfileDataResponse)
+        // Type #5 (GetWalletDataResponse)
+        complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetWalletDataResponse")));
+        // Type #6 (GetAccountProfileDataResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetAccountProfileDataResponse")));
-        // Type #6 (BaseRequest)
+        // Type #7 (BaseRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "BaseRequest")));
-        // Type #7 (GetOrdersRequest)
+        // Type #8 (GetOrdersRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetOrdersRequest")));
-        // Type #8 (UpdateAccountProfileResponse)
+        // Type #9 (GetWalletDataRequest)
+        complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetWalletDataRequest")));
+        // Type #10 (UpdateAccountProfileResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "UpdateAccountProfileResponse")));
-        // Type #9 (SellEnhancedRequest)
+        // Type #11 (SellEnhancedRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "SellEnhancedRequest")));
-        // Type #10 (GetQuoteResponse)
+        // Type #12 (GetQuoteResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetQuoteResponse")));
-        // Type #11 (GetHoldingRequest)
+        // Type #13 (GetHoldingRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetHoldingRequest")));
-        // Type #12 (GetAccountDataRequest)
+        // Type #14 (GetAccountDataRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetAccountDataRequest")));
-        // Type #13 (GetOrdersResponse)
+        // Type #15 (GetOrdersResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetOrdersResponse")));
-        // Type #14 (GetAccountProfileDataRequest)
+        // Type #16 (GetAccountProfileDataRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetAccountProfileDataRequest")));
-        // Type #15 (GetQuoteRequest)
+        // Type #17 (GetQuoteRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetQuoteRequest")));
-        // Type #16 (registerRequest)
+        // Type #18 (registerRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "registerRequest")));
-        // Type #17 (GetClosedOrdersResponse)
+        // Type #19 (GetClosedOrdersResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetClosedOrdersResponse")));
-        // Type #18 (LogoutRequest)
+        // Type #20 (LogoutRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "LogoutRequest")));
-        // Type #19 (LoginResponse)
+        // Type #21 (LoginResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "LoginResponse")));
-        // Type #20 (LoginRequest)
+        // Type #22 (LoginRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "LoginRequest")));
-        // Type #21 (GetTopOrdersRequest)
+        // Type #23 (GetTopOrdersRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetTopOrdersRequest")));
-        // Type #22 (GetWalletRequest)
-        complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetWalletRequest")));
-        // Type #23 (GetHoldingResponse)
+        // Type #24 (GetHoldingResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetHoldingResponse")));
-        // Type #24 (SellRequest)
+        // Type #25 (SellRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "SellRequest")));
-        // Type #25 (BuyRequest)
+        // Type #26 (BuyRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "BuyRequest")));
-        // Type #26 (SellEnhancedResponse)
+        // Type #27 (SellEnhancedResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "SellEnhancedResponse")));
-        // Type #27 (UpdateAccountProfileRequest)
+        // Type #28 (UpdateAccountProfileRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "UpdateAccountProfileRequest")));
-        // Type #28 (GetClosedOrdersRequest)
+        // Type #29 (GetClosedOrdersRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetClosedOrdersRequest")));
-        // Type #29 (GetMarketSummaryRequest)
+        // Type #30 (GetMarketSummaryRequest)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetMarketSummaryRequest")));
-        // Type #30 (GetHoldingsResponse)
+        // Type #31 (GetHoldingsResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetHoldingsResponse")));
-        // Type #31 (GetWalletResponse)
-        complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetWalletResponse")));
         // Type #32 (GetAccountDataResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetAccountDataResponse")));
         // Type #33 (GetHoldingsRequest)
@@ -196,8 +196,12 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "orderData"), complexTypes.get(40), 1);
          
-        // Type #5 (GetAccountProfileDataResponse)
+        // Type #5 (GetWalletDataResponse)
         currType = complexTypes.get(5);
+        currType.addComplexElement(new QName(NS2, "walletData"), complexTypes.get(38), 1);
+         
+        // Type #6 (GetAccountProfileDataResponse)
+        currType = complexTypes.get(6);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -205,17 +209,21 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "accountProfileData"), complexTypes.get(42), 1);
          
-        // Type #6 (BaseRequest)
-        currType = complexTypes.get(6);
+        // Type #7 (BaseRequest)
+        currType = complexTypes.get(7);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
          
-        // Type #7 (GetOrdersRequest)
-        currType = complexTypes.get(7);
+        // Type #8 (GetOrdersRequest)
+        currType = complexTypes.get(8);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #8 (UpdateAccountProfileResponse)
-        currType = complexTypes.get(8);
+        // Type #9 (GetWalletDataRequest)
+        currType = complexTypes.get(9);
+        currType.addSimpleElement(new QName(NS2, "userID"), 1);
+         
+        // Type #10 (UpdateAccountProfileResponse)
+        currType = complexTypes.get(10);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -223,15 +231,15 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "accountProfileData"), complexTypes.get(42), 1);
          
-        // Type #9 (SellEnhancedRequest)
-        currType = complexTypes.get(9);
+        // Type #11 (SellEnhancedRequest)
+        currType = complexTypes.get(11);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "holdingID"), 1);
         currType.addSimpleElement(new QName(NS2, "quantity"), 1);
          
-        // Type #10 (GetQuoteResponse)
-        currType = complexTypes.get(10);
+        // Type #12 (GetQuoteResponse)
+        currType = complexTypes.get(12);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -239,19 +247,19 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "quoteData"), complexTypes.get(39), 1);
          
-        // Type #11 (GetHoldingRequest)
-        currType = complexTypes.get(11);
+        // Type #13 (GetHoldingRequest)
+        currType = complexTypes.get(13);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "holdingID"), 1);
          
-        // Type #12 (GetAccountDataRequest)
-        currType = complexTypes.get(12);
+        // Type #14 (GetAccountDataRequest)
+        currType = complexTypes.get(14);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #13 (GetOrdersResponse)
-        currType = complexTypes.get(13);
+        // Type #15 (GetOrdersResponse)
+        currType = complexTypes.get(15);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -259,18 +267,18 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "orderData"), complexTypes.get(40), -1);
          
-        // Type #14 (GetAccountProfileDataRequest)
-        currType = complexTypes.get(14);
+        // Type #16 (GetAccountProfileDataRequest)
+        currType = complexTypes.get(16);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #15 (GetQuoteRequest)
-        currType = complexTypes.get(15);
+        // Type #17 (GetQuoteRequest)
+        currType = complexTypes.get(17);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "symbol"), 1);
          
-        // Type #16 (registerRequest)
-        currType = complexTypes.get(16);
+        // Type #18 (registerRequest)
+        currType = complexTypes.get(18);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "password"), 1);
         currType.addSimpleElement(new QName(NS2, "fullname"), 1);
@@ -280,8 +288,8 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addSimpleElement(new QName(NS2, "openBalance"), 1);
         currType.addSimpleElement(new QName(NS2, "currencyType"), 1);
          
-        // Type #17 (GetClosedOrdersResponse)
-        currType = complexTypes.get(17);
+        // Type #19 (GetClosedOrdersResponse)
+        currType = complexTypes.get(19);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -289,30 +297,26 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "orderData"), complexTypes.get(40), -1);
          
-        // Type #18 (LogoutRequest)
-        currType = complexTypes.get(18);
+        // Type #20 (LogoutRequest)
+        currType = complexTypes.get(20);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #19 (LoginResponse)
-        currType = complexTypes.get(19);
+        // Type #21 (LoginResponse)
+        currType = complexTypes.get(21);
         currType.addComplexElement(new QName(NS2, "account"), complexTypes.get(36), 1);
          
-        // Type #20 (LoginRequest)
-        currType = complexTypes.get(20);
+        // Type #22 (LoginRequest)
+        currType = complexTypes.get(22);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "password"), 1);
          
-        // Type #21 (GetTopOrdersRequest)
-        currType = complexTypes.get(21);
+        // Type #23 (GetTopOrdersRequest)
+        currType = complexTypes.get(23);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #22 (GetWalletRequest)
-        currType = complexTypes.get(22);
-        currType.addSimpleElement(new QName(NS2, "userID"), 1);
-         
-        // Type #23 (GetHoldingResponse)
-        currType = complexTypes.get(23);
+        // Type #24 (GetHoldingResponse)
+        currType = complexTypes.get(24);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -320,23 +324,23 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "holdingData"), complexTypes.get(41), 1);
          
-        // Type #24 (SellRequest)
-        currType = complexTypes.get(24);
+        // Type #25 (SellRequest)
+        currType = complexTypes.get(25);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "holdingID"), 1);
         currType.addSimpleElement(new QName(NS2, "orderProcessingMode"), 1);
          
-        // Type #25 (BuyRequest)
-        currType = complexTypes.get(25);
+        // Type #26 (BuyRequest)
+        currType = complexTypes.get(26);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
         currType.addSimpleElement(new QName(NS2, "symbol"), 1);
         currType.addSimpleElement(new QName(NS2, "quantity"), 1);
         currType.addSimpleElement(new QName(NS2, "orderProcessingMode"), 1);
          
-        // Type #26 (SellEnhancedResponse)
-        currType = complexTypes.get(26);
+        // Type #27 (SellEnhancedResponse)
+        currType = complexTypes.get(27);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
@@ -344,32 +348,28 @@ public class BusinessServiceV1TypeDefsBuilder
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "orderData"), complexTypes.get(40), 1);
          
-        // Type #27 (UpdateAccountProfileRequest)
-        currType = complexTypes.get(27);
+        // Type #28 (UpdateAccountProfileRequest)
+        currType = complexTypes.get(28);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "accountProfileData"), complexTypes.get(42), 1);
          
-        // Type #28 (GetClosedOrdersRequest)
-        currType = complexTypes.get(28);
+        // Type #29 (GetClosedOrdersRequest)
+        currType = complexTypes.get(29);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
-        // Type #29 (GetMarketSummaryRequest)
-        currType = complexTypes.get(29);
+        // Type #30 (GetMarketSummaryRequest)
+        currType = complexTypes.get(30);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
          
-        // Type #30 (GetHoldingsResponse)
-        currType = complexTypes.get(30);
+        // Type #31 (GetHoldingsResponse)
+        currType = complexTypes.get(31);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
         currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(47), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
         currType.addSimpleElement(new QName(NS1, "timestamp"), 1);
         currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(45), -1);
         currType.addComplexElement(new QName(NS2, "holdingData"), complexTypes.get(41), -1);
-         
-        // Type #31 (GetWalletResponse)
-        currType = complexTypes.get(31);
-        currType.addComplexElement(new QName(NS2, "wallet"), complexTypes.get(38), 1);
          
         // Type #32 (GetAccountDataResponse)
         currType = complexTypes.get(32);
@@ -519,23 +519,23 @@ public class BusinessServiceV1TypeDefsBuilder
          
         // Type #48 (<Anonymous>)
         currType = complexTypes.get(48);
-        currType.addSimpleElement(new QName(NS2, "userID"), 1);
+        currType.addComplexElement(new QName(NS2, "newWalletData"), complexTypes.get(38), 1);
          
         // Type #49 (<Anonymous>)
         currType = complexTypes.get(49);
-        currType.addSimpleElement(new QName(NS2, "in"), 1);
+        currType.addComplexElement(new QName(NS2, "walletData"), complexTypes.get(38), 1);
          
         // Type #50 (<Anonymous>)
         currType = complexTypes.get(50);
-        currType.addSimpleElement(new QName(NS2, "out"), 1);
+        currType.addSimpleElement(new QName(NS2, "userID"), 1);
          
         // Type #51 (<Anonymous>)
         currType = complexTypes.get(51);
-        currType.addComplexElement(new QName(NS2, "walletData"), complexTypes.get(38), 1);
+        currType.addSimpleElement(new QName(NS2, "in"), 1);
          
         // Type #52 (<Anonymous>)
         currType = complexTypes.get(52);
-        currType.addSimpleElement(new QName(NS2, "in"), 1);
+        currType.addSimpleElement(new QName(NS2, "out"), 1);
          
         // Type #53 (<Anonymous>)
         currType = complexTypes.get(53);
@@ -547,7 +547,7 @@ public class BusinessServiceV1TypeDefsBuilder
          
         // Type #55 (<Anonymous>)
         currType = complexTypes.get(55);
-        currType.addComplexElement(new QName(NS2, "newWalletData"), complexTypes.get(38), 1);
+        currType.addSimpleElement(new QName(NS2, "in"), 1);
          
         // Type #56 (<Anonymous>)
         currType = complexTypes.get(56);
@@ -555,49 +555,49 @@ public class BusinessServiceV1TypeDefsBuilder
     }
 
     private void addRootElements0(ArrayList<FlatSchemaComplexTypeImpl> complexTypes, HashMap<QName, FlatSchemaElementDeclImpl> rootElements) {
-        rootElements.put(new QName(NS2, "registerResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "registerResponse"), complexTypes.get(50)));
+        rootElements.put(new QName(NS2, "registerResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "registerResponse"), complexTypes.get(52)));
         rootElements.put(new QName(NS2, "getTopOrdersResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getTopOrdersResponse"), complexTypes.get(1)));
         rootElements.put(new QName(NS2, "logoutResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logoutResponse"), complexTypes.get(2)));
-        rootElements.put(new QName(NS2, "getAccountProfileDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountProfileDataRequest"), complexTypes.get(14)));
-        rootElements.put(new QName(NS2, "registerRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "registerRequest"), complexTypes.get(16)));
-        rootElements.put(new QName(NS2, "login"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "login"), complexTypes.get(49)));
-        rootElements.put(new QName(NS2, "sellEnhancedResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellEnhancedResponse"), complexTypes.get(26)));
-        rootElements.put(new QName(NS2, "updateAccountProfileRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateAccountProfileRequest"), complexTypes.get(27)));
-        rootElements.put(new QName(NS2, "getWallet"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWallet"), complexTypes.get(48)));
-        rootElements.put(new QName(NS2, "getOrdersResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOrdersResponse"), complexTypes.get(13)));
-        rootElements.put(new QName(NS2, "getHoldingResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingResponse"), complexTypes.get(23)));
-        rootElements.put(new QName(NS2, "buyRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "buyRequest"), complexTypes.get(25)));
-        rootElements.put(new QName(NS2, "loginRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "loginRequest"), complexTypes.get(20)));
-        rootElements.put(new QName(NS2, "sellEnhancedRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellEnhancedRequest"), complexTypes.get(9)));
+        rootElements.put(new QName(NS2, "getAccountProfileDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountProfileDataRequest"), complexTypes.get(16)));
+        rootElements.put(new QName(NS2, "getWalletDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletDataRequest"), complexTypes.get(9)));
+        rootElements.put(new QName(NS2, "registerRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "registerRequest"), complexTypes.get(18)));
+        rootElements.put(new QName(NS2, "login"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "login"), complexTypes.get(51)));
+        rootElements.put(new QName(NS2, "sellEnhancedResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellEnhancedResponse"), complexTypes.get(27)));
+        rootElements.put(new QName(NS2, "updateAccountProfileRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateAccountProfileRequest"), complexTypes.get(28)));
+        rootElements.put(new QName(NS2, "getWallet"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWallet"), complexTypes.get(50)));
+        rootElements.put(new QName(NS2, "getOrdersResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOrdersResponse"), complexTypes.get(15)));
+        rootElements.put(new QName(NS2, "loginRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "loginRequest"), complexTypes.get(22)));
+        rootElements.put(new QName(NS2, "buyRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "buyRequest"), complexTypes.get(26)));
+        rootElements.put(new QName(NS2, "getHoldingResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingResponse"), complexTypes.get(24)));
+        rootElements.put(new QName(NS2, "sellEnhancedRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellEnhancedRequest"), complexTypes.get(11)));
         rootElements.put(new QName(NS2, "getHoldingsRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingsRequest"), complexTypes.get(33)));
-        rootElements.put(new QName(NS2, "getHoldingRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingRequest"), complexTypes.get(11)));
+        rootElements.put(new QName(NS2, "getHoldingRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingRequest"), complexTypes.get(13)));
         rootElements.put(new QName(NS2, "sellResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellResponse"), complexTypes.get(3)));
-        rootElements.put(new QName(NS2, "getAccountProfileDataResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountProfileDataResponse"), complexTypes.get(5)));
-        rootElements.put(new QName(NS2, "getClosedOrdersResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClosedOrdersResponse"), complexTypes.get(17)));
-        rootElements.put(new QName(NS2, "getTopOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getTopOrdersRequest"), complexTypes.get(21)));
+        rootElements.put(new QName(NS2, "getAccountProfileDataResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountProfileDataResponse"), complexTypes.get(6)));
+        rootElements.put(new QName(NS2, "updateWalletDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWalletDataRequest"), complexTypes.get(49)));
+        rootElements.put(new QName(NS2, "getClosedOrdersResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClosedOrdersResponse"), complexTypes.get(19)));
+        rootElements.put(new QName(NS2, "updateWalletDataResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWalletDataResponse"), complexTypes.get(48)));
+        rootElements.put(new QName(NS2, "getTopOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getTopOrdersRequest"), complexTypes.get(23)));
+        rootElements.put(new QName(NS2, "getWalletDataResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletDataResponse"), complexTypes.get(5)));
         rootElements.put(new QName(NS2, "getAccountDataResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountDataResponse"), complexTypes.get(32)));
         rootElements.put(new QName(NS2, "getAllQuotesRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotesRequest"), complexTypes.get(34)));
-        rootElements.put(new QName(NS2, "getQuoteRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteRequest"), complexTypes.get(15)));
+        rootElements.put(new QName(NS2, "getQuoteRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteRequest"), complexTypes.get(17)));
         rootElements.put(new QName(NS2, "getMarketSummaryResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getMarketSummaryResponse"), complexTypes.get(35)));
         rootElements.put(new QName(NS2, "getAllQuotesResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotesResponse"), complexTypes.get(56)));
-        rootElements.put(new QName(NS2, "getHoldingsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingsResponse"), complexTypes.get(30)));
-        rootElements.put(new QName(NS2, "updateWalletResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWalletResponse"), complexTypes.get(55)));
-        rootElements.put(new QName(NS2, "register"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "register"), complexTypes.get(53)));
-        rootElements.put(new QName(NS2, "updateAccountProfileResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateAccountProfileResponse"), complexTypes.get(8)));
+        rootElements.put(new QName(NS2, "getHoldingsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getHoldingsResponse"), complexTypes.get(31)));
+        rootElements.put(new QName(NS2, "register"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "register"), complexTypes.get(54)));
+        rootElements.put(new QName(NS2, "updateAccountProfileResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateAccountProfileResponse"), complexTypes.get(10)));
         rootElements.put(new QName(NS2, "buyResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "buyResponse"), complexTypes.get(4)));
-        rootElements.put(new QName(NS2, "logout"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logout"), complexTypes.get(54)));
-        rootElements.put(new QName(NS2, "getWalletResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletResponse"), complexTypes.get(31)));
-        rootElements.put(new QName(NS2, "sellRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellRequest"), complexTypes.get(24)));
-        rootElements.put(new QName(NS2, "logoutRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logoutRequest"), complexTypes.get(18)));
-        rootElements.put(new QName(NS2, "getAllQuotes"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotes"), complexTypes.get(52)));
-        rootElements.put(new QName(NS2, "getQuoteResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteResponse"), complexTypes.get(10)));
-        rootElements.put(new QName(NS2, "getWalletRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getWalletRequest"), complexTypes.get(22)));
-        rootElements.put(new QName(NS2, "getMarketSummaryRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getMarketSummaryRequest"), complexTypes.get(29)));
-        rootElements.put(new QName(NS2, "loginResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "loginResponse"), complexTypes.get(19)));
-        rootElements.put(new QName(NS2, "getClosedOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClosedOrdersRequest"), complexTypes.get(28)));
-        rootElements.put(new QName(NS2, "getOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOrdersRequest"), complexTypes.get(7)));
-        rootElements.put(new QName(NS2, "getAccountDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountDataRequest"), complexTypes.get(12)));
-        rootElements.put(new QName(NS2, "updateWallet"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "updateWallet"), complexTypes.get(51)));
+        rootElements.put(new QName(NS2, "logout"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logout"), complexTypes.get(55)));
+        rootElements.put(new QName(NS2, "sellRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "sellRequest"), complexTypes.get(25)));
+        rootElements.put(new QName(NS2, "logoutRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "logoutRequest"), complexTypes.get(20)));
+        rootElements.put(new QName(NS2, "getAllQuotes"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAllQuotes"), complexTypes.get(53)));
+        rootElements.put(new QName(NS2, "getQuoteResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getQuoteResponse"), complexTypes.get(12)));
+        rootElements.put(new QName(NS2, "getMarketSummaryRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getMarketSummaryRequest"), complexTypes.get(30)));
+        rootElements.put(new QName(NS2, "loginResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "loginResponse"), complexTypes.get(21)));
+        rootElements.put(new QName(NS2, "getClosedOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClosedOrdersRequest"), complexTypes.get(29)));
+        rootElements.put(new QName(NS2, "getOrdersRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOrdersRequest"), complexTypes.get(8)));
+        rootElements.put(new QName(NS2, "getAccountDataRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getAccountDataRequest"), complexTypes.get(14)));
     }
 
 }

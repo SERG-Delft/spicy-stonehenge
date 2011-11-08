@@ -324,7 +324,7 @@
 							<xs:element maxOccurs="1" minOccurs="1"
 								name="aimCurrency" type="xs:string" />
 							<xs:element maxOccurs="1" minOccurs="1"
-								name="exchAmount" type="xs:int" />
+								name="exchAmount" type="xs:double" />
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
@@ -341,11 +341,104 @@
 					<xs:extension base="tns:BaseResponse">
 						<xs:sequence>
 							<xs:element maxOccurs="1" minOccurs="1"
-								name="exchResult" type="xs:string" />
+								name="exchResult" type="xs:double" />
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
+			<xs:element name="updateWalletDataRequest">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element name="userID" type="xs:string"
+							maxOccurs="1" minOccurs="1">
+						</xs:element>
+						<xs:element name="fromCurrency" type="xs:string"
+							maxOccurs="1" minOccurs="1">
+						</xs:element>
+						<xs:element name="toCurrency"
+							type="xs:string" maxOccurs="1" minOccurs="1">
+						</xs:element>
+						<xs:element name="fromAmount"
+							type="xs:double" maxOccurs="1" minOccurs="1">
+						</xs:element>
+						<xs:element name="toAmount"
+							type="xs:double" maxOccurs="1" minOccurs="1">
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="updateWalletDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element name="walletData" type="tns:WalletData" maxOccurs="1" minOccurs="1"></xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		<xs:complexType name="WalletData">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		<xs:appinfo><typeLibrarySource library="TradeTypeLibrary" namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"></typeLibrarySource></xs:appinfo></xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="eur" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="usd" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="gbp" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="cny" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="inr" type="xs:double"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		<xs:complexType name="checkCurrencyRequest">
+			<xs:sequence>
+				<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="inputCurrency" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="checkCurrencyReponse">
+			<xs:sequence>
+				<xs:element name="currencyExist" type="xs:boolean" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="checkAmountRequest">
+			<xs:sequence>
+				<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="currencyType" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+				<xs:element name="checkAmount" type="xs:double" maxOccurs="1" minOccurs="1"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:element name="checkCurrency">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element name="userID" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+					<xs:element name="inputCurrency" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="checkCurrencyResponse">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element name="currencyExist" type="xs:boolean" maxOccurs="1" minOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="checkAmountResponse">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element name="amountEnough" type="xs:boolean" maxOccurs="1" minOccurs="1"></xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="checkAmountRequest"
+			type="tns:checkAmountRequest">
+		</xs:element>
+		<xs:element name="checkCurrencyRequest"
+			type="tns:checkCurrencyRequest">
+		</xs:element>
 		</xs:schema>
 	</wsdl:types>
 	<wsdl:message name="exchangeCurrencyRequest">
@@ -354,6 +447,24 @@
 	<wsdl:message name="exchangeCurrencyResponse">
 		<wsdl:part element="tns:exchangeCurrencyResponse" name="params" />
 	</wsdl:message>
+	<wsdl:message name="checkCurrencyRequest">
+		<wsdl:part name="parameters" element="tns:checkCurrencyRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="checkCurrencyResponse">
+		<wsdl:part name="parameters" element="tns:checkCurrencyResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="checkAmountRequest">
+		<wsdl:part element="tns:checkAmountRequest" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="checkAmountResponse">
+		<wsdl:part name="parameters" element="tns:checkAmountResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataRequest">
+		<wsdl:part name="parameters" element="tns:updateWalletDataRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataResponse">
+		<wsdl:part name="parameters" element="tns:updateWalletDataResponse"></wsdl:part>
+	</wsdl:message>
 	<wsdl:portType name="ExchangeServicePort">
 		<wsdl:operation name="exchangeCurrency">
 			<wsdl:documentation>
@@ -361,32 +472,148 @@
 			</wsdl:documentation>
 			<wsdl:input message="tns:exchangeCurrencyRequest" />
 			<wsdl:output message="tns:exchangeCurrencyResponse" />
+		</wsdl:operation>						<wsdl:operation name="updateWalletData">
+			<wsdl:input message="tns:updateWalletDataRequest"></wsdl:input>
+			<wsdl:output message="tns:updateWalletDataResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+			<wsdl:input message="tns:checkCurrencyRequest"></wsdl:input>
+			<wsdl:output message="tns:checkCurrencyResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+			<wsdl:input message="tns:checkAmountRequest"></wsdl:input>
+			<wsdl:output message="tns:checkAmountResponse"></wsdl:output>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ExchangeServiceHttpBinding"
 		type="tns:ExchangeServicePort">
+
 		<http:binding verb="POST" />
 		<wsdl:operation name="exchangeCurrency">
+
 			<http:operation location="/exchangeCurrency" />
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml" />
+
+
+
+
+
+
+
+			</wsdl:output>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="updateWalletData">
+
+			<http:operation location="/updateWalletData" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+
+
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+
+
+
+
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+
+			<http:operation location="/checkCurrency" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+
+			<http:operation location="/checkAmount" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" />
+
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="ExchangeServiceSOAPBinding"
 		type="tns:ExchangeServicePort">
+
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="exchangeCurrency">
+
 			<soap:operation
 				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/exchangeCurrency" />
 			<wsdl:input>
+
 				<soap:body use="literal" />
 			</wsdl:input>
 			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="updateWalletData">
+
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/updateWalletData" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/checkCurrency" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+
+			<soap:operation
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/checkAmount" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
 				<soap:body use="literal" />
 			</wsdl:output>
 		</wsdl:operation>

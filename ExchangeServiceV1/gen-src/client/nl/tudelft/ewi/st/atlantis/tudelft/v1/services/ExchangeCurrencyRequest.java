@@ -24,7 +24,7 @@ import org.ebayopensource.turmeric.common.v1.types.BaseRequest;
  *       &lt;sequence>
  *         &lt;element name="baseCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="aimCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="exchAmount" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="exchAmount" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -47,7 +47,7 @@ public class ExchangeCurrencyRequest
     protected String baseCurrency;
     @XmlElement(required = true)
     protected String aimCurrency;
-    protected int exchAmount;
+    protected double exchAmount;
 
     /**
      * Gets the value of the baseCurrency property.
@@ -101,7 +101,7 @@ public class ExchangeCurrencyRequest
      * Gets the value of the exchAmount property.
      * 
      */
-    public int getExchAmount() {
+    public double getExchAmount() {
         return exchAmount;
     }
 
@@ -109,7 +109,7 @@ public class ExchangeCurrencyRequest
      * Sets the value of the exchAmount property.
      * 
      */
-    public void setExchAmount(int value) {
+    public void setExchAmount(double value) {
         this.exchAmount = value;
     }
 

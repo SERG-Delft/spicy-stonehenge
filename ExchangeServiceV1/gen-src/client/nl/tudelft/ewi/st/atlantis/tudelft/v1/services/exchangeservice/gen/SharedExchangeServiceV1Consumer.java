@@ -7,8 +7,14 @@ import java.util.List;
 import java.util.concurrent.Future;
 import javax.xml.ws.AsyncHandler;
 import javax.xml.ws.Response;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.AsyncExchangeServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceRuntimeException;
@@ -151,6 +157,28 @@ public class SharedExchangeServiceV1Consumer
         return result;
     }
 
+    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0) {
+        Response<UpdateWalletDataResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.updateWalletDataAsync(param0);
+        return result;
+    }
+
+    public Future<?> updateWalletDataAsync(UpdateWalletDataRequest param0, AsyncHandler<UpdateWalletDataResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.updateWalletDataAsync(param0, param1);
+        return result;
+    }
+
     public Future<?> exchangeCurrencyAsync(ExchangeCurrencyRequest param0, AsyncHandler<ExchangeCurrencyResponse> param1) {
         Future<?> result = null;
         try {
@@ -173,6 +201,61 @@ public class SharedExchangeServiceV1Consumer
         return result;
     }
 
+    public Future<?> checkCurrencyAsync(CheckCurrencyRequest param0, AsyncHandler<CheckCurrencyResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkCurrencyAsync(param0, param1);
+        return result;
+    }
+
+    public Response<CheckCurrencyResponse> checkCurrencyAsync(CheckCurrencyRequest param0) {
+        Response<CheckCurrencyResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkCurrencyAsync(param0);
+        return result;
+    }
+
+    public Response<CheckAmountResponse> checkAmountAsync(CheckAmountRequest param0) {
+        Response<CheckAmountResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkAmountAsync(param0);
+        return result;
+    }
+
+    public Future<?> checkAmountAsync(CheckAmountRequest param0, AsyncHandler<CheckAmountResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkAmountAsync(param0, param1);
+        return result;
+    }
+
+    public UpdateWalletDataResponse updateWalletData(UpdateWalletDataRequest param0) {
+        UpdateWalletDataResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.updateWalletData(param0);
+        return result;
+    }
+
     public ExchangeCurrencyResponse exchangeCurrency(ExchangeCurrencyRequest param0) {
         ExchangeCurrencyResponse result = null;
         try {
@@ -181,6 +264,28 @@ public class SharedExchangeServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.exchangeCurrency(param0);
+        return result;
+    }
+
+    public CheckCurrencyResponse checkCurrency(CheckCurrencyRequest param0) {
+        CheckCurrencyResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkCurrency(param0);
+        return result;
+    }
+
+    public CheckAmountResponse checkAmount(CheckAmountRequest param0) {
+        CheckAmountResponse result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkAmount(param0);
         return result;
     }
 

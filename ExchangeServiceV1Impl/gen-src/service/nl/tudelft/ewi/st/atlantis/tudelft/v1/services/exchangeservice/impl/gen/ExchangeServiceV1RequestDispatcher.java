@@ -1,8 +1,14 @@
 
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.impl.gen;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.ExchangeServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
@@ -21,7 +27,10 @@ public class ExchangeServiceV1RequestDispatcher
 
     public ExchangeServiceV1RequestDispatcher() {
         super(ExchangeServiceV1 .class);
+        addSupportedOperation("updateWalletData", new Class[] {UpdateWalletDataRequest.class }, new Class[] {UpdateWalletDataResponse.class });
         addSupportedOperation("exchangeCurrency", new Class[] {ExchangeCurrencyRequest.class }, new Class[] {ExchangeCurrencyResponse.class });
+        addSupportedOperation("checkCurrency", new Class[] {CheckCurrencyRequest.class }, new Class[] {CheckCurrencyResponse.class });
+        addSupportedOperation("checkAmount", new Class[] {CheckAmountRequest.class }, new Class[] {CheckAmountResponse.class });
     }
 
     public boolean dispatch(MessageContext param0, ExchangeServiceV1 param1)
@@ -32,11 +41,47 @@ public class ExchangeServiceV1RequestDispatcher
         String operationName = msgCtx.getOperationName();
         Message requestMsg = msgCtx.getRequestMessage();
          
+        if ("updateWalletData".equals(operationName)) {
+            UpdateWalletDataRequest param2 = ((UpdateWalletDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                UpdateWalletDataResponse result = service.updateWalletData(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
         if ("exchangeCurrency".equals(operationName)) {
             ExchangeCurrencyRequest param2 = ((ExchangeCurrencyRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 ExchangeCurrencyResponse result = service.exchangeCurrency(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("checkCurrency".equals(operationName)) {
+            CheckCurrencyRequest param2 = ((CheckCurrencyRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                CheckCurrencyResponse result = service.checkCurrency(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("checkAmount".equals(operationName)) {
+            CheckAmountRequest param2 = ((CheckAmountRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                CheckAmountResponse result = service.checkAmount(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

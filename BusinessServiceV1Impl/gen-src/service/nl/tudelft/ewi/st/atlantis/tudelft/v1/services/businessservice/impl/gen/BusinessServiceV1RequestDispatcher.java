@@ -23,8 +23,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletRequest;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
@@ -37,8 +37,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
@@ -64,9 +64,8 @@ public class BusinessServiceV1RequestDispatcher
         addSupportedOperation("getMarketSummary", new Class[] {GetMarketSummaryRequest.class }, new Class[] {GetMarketSummaryResponse.class });
         addSupportedOperation("buy", new Class[] {BuyRequest.class }, new Class[] {BuyResponse.class });
         addSupportedOperation("getAccountData", new Class[] {GetAccountDataRequest.class }, new Class[] {GetAccountDataResponse.class });
-        addSupportedOperation("updateWallet", new Class[] {UpdateWallet.class }, new Class[] {UpdateWalletResponse.class });
         addSupportedOperation("getHolding", new Class[] {GetHoldingRequest.class }, new Class[] {GetHoldingResponse.class });
-        addSupportedOperation("getWallet", new Class[] {GetWalletRequest.class }, new Class[] {GetWalletResponse.class });
+        addSupportedOperation("updateWalletData", new Class[] {UpdateWalletDataRequest.class }, new Class[] {UpdateWalletDataResponse.class });
         addSupportedOperation("sellEnhanced", new Class[] {SellEnhancedRequest.class }, new Class[] {SellEnhancedResponse.class });
         addSupportedOperation("updateAccountProfile", new Class[] {UpdateAccountProfileRequest.class }, new Class[] {UpdateAccountProfileResponse.class });
         addSupportedOperation("getTopOrders", new Class[] {GetTopOrdersRequest.class }, new Class[] {GetTopOrdersResponse.class });
@@ -75,6 +74,7 @@ public class BusinessServiceV1RequestDispatcher
         addSupportedOperation("sell", new Class[] {SellRequest.class }, new Class[] {SellResponse.class });
         addSupportedOperation("getOrders", new Class[] {GetOrdersRequest.class }, new Class[] {GetOrdersResponse.class });
         addSupportedOperation("getHoldings", new Class[] {GetHoldingsRequest.class }, new Class[] {GetHoldingsResponse.class });
+        addSupportedOperation("getWalletData", new Class[] {GetWalletDataRequest.class }, new Class[] {GetWalletDataResponse.class });
         addSupportedOperation("getClosedOrders", new Class[] {GetClosedOrdersRequest.class }, new Class[] {GetClosedOrdersResponse.class });
     }
 
@@ -170,18 +170,6 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("updateWallet".equals(operationName)) {
-            UpdateWallet param2 = ((UpdateWallet) requestMsg.getParam(0));
-            try {
-                Message responseMsg = msgCtx.getResponseMessage();
-                UpdateWalletResponse result = service.updateWallet(param2);
-                responseMsg.setParam(0, result);
-            } catch (Throwable th) {
-                handleServiceException(msgCtx, th);
-            }
-            return true;
-        }
-        else 
         if ("getHolding".equals(operationName)) {
             GetHoldingRequest param2 = ((GetHoldingRequest) requestMsg.getParam(0));
             try {
@@ -194,11 +182,11 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("getWallet".equals(operationName)) {
-            GetWalletRequest param2 = ((GetWalletRequest) requestMsg.getParam(0));
+        if ("updateWalletData".equals(operationName)) {
+            UpdateWalletDataRequest param2 = ((UpdateWalletDataRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                GetWalletResponse result = service.getWallet(param2);
+                UpdateWalletDataResponse result = service.updateWalletData(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
@@ -295,6 +283,18 @@ public class BusinessServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetHoldingsResponse result = service.getHoldings(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getWalletData".equals(operationName)) {
+            GetWalletDataRequest param2 = ((GetWalletDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetWalletDataResponse result = service.getWalletData(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

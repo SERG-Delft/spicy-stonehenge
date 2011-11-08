@@ -8,16 +8,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for GetWalletRequest complex type.
+ * <p>Java class for checkCurrencyRequest complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="GetWalletRequest">
+ * &lt;complexType name="checkCurrencyRequest">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="inputCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,13 +28,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GetWalletRequest", propOrder = {
-    "userID"
+@XmlType(name = "checkCurrencyRequest", propOrder = {
+    "userID",
+    "inputCurrency"
 })
-public class GetWalletRequest {
+public class CheckCurrencyRequest {
 
     @XmlElement(required = true)
     protected String userID;
+    @XmlElement(required = true)
+    protected String inputCurrency;
 
     /**
      * Gets the value of the userID property.
@@ -57,6 +61,30 @@ public class GetWalletRequest {
      */
     public void setUserID(String value) {
         this.userID = value;
+    }
+
+    /**
+     * Gets the value of the inputCurrency property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInputCurrency() {
+        return inputCurrency;
+    }
+
+    /**
+     * Sets the value of the inputCurrency property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInputCurrency(String value) {
+        this.inputCurrency = value;
     }
 
 }

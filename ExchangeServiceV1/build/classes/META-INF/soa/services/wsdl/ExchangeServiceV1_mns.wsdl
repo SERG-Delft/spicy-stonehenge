@@ -8,10 +8,11 @@
 	http://www.apache.org/licenses/LICENSE-2.0
 	
 -->
-<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" xmlns:types="http://www.ebayopensource.org/turmeric/common/v1/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ExchangeService" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" xmlns:types="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" xmlns:types1="http://www.ebayopensource.org/turmeric/common/v1/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ExchangeService" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 	<wsdl:types>
 		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 <xs:import namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+<xs:import namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"/>
 			
 			
 			
@@ -30,11 +31,12 @@
 					</xs:documentation>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:BaseRequest">
+					<xs:extension base="types1:BaseRequest">
 						<xs:sequence>
 							<xs:element maxOccurs="1" minOccurs="1" name="baseCurrency" type="xs:string"/>
 							<xs:element maxOccurs="1" minOccurs="1" name="aimCurrency" type="xs:string"/>
-							<xs:element maxOccurs="1" minOccurs="1" name="exchAmount" type="xs:int"/>
+							<xs:element maxOccurs="1" minOccurs="1" name="exchAmount" type="xs:double"/>
+
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
@@ -47,15 +49,109 @@
 					</xs:documentation>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:BaseResponse">
+					<xs:extension base="types1:BaseResponse">
 						<xs:sequence>
-							<xs:element maxOccurs="1" minOccurs="1" name="exchResult" type="xs:string"/>
+							<xs:element maxOccurs="1" minOccurs="1" name="exchResult" type="xs:double"/>
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
+			<xs:element name="updateWalletDataRequest">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string">
+						</xs:element>
+						<xs:element maxOccurs="1" minOccurs="1" name="fromCurrency" type="xs:string">
+						</xs:element>
+						<xs:element maxOccurs="1" minOccurs="1" name="toCurrency" type="xs:string">
+						</xs:element>
+						<xs:element maxOccurs="1" minOccurs="1" name="fromAmount" type="xs:double">
+						</xs:element>
+						<xs:element maxOccurs="1" minOccurs="1" name="toAmount" type="xs:double">
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="updateWalletDataResponse">
+				<xs:complexType>
+					<xs:sequence>
+
+						<xs:element maxOccurs="1" minOccurs="1" name="walletData" type="types:WalletData"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		
+		<xs:complexType name="checkCurrencyRequest">
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="inputCurrency" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="checkCurrencyReponse">
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="1" name="currencyExist" type="xs:boolean"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:complexType name="checkAmountRequest">
+			<xs:sequence>
+				<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="currencyType" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="checkAmount" type="xs:double"/>
+			</xs:sequence>
+		</xs:complexType>
+
+
+		<xs:element name="checkCurrency">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="inputCurrency" type="xs:string"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="checkCurrencyResponse">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element maxOccurs="1" minOccurs="1" name="currencyExist" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="checkAmountResponse">
+			<xs:complexType>
+				<xs:sequence>
+
+					<xs:element maxOccurs="1" minOccurs="1" name="amountEnough" type="xs:boolean"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="checkAmountRequest" type="tns:checkAmountRequest">
+		</xs:element>
+		<xs:element name="checkCurrencyRequest" type="tns:checkCurrencyRequest">
+		</xs:element>
 		</xs:schema>
-	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ebayopensource.org/turmeric/common/v1/types">
+	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
+<xs:complexType name="WalletData">
+		<xs:annotation>
+			<xs:documentation/>
+		<xs:appinfo>
+<typeLibrarySource library="TradeTypeLibrary" namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"/>
+</xs:appinfo>
+</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="eur" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="usd" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="gbp" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="cny" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="inr" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ebayopensource.org/turmeric/common/v1/types">
 <xs:simpleType name="AckValue">
 				<xs:annotation>
 					<xs:documentation>
@@ -120,7 +216,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types1:ExtensionType"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType abstract="true" name="BaseResponse">
@@ -135,7 +231,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:sequence>
-					<xs:element name="ack" type="types:AckValue">
+					<xs:element name="ack" type="types1:AckValue">
 						<xs:annotation>
 							<xs:documentation/>
 							<xs:appinfo>
@@ -146,7 +242,7 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="errorMessage" type="types:ErrorMessage">
+					<xs:element minOccurs="0" name="errorMessage" type="types1:ErrorMessage">
 						<xs:annotation>
 							<xs:documentation>
 								Information for an error or warning that
@@ -183,7 +279,7 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types1:ExtensionType"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="CommonErrorData">
@@ -196,7 +292,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:ErrorData">
+					<xs:extension base="types1:ErrorData">
 						<xs:sequence>
 							<xs:element name="errorName" type="xs:string"/>
 							<xs:element minOccurs="0" name="cause" type="xs:string"/>
@@ -243,11 +339,11 @@
 					<xs:element name="errorId" type="xs:long"/>
 					<xs:element name="domain" type="xs:string"/>
 					<xs:element minOccurs="0" name="subdomain" type="xs:string"/>
-					<xs:element name="severity" type="types:ErrorSeverity"/>
-					<xs:element name="category" type="types:ErrorCategory"/>
+					<xs:element name="severity" type="types1:ErrorSeverity"/>
+					<xs:element name="category" type="types1:ErrorCategory"/>
 					<xs:element name="message" type="xs:string"/>
 					<xs:element minOccurs="0" name="exceptionId" type="xs:token"/>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="types:ErrorParameter"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="types1:ErrorParameter"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="ErrorMessage">
@@ -266,7 +362,7 @@
 					</xs:sequence>
 				-->
 				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="types:CommonErrorData"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="types1:CommonErrorData"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="ErrorParameter">
@@ -323,6 +419,25 @@
 	<wsdl:message name="exchangeCurrencyResponse">
 		<wsdl:part element="tns:exchangeCurrencyResponse" name="params"/>
 	</wsdl:message>
+	<wsdl:message name="checkCurrencyRequest">
+		<wsdl:part element="tns:checkCurrencyRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="checkCurrencyResponse">
+		<wsdl:part element="tns:checkCurrencyResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="checkAmountRequest">
+		<wsdl:part element="tns:checkAmountRequest" name="parameters"/>
+
+	</wsdl:message>
+	<wsdl:message name="checkAmountResponse">
+		<wsdl:part element="tns:checkAmountResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataRequest">
+		<wsdl:part element="tns:updateWalletDataRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataResponse">
+		<wsdl:part element="tns:updateWalletDataResponse" name="parameters"/>
+	</wsdl:message>
 	<wsdl:portType name="ExchangeServicePort">
 		<wsdl:operation name="exchangeCurrency">
 			<wsdl:documentation>
@@ -331,27 +446,142 @@
 			<wsdl:input message="tns:exchangeCurrencyRequest"/>
 			<wsdl:output message="tns:exchangeCurrencyResponse"/>
 		</wsdl:operation>
+
+						<wsdl:operation name="updateWalletData">
+			<wsdl:input message="tns:updateWalletDataRequest"/>
+			<wsdl:output message="tns:updateWalletDataResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+			<wsdl:input message="tns:checkCurrencyRequest"/>
+			<wsdl:output message="tns:checkCurrencyResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+			<wsdl:input message="tns:checkAmountRequest"/>
+			<wsdl:output message="tns:checkAmountResponse"/>
+		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ExchangeServiceHttpBinding" type="tns:ExchangeServicePort">
+
 		<http:binding verb="POST"/>
 		<wsdl:operation name="exchangeCurrency">
+
 			<http:operation location="/exchangeCurrency"/>
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded"/>
+
+
+
+
+
+
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
+
+
+
+
+
+
+			</wsdl:output>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="updateWalletData">
+
+			<http:operation location="/updateWalletData"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+
+
+
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+
+
+
+
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+
+			<http:operation location="/checkCurrency"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+
+			<http:operation location="/checkAmount"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="ExchangeServiceSOAPBinding" type="tns:ExchangeServicePort">
+
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<wsdl:operation name="exchangeCurrency">
+
 			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/exchangeCurrency"/>
 			<wsdl:input>
+
 				<soap:body use="literal"/>
 			</wsdl:input>
 			<wsdl:output>
+
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+
+
+		<wsdl:operation name="updateWalletData">
+
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/updateWalletData"/>
+			<wsdl:input>
+
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkCurrency">
+
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/checkCurrency"/>
+			<wsdl:input>
+
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="checkAmount">
+
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/checkAmount"/>
+			<wsdl:input>
+
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+
 				<soap:body use="literal"/>
 			</wsdl:output>
 		</wsdl:operation>

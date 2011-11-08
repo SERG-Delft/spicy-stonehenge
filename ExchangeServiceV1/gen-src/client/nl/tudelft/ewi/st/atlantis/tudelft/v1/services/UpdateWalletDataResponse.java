@@ -32,8 +32,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData;
 @XmlType(name = "", propOrder = {
     "walletData"
 })
-@XmlRootElement(name = "updateWallet")
-public class UpdateWallet {
+@XmlRootElement(name = "updateWalletDataResponse")
+public class UpdateWalletDataResponse {
 
     @XmlElement(required = true)
     protected WalletData walletData;

@@ -4,22 +4,21 @@ package nl.tudelft.ewi.st.atlantis.tudelft.v1.services;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for GetWalletDataResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="GetWalletDataResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="newWalletData" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types}WalletData"/>
+ *         &lt;element name="walletData" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types}WalletData"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,37 +28,36 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "newWalletData"
+@XmlType(name = "GetWalletDataResponse", propOrder = {
+    "walletData"
 })
-@XmlRootElement(name = "updateWalletResponse")
-public class UpdateWalletResponse {
+public class GetWalletDataResponse {
 
     @XmlElement(required = true)
-    protected WalletData newWalletData;
+    protected WalletData walletData;
 
     /**
-     * Gets the value of the newWalletData property.
+     * Gets the value of the walletData property.
      * 
      * @return
      *     possible object is
      *     {@link WalletData }
      *     
      */
-    public WalletData getNewWalletData() {
-        return newWalletData;
+    public WalletData getWalletData() {
+        return walletData;
     }
 
     /**
-     * Sets the value of the newWalletData property.
+     * Sets the value of the walletData property.
      * 
      * @param value
      *     allowed object is
      *     {@link WalletData }
      *     
      */
-    public void setNewWalletData(WalletData value) {
-        this.newWalletData = value;
+    public void setWalletData(WalletData value) {
+        this.walletData = value;
     }
 
 }

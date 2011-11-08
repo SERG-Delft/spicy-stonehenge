@@ -2,6 +2,7 @@ package nl.tudelft.stocktrader;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 
 public class Wallet {
 	protected String userID;
@@ -30,11 +31,20 @@ public class Wallet {
     	setCny(cny);
     	setInr(inr);    	
     }
+    
+    public boolean checkCurrency(String inputCurrrency){
+    	return money.containsKey(inputCurrrency);
+    }
    
-    public void addMoney(String currencyType, BigDecimal value){
+    public void setMoney(String currencyType, BigDecimal value){
     	money.put(currencyType, value);
     }
     
+    public BigDecimal getMoney(String currencyType){
+    	return money.get(currencyType);
+    }
+    
+   
 	public String getUserID() {
 		return userID;
 	}

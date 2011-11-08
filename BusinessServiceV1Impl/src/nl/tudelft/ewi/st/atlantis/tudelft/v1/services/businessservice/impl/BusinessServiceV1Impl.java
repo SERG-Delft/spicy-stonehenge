@@ -29,8 +29,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletRequest;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
@@ -43,8 +43,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWallet;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
@@ -320,7 +320,7 @@ public class BusinessServiceV1Impl
 	}
 
 	@Override
-	public GetWalletResponse getWallet(GetWalletRequest getWalletRequest) {
+	public GetWalletDataResponse getWalletData(GetWalletDataRequest getWalletRequest) {
 		Wallet wallet = null;
     	try {
 			wallet = mgr.getWallet(getWalletRequest.getUserID());
@@ -328,25 +328,26 @@ public class BusinessServiceV1Impl
 			logger.debug("", e);
 		}
 		
-		GetWalletResponse response = new GetWalletResponse();
-		response.setWallet(TypeFactory.toWalletData(wallet));
+		GetWalletDataResponse response = new GetWalletDataResponse();
+		response.setWalletData(TypeFactory.toWalletData(wallet));
 		
 		return response;
 	}
 
-	@Override
-	public UpdateWalletResponse updateWallet(UpdateWallet updateWallet) {
 
+	@Override
+	public UpdateWalletDataResponse updateWalletData(
+			UpdateWalletDataRequest updateWalletDataRequest) {
 		Wallet wallet = null;
     	try {
 			wallet = mgr.updateWallet(
-					TypeFactory.toWallet(updateWallet.getWalletData()));
+					TypeFactory.toWallet(updateWalletDataRequest.getWalletData()));
 			
 		} catch (DAOException e) {
 			logger.debug("", e);
 		}
 		
-		UpdateWalletResponse response = new UpdateWalletResponse();
+		UpdateWalletDataResponse response = new UpdateWalletDataResponse();
 		response.setNewWalletData(TypeFactory.toWalletData(wallet));
 		
 		return response;

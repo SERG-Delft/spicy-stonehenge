@@ -147,22 +147,29 @@ function GetClassMap($constWS) {
 		"getAllQuotesResponse" => "getAllQuotesResponse",
 		"registerRequest" => "registerRequest",
 		"registerResponse" => "registerResponse",
-		"getWalletRequest" => "getWalletRequest",
-		"getWalletResponse" => "getWalletResponse",
+		"getWalletDataRequest" => "getWalletDataRequest",
+		"getWalletDataResponse" => "getWalletDataResponse",
 		"WalletData" => "WalletData",
-		"updateWallet" => "updateWallet",
-		"updateWalletResponse" => "updateWalletResponse");
+		"updateWalletDataRequest" => "updateWalletDataRequest",
+		"updateWalletDataResponse" => "updateWalletDataResponse");
 		
 		/*for exchange service*/
 	$aExchange = array(
-    "BaseRequest" => "BaseRequest",
-    "ExtensionType" => "ExtensionType",
-    "exchangeCurrencyRequest" => "exchangeCurrencyRequest",
-    "BaseResponse" => "BaseResponse",
-    "ErrorMessage" => "ErrorMessage",
-    "ErrorData" => "ErrorData",
-    "CommonErrorData" => "CommonErrorData",
-    "exchangeCurrencyResponse" => "exchangeCurrencyResponse");	
+		"BaseRequest" => "BaseRequest",
+		"ExtensionType" => "ExtensionType",
+		"exchangeCurrencyRequest" => "exchangeCurrencyRequest",
+		"BaseResponse" => "BaseResponse",
+		"ErrorMessage" => "ErrorMessage",
+		"ErrorData" => "ErrorData",
+		"CommonErrorData" => "CommonErrorData",
+		"exchangeCurrencyResponse" => "exchangeCurrencyResponse",
+		"updateWalletDataRequest" => "updateWalletDataRequest",
+		"updateWalletDataResponse" => "updateWalletDataResponse",
+		"WalletData" => "WalletData",
+		"checkCurrencyRequest" => "checkCurrencyRequest",
+		"checkCurrencyResponse" => "checkCurrencyResponse",
+		"checkAmountRequest" => "checkAmountRequest",
+		"checkAmountResponse" => "checkAmountResponse");	
 		
 
 		/*for exchange service*/

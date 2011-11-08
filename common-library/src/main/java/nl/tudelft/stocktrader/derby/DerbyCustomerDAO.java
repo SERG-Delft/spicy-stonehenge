@@ -54,7 +54,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_SELECT_CLOSED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'closed'";
     private static final String SQL_UPDATE_CLOSED_ORDERS = "UPDATE orders SET orderstatus = 'completed' WHERE orderstatus = 'closed' AND account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?)";
     private static final String SQL_INSERT_ACCOUNT_PROFILE = "INSERT INTO accountprofile VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?)";//; SELECT LAST_INSERT_ID()
+    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid, currency) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?)";//; SELECT LAST_INSERT_ID()
     private static final String SQL_UPDATE_ACCOUNT_PROFILE = "UPDATE accountprofile SET address = ?, password = ?, email = ?, creditcard = ?, fullname = ? WHERE userid = ?";
     private static final String SQL_SELECT_HOLDINGS = "SELECT holdingid, quantity, purchaseprice, purchasedate, quote_symbol, account_accountid FROM holding WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) ORDER BY holdingid DESC";
     //for register
@@ -500,8 +500,9 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
     }
 
-    public void insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
+    public boolean insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
         PreparedStatement insertAccountProfile = null;
+        boolean insertSuccess = false;
         try {
             insertAccountProfile = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT_PROFILE);
             insertAccountProfile.setString(1, accountProfileBean.getAddress());
@@ -511,7 +512,9 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
             insertAccountProfile.setString(5, accountProfileBean.getCreditCard());
             insertAccountProfile.setString(6, accountProfileBean.getFullName());
             insertAccountProfile.executeUpdate();
+            insertSuccess = true;
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
         } finally {
             if (insertAccountProfile != null) {
@@ -522,11 +525,13 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
 //  "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?); SELECT LAST_INSERT_ID();";
 
-    public void insertAccount(Account accountBean) throws DAOException {
+    public boolean insertAccount(Account accountBean) throws DAOException {
         PreparedStatement insertAccount = null;
+        boolean insertSuccess = false;
         try {
             insertAccount = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT);
             insertAccount.setBigDecimal(1, accountBean.getOpenBalance());
@@ -536,9 +541,12 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
 //            insertAccount.setDate(4, StockTraderUtility.convertToSqlDate(accountBean.getLastLogin()));
             insertAccount.setInt(4, 0);
             insertAccount.setString(5, accountBean.getUserID());
+            insertAccount.setString(6, accountBean.getCurrencyType());
             insertAccount.executeUpdate();
+            insertSuccess = true;
 
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
 
         } finally {
@@ -550,6 +558,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
 
     public AccountProfile update(AccountProfile customerAccountProfile) throws DAOException {

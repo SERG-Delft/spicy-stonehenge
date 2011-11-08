@@ -2,7 +2,10 @@
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.test;
 
 import junit.framework.TestCase;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.ExchangeServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.sif.service.Service;
@@ -31,12 +34,51 @@ public class ExchangeServiceV1Test
         return m_proxy;
     }
 
+    public void testUpdateWalletData()
+        throws Exception
+    {
+        UpdateWalletDataResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().updateWalletData(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
     public void testExchangeCurrency()
         throws Exception
     {
         ExchangeCurrencyResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().exchangeCurrency(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testCheckCurrency()
+        throws Exception
+    {
+        CheckCurrencyResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().checkCurrency(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testCheckAmount()
+        throws Exception
+    {
+        CheckAmountResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().checkAmount(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

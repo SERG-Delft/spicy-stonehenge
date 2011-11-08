@@ -53,10 +53,10 @@ public interface CustomerDAO {
 	public List<Order> getClosedOrders(String userId)
 			throws DAOException;
 
-	public void insertAccountProfile(AccountProfile accountProfileBean)
+	public boolean insertAccountProfile(AccountProfile accountProfileBean)
 			throws DAOException;
 
-	public void insertAccount(Account accountBean)
+	public boolean insertAccount(Account accountBean)
 			throws DAOException;
 
 	public AccountProfile update(AccountProfile customAccountProfile) 

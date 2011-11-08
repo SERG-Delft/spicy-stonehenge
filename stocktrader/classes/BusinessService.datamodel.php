@@ -648,7 +648,7 @@ class registerResponse {
 
 }
 
-class getWalletRequest {
+class getWalletDataRequest {
 
     /**
      * @var string
@@ -657,12 +657,12 @@ class getWalletRequest {
 
 }
 
-class getWalletResponse {
+class getWalletDataResponse {
 
     /**
      * @var (object)WalletData
      */
-    public $wallet;
+    public $walletData;
 
 }
 
@@ -700,7 +700,7 @@ class WalletData {
 
 }
 
-class updateWallet {
+class updateWalletDataRequest {
 
     /**
      * @var (object)WalletData
@@ -709,7 +709,7 @@ class updateWallet {
 
 }
 
-class updateWalletResponse {
+class updateWalletDataResponse {
 
     /**
      * @var (object)WalletData

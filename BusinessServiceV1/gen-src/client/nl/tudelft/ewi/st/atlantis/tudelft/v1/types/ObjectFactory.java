@@ -30,6 +30,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AccountData }
+     * 
+     */
+    public AccountData createAccountData() {
+        return new AccountData();
+    }
+
+    /**
+     * Create an instance of {@link AccountProfileData }
+     * 
+     */
+    public AccountProfileData createAccountProfileData() {
+        return new AccountProfileData();
+    }
+
+    /**
+     * Create an instance of {@link HoldingData }
+     * 
+     */
+    public HoldingData createHoldingData() {
+        return new HoldingData();
+    }
+
+    /**
+     * Create an instance of {@link MarketSummaryData }
+     * 
+     */
+    public MarketSummaryData createMarketSummaryData() {
+        return new MarketSummaryData();
+    }
+
+    /**
      * Create an instance of {@link OrderData }
      * 
      */
@@ -51,38 +83,6 @@ public class ObjectFactory {
      */
     public WalletData createWalletData() {
         return new WalletData();
-    }
-
-    /**
-     * Create an instance of {@link HoldingData }
-     * 
-     */
-    public HoldingData createHoldingData() {
-        return new HoldingData();
-    }
-
-    /**
-     * Create an instance of {@link AccountProfileData }
-     * 
-     */
-    public AccountProfileData createAccountProfileData() {
-        return new AccountProfileData();
-    }
-
-    /**
-     * Create an instance of {@link MarketSummaryData }
-     * 
-     */
-    public MarketSummaryData createMarketSummaryData() {
-        return new MarketSummaryData();
-    }
-
-    /**
-     * Create an instance of {@link AccountData }
-     * 
-     */
-    public AccountData createAccountData() {
-        return new AccountData();
     }
 
 }

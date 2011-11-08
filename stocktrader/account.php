@@ -49,7 +49,7 @@ else
 		GetAccountProfileData(GetUserFromCookie());
 		//for wallet
 	$userWalletDataReturn = 
-		GetWallet(GetUserFromCookie());
+		GetWalletData(GetUserFromCookie());
 }
 
 function FormatDate($date) {

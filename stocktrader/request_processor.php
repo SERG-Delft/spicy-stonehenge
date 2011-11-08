@@ -451,21 +451,6 @@ function checkForClosedOrders()
 	}
 }
 
-// for exchange service
-
-function exchangeCurrency($baseCurrency, $aimCurrency, $exchAmount) {
-	$proxy = GetProxy("exchangeCurrency", EXCHANGE_CLASSMAP);
-	$input = new exchangeCurrencyRequest();
-	$input->baseCurrency = $baseCurrency;
-	$input->aimCurrency = $aimCurrency;
-	$input->exchAmount = $exchAmount;
-	$response = $proxy->exchangeCurrency($input);
-   // var_dump($proxy);
-	return $response->exchResult;
-
-}
-
-
 //for user register
 
 function register($userID, $password, $fullname, $address, 
@@ -521,12 +506,12 @@ function RegisterUser($userID, $password, $fullname,
 */
 
 
-function getWallet($userid) {
-	$proxy = GetProxy("getWallet", BUSINESS_CLASSMAP);
-    $input = new getWalletRequest();
+function getWalletData($userid) {
+	$proxy = GetProxy("getWalletData", BUSINESS_CLASSMAP);
+    $input = new getWalletDataRequest();
 	$input->userID = $userid;
-    $response = $proxy->getWallet($input);
-	return $response->wallet;
+    $response = $proxy->getWalletData($input);
+	return $response->walletData;
 
 }
 
@@ -536,10 +521,10 @@ function getWallet($userid) {
  * @param object of updateWallet $input 
  * @return object of updateWalletResponse 
  */
-function updateWallet($userID, $eur, $usd, $gbp, $cny, $inr)
+function updateWalletData($userID, $eur, $usd, $gbp, $cny, $inr)
 {
-	$proxy = GetProxy("updateWallet",BUSINESS_CLASSMAP);
-	$input = new updateWallet();
+	$proxy = GetProxy("updateWalletData",BUSINESS_CLASSMAP);
+	$input = new updateWalletData();
 	$input->walletData = new WalletData();
 	$input->walletData->userID = $userID;
 	$input->walletData->eur = $eur;
@@ -547,8 +532,61 @@ function updateWallet($userID, $eur, $usd, $gbp, $cny, $inr)
 	$input->walletData->gbp = $gbp;
 	$input->walletData->cny = $cny;
 	$input->walletData->inr = $inr;
-    $response = $proxy->updateWallet($input);
+    $response = $proxy->updateWalletData($input);
 	return $response;
 }
+
+
+// for exchange service
+
+function exchangeCurrency($baseCurrency, $aimCurrency, $exchAmount) {
+	$proxy = GetProxy("exchangeCurrency", EXCHANGE_CLASSMAP);
+	$input = new exchangeCurrencyRequest();
+	$input->baseCurrency = $baseCurrency;
+	$input->aimCurrency = $aimCurrency;
+	$input->exchAmount = $exchAmount;
+	$response = $proxy->exchangeCurrency($input);
+   // var_dump($proxy);
+	return $response->exchResult;
+
+}
+
+
+/**
+ * Service function updateWalletData
+ * @param object of updateWalletDataRequest $input 
+ * @return object of updateWalletDataResponse 
+ */
+function updateWalletData($userID, $fromCurrency, $toCurrency, $fromAmount, $toAmount) {
+    $proxy = GetProxy("updateWalletData", EXCHANGE_CLASSMAP);
+
+}
+
+
+/**
+ * Service function checkCurrency
+ * @param object of checkCurrencyRequest $input 
+ * @return object of checkCurrencyResponse 
+ */
+function checkCurrency($input) {
+    // TODO: fill in the business logic
+    // NOTE: $input is of type checkCurrencyRequest
+    // NOTE: should return an object of type checkCurrencyResponse
+
+}
+
+
+/**
+ * Service function checkAmount
+ * @param object of checkAmountRequest $input 
+ * @return object of checkAmountResponse 
+ */
+function checkAmount($input) {
+    // TODO: fill in the business logic
+    // NOTE: $input is of type checkAmountRequest
+    // NOTE: should return an object of type checkAmountResponse
+
+}
+
 
 ?>

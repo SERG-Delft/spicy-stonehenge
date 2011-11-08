@@ -16,7 +16,7 @@ class exchangeCurrencyRequest extends BaseRequest {
     public $aimCurrency;
 
     /**
-     * @var int
+     * @var double
      */
     public $exchAmount;
 
@@ -25,9 +25,132 @@ class exchangeCurrencyRequest extends BaseRequest {
 class exchangeCurrencyResponse extends BaseResponse {
 
     /**
-     * @var string
+     * @var double
      */
     public $exchResult;
+
+}
+
+class updateWalletDataRequest {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var string
+     */
+    public $fromCurrency;
+
+    /**
+     * @var string
+     */
+    public $toCurrency;
+
+    /**
+     * @var double
+     */
+    public $fromAmount;
+
+    /**
+     * @var double
+     */
+    public $toAmount;
+
+}
+
+class updateWalletDataResponse {
+
+    /**
+     * @var (object)WalletData
+     */
+    public $walletData;
+
+}
+
+class WalletData {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var double
+     */
+    public $eur;
+
+    /**
+     * @var double
+     */
+    public $usd;
+
+    /**
+     * @var double
+     */
+    public $gbp;
+
+    /**
+     * @var double
+     */
+    public $cny;
+
+    /**
+     * @var double
+     */
+    public $inr;
+
+}
+
+class checkCurrencyRequest {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var string
+     */
+    public $inputCurrency;
+
+}
+
+class checkCurrencyResponse {
+
+    /**
+     * @var boolean
+     */
+    public $currencyExist;
+
+}
+
+class checkAmountRequest {
+
+    /**
+     * @var string
+     */
+    public $userID;
+
+    /**
+     * @var string
+     */
+    public $currencyType;
+
+    /**
+     * @var double
+     */
+    public $checkAmount;
+
+}
+
+class checkAmountResponse {
+
+    /**
+     * @var boolean
+     */
+    public $amountEnough;
 
 }
 ?>

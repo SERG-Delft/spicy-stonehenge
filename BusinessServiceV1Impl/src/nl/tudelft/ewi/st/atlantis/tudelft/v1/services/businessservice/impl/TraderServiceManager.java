@@ -118,14 +118,14 @@ public class TraderServiceManager {
 			a.setBalance(openBalance);
 			a.setCurrencyType(currencyType);
 			a.setLogoutCount(0);			
-			customerDAO.insertAccount(a);
-			customerDAO.insertAccountProfile(new AccountProfile(userId, password, 
+			boolean insertAccount = customerDAO.insertAccount(a);
+			boolean insertAP = customerDAO.insertAccountProfile(new AccountProfile(userId, password, 
 											fullName, address, email, creditcard));	
 			//also need to insert wallet
 			Wallet wallet = new Wallet(userId);
-			wallet.addMoney(currencyType, openBalance);
-			boolean insertOP = customerDAO.insertWallet(wallet);
-			if(insertOP)
+			wallet.setMoney(currencyType, openBalance);
+			boolean insertWallet = customerDAO.insertWallet(wallet);
+			if(insertAP && insertAccount && insertWallet)
 				result = "success";
 			else
 				result = "failed";

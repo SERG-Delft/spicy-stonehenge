@@ -37,15 +37,14 @@ else
 		$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);	
 		//call update wallet
 		$userWalletDataReturn = 
-		GetWallet(GetUserFromCookie());
+		GetWalletData(GetUserFromCookie());
 		//print $exchAmount;
 		print $exchResult;
 	}
 	$userWalletDataReturn = 
-		GetWallet(GetUserFromCookie());
+		GetWalletData(GetUserFromCookie());
 }
-
-
+    
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -111,8 +110,10 @@ else
 			<div class="exchange" align="center">
 				<form method="post"  action="exchange.php">
 					<table>
-					<tr>                   
-                        <td>Base Currency</td>
+					<tr>  
+						<td>Exchanged Amount: </td>
+						<td><input name="EXCHAMOUNT" type="text" id="" size="15"/></td>					
+                        <td>From Currency</td>
                         <td><select name="BASECURRENCY" align="center">
                                 <option value="EUR">EUR</option>
                                 <option value="USD">USD</option>
@@ -121,7 +122,7 @@ else
 								<option value="INR">INR</option>
                             </select>
                         </td>
-                        <td>Aim Currency</td>
+                        <td>To Currency</td>
                         <td><select name="AIMCURRENCY" align="center">
                                 <option value="EUR">EUR</option>
                                 <option value="USD">USD</option>
@@ -130,8 +131,8 @@ else
 								<option value="INR">INR</option>
                             </select>
                         </td>
-                        <td>Exchanged Amount: </td>
-                    	<td><input name="EXCHAMOUNT" type="text" id="" size="25"/></td>
+                        
+                    	
                      </tr>
 					</table>
 					<input type = "submit" name = "EXCHANGEREQUEST" value = "Exchange" class="button" align="center"/> 
