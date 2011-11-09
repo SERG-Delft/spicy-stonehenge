@@ -65,7 +65,8 @@ public class ExchangeServiceV1Impl
 	public CheckCurrencyResponse checkCurrency(
 			CheckCurrencyRequest checkCurrencyRequest) {
 		boolean result = mgr.checkCurrency(checkCurrencyRequest.getUserID(), 
-					checkCurrencyRequest.getInputCurrency());
+					checkCurrencyRequest.getBaseCurrency(), checkCurrencyRequest.getAimCurrency());
+		
 		CheckCurrencyResponse response = new CheckCurrencyResponse();
 		response.setCurrencyExist(result);
 		return response;

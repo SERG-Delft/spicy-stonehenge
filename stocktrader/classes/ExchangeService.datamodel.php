@@ -79,8 +79,12 @@ class checkCurrencyRequest {
     /**
      * @var string
      */
-    public $inputCurrency;
+    public $baseCurrency;
 
+    /**
+     * @var string
+     */
+    public $aimCurrency;
 }
 
 class checkCurrencyResponse {

@@ -109,7 +109,8 @@ public class ExchangeServiceV1TypeDefsBuilder
         // Type #4 (checkCurrencyRequest)
         currType = complexTypes.get(4);
         currType.addSimpleElement(new QName(NS1, "userID"), 1);
-        currType.addSimpleElement(new QName(NS1, "inputCurrency"), 1);
+        currType.addSimpleElement(new QName(NS1, "baseCurrency"), 1);
+        currType.addSimpleElement(new QName(NS1, "aimCurrency"), 1);
          
         // Type #5 (BaseRequest)
         currType = complexTypes.get(5);

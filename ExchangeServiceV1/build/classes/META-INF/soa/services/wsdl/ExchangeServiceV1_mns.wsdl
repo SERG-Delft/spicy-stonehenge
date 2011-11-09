@@ -84,8 +84,11 @@
 		
 		<xs:complexType name="checkCurrencyRequest">
 			<xs:sequence>
-				<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string"/>
-				<xs:element maxOccurs="1" minOccurs="1" name="inputCurrency" type="xs:string"/>
+				<xs:element maxOccurs="1" minOccurs="1" name="userID" type="xs:string">
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="1" name="baseCurrency" type="xs:string">
+				</xs:element>
+				<xs:element maxOccurs="1" minOccurs="1" name="aimCurrency" type="xs:string"/>
 			</xs:sequence>
 		</xs:complexType>
 		<xs:complexType name="checkCurrencyReponse">
@@ -475,9 +478,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
 
 
 
@@ -498,9 +503,11 @@
 
 
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
 
 
 
@@ -513,9 +520,11 @@
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded"/>
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
 
 			</wsdl:output>
 		</wsdl:operation>
@@ -525,9 +534,11 @@
 			<wsdl:input>
 				<mime:content type="application/x-www-form-urlencoded"/>
 
+
 			</wsdl:input>
 			<wsdl:output>
 				<mime:content type="text/xml"/>
+
 
 			</wsdl:output>
 		</wsdl:operation>

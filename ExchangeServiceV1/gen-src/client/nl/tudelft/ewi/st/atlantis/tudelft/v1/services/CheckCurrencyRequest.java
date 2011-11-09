@@ -18,7 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="userID" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="inputCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="baseCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="aimCurrency" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,14 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "checkCurrencyRequest", propOrder = {
     "userID",
-    "inputCurrency"
+    "baseCurrency",
+    "aimCurrency"
 })
 public class CheckCurrencyRequest {
 
     @XmlElement(required = true)
     protected String userID;
     @XmlElement(required = true)
-    protected String inputCurrency;
+    protected String baseCurrency;
+    @XmlElement(required = true)
+    protected String aimCurrency;
 
     /**
      * Gets the value of the userID property.
@@ -64,27 +68,51 @@ public class CheckCurrencyRequest {
     }
 
     /**
-     * Gets the value of the inputCurrency property.
+     * Gets the value of the baseCurrency property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getInputCurrency() {
-        return inputCurrency;
+    public String getBaseCurrency() {
+        return baseCurrency;
     }
 
     /**
-     * Sets the value of the inputCurrency property.
+     * Sets the value of the baseCurrency property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setInputCurrency(String value) {
-        this.inputCurrency = value;
+    public void setBaseCurrency(String value) {
+        this.baseCurrency = value;
+    }
+
+    /**
+     * Gets the value of the aimCurrency property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAimCurrency() {
+        return aimCurrency;
+    }
+
+    /**
+     * Sets the value of the aimCurrency property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAimCurrency(String value) {
+        this.aimCurrency = value;
     }
 
 }

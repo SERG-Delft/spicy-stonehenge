@@ -578,11 +578,12 @@ function updateWalletData($userID, $fromCurrency, $toCurrency, $fromAmount, $toA
  * @param object of checkCurrencyRequest $input 
  * @return object of checkCurrencyResponse 
  */
-function checkCurrency( $userID, $inputCurrency) {
+function checkCurrency( $userID, $baseCurrency, $aimCurrency) {
     $proxy = GetProxy("checkCurrency", EXCHANGE_CLASSMAP);
 	$input = new checkCurrencyRequest();
 	$input->userID = $userID;
-	$input->inputCurrency = $inputCurrency;
+	$input->baseCurrency = $baseCurrency;
+	$input->aimCurrency = $aimCurrency;
 	$response = $proxy->checkCurrency($input);
 	return $response->currencyExist;
 }

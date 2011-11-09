@@ -39,9 +39,15 @@ public class ExchangeServiceManager {
 			factory = DAOFactory.getFactory();
 		}
 	
-	public boolean checkCurrency(String userID, String inputCurrency){
-		Wallet wallet = new Wallet(userID);
-		return wallet.checkCurrency(inputCurrency);
+	public boolean checkCurrency(String userID, String baseCurrency, String aimCurrency){
+		boolean isCurrencyOK = false;
+		if(!baseCurrency.equals(aimCurrency)){			
+			Wallet wallet = new Wallet(userID);
+			 if(wallet.checkCurrency(baseCurrency)&&wallet.checkCurrency(aimCurrency)){
+				 isCurrencyOK = true;
+			 }
+		}
+		 return isCurrencyOK;
 	}
 	
 	public boolean checkAmount(String userID, String checkCurrency, BigDecimal checkAmount) throws DAOException{

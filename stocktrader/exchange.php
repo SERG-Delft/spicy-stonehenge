@@ -19,6 +19,7 @@
 require_once("request_processor.php");
 
 //$successfulExchange = false;/*change the logic here*/
+$infor = "";
 
 if(!IsLoggedIn())
 {
@@ -28,24 +29,30 @@ else
 {
 	//print("user login");
 	/*If the user requested to update his profile information*/
-	
-	if (isset($_POST['EXCHANGEREQUEST']))
-	{	
+
+	if (isset($_POST['EXCHANGEREQUEST'])){
 		$userID = GetUserFromCookie();
 		$baseCurrency = $_POST['BASECURRENCY'];	
 		$aimCurrency = $_POST['AIMCURRENCY'];
 		$exchAmount = $_POST['EXCHAMOUNT'];
-		$currencySupported = checkCurrency($userID, $baseCurrency); 
-		if($currencySupported){
-			$amountEnough = checkAmount($userID, $baseCurrency, $exchAmount);
-			if($amountEnough){
-			
-				$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);
-				if($exchResult>0){
-					$userWalletDataReturn = updateWalletData($userID, $baseCurrency,$aimCurrency,$exchAmount, $exchResult);
+		if($exchAmount != null && ($baseCurrency != $aimCurrency)){
+			$currencySupported = checkCurrency($userID, $baseCurrency, $aimCurrency); 
+			if($currencySupported){
+				$amountEnough = checkAmount($userID, $baseCurrency, $exchAmount);
+				if($amountEnough){				
+					$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);
+					if($exchResult>0){
+						$userWalletDataReturn = updateWalletData($userID, $baseCurrency,$aimCurrency,$exchAmount, $exchResult);
+					}
+					
+				}else{
+					$infor = "Sorry, you don't have enough amount, pleas input less.";
 				}
-				
+			}else{
+				$infor = "Sorry, the currency you chose is not supported, please choose another one.";
 			}
+		}else{
+			$infor = "Please input the exchange amount and choose the currencies.";
 		}
 		
 	}
@@ -127,6 +134,7 @@ else
                                 <option value="GBP">GBP</option>
 								<option value="CNY">CNY</option>
 								<option value="INR">INR</option>
+								<option value="CSD">CSD</option>
                             </select>
                         </td>
                         <td>To Currency</td>
@@ -148,14 +156,7 @@ else
 				</p>
 				<?php
 		/*Display the wallet information of a the user*/
-					if(!$currencySupported){
-						//currency is not supported
-						print("<p style=\"color: red\" align=\"center\">Sorry, the currency you chose is not supported, please choose another one.</p>");
-					}else if(!$amountEnough){
-						//you don't have enough amount, pleas input less.
-						print("<p style=\"color: red\" align=\"center\">Sorry, you don't have enough amount, pleas input less.</p>");
-					}
-		
+					print("<p style=\"color: red\" align=\"center\">".$infor."</p>");		
 					if ($userWalletDataReturn)	//set as wallet
 					{
 						print("User's current wallet status:");
