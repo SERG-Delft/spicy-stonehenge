@@ -283,7 +283,7 @@ function FormatDate($date) {
 							<td>".$userWalletDataReturn->gbp."</td>	</tr>");
 						print("<tr><td class=\"left\">CNY Balance:</td>
 							<td>".$userWalletDataReturn->cny."</td>
-							<td class=\"left\">IBR Balance:</td>
+							<td class=\"left\">INR Balance:</td>
 							<td>".$userWalletDataReturn->inr."</td></tr>");						
 						print("</tbody></table>");
 						print ("<tr><td colspan=\"4\" class=\"button\"><input type=\"submit\" 

@@ -666,56 +666,25 @@ class getWalletDataResponse {
 
 }
 
-class WalletData {
 
-    /**
-     * @var string
-     */
-    public $userID;
-
-    /**
-     * @var double
-     */
-    public $eur;
-
-    /**
-     * @var double
-     */
-    public $usd;
-
-    /**
-     * @var double
-     */
-    public $gbp;
-
-    /**
-     * @var double
-     */
-    public $cny;
-
-    /**
-     * @var double
-     */
-    public $inr;
-
-}
-
-class updateWalletDataRequest {
+//class updateWalletDataRequest {
 
     /**
      * @var (object)WalletData
      */
-    public $walletData;
+  //  public $walletData;
 
-}
+//}
 
-class updateWalletDataResponse {
+
+
+//class updateWalletDataResponse {
 
     /**
      * @var (object)WalletData
      */
-    public $newWalletData;
+//    public $newWalletData;
 
-}
+//}
 
 ?>

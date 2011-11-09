@@ -150,18 +150,19 @@ function GetClassMap($constWS) {
 		"getWalletDataRequest" => "getWalletDataRequest",
 		"getWalletDataResponse" => "getWalletDataResponse",
 		"WalletData" => "WalletData",
-		"updateWalletDataRequest" => "updateWalletDataRequest",
-		"updateWalletDataResponse" => "updateWalletDataResponse");
+		//"updateWalletDataRequest" => "updateWalletDataRequest",
+		//"updateWalletDataResponse" => "updateWalletDataResponse"
+		);
 		
 		/*for exchange service*/
 	$aExchange = array(
 		"BaseRequest" => "BaseRequest",
 		"ExtensionType" => "ExtensionType",
-		"exchangeCurrencyRequest" => "exchangeCurrencyRequest",
 		"BaseResponse" => "BaseResponse",
 		"ErrorMessage" => "ErrorMessage",
 		"ErrorData" => "ErrorData",
 		"CommonErrorData" => "CommonErrorData",
+		"exchangeCurrencyRequest" => "exchangeCurrencyRequest",
 		"exchangeCurrencyResponse" => "exchangeCurrencyResponse",
 		"updateWalletDataRequest" => "updateWalletDataRequest",
 		"updateWalletDataResponse" => "updateWalletDataResponse",

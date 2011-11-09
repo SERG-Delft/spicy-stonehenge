@@ -521,6 +521,7 @@ function getWalletData($userid) {
  * @param object of updateWallet $input 
  * @return object of updateWalletResponse 
  */
+ /**
 function updateWalletData($userID, $eur, $usd, $gbp, $cny, $inr)
 {
 	$proxy = GetProxy("updateWalletData",BUSINESS_CLASSMAP);
@@ -535,6 +536,7 @@ function updateWalletData($userID, $eur, $usd, $gbp, $cny, $inr)
     $response = $proxy->updateWalletData($input);
 	return $response;
 }
+*/
 
 
 // for exchange service
@@ -559,7 +561,15 @@ function exchangeCurrency($baseCurrency, $aimCurrency, $exchAmount) {
  */
 function updateWalletData($userID, $fromCurrency, $toCurrency, $fromAmount, $toAmount) {
     $proxy = GetProxy("updateWalletData", EXCHANGE_CLASSMAP);
-
+	$input = new updateWalletDataRequest();
+	$input->userID = $userID;
+	$input->fromCurrency = $fromCurrency;
+	$input->toCurrency = $toCurrency;
+	$input->fromAmount = $fromAmount;
+	$input->toAmount = $toAmount;
+	$response = $proxy->updateWalletData($input);
+   // var_dump($proxy);
+	return $response;
 }
 
 
@@ -568,11 +578,13 @@ function updateWalletData($userID, $fromCurrency, $toCurrency, $fromAmount, $toA
  * @param object of checkCurrencyRequest $input 
  * @return object of checkCurrencyResponse 
  */
-function checkCurrency($input) {
-    // TODO: fill in the business logic
-    // NOTE: $input is of type checkCurrencyRequest
-    // NOTE: should return an object of type checkCurrencyResponse
-
+function checkCurrency( $userID, $inputCurrency) {
+    $proxy = GetProxy("checkCurrency", EXCHANGE_CLASSMAP);
+	$input = new checkCurrencyRequest();
+	$input->userID = $userID;
+	$input->inputCurrency = $inputCurrency;
+	$response = $proxy->checkCurrency($input);
+	return $response->currencyExist;
 }
 
 
@@ -581,11 +593,15 @@ function checkCurrency($input) {
  * @param object of checkAmountRequest $input 
  * @return object of checkAmountResponse 
  */
-function checkAmount($input) {
-    // TODO: fill in the business logic
-    // NOTE: $input is of type checkAmountRequest
-    // NOTE: should return an object of type checkAmountResponse
-
+function checkAmount($userID, $currencyType, $checkAmount) {
+    $proxy = GetProxy("checkAmount", EXCHANGE_CLASSMAP);
+	$input = new checkAmountRequest();
+	$input->userID = $userID;
+	$input->currencyType = $currencyType;
+	$input->checkAmount = $checkAmount;
+	$response = $proxy->checkAmount($input);
+   // var_dump($proxy);
+	return $response->amountEnough;
 }
 
 

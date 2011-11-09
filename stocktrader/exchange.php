@@ -18,7 +18,7 @@
 
 require_once("request_processor.php");
 
-$successfulExchange = false;/*change the logic here*/
+//$successfulExchange = false;/*change the logic here*/
 
 if(!IsLoggedIn())
 {
@@ -26,23 +26,30 @@ if(!IsLoggedIn())
 }
 else
 {
+	//print("user login");
 	/*If the user requested to update his profile information*/
+	
 	if (isset($_POST['EXCHANGEREQUEST']))
-	{
-		/*New user registration*/
+	{	
+		$userID = GetUserFromCookie();
 		$baseCurrency = $_POST['BASECURRENCY'];	
 		$aimCurrency = $_POST['AIMCURRENCY'];
 		$exchAmount = $_POST['EXCHAMOUNT'];
+		$currencySupported = checkCurrency($userID, $baseCurrency); 
+		if($currencySupported){
+			$amountEnough = checkAmount($userID, $baseCurrency, $exchAmount);
+			if($amountEnough){
+			
+				$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);
+				if($exchResult>0){
+					$userWalletDataReturn = updateWalletData($userID, $baseCurrency,$aimCurrency,$exchAmount, $exchResult);
+				}
+				
+			}
+		}
 		
-		$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);	
-		//call update wallet
-		$userWalletDataReturn = 
-		GetWalletData(GetUserFromCookie());
-		//print $exchAmount;
-		print $exchResult;
 	}
-	$userWalletDataReturn = 
-		GetWalletData(GetUserFromCookie());
+	$userWalletDataReturn = GetWalletData(GetUserFromCookie());
 }
     
 ?>
@@ -141,6 +148,14 @@ else
 				</p>
 				<?php
 		/*Display the wallet information of a the user*/
+					if(!$currencySupported){
+						//currency is not supported
+						print("<p style=\"color: red\" align=\"center\">Sorry, the currency you chose is not supported, please choose another one.</p>");
+					}else if(!$amountEnough){
+						//you don't have enough amount, pleas input less.
+						print("<p style=\"color: red\" align=\"center\">Sorry, you don't have enough amount, pleas input less.</p>");
+					}
+		
 					if ($userWalletDataReturn)	//set as wallet
 					{
 						print("User's current wallet status:");
@@ -155,10 +170,11 @@ else
 							<td>".$userWalletDataReturn->gbp."</td>	</tr>");
 						print("<tr><td class=\"left\">CNY Balance:</td>
 							<td>".$userWalletDataReturn->cny."</td>
-							<td class=\"left\">IBR Balance:</td>
+							<td class=\"left\">INR Balance:</td>
 							<td>".$userWalletDataReturn->inr."</td></tr>");						
 						print("</tbody></table>");
 					}	
+					
 		
 		?>
           	</p>

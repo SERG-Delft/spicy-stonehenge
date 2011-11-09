@@ -69,40 +69,6 @@ class updateWalletDataResponse {
 
 }
 
-class WalletData {
-
-    /**
-     * @var string
-     */
-    public $userID;
-
-    /**
-     * @var double
-     */
-    public $eur;
-
-    /**
-     * @var double
-     */
-    public $usd;
-
-    /**
-     * @var double
-     */
-    public $gbp;
-
-    /**
-     * @var double
-     */
-    public $cny;
-
-    /**
-     * @var double
-     */
-    public $inr;
-
-}
-
 class checkCurrencyRequest {
 
     /**
