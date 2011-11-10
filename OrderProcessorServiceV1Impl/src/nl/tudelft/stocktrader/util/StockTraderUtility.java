@@ -23,9 +23,6 @@ import java.sql.Date;
 import java.util.Calendar;
 import java.util.Random;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 public class StockTraderUtility {
 	
 	public static final String TRADE_ORDER_SERVICE_PROPERTY_FILE = "TradeServiceConfig.properties";
@@ -52,8 +49,8 @@ public class StockTraderUtility {
 	public static final BigDecimal BUY_FEE = BigDecimal.valueOf(15.95);
 	public static final BigDecimal SELL_FEE = BigDecimal.valueOf(25.95);
 
-	private static final Log logger = LogFactory
-			.getLog(StockTraderUtility.class);
+//	private static final Log logger = LogFactory
+//			.getLog(StockTraderUtility.class);
 
 	public static BigDecimal getRandomPriceChangeFactor(BigDecimal currentPrice) {
 		if (currentPrice.compareTo(PENNY_STOCK_P) == -1

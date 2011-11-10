@@ -43,14 +43,6 @@ public interface AsyncBusinessServiceV1
 {
 
 
-    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> handler);
-
-    public Response<LogoutResponse> logoutAsync(LogoutRequest param0);
-
-    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> handler);
-
-    public Response<LoginResponse> loginAsync(LoginRequest param0);
-
     public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> handler);
 
     public Response<GetQuoteResponse> getQuoteAsync(GetQuoteRequest param0);
@@ -79,6 +71,10 @@ public interface AsyncBusinessServiceV1
 
     public Response<UpdateAccountProfileResponse> updateAccountProfileAsync(UpdateAccountProfileRequest param0);
 
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> handler);
+
+    public Response<LogoutResponse> logoutAsync(LogoutRequest param0);
+
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> handler);
 
     public Response<GetTopOrdersResponse> getTopOrdersAsync(GetTopOrdersRequest param0);
@@ -98,6 +94,10 @@ public interface AsyncBusinessServiceV1
     public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> handler);
 
     public Response<GetOrdersResponse> getOrdersAsync(GetOrdersRequest param0);
+
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> handler);
+
+    public Response<LoginResponse> loginAsync(LoginRequest param0);
 
     public Future<?> getHoldingsAsync(GetHoldingsRequest param0, AsyncHandler<GetHoldingsResponse> handler);
 

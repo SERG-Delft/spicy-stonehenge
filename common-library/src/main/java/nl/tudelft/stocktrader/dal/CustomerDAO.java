@@ -24,6 +24,8 @@ import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 
+import nl.tudelft.stocktrader.dal.DAOException;
+
 public interface CustomerDAO {
 
 	public Holding getHoldingForUpdate(int orderId)

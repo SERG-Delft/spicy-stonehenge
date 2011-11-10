@@ -31,12 +31,6 @@ public class OrderProcessorServiceV1Proxy
         super(service);
     }
 
-    public List<Response<?>> poll(boolean block, boolean partial)
-        throws InterruptedException
-    {
-        return m_service.poll(block, partial);
-    }
-
     public Future<?> isOnlineAsync(IsOnlineRequest param0, AsyncHandler<IsOnlineResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("isOnline");
         Future<?> result = dispatch.invokeAsync(param0, param1);
@@ -59,6 +53,12 @@ public class OrderProcessorServiceV1Proxy
         Dispatch dispatch = m_service.createDispatch("submitOrder");
         Response<SubmitOrderResponse> result = dispatch.invokeAsync(param0);
         return result;
+    }
+
+    public List<Response<?>> poll(boolean block, boolean partial)
+        throws InterruptedException
+    {
+        return m_service.poll(block, partial);
     }
 
     public IsOnlineResponse isOnline(IsOnlineRequest param0) {

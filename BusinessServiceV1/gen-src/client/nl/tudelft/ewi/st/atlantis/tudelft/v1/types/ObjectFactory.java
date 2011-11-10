@@ -30,7 +30,22 @@ public class ObjectFactory {
     }
 
     /**
-<<<<<<< HEAD
+     * Create an instance of {@link MarketSummaryData }
+     * 
+     */
+    public MarketSummaryData createMarketSummaryData() {
+        return new MarketSummaryData();
+    }
+
+    /**
+     * Create an instance of {@link AccountProfileData }
+     * 
+     */
+    public AccountProfileData createAccountProfileData() {
+        return new AccountProfileData();
+    }
+
+    /**
      * Create an instance of {@link OrderData }
      * 
      */
@@ -39,25 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AccountProfileData }
+     * Create an instance of {@link HoldingData }
      * 
      */
-    public AccountProfileData createAccountProfileData() {
-        return new AccountProfileData();
-    }
-
-    /**
-     * Create an instance of {@link QuoteData }
-     * 
-     */
-    public QuoteData createQuoteData() {
-        return new QuoteData();
-=======
-     * Create an instance of {@link MarketSummaryData }
-     * 
-     */
-    public MarketSummaryData createMarketSummaryData() {
-        return new MarketSummaryData();
+    public HoldingData createHoldingData() {
+        return new HoldingData();
     }
 
     /**
@@ -69,36 +70,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link HoldingData }
+     * Create an instance of {@link AccountData }
      * 
      */
-    public HoldingData createHoldingData() {
-        return new HoldingData();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link HoldingData }
-     * 
-     */
-    public HoldingData createHoldingData() {
-        return new HoldingData();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link MarketSummaryData }
-     * 
-     */
-    public MarketSummaryData createMarketSummaryData() {
-        return new MarketSummaryData();
-=======
-     * Create an instance of {@link AccountProfileData }
-     * 
-     */
-    public AccountProfileData createAccountProfileData() {
-        return new AccountProfileData();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
+    public AccountData createAccountData() {
+        return new AccountData();
     }
 
 }

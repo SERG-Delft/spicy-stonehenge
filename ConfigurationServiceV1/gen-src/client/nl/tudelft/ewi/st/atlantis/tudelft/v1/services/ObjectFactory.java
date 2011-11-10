@@ -24,21 +24,21 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SetBSToOPSResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setBSToOPSResponse");
-    private final static QName _GetClientConfigResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getClientConfigResponse");
-    private final static QName _GetOPSConfigResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOPSConfigResponse");
-    private final static QName _GetClientConfigRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getClientConfigRequest");
-    private final static QName _GetBSLocationsResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSLocationsResponse");
-    private final static QName _GetOPSConfigRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOPSConfigRequest");
-    private final static QName _GetBSLocationsRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSLocationsRequest");
-    private final static QName _SetClientToBSRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setClientToBSRequest");
-    private final static QName _SetBSToOPSRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setBSToOPSRequest");
-    private final static QName _SetServiceLocationResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setServiceLocationResponse");
     private final static QName _GetBSConfigRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSConfigRequest");
     private final static QName _GetBSConfigResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSConfigResponse");
-    private final static QName _SetClientToBSResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setClientToBSResponse");
+    private final static QName _GetBSLocationsRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSLocationsRequest");
+    private final static QName _GetBSLocationsResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getBSLocationsResponse");
+    private final static QName _GetClientConfigRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getClientConfigRequest");
+    private final static QName _GetClientConfigResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getClientConfigResponse");
+    private final static QName _GetOPSConfigRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOPSConfigRequest");
+    private final static QName _GetOPSConfigResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOPSConfigResponse");
     private final static QName _GetOPSLocationsRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "getOPSLocationsRequest");
+    private final static QName _SetBSToOPSRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setBSToOPSRequest");
+    private final static QName _SetBSToOPSResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setBSToOPSResponse");
+    private final static QName _SetClientToBSRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setClientToBSRequest");
+    private final static QName _SetClientToBSResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setClientToBSResponse");
     private final static QName _SetServiceLocationRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setServiceLocationRequest");
+    private final static QName _SetServiceLocationResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "setServiceLocationResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: nl.tudelft.ewi.st.atlantis.tudelft.v1.services
@@ -48,317 +48,11 @@ public class ObjectFactory {
     }
 
     /**
-<<<<<<< HEAD
-     * Create an instance of {@link GetBSLocationsResponse }
-     * 
-     */
-    public GetBSLocationsResponse createGetBSLocationsResponse() {
-        return new GetBSLocationsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSLocations }
-     * 
-     */
-    public GetOPSLocations createGetOPSLocations() {
-        return new GetOPSLocations();
-=======
-     * Create an instance of {@link SetBSToOPSResponse }
-     * 
-     */
-    public SetBSToOPSResponse createSetBSToOPSResponse() {
-        return new SetBSToOPSResponse();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link GetClientConfigResponse }
-     * 
-     */
-    public GetClientConfigResponse createGetClientConfigResponse() {
-        return new GetClientConfigResponse();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link GetBSLocationsRequest }
-     * 
-     */
-    public GetBSLocationsRequest createGetBSLocationsRequest() {
-        return new GetBSLocationsRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSConfigResponse }
-     * 
-     */
-    public GetOPSConfigResponse createGetOPSConfigResponse() {
-        return new GetOPSConfigResponse();
-=======
-     * Create an instance of {@link SetServiceLocationResponse }
-     * 
-     */
-    public SetServiceLocationResponse createSetServiceLocationResponse() {
-        return new SetServiceLocationResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSConfigRequest }
-     * 
-     */
-    public GetOPSConfigRequest createGetOPSConfigRequest() {
-        return new GetOPSConfigRequest();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link GetClientConfigRequest }
-     * 
-     */
-    public GetClientConfigRequest createGetClientConfigRequest() {
-        return new GetClientConfigRequest();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link GetOPSLocationsResponse }
-     * 
-     */
-    public GetOPSLocationsResponse createGetOPSLocationsResponse() {
-        return new GetOPSLocationsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSConfigRequest }
-     * 
-     */
-    public GetOPSConfigRequest createGetOPSConfigRequest() {
-        return new GetOPSConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOPSLocationsRequest }
-     * 
-     */
-    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
-        return new GetOPSLocationsRequest();
-=======
-     * Create an instance of {@link GetBSLocationsRequest }
-     * 
-     */
-    public GetBSLocationsRequest createGetBSLocationsRequest() {
-        return new GetBSLocationsRequest();
-    }
-
-    /**
      * Create an instance of {@link GetBSConfigRequest }
      * 
      */
     public GetBSConfigRequest createGetBSConfigRequest() {
         return new GetBSConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link SetBSToOPSRequest }
-     * 
-     */
-    public SetBSToOPSRequest createSetBSToOPSRequest() {
-        return new SetBSToOPSRequest();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link SetClientToBSResponse }
-     * 
-     */
-    public SetClientToBSResponse createSetClientToBSResponse() {
-        return new SetClientToBSResponse();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link SetBSToOPSRequest }
-     * 
-     */
-    public SetBSToOPSRequest createSetBSToOPSRequest() {
-        return new SetBSToOPSRequest();
-=======
-     * Create an instance of {@link GetOPSLocations }
-     * 
-     */
-    public GetOPSLocations createGetOPSLocations() {
-        return new GetOPSLocations();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link GetBSConfigResponse }
-     * 
-     */
-    public GetBSConfigResponse createGetBSConfigResponse() {
-        return new GetBSConfigResponse();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link SetClientToBSRequest }
-     * 
-     */
-    public SetClientToBSRequest createSetClientToBSRequest() {
-        return new SetClientToBSRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBSConfigRequest }
-     * 
-     */
-    public GetBSConfigRequest createGetBSConfigRequest() {
-        return new GetBSConfigRequest();
-=======
-     * Create an instance of {@link GetOPSLocationsRequest }
-     * 
-     */
-    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
-        return new GetOPSLocationsRequest();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link GetClientConfigRequest }
-     * 
-     */
-    public GetClientConfigRequest createGetClientConfigRequest() {
-        return new GetClientConfigRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetBSLocationsResponse }
-     * 
-     */
-    public GetBSLocationsResponse createGetBSLocationsResponse() {
-        return new GetBSLocationsResponse();
-    }
-
-    /**
-<<<<<<< HEAD
-     * Create an instance of {@link SetBSToOPSResponse }
-     * 
-     */
-    public SetBSToOPSResponse createSetBSToOPSResponse() {
-        return new SetBSToOPSResponse();
-=======
-     * Create an instance of {@link GetOPSLocationsResponse }
-     * 
-     */
-    public GetOPSLocationsResponse createGetOPSLocationsResponse() {
-        return new GetOPSLocationsResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetClientConfigResponse }
-     * 
-     */
-    public GetClientConfigResponse createGetClientConfigResponse() {
-        return new GetClientConfigResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetServiceLocationRequest }
-     * 
-     */
-    public SetServiceLocationRequest createSetServiceLocationRequest() {
-        return new SetServiceLocationRequest();
->>>>>>> e2dde3189924cf5a8278e2bc25c7047a2e255767
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetBSToOPSResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setBSToOPSResponse")
-    public JAXBElement<SetBSToOPSResponse> createSetBSToOPSResponse(SetBSToOPSResponse value) {
-        return new JAXBElement<SetBSToOPSResponse>(_SetBSToOPSResponse_QNAME, SetBSToOPSResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetClientConfigResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getClientConfigResponse")
-    public JAXBElement<GetClientConfigResponse> createGetClientConfigResponse(GetClientConfigResponse value) {
-        return new JAXBElement<GetClientConfigResponse>(_GetClientConfigResponse_QNAME, GetClientConfigResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOPSConfigResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getOPSConfigResponse")
-    public JAXBElement<GetOPSConfigResponse> createGetOPSConfigResponse(GetOPSConfigResponse value) {
-        return new JAXBElement<GetOPSConfigResponse>(_GetOPSConfigResponse_QNAME, GetOPSConfigResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetClientConfigRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getClientConfigRequest")
-    public JAXBElement<GetClientConfigRequest> createGetClientConfigRequest(GetClientConfigRequest value) {
-        return new JAXBElement<GetClientConfigRequest>(_GetClientConfigRequest_QNAME, GetClientConfigRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBSLocationsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getBSLocationsResponse")
-    public JAXBElement<GetBSLocationsResponse> createGetBSLocationsResponse(GetBSLocationsResponse value) {
-        return new JAXBElement<GetBSLocationsResponse>(_GetBSLocationsResponse_QNAME, GetBSLocationsResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOPSConfigRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getOPSConfigRequest")
-    public JAXBElement<GetOPSConfigRequest> createGetOPSConfigRequest(GetOPSConfigRequest value) {
-        return new JAXBElement<GetOPSConfigRequest>(_GetOPSConfigRequest_QNAME, GetOPSConfigRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetBSLocationsRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getBSLocationsRequest")
-    public JAXBElement<GetBSLocationsRequest> createGetBSLocationsRequest(GetBSLocationsRequest value) {
-        return new JAXBElement<GetBSLocationsRequest>(_GetBSLocationsRequest_QNAME, GetBSLocationsRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetClientToBSRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setClientToBSRequest")
-    public JAXBElement<SetClientToBSRequest> createSetClientToBSRequest(SetClientToBSRequest value) {
-        return new JAXBElement<SetClientToBSRequest>(_SetClientToBSRequest_QNAME, SetClientToBSRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetBSToOPSRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setBSToOPSRequest")
-    public JAXBElement<SetBSToOPSRequest> createSetBSToOPSRequest(SetBSToOPSRequest value) {
-        return new JAXBElement<SetBSToOPSRequest>(_SetBSToOPSRequest_QNAME, SetBSToOPSRequest.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetServiceLocationResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setServiceLocationResponse")
-    public JAXBElement<SetServiceLocationResponse> createSetServiceLocationResponse(SetServiceLocationResponse value) {
-        return new JAXBElement<SetServiceLocationResponse>(_SetServiceLocationResponse_QNAME, SetServiceLocationResponse.class, null, value);
     }
 
     /**
@@ -371,6 +65,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetBSConfigResponse }
+     * 
+     */
+    public GetBSConfigResponse createGetBSConfigResponse() {
+        return new GetBSConfigResponse();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetBSConfigResponse }{@code >}}
      * 
      */
@@ -380,12 +82,121 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SetClientToBSResponse }{@code >}}
+     * Create an instance of {@link GetBSLocationsRequest }
      * 
      */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setClientToBSResponse")
-    public JAXBElement<SetClientToBSResponse> createSetClientToBSResponse(SetClientToBSResponse value) {
-        return new JAXBElement<SetClientToBSResponse>(_SetClientToBSResponse_QNAME, SetClientToBSResponse.class, null, value);
+    public GetBSLocationsRequest createGetBSLocationsRequest() {
+        return new GetBSLocationsRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBSLocationsRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getBSLocationsRequest")
+    public JAXBElement<GetBSLocationsRequest> createGetBSLocationsRequest(GetBSLocationsRequest value) {
+        return new JAXBElement<GetBSLocationsRequest>(_GetBSLocationsRequest_QNAME, GetBSLocationsRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetBSLocationsResponse }
+     * 
+     */
+    public GetBSLocationsResponse createGetBSLocationsResponse() {
+        return new GetBSLocationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetBSLocationsResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getBSLocationsResponse")
+    public JAXBElement<GetBSLocationsResponse> createGetBSLocationsResponse(GetBSLocationsResponse value) {
+        return new JAXBElement<GetBSLocationsResponse>(_GetBSLocationsResponse_QNAME, GetBSLocationsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetClientConfigRequest }
+     * 
+     */
+    public GetClientConfigRequest createGetClientConfigRequest() {
+        return new GetClientConfigRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetClientConfigRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getClientConfigRequest")
+    public JAXBElement<GetClientConfigRequest> createGetClientConfigRequest(GetClientConfigRequest value) {
+        return new JAXBElement<GetClientConfigRequest>(_GetClientConfigRequest_QNAME, GetClientConfigRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetClientConfigResponse }
+     * 
+     */
+    public GetClientConfigResponse createGetClientConfigResponse() {
+        return new GetClientConfigResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetClientConfigResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getClientConfigResponse")
+    public JAXBElement<GetClientConfigResponse> createGetClientConfigResponse(GetClientConfigResponse value) {
+        return new JAXBElement<GetClientConfigResponse>(_GetClientConfigResponse_QNAME, GetClientConfigResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetOPSConfigRequest }
+     * 
+     */
+    public GetOPSConfigRequest createGetOPSConfigRequest() {
+        return new GetOPSConfigRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetOPSConfigRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getOPSConfigRequest")
+    public JAXBElement<GetOPSConfigRequest> createGetOPSConfigRequest(GetOPSConfigRequest value) {
+        return new JAXBElement<GetOPSConfigRequest>(_GetOPSConfigRequest_QNAME, GetOPSConfigRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetOPSConfigResponse }
+     * 
+     */
+    public GetOPSConfigResponse createGetOPSConfigResponse() {
+        return new GetOPSConfigResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetOPSConfigResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "getOPSConfigResponse")
+    public JAXBElement<GetOPSConfigResponse> createGetOPSConfigResponse(GetOPSConfigResponse value) {
+        return new JAXBElement<GetOPSConfigResponse>(_GetOPSConfigResponse_QNAME, GetOPSConfigResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetOPSLocations }
+     * 
+     */
+    public GetOPSLocations createGetOPSLocations() {
+        return new GetOPSLocations();
+    }
+
+    /**
+     * Create an instance of {@link GetOPSLocationsRequest }
+     * 
+     */
+    public GetOPSLocationsRequest createGetOPSLocationsRequest() {
+        return new GetOPSLocationsRequest();
     }
 
     /**
@@ -398,12 +209,113 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetOPSLocationsResponse }
+     * 
+     */
+    public GetOPSLocationsResponse createGetOPSLocationsResponse() {
+        return new GetOPSLocationsResponse();
+    }
+
+    /**
+     * Create an instance of {@link SetBSToOPSRequest }
+     * 
+     */
+    public SetBSToOPSRequest createSetBSToOPSRequest() {
+        return new SetBSToOPSRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetBSToOPSRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setBSToOPSRequest")
+    public JAXBElement<SetBSToOPSRequest> createSetBSToOPSRequest(SetBSToOPSRequest value) {
+        return new JAXBElement<SetBSToOPSRequest>(_SetBSToOPSRequest_QNAME, SetBSToOPSRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link SetBSToOPSResponse }
+     * 
+     */
+    public SetBSToOPSResponse createSetBSToOPSResponse() {
+        return new SetBSToOPSResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetBSToOPSResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setBSToOPSResponse")
+    public JAXBElement<SetBSToOPSResponse> createSetBSToOPSResponse(SetBSToOPSResponse value) {
+        return new JAXBElement<SetBSToOPSResponse>(_SetBSToOPSResponse_QNAME, SetBSToOPSResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link SetClientToBSRequest }
+     * 
+     */
+    public SetClientToBSRequest createSetClientToBSRequest() {
+        return new SetClientToBSRequest();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetClientToBSRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setClientToBSRequest")
+    public JAXBElement<SetClientToBSRequest> createSetClientToBSRequest(SetClientToBSRequest value) {
+        return new JAXBElement<SetClientToBSRequest>(_SetClientToBSRequest_QNAME, SetClientToBSRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link SetClientToBSResponse }
+     * 
+     */
+    public SetClientToBSResponse createSetClientToBSResponse() {
+        return new SetClientToBSResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetClientToBSResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setClientToBSResponse")
+    public JAXBElement<SetClientToBSResponse> createSetClientToBSResponse(SetClientToBSResponse value) {
+        return new JAXBElement<SetClientToBSResponse>(_SetClientToBSResponse_QNAME, SetClientToBSResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link SetServiceLocationRequest }
+     * 
+     */
+    public SetServiceLocationRequest createSetServiceLocationRequest() {
+        return new SetServiceLocationRequest();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SetServiceLocationRequest }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setServiceLocationRequest")
     public JAXBElement<SetServiceLocationRequest> createSetServiceLocationRequest(SetServiceLocationRequest value) {
         return new JAXBElement<SetServiceLocationRequest>(_SetServiceLocationRequest_QNAME, SetServiceLocationRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link SetServiceLocationResponse }
+     * 
+     */
+    public SetServiceLocationResponse createSetServiceLocationResponse() {
+        return new SetServiceLocationResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetServiceLocationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "setServiceLocationResponse")
+    public JAXBElement<SetServiceLocationResponse> createSetServiceLocationResponse(SetServiceLocationResponse value) {
+        return new JAXBElement<SetServiceLocationResponse>(_SetServiceLocationResponse_QNAME, SetServiceLocationResponse.class, null, value);
     }
 
 }

@@ -46,32 +46,6 @@ public class BusinessServiceV1Test
         return m_proxy;
     }
 
-    public void testLogout()
-        throws Exception
-    {
-        LogoutResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().logout(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
-    public void testLogin()
-        throws Exception
-    {
-        LoginResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().login(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
     public void testGetQuote()
         throws Exception
     {
@@ -163,6 +137,19 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
+    public void testLogout()
+        throws Exception
+    {
+        LogoutResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().logout(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
     public void testGetTopOrders()
         throws Exception
     {
@@ -221,6 +208,19 @@ public class BusinessServiceV1Test
         GetOrdersResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getOrders(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testLogin()
+        throws Exception
+    {
+        LoginResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().login(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
