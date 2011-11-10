@@ -82,6 +82,9 @@ if (isset ($_POST['LOGINREQUEST']))
 			<a href="quotes.php">Quotes/Trade</a>
 			</td>
 			<td>
+				<a href="exchange.php">Exchange</a>
+			</td>			
+			<td>
 			<a href="glossary.php">Glossary</a>
 			</td>
 			<td>

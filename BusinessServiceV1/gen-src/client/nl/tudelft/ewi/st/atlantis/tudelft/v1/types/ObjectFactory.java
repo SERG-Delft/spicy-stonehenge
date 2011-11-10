@@ -30,11 +30,19 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link MarketSummaryData }
      * 
      */
     public MarketSummaryData createMarketSummaryData() {
         return new MarketSummaryData();
+=======
+     * Create an instance of {@link AccountData }
+     * 
+     */
+    public AccountData createAccountData() {
+        return new AccountData();
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     }
 
     /**
@@ -46,19 +54,40 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link OrderData }
      * 
      */
     public OrderData createOrderData() {
         return new OrderData();
-    }
-
-    /**
+=======
      * Create an instance of {@link HoldingData }
      * 
      */
     public HoldingData createHoldingData() {
         return new HoldingData();
+    }
+
+    /**
+     * Create an instance of {@link MarketSummaryData }
+     * 
+     */
+    public MarketSummaryData createMarketSummaryData() {
+        return new MarketSummaryData();
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
+    }
+
+    /**
+     * Create an instance of {@link OrderData }
+     * 
+     */
+<<<<<<< HEAD
+    public HoldingData createHoldingData() {
+        return new HoldingData();
+=======
+    public OrderData createOrderData() {
+        return new OrderData();
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     }
 
     /**
@@ -70,11 +99,19 @@ public class ObjectFactory {
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of {@link AccountData }
      * 
      */
     public AccountData createAccountData() {
         return new AccountData();
+=======
+     * Create an instance of {@link WalletData }
+     * 
+     */
+    public WalletData createWalletData() {
+        return new WalletData();
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     }
 
 }

@@ -29,16 +29,22 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.AsyncBusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceInvocationException;
 import org.ebayopensource.turmeric.runtime.sif.impl.internal.service.BaseServiceProxy;
@@ -59,8 +65,22 @@ public class BusinessServiceV1Proxy
         super(service);
     }
 
-    public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getQuote");
+<<<<<<< HEAD
+=======
+    public List<Response<?>> poll(boolean block, boolean partial)
+        throws InterruptedException
+    {
+        return m_service.poll(block, partial);
+    }
+
+    public Response<RegisterResponse> registerAsync(RegisterRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("register");
+        Response<RegisterResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> registerAsync(RegisterRequest param0, AsyncHandler<RegisterResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("register");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -68,6 +88,19 @@ public class BusinessServiceV1Proxy
     public Response<GetQuoteResponse> getQuoteAsync(GetQuoteRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getQuote");
         Response<GetQuoteResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
+    public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getQuote");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Future<?> getMarketSummaryAsync(GetMarketSummaryRequest param0, AsyncHandler<GetMarketSummaryResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getMarketSummary");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
@@ -83,12 +116,15 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+<<<<<<< HEAD
     public Future<?> buyAsync(BuyRequest param0, AsyncHandler<BuyResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("buy");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
+=======
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     public Response<BuyResponse> buyAsync(BuyRequest param0) {
         Dispatch dispatch = m_service.createDispatch("buy");
         Response<BuyResponse> result = dispatch.invokeAsync(param0);
@@ -113,15 +149,32 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> getHoldingAsync(GetHoldingRequest param0, AsyncHandler<GetHoldingResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getHolding");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<GetHoldingResponse> getHoldingAsync(GetHoldingRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getHolding");
         Response<GetHoldingResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
+<<<<<<< HEAD
     public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("sellEnhanced");
+=======
+    public Future<?> updateWalletDataAsync(UpdateWalletDataRequest param0, AsyncHandler<UpdateWalletDataResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("updateWalletData");
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("updateWalletData");
+        Response<UpdateWalletDataResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -149,6 +202,15 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+<<<<<<< HEAD
+=======
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("logout");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     public Response<LogoutResponse> logoutAsync(LogoutRequest param0) {
         Dispatch dispatch = m_service.createDispatch("logout");
         Response<LogoutResponse> result = dispatch.invokeAsync(param0);
@@ -224,6 +286,21 @@ public class BusinessServiceV1Proxy
     public Response<LoginResponse> loginAsync(LoginRequest param0) {
         Dispatch dispatch = m_service.createDispatch("login");
         Response<LoginResponse> result = dispatch.invokeAsync(param0);
+<<<<<<< HEAD
+=======
+        return result;
+    }
+
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("login");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetHoldingsResponse> getHoldingsAsync(GetHoldingsRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getHoldings");
+        Response<GetHoldingsResponse> result = dispatch.invokeAsync(param0);
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         return result;
     }
 
@@ -233,9 +310,27 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+<<<<<<< HEAD
     public Response<GetHoldingsResponse> getHoldingsAsync(GetHoldingsRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getHoldings");
         Response<GetHoldingsResponse> result = dispatch.invokeAsync(param0);
+=======
+    public Response<GetWalletDataResponse> getWalletDataAsync(GetWalletDataRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getWalletData");
+        Response<GetWalletDataResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> getWalletDataAsync(GetWalletDataRequest param0, AsyncHandler<GetWalletDataResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getWalletData");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetClosedOrdersResponse> getClosedOrdersAsync(GetClosedOrdersRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getClosedOrders");
+        Response<GetClosedOrdersResponse> result = dispatch.invokeAsync(param0);
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         return result;
     }
 
@@ -245,6 +340,7 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+<<<<<<< HEAD
     public Response<GetClosedOrdersResponse> getClosedOrdersAsync(GetClosedOrdersRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getClosedOrders");
         Response<GetClosedOrdersResponse> result = dispatch.invokeAsync(param0);
@@ -255,6 +351,19 @@ public class BusinessServiceV1Proxy
         throws InterruptedException
     {
         return m_service.poll(block, partial);
+=======
+    public RegisterResponse register(RegisterRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("register", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        RegisterResponse result = ((RegisterResponse) returnParamList.get(0));
+        return result;
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     }
 
     public GetQuoteResponse getQuote(GetQuoteRequest param0) {
@@ -319,6 +428,19 @@ public class BusinessServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetHoldingResponse result = ((GetHoldingResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public UpdateWalletDataResponse updateWalletData(UpdateWalletDataRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("updateWalletData", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        UpdateWalletDataResponse result = ((UpdateWalletDataResponse) returnParamList.get(0));
         return result;
     }
 
@@ -449,6 +571,19 @@ public class BusinessServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetHoldingsResponse result = ((GetHoldingsResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public GetWalletDataResponse getWalletData(GetWalletDataRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("getWalletData", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        GetWalletDataResponse result = ((GetWalletDataResponse) returnParamList.get(0));
         return result;
     }
 

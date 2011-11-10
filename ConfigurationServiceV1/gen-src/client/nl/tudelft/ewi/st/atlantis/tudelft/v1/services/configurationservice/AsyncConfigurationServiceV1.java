@@ -11,6 +11,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
@@ -58,6 +60,10 @@ public interface AsyncConfigurationServiceV1
     public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> handler);
 
     public Response<GetOPSLocationsResponse> getOPSLocationsAsync(GetOPSLocationsRequest param0);
+
+    public Future<?> getESLocationsAsync(GetESLocationsRequest param0, AsyncHandler<GetESLocationsResponse> handler);
+
+    public Response<GetESLocationsResponse> getESLocationsAsync(GetESLocationsRequest param0);
 
     public List<Response<?>> poll(boolean block, boolean partial)
         throws InterruptedException

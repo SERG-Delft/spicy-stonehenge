@@ -23,6 +23,7 @@ import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
+import nl.tudelft.stocktrader.Wallet;
 
 import nl.tudelft.stocktrader.dal.DAOException;
 
@@ -54,16 +55,25 @@ public interface CustomerDAO {
 	public List<Order> getClosedOrders(String userId)
 			throws DAOException;
 
-	public void insertAccountProfile(AccountProfile accountProfileBean)
+	public boolean insertAccountProfile(AccountProfile accountProfileBean)
 			throws DAOException;
 
-	public void insertAccount(Account accountBean)
+	public boolean insertAccount(Account accountBean)
 			throws DAOException;
 
-	public AccountProfile update(
-			AccountProfile customAccountProfile) throws DAOException;
+	public AccountProfile update(AccountProfile customAccountProfile) 
+			throws DAOException;
 
 	public List<Holding> getHoldings(String userID)
 			throws DAOException;
 
+	public boolean insertWallet(Wallet wallet)
+			throws DAOException;
+	
+	public Wallet getWallet(String userID)
+			throws DAOException;
+	
+	public Wallet updateWallet(Wallet wallet)
+			throws DAOException;
+	
 }

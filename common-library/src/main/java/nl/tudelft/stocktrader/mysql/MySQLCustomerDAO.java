@@ -30,6 +30,7 @@ import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.util.StockTraderUtility;
@@ -490,8 +491,9 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
         }
     }
 
-    public void insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
+    public boolean insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
         PreparedStatement insertAccountProfile = null;
+        boolean insertSuccess = false;
         try {
             insertAccountProfile = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT_PROFILE);
             insertAccountProfile.setString(1, accountProfileBean.getAddress());
@@ -501,7 +503,9 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
             insertAccountProfile.setString(5, accountProfileBean.getCreditCard());
             insertAccountProfile.setString(6, accountProfileBean.getFullName());
             insertAccountProfile.executeUpdate();
+            insertSuccess = true;
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
         } finally {
             if (insertAccountProfile != null) {
@@ -512,10 +516,12 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
 
-    public void insertAccount(Account accountBean) throws DAOException {
+    public boolean insertAccount(Account accountBean) throws DAOException {
         PreparedStatement insertAccount = null;
+        boolean insertSuccess = false;
         try {
             insertAccount = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT);
             insertAccount.setBigDecimal(1, accountBean.getOpenBalance());
@@ -525,8 +531,10 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
             insertAccount.setInt(5, accountBean.getLoginCount());
             insertAccount.setString(6, accountBean.getUserID());
             insertAccount.executeUpdate();
+            insertSuccess = true;
 
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
 
         } finally {
@@ -538,6 +546,7 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
 
     public AccountProfile update(AccountProfile customerAccountProfile) throws DAOException {
@@ -603,4 +612,21 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
             }
         }
     }
+
+	public boolean insertWallet(Wallet wallet) throws DAOException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Wallet getWallet(String userID) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Wallet updateWallet(Wallet wallet) throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

@@ -1,5 +1,6 @@
 package nl.tudelft.stocktrader;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -13,6 +14,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData;
 
 import nl.tudelft.stocktrader.Order;
 
@@ -217,4 +219,29 @@ public class TypeFactory {
 		
 		return ret;
 	}
+	
+	public static WalletData toWalletData(Wallet w){
+		WalletData wd = new WalletData();
+		
+		wd.setUserID(w.getUserID());
+		wd.setCny(w.getCny().doubleValue());
+		wd.setEur(w.getEur().doubleValue());
+		wd.setGbp(w.getGbp().doubleValue());
+		wd.setInr(w.getInr().doubleValue());
+		wd.setUsd(w.getUsd().doubleValue());
+		
+		return wd;
+	}
+	
+	public static Wallet toWallet(WalletData wd){
+		Wallet w = new Wallet(wd.getUserID());
+		w.setCny(BigDecimal.valueOf(wd.getCny()));
+		w.setEur(BigDecimal.valueOf(wd.getEur()));
+		w.setGbp(BigDecimal.valueOf(wd.getGbp()));
+		w.setInr(BigDecimal.valueOf(wd.getInr()));
+		w.setUsd(BigDecimal.valueOf(wd.getUsd()));
+		
+		return w;
+	}
+	
 }

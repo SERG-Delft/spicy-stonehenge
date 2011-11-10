@@ -21,6 +21,7 @@ ini_set('display_errors', 1);
 //require_once('configservice.classmap.php');
 require_once('classes/BusinessService.datamodel.php');
 require_once('utils/wsclient.util.php');
+require_once('classes/ExchangeService.datamodel.php');
 
 define ("STATUS_SUCCESS", 1);
 define ("STATUS_FAILURE", 0);
@@ -34,34 +35,6 @@ define ("COOKIE_ENDPOINT", "endpoint");
 /*this will set the default end point if end point is NOT already set.*/
 //SetDefaultEndpoint(); 
 
-/**
- * This method registes a new user in the system
- * @param userID id of the user
- * @param password password of the user
- * @param fullname full name of the user
- * @param address address of the user
- * @param email email address of the user
- * @param creditcard credit card number of the user
- * @param openBalance initial balance of the user
- * @return account details of the registerd user on success. NULL otherwise.
- */
-
-function RegisterUser($userID, $password, $fullname, 
-	$address, $email, $creditcard, $openBalance)
-{
-	$proxy = GetProxy("register", BUSINESS_CLASSMAP);
-	$input = new registerRequest();
-	$input->userID = $userID;
-	$input->password = $password;
-	$input->fullname = $fullname;
-	$input->address = $address;
-	$input->email = $email;
-	$input->creditcard = $creditcard;
-	$input->openBalance = $openBalance;
-
-	$response = $proxy->register($input);
-	return $response;
-}
 
 /**
  * Updates account profile information
@@ -273,8 +246,6 @@ function GetEndpoint()
  * Gets proxy object to make communication with business service
  */
 
-
-
 /**
  * Sends login request to verify whether current user is authorized
  * @param userid user id of current user
@@ -479,5 +450,160 @@ function checkForClosedOrders()
 		}
 	}
 }
+
+//for user register
+
+function register($userID, $password, $fullname, $address, 
+	$email, $creditcard, $openBalance, $currencyType) 
+{	
+	$proxy = GetProxy("register", BUSINESS_CLASSMAP);
+	$input = new registerRequest();
+	$input->userID = $userID;
+	$input->password = $password;
+	$input->fullname = $fullname;
+	$input->address = $address;
+	$input->email = $email;
+	$input->creditcard = $creditcard;
+	$input->openBalance = $openBalance;
+	$input->currencyType = $currencyType;
+	
+	$response = $proxy->register($input);
+   // var_dump($proxy);
+	return $response;
+
+}
+
+
+/**
+ * This method registes a new user in the system
+ * @param userID id of the user
+ * @param password password of the user
+ * @param fullname full name of the user
+ * @param address address of the user
+ * @param email email address of the user
+ * @param creditcard credit card number of the user
+ * @param openBalance initial balance of the user
+ * @return account details of the registerd user on success. NULL otherwise.
+ */
+
+/**
+function RegisterUser($userID, $password, $fullname, 
+	$address, $email, $creditcard, $openBalance)
+{
+	$proxy = GetProxy("register", BUSINESS_CLASSMAP);
+	$input = new registerRequest();
+	$input->userID = $userID;
+	$input->password = $password;
+	$input->fullname = $fullname;
+	$input->address = $address;
+	$input->email = $email;
+	$input->creditcard = $creditcard;
+	$input->openBalance = $openBalance;
+
+	$response = $proxy->register($input);
+	return $response;
+}
+*/
+
+
+function getWalletData($userid) {
+	$proxy = GetProxy("getWalletData", BUSINESS_CLASSMAP);
+    $input = new getWalletDataRequest();
+	$input->userID = $userid;
+    $response = $proxy->getWalletData($input);
+	return $response->walletData;
+
+}
+
+
+/**
+ * Service function updateWallet
+ * @param object of updateWallet $input 
+ * @return object of updateWalletResponse 
+ */
+ /**
+function updateWalletData($userID, $eur, $usd, $gbp, $cny, $inr)
+{
+	$proxy = GetProxy("updateWalletData",BUSINESS_CLASSMAP);
+	$input = new updateWalletData();
+	$input->walletData = new WalletData();
+	$input->walletData->userID = $userID;
+	$input->walletData->eur = $eur;
+	$input->walletData->usd = $usd;
+	$input->walletData->gbp = $gbp;
+	$input->walletData->cny = $cny;
+	$input->walletData->inr = $inr;
+    $response = $proxy->updateWalletData($input);
+	return $response;
+}
+*/
+
+
+// for exchange service
+
+function exchangeCurrency($baseCurrency, $aimCurrency, $exchAmount) {
+	$proxy = GetProxy("exchangeCurrency", EXCHANGE_CLASSMAP);
+	$input = new exchangeCurrencyRequest();
+	$input->baseCurrency = $baseCurrency;
+	$input->aimCurrency = $aimCurrency;
+	$input->exchAmount = $exchAmount;
+	$response = $proxy->exchangeCurrency($input);
+   // var_dump($proxy);
+	return $response->exchResult;
+
+}
+
+
+/**
+ * Service function updateWalletData
+ * @param object of updateWalletDataRequest $input 
+ * @return object of updateWalletDataResponse 
+ */
+function updateWalletData($userID, $fromCurrency, $toCurrency, $fromAmount, $toAmount) {
+    $proxy = GetProxy("updateWalletData", EXCHANGE_CLASSMAP);
+	$input = new updateWalletDataRequest();
+	$input->userID = $userID;
+	$input->fromCurrency = $fromCurrency;
+	$input->toCurrency = $toCurrency;
+	$input->fromAmount = $fromAmount;
+	$input->toAmount = $toAmount;
+	$response = $proxy->updateWalletData($input);
+   // var_dump($proxy);
+	return $response;
+}
+
+
+/**
+ * Service function checkCurrency
+ * @param object of checkCurrencyRequest $input 
+ * @return object of checkCurrencyResponse 
+ */
+function checkCurrency( $userID, $baseCurrency, $aimCurrency) {
+    $proxy = GetProxy("checkCurrency", EXCHANGE_CLASSMAP);
+	$input = new checkCurrencyRequest();
+	$input->userID = $userID;
+	$input->baseCurrency = $baseCurrency;
+	$input->aimCurrency = $aimCurrency;
+	$response = $proxy->checkCurrency($input);
+	return $response->currencyExist;
+}
+
+
+/**
+ * Service function checkAmount
+ * @param object of checkAmountRequest $input 
+ * @return object of checkAmountResponse 
+ */
+function checkAmount($userID, $currencyType, $checkAmount) {
+    $proxy = GetProxy("checkAmount", EXCHANGE_CLASSMAP);
+	$input = new checkAmountRequest();
+	$input->userID = $userID;
+	$input->currencyType = $currencyType;
+	$input->checkAmount = $checkAmount;
+	$response = $proxy->checkAmount($input);
+   // var_dump($proxy);
+	return $response->amountEnough;
+}
+
 
 ?>

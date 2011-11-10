@@ -3,7 +3,7 @@
  * BusinessServiceV1.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6-wso2v2  Built on : Oct 25, 2010 (02:27:59 MST)
+ * by the Apache Axis2 version: 1.6-wso2v4  Built on : Jan 03, 2011 (12:16:01 UTC)
  */
     package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice;
     /**
@@ -84,6 +84,20 @@
          
         /**
          * Auto generated method signature
+         * 
+                                    * @param updateWalletDataRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse updateWalletData
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest updateWalletDataRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
          * Documentation goes here.
                                     * @param sellEnhancedRequest
          */
@@ -106,6 +120,20 @@
                 public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse updateAccountProfile
                 (
                   nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest updateAccountProfileRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * 
+                                    * @param registerRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse register
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest registerRequest
                  )
             ;
         
@@ -218,6 +246,20 @@
                 public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsResponse getHoldings
                 (
                   nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsRequest getHoldingsRequest
+                 )
+            ;
+        
+         
+        /**
+         * Auto generated method signature
+         * 
+                                    * @param getWalletDataRequest
+         */
+
+        
+                public nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse getWalletData
+                (
+                  nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest getWalletDataRequest
                  )
             ;
         

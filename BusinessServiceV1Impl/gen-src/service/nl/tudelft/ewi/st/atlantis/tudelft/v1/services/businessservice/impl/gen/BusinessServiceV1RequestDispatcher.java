@@ -23,16 +23,22 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
@@ -51,11 +57,18 @@ public class BusinessServiceV1RequestDispatcher
 
     public BusinessServiceV1RequestDispatcher() {
         super(BusinessServiceV1 .class);
+<<<<<<< HEAD
+=======
+        addSupportedOperation("register", new Class[] {RegisterRequest.class }, new Class[] {RegisterResponse.class });
+        addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
+        addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         addSupportedOperation("getQuote", new Class[] {GetQuoteRequest.class }, new Class[] {GetQuoteResponse.class });
         addSupportedOperation("getMarketSummary", new Class[] {GetMarketSummaryRequest.class }, new Class[] {GetMarketSummaryResponse.class });
         addSupportedOperation("buy", new Class[] {BuyRequest.class }, new Class[] {BuyResponse.class });
         addSupportedOperation("getAccountData", new Class[] {GetAccountDataRequest.class }, new Class[] {GetAccountDataResponse.class });
         addSupportedOperation("getHolding", new Class[] {GetHoldingRequest.class }, new Class[] {GetHoldingResponse.class });
+        addSupportedOperation("updateWalletData", new Class[] {UpdateWalletDataRequest.class }, new Class[] {UpdateWalletDataResponse.class });
         addSupportedOperation("sellEnhanced", new Class[] {SellEnhancedRequest.class }, new Class[] {SellEnhancedResponse.class });
         addSupportedOperation("updateAccountProfile", new Class[] {UpdateAccountProfileRequest.class }, new Class[] {UpdateAccountProfileResponse.class });
         addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
@@ -66,6 +79,7 @@ public class BusinessServiceV1RequestDispatcher
         addSupportedOperation("getOrders", new Class[] {GetOrdersRequest.class }, new Class[] {GetOrdersResponse.class });
         addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
         addSupportedOperation("getHoldings", new Class[] {GetHoldingsRequest.class }, new Class[] {GetHoldingsResponse.class });
+        addSupportedOperation("getWalletData", new Class[] {GetWalletDataRequest.class }, new Class[] {GetWalletDataResponse.class });
         addSupportedOperation("getClosedOrders", new Class[] {GetClosedOrdersRequest.class }, new Class[] {GetClosedOrdersResponse.class });
     }
 
@@ -77,6 +91,45 @@ public class BusinessServiceV1RequestDispatcher
         String operationName = msgCtx.getOperationName();
         Message requestMsg = msgCtx.getRequestMessage();
          
+<<<<<<< HEAD
+=======
+        if ("register".equals(operationName)) {
+            RegisterRequest param2 = ((RegisterRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                RegisterResponse result = service.register(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("login".equals(operationName)) {
+            LoginRequest param2 = ((LoginRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                LoginResponse result = service.login(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("logout".equals(operationName)) {
+            LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                LogoutResponse result = service.logout(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         if ("getQuote".equals(operationName)) {
             GetQuoteRequest param2 = ((GetQuoteRequest) requestMsg.getParam(0));
             try {
@@ -130,6 +183,18 @@ public class BusinessServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetHoldingResponse result = service.getHolding(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("updateWalletData".equals(operationName)) {
+            UpdateWalletDataRequest param2 = ((UpdateWalletDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                UpdateWalletDataResponse result = service.updateWalletData(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
@@ -250,6 +315,18 @@ public class BusinessServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetHoldingsResponse result = service.getHoldings(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getWalletData".equals(operationName)) {
+            GetWalletDataRequest param2 = ((GetWalletDataRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetWalletDataResponse result = service.getWalletData(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

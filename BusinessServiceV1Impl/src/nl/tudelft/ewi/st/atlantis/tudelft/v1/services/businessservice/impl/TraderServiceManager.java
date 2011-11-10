@@ -30,6 +30,7 @@ import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.TypeFactory;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.dal.DAOFactory;
@@ -104,10 +105,34 @@ public class TraderServiceManager {
 		return customerDAO.getClosedOrders(userId);
 	}
 
-	public Account register(String userId, String password,
+	public String register(String userId, String password,
 			String fullName, String address, String email, String creditcard,
-			BigDecimal openBalance) throws DAOException {
-		throw new UnsupportedOperationException();
+			BigDecimal openBalance, String currencyType) throws DAOException {
+		
+		String result;
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		if(customerDAO.getAccountProfileData(userId)==null){
+			Account a = new Account();
+			a.setUserID(userId);
+			a.setOpenBalance(openBalance);
+			a.setBalance(openBalance);
+			a.setCurrencyType(currencyType);
+			a.setLogoutCount(0);			
+			boolean insertAccount = customerDAO.insertAccount(a);
+			boolean insertAP = customerDAO.insertAccountProfile(new AccountProfile(userId, password, 
+											fullName, address, email, creditcard));	
+			//also need to insert wallet
+			Wallet wallet = new Wallet(userId);
+			wallet.setMoney(currencyType, openBalance);
+			boolean insertWallet = customerDAO.insertWallet(wallet);
+			if(insertAP && insertAccount && insertWallet)
+				result = "success";
+			else
+				result = "failed";
+		}else
+			result = "userexist";	
+
+		return result;
 	}
 
 //	public CustomAccountBean addNewRegisteredUser(String userId,
@@ -249,6 +274,18 @@ public class TraderServiceManager {
 			throws DAOException {
 		CustomerDAO customerDAO = factory.getCustomerDAO();
 		return customerDAO.getHoldings(userID);
+	}
+	
+	public Wallet getWallet(String userID) 
+			throws DAOException {
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		return customerDAO.getWallet(userID);
+		
+	}
+	
+	public Wallet updateWallet(Wallet wallet) throws DAOException{
+		CustomerDAO customerDAO = factory.getCustomerDAO();
+		return customerDAO.updateWallet(wallet);
 	}
 
 }

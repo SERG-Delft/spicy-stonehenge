@@ -32,6 +32,7 @@ import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.util.StockTraderUtility;
@@ -54,10 +55,17 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_SELECT_CLOSED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'closed'";
     private static final String SQL_UPDATE_CLOSED_ORDERS = "UPDATE orders SET orderstatus = 'completed' WHERE orderstatus = 'closed' AND account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?)";
     private static final String SQL_INSERT_ACCOUNT_PROFILE = "INSERT INTO accountprofile VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, lastlogin, logincount, profile_userid, accountid) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?, null); SELECT LAST_INSERT_ID();";
+    private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid, currency) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?)";//; SELECT LAST_INSERT_ID()
     private static final String SQL_UPDATE_ACCOUNT_PROFILE = "UPDATE accountprofile SET address = ?, password = ?, email = ?, creditcard = ?, fullname = ? WHERE userid = ?";
     private static final String SQL_SELECT_HOLDINGS = "SELECT holdingid, quantity, purchaseprice, purchasedate, quote_symbol, account_accountid FROM holding WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) ORDER BY holdingid DESC";
+    //for register
+//    private static final String SQL_SELECT_USER_LIST = "SELECT userid FROM accountprofile";
+    private static final String SQL_INSERT_WALLET = "INSERT INTO wallet (userid, usd, eur, gbp, cny, inr) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String SQL_SELECT_WALLET = "SELECT userid, usd, eur, gbp, cny, inr FROM wallet where userid = ?";
+    private static final String SQL_UPDATE_WALLET = "UPDATE wallet SET usd = ?, eur = ?, gbp = ?, cny = ?, inr = ? WHERE userid = ?";
 
+ 
+    
     public DerbyCustomerDAO(Connection sqlConnection) throws DAOException {
         super(sqlConnection);
     }
@@ -496,8 +504,9 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
     }
 
-    public void insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
+    public boolean insertAccountProfile(AccountProfile accountProfileBean) throws DAOException {
         PreparedStatement insertAccountProfile = null;
+        boolean insertSuccess = false;
         try {
             insertAccountProfile = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT_PROFILE);
             insertAccountProfile.setString(1, accountProfileBean.getAddress());
@@ -507,7 +516,9 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
             insertAccountProfile.setString(5, accountProfileBean.getCreditCard());
             insertAccountProfile.setString(6, accountProfileBean.getFullName());
             insertAccountProfile.executeUpdate();
+            insertSuccess = true;
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
         } finally {
             if (insertAccountProfile != null) {
@@ -518,21 +529,28 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
+//  "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?); SELECT LAST_INSERT_ID();";
 
-    public void insertAccount(Account accountBean) throws DAOException {
+    public boolean insertAccount(Account accountBean) throws DAOException {
         PreparedStatement insertAccount = null;
+        boolean insertSuccess = false;
         try {
             insertAccount = sqlConnection.prepareStatement(SQL_INSERT_ACCOUNT);
             insertAccount.setBigDecimal(1, accountBean.getOpenBalance());
-            insertAccount.setInt(2, accountBean.getLogoutCount());
-            insertAccount.setBigDecimal(3, accountBean.getBalance());
-            insertAccount.setDate(4, StockTraderUtility.convertToSqlDate(accountBean.getLastLogin()));
-            insertAccount.setInt(5, accountBean.getLoginCount());
-            insertAccount.setString(6, accountBean.getUserID());
+            insertAccount.setInt(2, 0);
+            insertAccount.setBigDecimal(3, accountBean.getOpenBalance());
+            //first insert: the user didn't exist before, no last login
+//            insertAccount.setDate(4, StockTraderUtility.convertToSqlDate(accountBean.getLastLogin()));
+            insertAccount.setInt(4, 0);
+            insertAccount.setString(5, accountBean.getUserID());
+            insertAccount.setString(6, accountBean.getCurrencyType());
             insertAccount.executeUpdate();
+            insertSuccess = true;
 
         } catch (SQLException e) {
+        	insertSuccess = false;
             throw new DAOException("", e);
 
         } finally {
@@ -544,6 +562,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                 }
             }
         }
+        return insertSuccess;
     }
 
     public AccountProfile update(AccountProfile customerAccountProfile) throws DAOException {
@@ -609,4 +628,126 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
             }
         }
     }
+
+//userid, usd, eur, gbp, cny, inr
+    
+	public boolean insertWallet(Wallet wallet) throws DAOException {
+		PreparedStatement insertWallet = null;
+		boolean insertSuccess = false;
+        try {
+            insertWallet = sqlConnection.prepareStatement(SQL_INSERT_WALLET);
+            insertWallet.setString(1, wallet.getUserID());
+            insertWallet.setBigDecimal(2, wallet.getUsd());
+            insertWallet.setBigDecimal(3, wallet.getEur());
+            insertWallet.setBigDecimal(4, wallet.getGbp());
+            insertWallet.setBigDecimal(5, wallet.getCny());
+            insertWallet.setBigDecimal(6, wallet.getInr());
+            insertWallet.executeUpdate();
+            insertSuccess = true;
+        } catch (SQLException e) {
+        	insertSuccess = false;
+            throw new DAOException("", e);
+        } finally {
+            if (insertWallet != null) {
+                try {
+                    insertWallet.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        }
+        return insertSuccess;
+	}
+	//userid, usd, eur, gbp, cny, inr
+	public Wallet getWallet(String userID) throws DAOException {
+		PreparedStatement selectWallet = null;
+        try {
+            selectWallet = sqlConnection.prepareStatement(SQL_SELECT_WALLET);
+            selectWallet.setString(1, userID);
+            ResultSet rs = selectWallet.executeQuery();
+            try {
+                while (rs.next()) {
+            		Wallet wallet = new Wallet(
+            				rs.getString(1),
+            				rs.getBigDecimal(2),
+            				rs.getBigDecimal(3),
+            				rs.getBigDecimal(4),
+            				rs.getBigDecimal(5),
+            				rs.getBigDecimal(6)
+            			); 
+                    return wallet;
+                }
+            } finally {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        } catch (SQLException e) {
+            throw new DAOException("", e);
+        } finally {
+            if (selectWallet != null) {
+                try {
+                    selectWallet.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        }
+        return null;
+	}
+
+	//userid, usd, eur, gbp, cny, inr
+	public Wallet updateWallet(Wallet wallet) throws DAOException {
+		PreparedStatement updateWallet = null;
+        try {
+            updateWallet = sqlConnection.prepareStatement(SQL_UPDATE_WALLET);
+            updateWallet.setBigDecimal(1, wallet.getUsd());
+            updateWallet.setBigDecimal(2, wallet.getEur());
+            updateWallet.setBigDecimal(3, wallet.getGbp());
+            updateWallet.setBigDecimal(4, wallet.getCny());
+            updateWallet.setBigDecimal(5, wallet.getInr());
+            updateWallet.setString(6, wallet.getUserID());
+            updateWallet.executeUpdate();
+            return wallet;
+        } catch (SQLException e) {
+            throw new DAOException("", e);
+        } finally {
+            if (updateWallet != null) {
+                try {
+                    updateWallet.close();
+                } catch (SQLException e) {
+                    logger.debug("", e);
+                }
+            }
+        }
+	}
+
+	
+	
+
+//	public List<String> getUserList() throws DAOException {	
+//		PreparedStatement selectUserList = null;
+//    	try {
+//			selectUserList = sqlConnection.prepareStatement(SQL_SELECT_USER_LIST);
+//			ResultSet rs = selectUserList.executeQuery();
+//			List<String> userList = new ArrayList<String>();
+//			
+//			while(rs.next()){
+//				userList.add(rs.getString(1));
+//			}			
+//			return userList;
+//    	} catch (SQLException e) {
+//            throw new DAOException("", e);
+//        } finally {
+//            if (selectUserList != null) {
+//                try {
+//                    selectUserList.close();
+//                } catch (SQLException e) {
+//                    logger.debug("", e);
+//                }
+//            }
+//        }
+//	}
 }

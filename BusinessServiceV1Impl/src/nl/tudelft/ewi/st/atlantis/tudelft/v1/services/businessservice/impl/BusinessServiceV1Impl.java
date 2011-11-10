@@ -1,6 +1,7 @@
 
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -28,16 +29,22 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
 import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
@@ -46,6 +53,7 @@ import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.TypeFactory;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.DAOException;
 
 public class BusinessServiceV1Impl
@@ -289,6 +297,59 @@ public class BusinessServiceV1Impl
 		GetAllQuotesResponse response = new GetAllQuotesResponse();
 		response.getQuotes().addAll(TypeFactory.toListQuoteData(quotes));
 
+		return response;
+	}
+
+	@Override
+	public RegisterResponse register(RegisterRequest registerRequest) {
+		// TODO Auto-generated method stub
+		String registerResult = null;
+		
+		try {
+			registerResult = mgr.register(registerRequest.getUserID(), registerRequest.getPassword(), 
+					registerRequest.getFullname(), registerRequest.getAddress(), 
+					registerRequest.getEmail(), registerRequest.getCreditcard(), 
+					BigDecimal.valueOf(registerRequest.getOpenBalance()), registerRequest.getCurrencyType());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		RegisterResponse response = new RegisterResponse();
+		response.setOut(registerResult);
+		
+		return response;
+	}
+
+	@Override
+	public GetWalletDataResponse getWalletData(GetWalletDataRequest getWalletRequest) {
+		Wallet wallet = null;
+    	try {
+			wallet = mgr.getWallet(getWalletRequest.getUserID());
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		GetWalletDataResponse response = new GetWalletDataResponse();
+		response.setWalletData(TypeFactory.toWalletData(wallet));
+		
+		return response;
+	}
+
+
+	@Override
+	public UpdateWalletDataResponse updateWalletData(
+			UpdateWalletDataRequest updateWalletDataRequest) {
+		Wallet wallet = null;
+    	try {
+			wallet = mgr.updateWallet(
+					TypeFactory.toWallet(updateWalletDataRequest.getWalletData()));
+			
+		} catch (DAOException e) {
+			logger.debug("", e);
+		}
+		
+		UpdateWalletDataResponse response = new UpdateWalletDataResponse();
+		response.setNewWalletData(TypeFactory.toWalletData(wallet));
+		
 		return response;
 	}
 

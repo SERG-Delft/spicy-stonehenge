@@ -88,6 +88,10 @@ public class ConfigurationServiceV1TypeDefsBuilder
         complexTypes.add(new FlatSchemaComplexTypeImpl());
         // Type #24 (<Anonymous>)
         complexTypes.add(new FlatSchemaComplexTypeImpl());
+        // Type #25 (<Anonymous>)
+        complexTypes.add(new FlatSchemaComplexTypeImpl());
+        // Type #26 (<Anonymous>)
+        complexTypes.add(new FlatSchemaComplexTypeImpl());
     }
 
     private void addComplexTypeElements0(ArrayList<FlatSchemaComplexTypeImpl> complexTypes) {
@@ -266,19 +270,28 @@ public class ConfigurationServiceV1TypeDefsBuilder
         currType.addSimpleElement(new QName(NS2, "in"), 1);
          
         // Type #24 (<Anonymous>)
-        currType = complexTypes.get(24);
+        // type has no child elements
+         
+        // Type #25 (<Anonymous>)
+        currType = complexTypes.get(25);
+        currType.addComplexElement(new QName(NS2, "locations"), complexTypes.get(17), -1);
+         
+        // Type #26 (<Anonymous>)
+        currType = complexTypes.get(26);
         currType.addComplexElement(new QName(NS2, "locations"), complexTypes.get(17), -1);
     }
 
     private void addRootElements0(ArrayList<FlatSchemaComplexTypeImpl> complexTypes, HashMap<QName, FlatSchemaElementDeclImpl> rootElements) {
         rootElements.put(new QName(NS2, "setBSToOPSResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "setBSToOPSResponse"), complexTypes.get(16)));
-        rootElements.put(new QName(NS2, "getOPSLocationsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOPSLocationsResponse"), complexTypes.get(24)));
+        rootElements.put(new QName(NS2, "getOPSLocationsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOPSLocationsResponse"), complexTypes.get(26)));
+        rootElements.put(new QName(NS2, "getESLocationsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getESLocationsResponse"), complexTypes.get(25)));
         rootElements.put(new QName(NS2, "getClientConfigResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClientConfigResponse"), complexTypes.get(14)));
         rootElements.put(new QName(NS2, "getOPSConfigResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOPSConfigResponse"), complexTypes.get(12)));
         rootElements.put(new QName(NS2, "getClientConfigRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getClientConfigRequest"), complexTypes.get(11)));
         rootElements.put(new QName(NS2, "getBSLocationsResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getBSLocationsResponse"), complexTypes.get(9)));
         rootElements.put(new QName(NS2, "getBSLocationsRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getBSLocationsRequest"), complexTypes.get(1)));
         rootElements.put(new QName(NS2, "getOPSConfigRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getOPSConfigRequest"), complexTypes.get(8)));
+        rootElements.put(new QName(NS2, "getESLocationsRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "getESLocationsRequest"), complexTypes.get(24)));
         rootElements.put(new QName(NS2, "setClientToBSRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "setClientToBSRequest"), complexTypes.get(6)));
         rootElements.put(new QName(NS2, "setBSToOPSRequest"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "setBSToOPSRequest"), complexTypes.get(15)));
         rootElements.put(new QName(NS2, "setServiceLocationResponse"), FlatSchemaElementDeclImpl.createRootComplexElement(new QName(NS2, "setServiceLocationResponse"), complexTypes.get(10)));

@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!DOCTYPE database SYSTEM "http://db.apache.org/torque/dtd/database">
+  <database name="MigrateTest">
+    <table name="ACCOUNT">
+      <column name="CREATIONDATE" primaryKey="false" required="false" type="TIMESTAMP" size="29,9" autoIncrement="false"/>
+      <column name="OPENBALANCE" primaryKey="false" required="false" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="LOGOUTCOUNT" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="BALANCE" primaryKey="false" required="false" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="ACCOUNTID" primaryKey="true" required="true" type="INTEGER" size="10" autoIncrement="true"/>
+      <column name="LASTLOGIN" primaryKey="false" required="false" type="TIMESTAMP" size="29,9" autoIncrement="false"/>
+      <column name="LOGINCOUNT" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="PROFILE_USERID" primaryKey="false" required="false" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="CURRENCY" primaryKey="false" required="false" type="VARCHAR" size="6" autoIncrement="false"/>
+    </table>
+    <table name="ACCOUNTPROFILE">
+      <column name="ADDRESS" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="PASSWORD" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="USERID" primaryKey="true" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="EMAIL" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="CREDITCARD" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="FULLNAME" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+    </table>
+    <table name="BSTOOPS">
+      <column name="BS" primaryKey="true" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+      <column name="OPS" primaryKey="false" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+    </table>
+    <table name="CLIENTTOBS">
+      <column name="CLIENT" primaryKey="true" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+      <column name="BS" primaryKey="false" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+    </table>
+    <table name="DBCONFIG">
+      <column name="DBNAME" primaryKey="true" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+      <column name="HOSTNAME" primaryKey="false" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+      <column name="PORT" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="ACTIVE" primaryKey="false" required="true" type="VARCHAR" size="1" autoIncrement="false"/>
+    </table>
+    <table name="ERROR">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="CATEGORY" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="DOMAIN" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="ERRORID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="NAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="ORGANIZATION" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="SEVERITY" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="SUBDOMAIN" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+    </table>
+    <table name="ERRORVALUE">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="AGGREGATIONPERIOD" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="CONSUMERNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="ERRORMESSAGE" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="OPERATIONNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="SERVERSIDE" primaryKey="false" required="true" type="SMALLINT" size="5" autoIncrement="false"/>
+      <column name="SERVICEADMINNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="TIMESTAMP" primaryKey="false" required="true" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="ERROR_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="ERROR" name="FKD7D0B0693BC9FC98">
+        <reference local="ERROR_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="HOLDING">
+      <column name="PURCHASEPRICE" primaryKey="false" required="true" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="HOLDINGID" primaryKey="true" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="QUANTITY" primaryKey="false" required="true" type="REAL" size="23" autoIncrement="false"/>
+      <column name="PURCHASEDATE" primaryKey="false" required="true" type="TIMESTAMP" size="29,9" autoIncrement="false"/>
+      <column name="ACCOUNT_ACCOUNTID" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="QUOTE_SYMBOL" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+    </table>
+    <table name="MACHINE">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="CANONICALHOSTNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="HOSTADDRESS" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="MACHINEGROUP_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="MACHINEGROUP" name="FK9469DC272D9CF3C4">
+        <reference local="MACHINEGROUP_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="MACHINEGROUP">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="NAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+    </table>
+    <table name="METRIC">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="OPERATIONNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="SERVICEADMINNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="METRICDEF_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="METRICDEF" name="FK892AE1D05E732490">
+        <reference local="METRICDEF_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="METRICCLASSIFIER">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="CONSUMERNAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="SOURCEDATACENTER" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="TARGETDATACENTER" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+    </table>
+    <table name="METRICCOMPONENTDEF">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="NAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="TYPE" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="METRICDEF_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="METRICDEF" name="FKF9616FB85E732490">
+        <reference local="METRICDEF_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="METRICCOMPONENTVALUE">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="VALUE" primaryKey="false" required="false" type="DOUBLE" size="52" autoIncrement="false"/>
+      <column name="METRICCOMPONENTDEF_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="METRICVALUE_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="METRICCOMPONENTDEF" name="FK27C05C6411641864">
+        <reference local="METRICCOMPONENTDEF_ID" foreign="ID"/>
+      </foreign-key>
+      <foreign-key foreignTable="METRICVALUE" name="FK27C05C6414E5B790">
+        <reference local="METRICVALUE_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="METRICDEF">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="CATEGORY" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="LEVEL" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+      <column name="NAME" primaryKey="false" required="false" type="VARCHAR" size="255" autoIncrement="false"/>
+    </table>
+    <table name="METRICVALUE">
+      <column name="ID" primaryKey="true" required="true" type="BIGINT" size="19" autoIncrement="true"/>
+      <column name="AGGREGATIONPERIOD" primaryKey="false" required="true" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="SERVERSIDE" primaryKey="false" required="true" type="SMALLINT" size="5" autoIncrement="false"/>
+      <column name="TIMESTAMP" primaryKey="false" required="true" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="MACHINE_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="METRIC_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <column name="METRICCLASSIFIER_ID" primaryKey="false" required="false" type="BIGINT" size="19" autoIncrement="false"/>
+      <foreign-key foreignTable="MACHINE" name="FKFB536181786F8CF0">
+        <reference local="MACHINE_ID" foreign="ID"/>
+      </foreign-key>
+      <foreign-key foreignTable="METRIC" name="FKFB53618159051464">
+        <reference local="METRIC_ID" foreign="ID"/>
+      </foreign-key>
+      <foreign-key foreignTable="METRICCLASSIFIER" name="FKFB536181D653E464">
+        <reference local="METRICCLASSIFIER_ID" foreign="ID"/>
+      </foreign-key>
+    </table>
+    <table name="ORDERS">
+      <column name="ORDERFEE" primaryKey="false" required="false" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="COMPLETIONDATE" primaryKey="false" required="false" type="TIMESTAMP" size="29,9" autoIncrement="false"/>
+      <column name="ORDERTYPE" primaryKey="false" required="false" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="ORDERSTATUS" primaryKey="false" required="false" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="PRICE" primaryKey="false" required="false" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="QUANTITY" primaryKey="false" required="true" type="REAL" size="23" autoIncrement="false"/>
+      <column name="OPENDATE" primaryKey="false" required="false" type="TIMESTAMP" size="29,9" autoIncrement="false"/>
+      <column name="ORDERID" primaryKey="true" required="true" type="INTEGER" size="10" autoIncrement="true"/>
+      <column name="ACCOUNT_ACCOUNTID" primaryKey="false" required="false" type="INTEGER" size="10" autoIncrement="false"/>
+      <column name="QUOTE_SYMBOL" primaryKey="false" required="false" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="HOLDING_HOLDINGID" primaryKey="false" required="false" type="INTEGER" size="10" autoIncrement="false"/>
+    </table>
+    <table name="QUOTE">
+      <column name="LOW" primaryKey="false" required="true" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="OPEN1" primaryKey="false" required="true" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="VOLUME" primaryKey="false" required="true" type="REAL" size="23" autoIncrement="false"/>
+      <column name="PRICE" primaryKey="false" required="true" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="HIGH" primaryKey="false" required="true" type="DECIMAL" size="12,2" autoIncrement="false"/>
+      <column name="COMPANYNAME" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="SYMBOL" primaryKey="true" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="CHANGE1" primaryKey="false" required="true" type="REAL" size="23" autoIncrement="false"/>
+    </table>
+    <table name="SERVICE">
+      <column name="SERVICENAME" primaryKey="true" required="true" type="VARCHAR" size="50" autoIncrement="false"/>
+      <column name="URL" primaryKey="false" required="true" type="VARCHAR" size="500" autoIncrement="false"/>
+      <column name="SEC" primaryKey="false" required="true" type="SMALLINT" size="5" autoIncrement="false"/>
+    </table>
+    <table name="WALLET">
+	  <column name="WALLETID" primaryKey="true" required="true" type="INTEGER" size="10" autoIncrement="true"/>
+      <column name="USERID" primaryKey="false" required="true" type="VARCHAR" size="250" autoIncrement="false"/>
+      <column name="USD" primaryKey="false" required="false" type="DECIMAL" size="5" autoIncrement="false"/>
+      <column name="EUR" primaryKey="false" required="false" type="DECIMAL" size="5" autoIncrement="false"/>
+      <column name="GBP" primaryKey="false" required="false" type="DECIMAL" size="5" autoIncrement="false"/>
+      <column name="CNY" primaryKey="false" required="false" type="DECIMAL" size="5" autoIncrement="false"/>
+      <column name="INR" primaryKey="false" required="false" type="DECIMAL" size="5" autoIncrement="false"/>
+    </table>
+  </database>

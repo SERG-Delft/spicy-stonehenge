@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+   <servlet>
+       <description>ExchangeServiceV1</description>
+       <display-name>ExchangeServiceV1</display-name>
+       <servlet-name>ExchangeServiceV1</servlet-name>
+       <servlet-class>org.ebayopensource.turmeric.runtime.spf.pipeline.SPFServlet</servlet-class>
+      <init-param>
+         <param-name>SOA_SERVICE_NAME</param-name>
+         <param-value>ExchangeServiceV1</param-value>
+      </init-param>
+   </servlet>
+   <servlet-mapping>
+       <servlet-name>ExchangeServiceV1</servlet-name>
+       <url-pattern>/ExchangeServiceV1</url-pattern>
+   </servlet-mapping>
+
+</web-app>
