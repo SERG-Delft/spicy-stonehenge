@@ -49,13 +49,10 @@ public interface AsyncBusinessServiceV1
 {
 
 
-<<<<<<< HEAD
-=======
     public Future<?> registerAsync(RegisterRequest param0, AsyncHandler<RegisterResponse> handler);
 
     public Response<RegisterResponse> registerAsync(RegisterRequest param0);
 
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> handler);
 
     public Response<GetQuoteResponse> getQuoteAsync(GetQuoteRequest param0);

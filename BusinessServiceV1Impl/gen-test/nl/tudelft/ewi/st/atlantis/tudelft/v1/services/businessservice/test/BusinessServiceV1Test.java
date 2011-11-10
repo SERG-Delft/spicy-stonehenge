@@ -49,48 +49,6 @@ public class BusinessServiceV1Test
         return m_proxy;
     }
 
-<<<<<<< HEAD
-=======
-    public void testRegister()
-        throws Exception
-    {
-        RegisterResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().register(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
-    public void testLogin()
-        throws Exception
-    {
-        LoginResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().login(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
-    public void testLogout()
-        throws Exception
-    {
-        LogoutResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().logout(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     public void testGetQuote()
         throws Exception
     {
@@ -318,6 +276,19 @@ public class BusinessServiceV1Test
         GetClosedOrdersResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getClosedOrders(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testRegister()
+        throws Exception
+    {
+        RegisterResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().register(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

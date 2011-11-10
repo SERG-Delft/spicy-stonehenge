@@ -7,9 +7,6 @@
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" name="nl.tudelft.ewi.st.atlantis.tudelft.v1.services"/>
     </package-map>
     <operation-list>
-<<<<<<< HEAD
-        <operation name="getQuote">
-=======
         <operation methodName="register" name="register">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterRequest</java-type-name>
@@ -30,7 +27,6 @@
             </error-message>
         </operation>
         <operation methodName="getQuote" name="getQuote">
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteRequest</java-type-name>
                 <xml-type-name>GetQuoteRequest</xml-type-name>
@@ -182,11 +178,7 @@
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
             </error-message>
         </operation>
-<<<<<<< HEAD
-        <operation name="logout">
-=======
         <operation methodName="logout" name="logout">
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest</java-type-name>
                 <xml-type-name>LogoutRequest</xml-type-name>
@@ -202,17 +194,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-<<<<<<< HEAD
-                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
-            </error-message>
-        </operation>
-        <operation name="getTopOrders">
-=======
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
             </error-message>
         </operation>
         <operation methodName="getTopOrders" name="getTopOrders">
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersRequest</java-type-name>
                 <xml-type-name>GetTopOrdersRequest</xml-type-name>
@@ -307,11 +292,7 @@
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
             </error-message>
         </operation>
-<<<<<<< HEAD
-        <operation name="login">
-=======
         <operation methodName="login" name="login">
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest</java-type-name>
                 <xml-type-name>LoginRequest</xml-type-name>
@@ -327,17 +308,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-<<<<<<< HEAD
-                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
-            </error-message>
-        </operation>
-        <operation name="getHoldings">
-=======
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
             </error-message>
         </operation>
         <operation methodName="getHoldings" name="getHoldings">
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsRequest</java-type-name>
                 <xml-type-name>GetHoldingsRequest</xml-type-name>
@@ -437,11 +411,8 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse</java-type-name>
-<<<<<<< HEAD
-=======
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse</java-type-name>
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountProfileData</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.HoldingData</java-type-name>

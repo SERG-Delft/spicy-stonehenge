@@ -13,11 +13,7 @@
 		<xs:schema xmlns:Q1="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 <xs:import namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
 <xs:import namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types"/>
-<<<<<<< HEAD
-			
-=======
 
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
 			
 			
 			
@@ -663,8 +659,6 @@
 					<xs:element maxOccurs="1" minOccurs="1" name="symbol" type="xs:string"/>
 				</xs:sequence>
 			</xs:complexType>
-<<<<<<< HEAD
-=======
 <xs:complexType name="WalletData">
 		<xs:annotation>
 			<xs:documentation/>
@@ -681,7 +675,6 @@
 			<xs:element maxOccurs="1" minOccurs="1" name="inr" type="xs:double"/>
 		</xs:sequence>
 	</xs:complexType>
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
 <xs:complexType name="AccountData">
 		<xs:annotation>
 			<xs:documentation/>
@@ -698,13 +691,9 @@
 			<xs:element maxOccurs="1" minOccurs="1" name="logoutCount" type="xs:int"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="loginCount" type="xs:int"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="accountID" type="xs:int"/>
-<<<<<<< HEAD
 			<xs:element maxOccurs="1" minOccurs="1" name="currencyType" type="xs:string"/>
-=======
-			<xs:element maxOccurs="1" minOccurs="1" name="currencyType" type="xs:string">
-			</xs:element>
+	
 
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

@@ -3,10 +3,7 @@
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData" xml-type-name="AccountData"/>
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation" xml-type-name="ServiceLocation"/>
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData" xml-type-name="MarketSummaryData"/>
-<<<<<<< HEAD
-=======
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData" xml-type-name="WalletData"/>
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData" xml-type-name="QuoteData"/>
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData" xml-type-name="OrderData"/>
     <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.v1.types.GsonResult" xml-type-name="GsonResult"/>

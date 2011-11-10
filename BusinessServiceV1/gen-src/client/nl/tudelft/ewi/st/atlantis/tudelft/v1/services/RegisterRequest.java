@@ -23,7 +23,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="creditcard" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="openBalance" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="openBalance" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="currencyType" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
     "address",
     "email",
     "creditcard",
-    "openBalance"
+    "openBalance",
+    "currencyType"
 })
 public class RegisterRequest {
 
@@ -56,8 +58,9 @@ public class RegisterRequest {
     protected String email;
     @XmlElement(required = true)
     protected String creditcard;
+    protected double openBalance;
     @XmlElement(required = true)
-    protected String openBalance;
+    protected String currencyType;
 
     /**
      * Gets the value of the userID property.
@@ -206,25 +209,41 @@ public class RegisterRequest {
     /**
      * Gets the value of the openBalance property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getOpenBalance() {
+    public double getOpenBalance() {
         return openBalance;
     }
 
     /**
      * Sets the value of the openBalance property.
      * 
+     */
+    public void setOpenBalance(double value) {
+        this.openBalance = value;
+    }
+
+    /**
+     * Gets the value of the currencyType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCurrencyType() {
+        return currencyType;
+    }
+
+    /**
+     * Sets the value of the currencyType property.
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setOpenBalance(String value) {
-        this.openBalance = value;
+    public void setCurrencyType(String value) {
+        this.currencyType = value;
     }
 
 }

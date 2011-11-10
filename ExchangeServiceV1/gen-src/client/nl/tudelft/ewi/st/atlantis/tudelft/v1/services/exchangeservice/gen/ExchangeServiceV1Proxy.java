@@ -41,15 +41,15 @@ public class ExchangeServiceV1Proxy
         return m_service.poll(block, partial);
     }
 
-    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("updateWalletData");
-        Response<UpdateWalletDataResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
     public Future<?> updateWalletDataAsync(UpdateWalletDataRequest param0, AsyncHandler<UpdateWalletDataResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("updateWalletData");
         Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("updateWalletData");
+        Response<UpdateWalletDataResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -77,15 +77,15 @@ public class ExchangeServiceV1Proxy
         return result;
     }
 
-    public Response<CheckAmountResponse> checkAmountAsync(CheckAmountRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("checkAmount");
-        Response<CheckAmountResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
     public Future<?> checkAmountAsync(CheckAmountRequest param0, AsyncHandler<CheckAmountResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("checkAmount");
         Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<CheckAmountResponse> checkAmountAsync(CheckAmountRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("checkAmount");
+        Response<CheckAmountResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
