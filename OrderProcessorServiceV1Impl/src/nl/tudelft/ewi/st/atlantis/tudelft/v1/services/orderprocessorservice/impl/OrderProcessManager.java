@@ -17,7 +17,6 @@
 
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.orderprocessorservice.impl;
 
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
@@ -29,13 +28,8 @@ import nl.tudelft.stocktrader.util.StockTraderUtility;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-
 import java.math.BigDecimal;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import javax.xml.datatype.XMLGregorianCalendar;
 
 public class OrderProcessManager {
 	private static final Log logger = LogFactory
@@ -45,6 +39,7 @@ public class OrderProcessManager {
 
 	public void processAndCompleteOrder(Order order)
 			throws DAOException {
+
 		if (logger.isDebugEnabled()) {
 			logger
 					.debug("ProcessOrder.processAndCompleteOrder(OrderDataModel) \nOrderID :"
@@ -75,11 +70,8 @@ public class OrderProcessManager {
 
 			Quote quote = orderDAO.getQuoteForUpdate(order.getSymbol());
 			if (quote == null) {
-				if (logger.isDebugEnabled()) {
-					logger
-							.debug("Unable to locate a quote entry for the symbol :"
+				System.out.println("Unable to locate a quote entry for the symbol :"
 									+ order.getSymbol());
-				}
 				return;
 			}
 
@@ -114,7 +106,6 @@ public class OrderProcessManager {
 					total = total.add(orderFee);
 				}
 			}
-
 			orderDAO.updateAccountBalance(order.getAccountId(), total);
 			orderDAO.updateStockPriceVolume(order.getQuantity(), quote);
 			order.setOrderStatus(StockTraderUtility.ORDER_STATUS_CLOSED);
@@ -126,6 +117,7 @@ public class OrderProcessManager {
 		} catch (DAOException e) {
 			try {
 				orderDAO.rollbackTransaction();
+				logger.error("", e);
 			} catch (DAOException e1) {
 				logger.error("", e1);
 			}

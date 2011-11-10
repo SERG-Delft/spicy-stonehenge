@@ -206,7 +206,7 @@ public class TraderServiceManager {
 			
 			SubmitOrderRequest request = new SubmitOrderRequest();
 			request.setData(TypeFactory.toOrderData(order));
-			
+
 			asynClient.submitOrderAsync(request);
 			orderDAO.commitTransaction();
 			return order;
@@ -237,7 +237,6 @@ public class TraderServiceManager {
 			order = orderDAO.createOrder(userID, holding.getQuoteId(),
 					StockTraderUtility.ORDER_TYPE_SELL, holding.getQuantity(),
 					holdingID);
-
 		} else if (StockTraderUtility.ORDER_TYPE_SELL_ENHANCED
 				.equals(orderType)) {
 			holding = orderDAO.getHolding(holdingID);

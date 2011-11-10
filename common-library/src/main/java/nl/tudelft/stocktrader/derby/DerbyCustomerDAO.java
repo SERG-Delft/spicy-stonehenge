@@ -18,6 +18,7 @@
 package nl.tudelft.stocktrader.derby;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -164,7 +165,10 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
         PreparedStatement debitAccountStat = null;
         try {
-            debitAccountStat = sqlConnection.prepareStatement(SQL_DEBIT_ACCOUNT);
+        	/* Tiago: we need to be very careful with BigDecimals. Round to 2 places */
+        	total = total.setScale(2, RoundingMode.HALF_UP);
+
+        	debitAccountStat = sqlConnection.prepareStatement(SQL_DEBIT_ACCOUNT);
             debitAccountStat.setBigDecimal(1, total);
             debitAccountStat.setInt(2, accountId);
             debitAccountStat.executeUpdate();

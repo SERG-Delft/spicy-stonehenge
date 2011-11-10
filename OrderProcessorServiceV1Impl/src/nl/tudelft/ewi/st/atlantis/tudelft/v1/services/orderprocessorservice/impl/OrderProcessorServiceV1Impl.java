@@ -24,7 +24,6 @@ public class OrderProcessorServiceV1Impl implements OrderProcessorServiceV1
 
     public IsOnlineResponse isOnline(IsOnlineRequest empty) {
     	logger.debug("OrderProcessorImpl.isOnline(IsOnlines)");
-    	
     	return new IsOnlineResponse();
     }
 

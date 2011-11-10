@@ -38,14 +38,14 @@ public class DerbyOrderDAO extends AbstractDerbyDAO implements OrderDAO {
 	private static Log logger = LogFactory.getLog(DerbyOrderDAO.class);
  
 	private static final String SQL_GET_ACCOUNTID_ORDER = "SELECT account_accountid FROM orders WHERE orderid = ?";
-	private static final String SQL_INSERT_HOLDING = "INSERT INTO holding (purchaseprice, quantity, purchasedate, account_accountid, quote_symbol, holdingid) VALUES (?, ?, ?, ?, ?, null)";
+	private static final String SQL_INSERT_HOLDING = "INSERT INTO holding (purchaseprice, quantity, purchasedate, account_accountid, quote_symbol) VALUES (?, ?, ?, ?, ?)";
 	private static final String SQL_UPDATE_HOLDING = "UPDATE holding SET quantity =quantity - ? WHERE holdingid = ?";
 	private static final String SQL_DELETE_HOLDING = "DELETE FROM holding WHERE holdingid = ?";
 	private static final String SQL_SELECT_HOLDING = "SELECT holdingid, quantity, purchaseprice, purchasedate, quote_symbol, account_accountid FROM holding WHERE holdingid = ?";
 	private static final String SQL_UPDATE_ORDER = "UPDATE orders SET quantity = ? WHERE orderid = ?";
 	private static final String SQL_CLOSE_ORDER = "UPDATE orders SET orderstatus = ?, completiondate = current_timestamp, holding_holdingid = ?, price = ? WHERE orderid = ?";
 	private static final String SQL_GET_ACCOUNTID = "SELECT accountid FROM account  WHERE profile_userid = ?";
-    private static final String SQL_GET_LAST_INSERT_ID = "SELECT IDENTITY_VAL_LOCAL()";
+    private static final String SQL_GET_LAST_INSERT_ID = "VALUES IDENTITY_VAL_LOCAL()";
 
 	// CHECKME
 	private static final String SQL_INSERT_ORDER = "INSERT INTO orders (opendate, orderfee, price, quote_symbol, quantity, ordertype, orderstatus, account_accountid, holding_holdingid) VALUES (current_timestamp, ?, ?, ?, ?, ?, 'open', ?, ?)";

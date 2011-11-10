@@ -691,8 +691,8 @@
 			<xs:element maxOccurs="1" minOccurs="1" name="logoutCount" type="xs:int"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="loginCount" type="xs:int"/>
 			<xs:element maxOccurs="1" minOccurs="1" name="accountID" type="xs:int"/>
-			<xs:element maxOccurs="1" minOccurs="1" name="currencyType" type="xs:string">
-			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="currencyType" type="xs:string"/>
+	
 
 		</xs:sequence>
 	</xs:complexType>

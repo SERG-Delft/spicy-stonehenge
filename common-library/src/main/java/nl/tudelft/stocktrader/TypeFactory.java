@@ -2,6 +2,7 @@ package nl.tudelft.stocktrader;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.MarketSummaryData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.OrderData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.QuoteData;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData;
+
+import nl.tudelft.stocktrader.Order;
 
 public class TypeFactory {
 	public static OrderData toOrderData(Order order) {
@@ -34,7 +37,14 @@ public class TypeFactory {
 		ret.setAccountID(order.getAccountId());
 		ret.setCompletionDate(dtf.newXMLGregorianCalendar((GregorianCalendar)order.getCompletionDate()));
 		ret.setHoldingID(order.getHoldingId());
-		ret.setOpenDate(dtf.newXMLGregorianCalendar((GregorianCalendar)order.getCompletionDate()));
+		GregorianCalendar openDate = order.getOpenDate() != null ?
+										(GregorianCalendar)order.getOpenDate() :
+											null;
+		if (openDate == null) {
+			openDate = (GregorianCalendar)Calendar.getInstance();
+			openDate.setTimeInMillis(0);
+		}
+		ret.setOpenDate(dtf.newXMLGregorianCalendar(openDate));
 		ret.setOrderFee(order.getOrderFee().doubleValue());
 		ret.setOrderID(order.getOrderID());
 		ret.setOrderStatus(order.getOrderStatus());

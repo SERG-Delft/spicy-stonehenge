@@ -30,6 +30,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CommonErrorData }
+     * 
+     */
+    public CommonErrorData createCommonErrorData() {
+        return new CommonErrorData();
+    }
+
+    /**
      * Create an instance of {@link ErrorData }
      * 
      */
@@ -46,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CommonErrorData }
+     * Create an instance of {@link ErrorParameter }
      * 
      */
-    public CommonErrorData createCommonErrorData() {
-        return new CommonErrorData();
+    public ErrorParameter createErrorParameter() {
+        return new ErrorParameter();
     }
 
     /**
@@ -59,14 +67,6 @@ public class ObjectFactory {
      */
     public ExtensionType createExtensionType() {
         return new ExtensionType();
-    }
-
-    /**
-     * Create an instance of {@link ErrorParameter }
-     * 
-     */
-    public ErrorParameter createErrorParameter() {
-        return new ErrorParameter();
     }
 
 }

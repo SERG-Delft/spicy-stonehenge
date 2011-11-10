@@ -167,6 +167,23 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+<<<<<<< HEAD
+    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> param1) {
+        Future<?> result = null;
+=======
+    public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0) {
+        Response<SetServiceLocationResponse> result = null;
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+<<<<<<< HEAD
+        result = m_proxy.setServiceLocationAsync(param0, param1);
+        return result;
+    }
+
     public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0) {
         Response<SetServiceLocationResponse> result = null;
         try {
@@ -174,6 +191,8 @@ public class SharedConfigurationServiceV1Consumer
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
+=======
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         result = m_proxy.setServiceLocationAsync(param0);
         return result;
     }
@@ -189,25 +208,43 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+<<<<<<< HEAD
+    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
+        Response<GetClientConfigResponse> result = null;
+=======
     public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> param1) {
         Future<?> result = null;
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
+<<<<<<< HEAD
+        result = m_proxy.getClientConfigAsync(param0);
+        return result;
+    }
+
+    public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> param1) {
+        Future<?> result = null;
+=======
         result = m_proxy.getClientConfigAsync(param0, param1);
         return result;
     }
 
     public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
         Response<GetClientConfigResponse> result = null;
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
+<<<<<<< HEAD
+        result = m_proxy.getBSConfigAsync(param0, param1);
+=======
         result = m_proxy.getClientConfigAsync(param0);
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         return result;
     }
 
@@ -222,14 +259,14 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
-    public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> param1) {
+    public Future<?> getOPSConfigAsync(GetOPSConfigRequest param0, AsyncHandler<GetOPSConfigResponse> param1) {
         Future<?> result = null;
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
-        result = m_proxy.getBSConfigAsync(param0, param1);
+        result = m_proxy.getOPSConfigAsync(param0, param1);
         return result;
     }
 
@@ -244,14 +281,14 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
-    public Future<?> getOPSConfigAsync(GetOPSConfigRequest param0, AsyncHandler<GetOPSConfigResponse> param1) {
+    public Future<?> setBSToOPSAsync(SetBSToOPSRequest param0, AsyncHandler<SetBSToOPSResponse> param1) {
         Future<?> result = null;
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
-        result = m_proxy.getOPSConfigAsync(param0, param1);
+        result = m_proxy.setBSToOPSAsync(param0, param1);
         return result;
     }
 
@@ -266,14 +303,23 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+<<<<<<< HEAD
+    public Future<?> setClientToBSAsync(SetClientToBSRequest param0, AsyncHandler<SetClientToBSResponse> param1) {
+        Future<?> result = null;
+=======
     public Response<SetBSToOPSResponse> setBSToOPSAsync(SetBSToOPSRequest param0) {
         Response<SetBSToOPSResponse> result = null;
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
+<<<<<<< HEAD
+        result = m_proxy.setClientToBSAsync(param0, param1);
+=======
         result = m_proxy.setBSToOPSAsync(param0);
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         return result;
     }
 
@@ -288,14 +334,22 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+<<<<<<< HEAD
+    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
+=======
     public Future<?> setClientToBSAsync(SetClientToBSRequest param0, AsyncHandler<SetClientToBSResponse> param1) {
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         Future<?> result = null;
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
+<<<<<<< HEAD
+        result = m_proxy.getBSLocationsAsync(param0, param1);
+=======
         result = m_proxy.setClientToBSAsync(param0, param1);
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
         return result;
     }
 
@@ -310,14 +364,14 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
-    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
+    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
         Future<?> result = null;
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
-        result = m_proxy.getBSLocationsAsync(param0, param1);
+        result = m_proxy.getOPSLocationsAsync(param0, param1);
         return result;
     }
 
@@ -332,14 +386,14 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
-    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
-        Future<?> result = null;
+    public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest param0) {
+        SetServiceLocationResponse result = null;
         try {
             m_proxy = getProxy();
         } catch (ServiceException serviceException) {
             throw ServiceRuntimeException.wrap(serviceException);
         }
-        result = m_proxy.getOPSLocationsAsync(param0, param1);
+        result = m_proxy.setServiceLocation(param0);
         return result;
     }
 
@@ -365,6 +419,8 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+<<<<<<< HEAD
+=======
     public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest param0) {
         SetServiceLocationResponse result = null;
         try {
@@ -387,6 +443,7 @@ public class SharedConfigurationServiceV1Consumer
         return result;
     }
 
+>>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
     public GetBSConfigResponse getBSConfig(GetBSConfigRequest param0) {
         GetBSConfigResponse result = null;
         try {

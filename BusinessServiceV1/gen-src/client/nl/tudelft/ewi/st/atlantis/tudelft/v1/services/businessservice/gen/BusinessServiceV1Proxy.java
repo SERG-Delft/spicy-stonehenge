@@ -71,14 +71,20 @@ public class BusinessServiceV1Proxy
         return m_service.poll(block, partial);
     }
 
+    public Future<?> registerAsync(RegisterRequest param0, AsyncHandler<RegisterResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("register");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<RegisterResponse> registerAsync(RegisterRequest param0) {
         Dispatch dispatch = m_service.createDispatch("register");
         Response<RegisterResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> registerAsync(RegisterRequest param0, AsyncHandler<RegisterResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("register");
+    public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getQuote");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -86,12 +92,6 @@ public class BusinessServiceV1Proxy
     public Response<GetQuoteResponse> getQuoteAsync(GetQuoteRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getQuote");
         Response<GetQuoteResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getQuote");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
@@ -107,14 +107,20 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> buyAsync(BuyRequest param0, AsyncHandler<BuyResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("buy");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<BuyResponse> buyAsync(BuyRequest param0) {
         Dispatch dispatch = m_service.createDispatch("buy");
         Response<BuyResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> buyAsync(BuyRequest param0, AsyncHandler<BuyResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("buy");
+    public Future<?> getAccountDataAsync(GetAccountDataRequest param0, AsyncHandler<GetAccountDataResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getAccountData");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -122,12 +128,6 @@ public class BusinessServiceV1Proxy
     public Response<GetAccountDataResponse> getAccountDataAsync(GetAccountDataRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getAccountData");
         Response<GetAccountDataResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> getAccountDataAsync(GetAccountDataRequest param0, AsyncHandler<GetAccountDataResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getAccountData");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
@@ -155,14 +155,20 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("sellEnhanced");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<SellEnhancedResponse> sellEnhancedAsync(SellEnhancedRequest param0) {
         Dispatch dispatch = m_service.createDispatch("sellEnhanced");
         Response<SellEnhancedResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("sellEnhanced");
+    public Future<?> updateAccountProfileAsync(UpdateAccountProfileRequest param0, AsyncHandler<UpdateAccountProfileResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("updateAccountProfile");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -170,12 +176,6 @@ public class BusinessServiceV1Proxy
     public Response<UpdateAccountProfileResponse> updateAccountProfileAsync(UpdateAccountProfileRequest param0) {
         Dispatch dispatch = m_service.createDispatch("updateAccountProfile");
         Response<UpdateAccountProfileResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> updateAccountProfileAsync(UpdateAccountProfileRequest param0, AsyncHandler<UpdateAccountProfileResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("updateAccountProfile");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
@@ -215,14 +215,20 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
+    public Future<?> getAllQuotesAsync(GetAllQuotesRequest param0, AsyncHandler<GetAllQuotesResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getAllQuotes");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<GetAllQuotesResponse> getAllQuotesAsync(GetAllQuotesRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getAllQuotes");
         Response<GetAllQuotesResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> getAllQuotesAsync(GetAllQuotesRequest param0, AsyncHandler<GetAllQuotesResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getAllQuotes");
+    public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("sell");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -233,8 +239,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> sellAsync(SellRequest param0, AsyncHandler<SellResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("sell");
+    public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getOrders");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -245,8 +251,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> getOrdersAsync(GetOrdersRequest param0, AsyncHandler<GetOrdersResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getOrders");
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("login");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -257,8 +263,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("login");
+    public Future<?> getHoldingsAsync(GetHoldingsRequest param0, AsyncHandler<GetHoldingsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getHoldings");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -269,8 +275,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> getHoldingsAsync(GetHoldingsRequest param0, AsyncHandler<GetHoldingsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getHoldings");
+    public Future<?> getWalletDataAsync(GetWalletDataRequest param0, AsyncHandler<GetWalletDataResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getWalletData");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -281,8 +287,8 @@ public class BusinessServiceV1Proxy
         return result;
     }
 
-    public Future<?> getWalletDataAsync(GetWalletDataRequest param0, AsyncHandler<GetWalletDataResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getWalletData");
+    public Future<?> getClosedOrdersAsync(GetClosedOrdersRequest param0, AsyncHandler<GetClosedOrdersResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getClosedOrders");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -290,12 +296,6 @@ public class BusinessServiceV1Proxy
     public Response<GetClosedOrdersResponse> getClosedOrdersAsync(GetClosedOrdersRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getClosedOrders");
         Response<GetClosedOrdersResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> getClosedOrdersAsync(GetClosedOrdersRequest param0, AsyncHandler<GetClosedOrdersResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getClosedOrders");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 

@@ -118,7 +118,7 @@ public class BusinessServiceV1Impl
 		
 		GetAccountDataResponse response = new GetAccountDataResponse();
 		response.setAccountData(TypeFactory.toAccountData(a));
-		
+	 
 		return response;
     }
 
