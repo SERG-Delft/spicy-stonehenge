@@ -1,5 +1,5 @@
 #surefire
-#Tue Nov 08 17:28:58 CET 2011
+#Thu Nov 10 15:28:45 CET 2011
 testClassesDirectory=E\:\\PhDWork\\Stonehenge\\Stonehenge10242\\spicy-stonehenge\\common-library\\target\\test-classes
 classPathUrl.4=C\:\\Users\\Kathy_Chen\\.m2\\repository\\com\\sun\\xml\\bind\\jaxb-xjc\\2.1.2\\jaxb-xjc-2.1.2.jar
 classPathUrl.3=C\:\\Users\\Kathy_Chen\\.m2\\repository\\org\\ebayopensource\\turmeric\\typelib\\TradeTypeLibrary\\1.0.0\\TradeTypeLibrary-1.0.0.jar
