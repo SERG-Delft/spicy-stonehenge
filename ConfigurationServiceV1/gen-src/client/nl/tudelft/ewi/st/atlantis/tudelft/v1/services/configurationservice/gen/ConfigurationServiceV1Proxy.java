@@ -13,7 +13,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
-import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
@@ -51,48 +51,27 @@ public class ConfigurationServiceV1Proxy
         return m_service.poll(block, partial);
     }
 
-<<<<<<< HEAD
-    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("setServiceLocation");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
-=======
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
-    public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("setServiceLocation");
-        Response<SetServiceLocationResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("setServiceLocation");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
-<<<<<<< HEAD
     public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getClientConfig");
         Response<GetClientConfigResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getBSConfig");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-=======
     public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getClientConfig");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
-    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("getClientConfig");
-        Response<GetClientConfigResponse> result = dispatch.invokeAsync(param0);
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
+    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("setServiceLocation");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("setServiceLocation");
+        Response<SetServiceLocationResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -102,8 +81,8 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Future<?> getOPSConfigAsync(GetOPSConfigRequest param0, AsyncHandler<GetOPSConfigResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getOPSConfig");
+    public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getBSConfig");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -114,42 +93,44 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Future<?> setBSToOPSAsync(SetBSToOPSRequest param0, AsyncHandler<SetBSToOPSResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("setBSToOPS");
+    public Future<?> getOPSConfigAsync(GetOPSConfigRequest param0, AsyncHandler<GetOPSConfigResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getOPSConfig");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 
-    public Future<?> setBSToOPSAsync(SetBSToOPSRequest param0, AsyncHandler<SetBSToOPSResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("setBSToOPS");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
-<<<<<<< HEAD
     public Future<?> setClientToBSAsync(SetClientToBSRequest param0, AsyncHandler<SetClientToBSResponse> param1) {
-=======
+        Dispatch dispatch = m_service.createDispatch("setClientToBS");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<SetClientToBSResponse> setClientToBSAsync(SetClientToBSRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("setClientToBS");
+        Response<SetClientToBSResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Response<GetESLocationsResponse> getESLocationsAsync(GetESLocationRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getESLocations");
+        Response<GetESLocationsResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> getESLocationsAsync(GetESLocationRequest param0, AsyncHandler<GetESLocationsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getESLocations");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
     public Response<SetBSToOPSResponse> setBSToOPSAsync(SetBSToOPSRequest param0) {
         Dispatch dispatch = m_service.createDispatch("setBSToOPS");
         Response<SetBSToOPSResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Response<SetClientToBSResponse> setClientToBSAsync(SetClientToBSRequest param0) {
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
-        Dispatch dispatch = m_service.createDispatch("setClientToBS");
-        Response<SetClientToBSResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> setClientToBSAsync(SetClientToBSRequest param0, AsyncHandler<SetClientToBSResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("setClientToBS");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
-    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getBSLocations");
+    public Future<?> setBSToOPSAsync(SetBSToOPSRequest param0, AsyncHandler<SetBSToOPSResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("setBSToOPS");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -160,8 +141,8 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getOPSLocations");
+    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getBSLocations");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -172,31 +153,9 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-<<<<<<< HEAD
-=======
-    public Response<GetESLocationsResponse> getESLocationsAsync(GetESLocationsRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("getESLocations");
-        Response<GetESLocationsResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
-    public Future<?> getESLocationsAsync(GetESLocationsRequest param0, AsyncHandler<GetESLocationsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getESLocations");
+    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getOPSLocations");
         Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
->>>>>>> f9518cc4e4c1c289f1fe92c85104cbb9644aaee6
-    public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest param0) {
-        Object[] params = new Object[ 1 ] ;
-        params[ 0 ] = param0;
-        List<Object> returnParamList = new ArrayList<Object>();
-        try {
-            m_service.invoke("setServiceLocation", params, returnParamList);
-        } catch (ServiceInvocationException svcInvocationEx) {
-            throw wrapInvocationException(svcInvocationEx);
-        }
-        SetServiceLocationResponse result = ((SetServiceLocationResponse) returnParamList.get(0));
         return result;
     }
 
@@ -210,6 +169,19 @@ public class ConfigurationServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetClientConfigResponse result = ((GetClientConfigResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public SetServiceLocationResponse setServiceLocation(SetServiceLocationRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("setServiceLocation", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        SetServiceLocationResponse result = ((SetServiceLocationResponse) returnParamList.get(0));
         return result;
     }
 
@@ -239,19 +211,6 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest param0) {
-        Object[] params = new Object[ 1 ] ;
-        params[ 0 ] = param0;
-        List<Object> returnParamList = new ArrayList<Object>();
-        try {
-            m_service.invoke("setBSToOPS", params, returnParamList);
-        } catch (ServiceInvocationException svcInvocationEx) {
-            throw wrapInvocationException(svcInvocationEx);
-        }
-        SetBSToOPSResponse result = ((SetBSToOPSResponse) returnParamList.get(0));
-        return result;
-    }
-
     public SetClientToBSResponse setClientToBS(SetClientToBSRequest param0) {
         Object[] params = new Object[ 1 ] ;
         params[ 0 ] = param0;
@@ -262,6 +221,32 @@ public class ConfigurationServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         SetClientToBSResponse result = ((SetClientToBSResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public GetESLocationsResponse getESLocations(GetESLocationRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("getESLocations", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        GetESLocationsResponse result = ((GetESLocationsResponse) returnParamList.get(0));
+        return result;
+    }
+
+    public SetBSToOPSResponse setBSToOPS(SetBSToOPSRequest param0) {
+        Object[] params = new Object[ 1 ] ;
+        params[ 0 ] = param0;
+        List<Object> returnParamList = new ArrayList<Object>();
+        try {
+            m_service.invoke("setBSToOPS", params, returnParamList);
+        } catch (ServiceInvocationException svcInvocationEx) {
+            throw wrapInvocationException(svcInvocationEx);
+        }
+        SetBSToOPSResponse result = ((SetBSToOPSResponse) returnParamList.get(0));
         return result;
     }
 
@@ -288,19 +273,6 @@ public class ConfigurationServiceV1Proxy
             throw wrapInvocationException(svcInvocationEx);
         }
         GetOPSLocationsResponse result = ((GetOPSLocationsResponse) returnParamList.get(0));
-        return result;
-    }
-
-    public GetESLocationsResponse getESLocations(GetESLocationsRequest param0) {
-        Object[] params = new Object[ 1 ] ;
-        params[ 0 ] = param0;
-        List<Object> returnParamList = new ArrayList<Object>();
-        try {
-            m_service.invoke("getESLocations", params, returnParamList);
-        } catch (ServiceInvocationException svcInvocationEx) {
-            throw wrapInvocationException(svcInvocationEx);
-        }
-        GetESLocationsResponse result = ((GetESLocationsResponse) returnParamList.get(0));
         return result;
     }
 

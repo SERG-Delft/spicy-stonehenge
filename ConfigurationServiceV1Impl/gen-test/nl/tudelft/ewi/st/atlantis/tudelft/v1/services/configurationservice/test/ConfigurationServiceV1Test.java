@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
@@ -90,12 +91,12 @@ public class ConfigurationServiceV1Test
         assertTrue(false);
     }
 
-    public void testSetBSToOPS()
+    public void testSetClientToBS()
         throws Exception
     {
-        SetBSToOPSResponse result = null;
+        SetClientToBSResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().setBSToOPS(null);
+        result = getProxy().setClientToBS(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -103,12 +104,25 @@ public class ConfigurationServiceV1Test
         assertTrue(false);
     }
 
-    public void testSetClientToBS()
+    public void testGetESLocations()
         throws Exception
     {
-        SetClientToBSResponse result = null;
+        GetESLocationsResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().setClientToBS(null);
+        result = getProxy().getESLocations(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testSetBSToOPS()
+        throws Exception
+    {
+        SetBSToOPSResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().setBSToOPS(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

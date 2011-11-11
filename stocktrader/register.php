@@ -49,11 +49,7 @@ if (isset($_POST['REGISTERUSER']))
 	{
 		$response = register($userID, $password, $fullname, $address, 
 	$email, $creditcard, $openBalance, $currencyType);
-			
-			print $response->out;
-			print $currencyType;
-			print $openBalance;
-			
+						
 		if ($response->out == "success")
 		{
 			$successfulRegistration = TRUE;
@@ -152,7 +148,7 @@ if (isset($_POST['REGISTERUSER']))
 					<thead>
 					<tr>
 					<th>
-					Create Account Profile:
+					Create New User:
 					</th>
 					</tr>
 					</thead>

@@ -235,6 +235,7 @@ function FormatDate($date) {
 					/*Display the account information of a the user*/
 					if ($userAccountDataReturn)	
 					{
+						//print("User's account information:");
 						print("<table align=\"center\" class=\"profile-content\" cellspacing=\"0\"><tbody>");
 						print ("<tr><td class=\"left\">Account ID:</td>
 							<td>".$userAccountDataReturn->accountID."</td><td class=\"left\">
@@ -272,6 +273,7 @@ function FormatDate($date) {
 					/*Display the wallet information of a the user*/
 					if ($userWalletDataReturn)	//set as wallet
 					{
+						//print("User's current wallet status:");
 						print("<table align=\"center\" class=\"profile-content\" cellspacing=\"0\"><tbody>");
 						print ("<tr><td class=\"left\">User ID:</td>
 							<td>".$userWalletDataReturn->userID."</td>
