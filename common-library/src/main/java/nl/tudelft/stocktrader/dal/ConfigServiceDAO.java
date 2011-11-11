@@ -25,6 +25,9 @@ import nl.tudelft.stocktrader.dal.configservice.OPSConfig;
 import nl.tudelft.stocktrader.dal.configservice.ServiceLocation;
 
 public interface ConfigServiceDAO {
+	
+	List<ServiceLocation> getESLocations();
+	
     List<ServiceLocation> getBSLocations();
 
     List<ServiceLocation> getOPSLocations();

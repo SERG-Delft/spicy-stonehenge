@@ -43,6 +43,7 @@ else
 					$exchResult = ExchangeCurrency ($baseCurrency,$aimCurrency,$exchAmount);
 					if($exchResult>0){
 						$userWalletDataReturn = updateWalletData($userID, $baseCurrency,$aimCurrency,$exchAmount, $exchResult);
+						$infor = "";
 					}
 					
 				}else{
@@ -52,7 +53,7 @@ else
 				$infor = "Sorry, the currency you chose is not supported, please choose another one.";
 			}
 		}else{
-			$infor = "Please input the exchange amount and choose the currencies.";
+			$infor = "Please input the exchange amount or choose the currencies.";
 		}
 		
 	}
