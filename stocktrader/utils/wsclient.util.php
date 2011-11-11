@@ -31,7 +31,8 @@ function GetProxy($methodName, $constClassmap)
 	} else if ($constClassmap == BUSINESS_CLASSMAP) {
 		$sEndpoint = GetBSEndPoint();
 	} else if ($constClassmap == EXCHANGE_CLASSMAP) {
-		$sEndpoint = "http://localhost:8080/exchange-service-war/ExchangeServiceV1";
+		//$sEndpoint = "http://localhost:8080/exchange-service-war/ExchangeServiceV1";
+		$sEndpoint = GetESLocations();
 	}
 
 	/*define the class map */
@@ -74,31 +75,50 @@ function GetBSEndPoint()
 	return $response->BS;
 }
 
+
+/**
+ * Service function getESLocations
+ * @param object of getESLocationsRequest $input 
+ * @return object of getESLocationsResponse 
+ */
+function GetESLocations() {
+	$proxy = GetProxy("getESLocations", CONFIG_CLASSMAP);
+	
+	$response = $proxy->getESLocations();	
+	$locations = $response->locations;
+	$serviceURL = $locations[0]->ServiceURL;
+
+	return $serviceURL;
+
+}
+
 function GetClassMap($constWS) {
 	$aConfig = array(
-	    "BaseRequest" => "BaseRequest",
-	    "ExtensionType" => "ExtensionType",
-	    "getClientConfigRequest" => "getClientConfigRequest",
-	    "BaseResponse" => "BaseResponse",
-	    "ErrorMessage" => "ErrorMessage",
-	    "ErrorData" => "ErrorData",
-	    "CommonErrorData" => "CommonErrorData",
-	    "getClientConfigResponse" => "getClientConfigResponse",
-	    "getBSConfigRequest" => "getBSConfigRequest",
-	    "getBSConfigResponse" => "getBSConfigResponse",
-	    "getOPSConfigRequest" => "getOPSConfigRequest",
-	    "getOPSConfigResponse" => "getOPSConfigResponse",
-	    "setClientToBSRequest" => "setClientToBSRequest",
-	    "setClientToBSResponse" => "setClientToBSResponse",
-	    "setBSToOPSRequest" => "setBSToOPSRequest",
-	    "setBSToOPSResponse" => "setBSToOPSResponse",
-	    "getBSLocationsRequest" => "getBSLocationsRequest",
-	    "getBSLocationsResponse" => "getBSLocationsResponse",
-	    "ServiceLocation" => "ServiceLocation",
-	    "setServiceLocationRequest" => "setServiceLocationRequest",
-	    "setServiceLocationResponse" => "setServiceLocationResponse",
-	    "getOPSLocationsRequest" => "getOPSLocationsRequest",
-	    "getOPSLocationsResponse" => "getOPSLocationsResponse");
+	        "BaseRequest" => "BaseRequest",
+    "ExtensionType" => "ExtensionType",
+    "getClientConfigRequest" => "getClientConfigRequest",
+    "BaseResponse" => "BaseResponse",
+    "ErrorMessage" => "ErrorMessage",
+    "ErrorData" => "ErrorData",
+    "CommonErrorData" => "CommonErrorData",
+    "getClientConfigResponse" => "getClientConfigResponse",
+    "getBSConfigRequest" => "getBSConfigRequest",
+    "getBSConfigResponse" => "getBSConfigResponse",
+    "getOPSConfigRequest" => "getOPSConfigRequest",
+    "getOPSConfigResponse" => "getOPSConfigResponse",
+    "setClientToBSRequest" => "setClientToBSRequest",
+    "setClientToBSResponse" => "setClientToBSResponse",
+    "setBSToOPSRequest" => "setBSToOPSRequest",
+    "setBSToOPSResponse" => "setBSToOPSResponse",
+    "getBSLocationsRequest" => "getBSLocationsRequest",
+    "getBSLocationsResponse" => "getBSLocationsResponse",
+    "ServiceLocation" => "ServiceLocation",
+    "setServiceLocationRequest" => "setServiceLocationRequest",
+    "setServiceLocationResponse" => "setServiceLocationResponse",
+    "getOPSLocationsRequest" => "getOPSLocationsRequest",
+    "getOPSLocationsResponse" => "getOPSLocationsResponse",
+    "getESLocationsRequest" => "getESLocationsRequest",
+    "getESLocationsResponse" => "getESLocationsResponse");
 
 	$aBusiness = array(
 		"BaseRequest" => "BaseRequest",

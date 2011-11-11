@@ -195,4 +195,19 @@ class getOPSLocationsResponse {
     public $locations;
 
 }
+
+
+
+class getESLocationsRequest {
+
+}
+
+class getESLocationsResponse {
+
+    /**
+     * @var array[1, unbounded] of (object)ServiceLocation
+     */
+    public $locations;
+
+}
 ?>

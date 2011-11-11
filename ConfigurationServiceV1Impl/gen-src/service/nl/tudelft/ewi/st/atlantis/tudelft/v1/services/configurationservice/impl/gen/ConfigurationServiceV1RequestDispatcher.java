@@ -7,6 +7,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
@@ -39,8 +41,9 @@ public class ConfigurationServiceV1RequestDispatcher
         addSupportedOperation("setServiceLocation", new Class[] {SetServiceLocationRequest.class }, new Class[] {SetServiceLocationResponse.class });
         addSupportedOperation("getBSConfig", new Class[] {GetBSConfigRequest.class }, new Class[] {GetBSConfigResponse.class });
         addSupportedOperation("getOPSConfig", new Class[] {GetOPSConfigRequest.class }, new Class[] {GetOPSConfigResponse.class });
-        addSupportedOperation("setBSToOPS", new Class[] {SetBSToOPSRequest.class }, new Class[] {SetBSToOPSResponse.class });
         addSupportedOperation("setClientToBS", new Class[] {SetClientToBSRequest.class }, new Class[] {SetClientToBSResponse.class });
+        addSupportedOperation("getESLocations", new Class[] {GetESLocationRequest.class }, new Class[] {GetESLocationsResponse.class });
+        addSupportedOperation("setBSToOPS", new Class[] {SetBSToOPSRequest.class }, new Class[] {SetBSToOPSResponse.class });
         addSupportedOperation("getBSLocations", new Class[] {GetBSLocationsRequest.class }, new Class[] {GetBSLocationsResponse.class });
         addSupportedOperation("getOPSLocations", new Class[] {GetOPSLocationsRequest.class }, new Class[] {GetOPSLocationsResponse.class });
     }
@@ -101,11 +104,11 @@ public class ConfigurationServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("setBSToOPS".equals(operationName)) {
-            SetBSToOPSRequest param2 = ((SetBSToOPSRequest) requestMsg.getParam(0));
+        if ("setClientToBS".equals(operationName)) {
+            SetClientToBSRequest param2 = ((SetClientToBSRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                SetBSToOPSResponse result = service.setBSToOPS(param2);
+                SetClientToBSResponse result = service.setClientToBS(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
@@ -113,11 +116,23 @@ public class ConfigurationServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("setClientToBS".equals(operationName)) {
-            SetClientToBSRequest param2 = ((SetClientToBSRequest) requestMsg.getParam(0));
+        if ("getESLocations".equals(operationName)) {
+            GetESLocationRequest param2 = ((GetESLocationRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                SetClientToBSResponse result = service.setClientToBS(param2);
+                GetESLocationsResponse result = service.getESLocations(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("setBSToOPS".equals(operationName)) {
+            SetBSToOPSRequest param2 = ((SetBSToOPSRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                SetBSToOPSResponse result = service.setBSToOPS(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
