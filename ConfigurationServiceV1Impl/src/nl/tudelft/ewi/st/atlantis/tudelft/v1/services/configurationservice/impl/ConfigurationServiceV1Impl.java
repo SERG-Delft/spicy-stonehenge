@@ -8,6 +8,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
@@ -99,5 +101,15 @@ public class ConfigurationServiceV1Impl
 								getConfigServiceDAO().getOPSLocations()));
 			
 			return getOPSLocationsResponse;	
+		}
+
+		@Override
+		public GetESLocationsResponse getESLocations(
+				GetESLocationRequest getESLocationsRequest) {
+			GetESLocationsResponse getESLocationsResponse = new GetESLocationsResponse();
+			getESLocationsResponse.getLocations()
+        				.addAll(TypeFactory.toRemoteServiceLocationList(
+        						getConfigServiceDAO().getESLocations()));
+        	return getESLocationsResponse;
 		}
 }
