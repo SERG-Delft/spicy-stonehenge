@@ -2,11 +2,12 @@
 <service enable-namespace-folding="true" name="QuoteServiceV1" xmlns="http://www.ebayopensource.org/turmeric/common/config">
     <package-map>
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.v1.services.quoteservice"/>
+        <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types"/>
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="org.ebayopensource.turmeric.common.v1.types"/>
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.v1.services"/>
     </package-map>
     <operation-list>
-        <operation name="getQuotes">
+        <operation methodName="getQuotes" name="getQuotes">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest</java-type-name>
                 <xml-type-name>GetQuotesRequest</xml-type-name>
@@ -22,19 +23,23 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/v1/services}errorMessage</xml-element-name>
             </error-message>
         </operation>
     </operation-list>
     <java-type-list>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.AckValue</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseRequest</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseResponse</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.CommonErrorData</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorCategory</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorData</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorParameter</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorSeverity</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ExtensionType</java-type-name>
     </java-type-list>
 </service>

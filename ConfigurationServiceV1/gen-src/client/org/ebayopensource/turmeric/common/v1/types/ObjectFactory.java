@@ -30,11 +30,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorParameter }
+     * Create an instance of {@link CommonErrorData }
      * 
      */
-    public ErrorParameter createErrorParameter() {
-        return new ErrorParameter();
+    public CommonErrorData createCommonErrorData() {
+        return new CommonErrorData();
     }
 
     /**
@@ -54,11 +54,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CommonErrorData }
+     * Create an instance of {@link ErrorParameter }
      * 
      */
-    public CommonErrorData createCommonErrorData() {
-        return new CommonErrorData();
+    public ErrorParameter createErrorParameter() {
+        return new ErrorParameter();
     }
 
     /**

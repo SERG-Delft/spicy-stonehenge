@@ -179,17 +179,6 @@ public class SharedExchangeServiceV1Consumer
         return result;
     }
 
-    public Future<?> exchangeCurrencyAsync(ExchangeCurrencyRequest param0, AsyncHandler<ExchangeCurrencyResponse> param1) {
-        Future<?> result = null;
-        try {
-            m_proxy = getProxy();
-        } catch (ServiceException serviceException) {
-            throw ServiceRuntimeException.wrap(serviceException);
-        }
-        result = m_proxy.exchangeCurrencyAsync(param0, param1);
-        return result;
-    }
-
     public Response<ExchangeCurrencyResponse> exchangeCurrencyAsync(ExchangeCurrencyRequest param0) {
         Response<ExchangeCurrencyResponse> result = null;
         try {
@@ -198,6 +187,17 @@ public class SharedExchangeServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.exchangeCurrencyAsync(param0);
+        return result;
+    }
+
+    public Future<?> exchangeCurrencyAsync(ExchangeCurrencyRequest param0, AsyncHandler<ExchangeCurrencyResponse> param1) {
+        Future<?> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.exchangeCurrencyAsync(param0, param1);
         return result;
     }
 
@@ -223,17 +223,6 @@ public class SharedExchangeServiceV1Consumer
         return result;
     }
 
-    public Response<CheckAmountResponse> checkAmountAsync(CheckAmountRequest param0) {
-        Response<CheckAmountResponse> result = null;
-        try {
-            m_proxy = getProxy();
-        } catch (ServiceException serviceException) {
-            throw ServiceRuntimeException.wrap(serviceException);
-        }
-        result = m_proxy.checkAmountAsync(param0);
-        return result;
-    }
-
     public Future<?> checkAmountAsync(CheckAmountRequest param0, AsyncHandler<CheckAmountResponse> param1) {
         Future<?> result = null;
         try {
@@ -242,6 +231,17 @@ public class SharedExchangeServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.checkAmountAsync(param0, param1);
+        return result;
+    }
+
+    public Response<CheckAmountResponse> checkAmountAsync(CheckAmountRequest param0) {
+        Response<CheckAmountResponse> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.checkAmountAsync(param0);
         return result;
     }
 

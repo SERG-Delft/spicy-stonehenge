@@ -62,12 +62,12 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testLogout()
+    public void testLogin()
         throws Exception
     {
-        LogoutResponse result = null;
+        LoginResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().logout(null);
+        result = getProxy().login(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -75,12 +75,12 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testLogin()
+    public void testLogout()
         throws Exception
     {
-        LoginResponse result = null;
+        LogoutResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().login(null);
+        result = getProxy().logout(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

@@ -25,6 +25,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.ArrayList;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.dal.DAOException;
@@ -314,5 +315,11 @@ public class MySQLMarketSummaryDAO extends AbstractMySQLDAO implements MarketSum
 		MarketSummary marketSummary = new MarketSummary(
 				tSIA, openTSIA, totalVolume, topGainers, topLosers);
 		return marketSummary;
+	}
+
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote)
+			throws DAOException {
+		throw new DAOException("Not implemented");
+		
 	}
 }

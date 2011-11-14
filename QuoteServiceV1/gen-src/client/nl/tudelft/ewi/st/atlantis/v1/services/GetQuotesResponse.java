@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
 
 
@@ -24,7 +25,7 @@ import org.ebayopensource.turmeric.common.v1.types.BaseResponse;
  *   &lt;complexContent>
  *     &lt;extension base="{http://www.ebayopensource.org/turmeric/common/v1/types}BaseResponse">
  *       &lt;sequence>
- *         &lt;element name="quoteData" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
+ *         &lt;element name="quoteData" type="{http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types}RemoteQuoteData" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -42,7 +43,7 @@ public class GetQuotesResponse
 {
 
     @XmlElement(required = true)
-    protected List<String> quoteData;
+    protected List<RemoteQuoteData> quoteData;
 
     /**
      * Gets the value of the quoteData property.
@@ -62,13 +63,13 @@ public class GetQuotesResponse
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link RemoteQuoteData }
      * 
      * 
      */
-    public List<String> getQuoteData() {
+    public List<RemoteQuoteData> getQuoteData() {
         if (quoteData == null) {
-            quoteData = new ArrayList<String>();
+            quoteData = new ArrayList<RemoteQuoteData>();
         }
         return this.quoteData;
     }

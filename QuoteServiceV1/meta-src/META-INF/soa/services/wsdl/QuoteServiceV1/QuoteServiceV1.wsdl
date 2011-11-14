@@ -337,12 +337,25 @@
 					<xs:extension base="tns:BaseResponse">
 						<xs:sequence>
 							<xs:element maxOccurs="unbounded"
-								minOccurs="1" name="quoteData" type="xs:string" />
+								minOccurs="1" name="quoteData" type="tns:RemoteQuoteData" />
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
-		</xs:schema>
+		<xs:complexType name="RemoteQuoteData">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		<xs:appinfo><typeLibrarySource library="TradeTypeLibrary" namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types"></typeLibrarySource></xs:appinfo></xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="ticker" type="xs:string"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="timestamp" type="xs:dateTime">
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="market" type="xs:string"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="value" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="change" type="xs:double"></xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="changePercent" type="xs:double"></xs:element>
+		</xs:sequence>
+	</xs:complexType></xs:schema>
 	</wsdl:types>
 	<wsdl:message name="getQuotesRequest">
 		<wsdl:part element="tns:getQuotesRequest" name="params" />

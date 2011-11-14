@@ -34,9 +34,8 @@ public class YahooProvider implements StockDataProvider {
 	public List<StockData> getManyStockQuotes(List<String> tickers) {
 		if (tickers.size() < 1) return new ArrayList<StockData>();
 		
-		StringBuffer urlString = new StringBuffer();
-		
 		try {
+			StringBuffer urlString = new StringBuffer();
             urlString.append("http://finance.yahoo.com/q?s=");
             
             for(String ticker : tickers) {
@@ -130,7 +129,6 @@ public class YahooProvider implements StockDataProvider {
             return data;
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("URL was: "+urlString.toString());
 		}
 		
 		return new ArrayList();

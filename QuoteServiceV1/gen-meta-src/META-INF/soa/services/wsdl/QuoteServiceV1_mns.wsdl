@@ -8,9 +8,10 @@
 	http://www.apache.org/licenses/LICENSE-2.0
 	
 -->
-<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://atlantis.st.ewi.tudelft.nl/v1/services" xmlns:types="http://www.ebayopensource.org/turmeric/common/v1/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="QuoteService" targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://atlantis.st.ewi.tudelft.nl/v1/services" xmlns:types="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types" xmlns:types1="http://www.ebayopensource.org/turmeric/common/v1/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="QuoteService" targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
 	<wsdl:types>
 		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+<xs:import namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types"/>
 <xs:import namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
 			
 			
@@ -30,7 +31,7 @@
 					</xs:documentation>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:BaseRequest">
+					<xs:extension base="types1:BaseRequest">
 						<xs:sequence>
 							<xs:element maxOccurs="unbounded" minOccurs="1" name="symbols" type="xs:string"/>
 						</xs:sequence>
@@ -45,15 +46,34 @@
 					</xs:documentation>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:BaseResponse">
+					<xs:extension base="types1:BaseResponse">
 						<xs:sequence>
-							<xs:element maxOccurs="unbounded" minOccurs="1" name="quoteData" type="xs:string"/>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="quoteData" type="types:RemoteQuoteData"/>
 						</xs:sequence>
 					</xs:extension>
 				</xs:complexContent>
 			</xs:complexType>
 		</xs:schema>
-	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ebayopensource.org/turmeric/common/v1/types">
+	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types">
+<xs:complexType name="RemoteQuoteData">
+		<xs:annotation>
+			<xs:documentation/>
+		<xs:appinfo>
+<typeLibrarySource library="TradeTypeLibrary" namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types"/>
+</xs:appinfo>
+</xs:annotation>
+		<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="ticker" type="xs:string"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="timestamp" type="xs:dateTime">
+			</xs:element>
+			<xs:element maxOccurs="1" minOccurs="1" name="market" type="xs:string"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="value" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="change" type="xs:double"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="changePercent" type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ebayopensource.org/turmeric/common/v1/types">
 <xs:simpleType name="AckValue">
 				<xs:annotation>
 					<xs:documentation>
@@ -118,7 +138,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types1:ExtensionType"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType abstract="true" name="BaseResponse">
@@ -133,7 +153,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:sequence>
-					<xs:element name="ack" type="types:AckValue">
+					<xs:element name="ack" type="types1:AckValue">
 						<xs:annotation>
 							<xs:documentation/>
 							<xs:appinfo>
@@ -144,7 +164,7 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="errorMessage" type="types:ErrorMessage">
+					<xs:element minOccurs="0" name="errorMessage" type="types1:ErrorMessage">
 						<xs:annotation>
 							<xs:documentation>
 								Information for an error or warning that
@@ -181,7 +201,7 @@
 							</xs:appinfo>
 						</xs:annotation>
 					</xs:element>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types1:ExtensionType"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="CommonErrorData">
@@ -194,7 +214,7 @@
 					</xs:appinfo>
 				</xs:annotation>
 				<xs:complexContent>
-					<xs:extension base="types:ErrorData">
+					<xs:extension base="types1:ErrorData">
 						<xs:sequence>
 							<xs:element name="errorName" type="xs:string"/>
 							<xs:element minOccurs="0" name="cause" type="xs:string"/>
@@ -241,11 +261,11 @@
 					<xs:element name="errorId" type="xs:long"/>
 					<xs:element name="domain" type="xs:string"/>
 					<xs:element minOccurs="0" name="subdomain" type="xs:string"/>
-					<xs:element name="severity" type="types:ErrorSeverity"/>
-					<xs:element name="category" type="types:ErrorCategory"/>
+					<xs:element name="severity" type="types1:ErrorSeverity"/>
+					<xs:element name="category" type="types1:ErrorCategory"/>
 					<xs:element name="message" type="xs:string"/>
 					<xs:element minOccurs="0" name="exceptionId" type="xs:token"/>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="types:ErrorParameter"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="types1:ErrorParameter"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="ErrorMessage">
@@ -264,7 +284,7 @@
 					</xs:sequence>
 				-->
 				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="types:CommonErrorData"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="types1:CommonErrorData"/>
 				</xs:sequence>
 			</xs:complexType>
 <xs:complexType name="ErrorParameter">

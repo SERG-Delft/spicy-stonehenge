@@ -25,6 +25,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.ArrayList;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.dal.DAOException;
@@ -197,26 +198,48 @@ public class DerbyMarketSummaryDAO extends AbstractDerbyDAO implements MarketSum
 		}
 	}
 
-	public void updateStockPriceVolume(double quantity, Quote quote) throws DAOException {
-		BigDecimal priceChangeFactor = StockTraderUtility.getRandomPriceChangeFactor(quote.getPrice());
-		BigDecimal newPrice = quote.getPrice().multiply(priceChangeFactor);
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote) throws DAOException {
+//		BigDecimal priceChangeFactor = StockTraderUtility.getRandomPriceChangeFactor(quote.getPrice());
+//		BigDecimal newPrice = quote.getPrice().multiply(priceChangeFactor);
+//
+//		if (newPrice.compareTo(quote.getLow()) == -1) {
+//			quote.setLow(newPrice);
+//		}
+//		if (newPrice.compareTo(quote.getHigh()) == 1) {
+//			quote.setHigh(newPrice);
+//		}
 
-		if (newPrice.compareTo(quote.getLow()) == -1) {
-			quote.setLow(newPrice);
-		}
-		if (newPrice.compareTo(quote.getHigh()) == 1) {
-			quote.setHigh(newPrice);
-		}
-
+		PreparedStatement previousValues = null;
 		PreparedStatement updateStockPriceVolumeStat = null;
 		try {
+			previousValues = sqlConnection.prepareStatement(SQL_SELECT_QUOTE);
+			previousValues.setString(1, quote.getTicker());
+			ResultSet rs = previousValues.executeQuery();
+			
+			if (!rs.next()) {
+				throw new DAOException("Could not find quote "+quote.getTicker());
+			}
+						
+			double low = rs.getDouble("low");
+			double high = rs.getDouble("high");
+			
+			if (low > quote.getValue()) {
+				low = quote.getValue();
+			}
+			
+			if (high < quote.getValue()) {
+				high = quote.getValue();
+			}
+			
+			BigDecimal value = new BigDecimal(quote.getValue());
+			
 			updateStockPriceVolumeStat = sqlConnection.prepareStatement(SQL_UPDATE_STOCKPRICEVOLUME);
-			updateStockPriceVolumeStat.setBigDecimal(1, newPrice);
-			updateStockPriceVolumeStat.setBigDecimal(2, quote.getLow());
-			updateStockPriceVolumeStat.setBigDecimal(3, quote.getHigh());
-			updateStockPriceVolumeStat.setBigDecimal(4, newPrice);
+			updateStockPriceVolumeStat.setBigDecimal(1, value);
+			updateStockPriceVolumeStat.setBigDecimal(2, new BigDecimal(low));
+			updateStockPriceVolumeStat.setBigDecimal(3, new BigDecimal(high));
+			updateStockPriceVolumeStat.setBigDecimal(4, value);
 			updateStockPriceVolumeStat.setFloat(5, (float) quantity);
-			updateStockPriceVolumeStat.setString(6, quote.getSymbol());
+			updateStockPriceVolumeStat.setString(6, quote.getTicker());
 			updateStockPriceVolumeStat.executeUpdate();
 
 		} catch (SQLException e) {

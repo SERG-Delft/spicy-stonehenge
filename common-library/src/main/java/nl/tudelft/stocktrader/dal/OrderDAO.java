@@ -20,13 +20,14 @@ package nl.tudelft.stocktrader.dal;
 
 import java.math.BigDecimal;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 
 public interface OrderDAO {
 
-	public Quote getQuoteForUpdate(String symbol) throws DAOException;
+	//public Quote getQuoteForUpdate(String symbol) throws DAOException;
 
 	public int createHolding(Order order) throws DAOException;
 
@@ -49,9 +50,11 @@ public interface OrderDAO {
 
 	public void updateOrder(Order order) throws DAOException;
 
-	public void updateStockPriceVolume(double quantity, Quote quote)
-			throws DAOException;
+//	public void updateStockPriceVolume(double quantity, Quote quote)
+//			throws DAOException;
 
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote) throws DAOException;
+	
 	public void closeOrder(Order order) throws DAOException;
 
     public void beginTransaction() throws DAOException;

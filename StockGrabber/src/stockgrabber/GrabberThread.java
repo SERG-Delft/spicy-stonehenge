@@ -8,11 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 import stockgrabber.model.StockData;
 import stockgrabber.provider.StockDataProvider;
@@ -29,71 +27,58 @@ public class GrabberThread extends Thread {
 		System.out.println("Thread "+Thread.currentThread().getName()+" reporting for duty! File: "+filename);
 		StockDataProvider provider = new YahooProvider("NASDAQ");
     	
-		List<String> tickers = loadTickers(filename);
-		int i = 0;
-		int base = 0;
-		int top = -1;
-		
     	while (true) {
-    		base = i*StockGrabber.BULK_SIZE;
-    		top = base + StockGrabber.BULK_SIZE;
-    		
-    		if (top > tickers.size()) {
-    			top = tickers.size();
-    			i=-1;
-//    			try {
-//					Thread.currentThread().sleep(40000);
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//				}
-    		}
-    		
-    		List<String> slice = tickers.subList(base, top);
+	        try{
+	            // Open the file that is the first 
+	            // command line parameter
+	            FileInputStream fstream = new FileInputStream(filename);
+	
+	            // Get the object of DataInputStream
+	            DataInputStream in = new DataInputStream(fstream);
+	            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+	            String strLine;
+	
+	            //truncateTable();
+	            
+	            LinkedList<String> tickers = new LinkedList<String>();
 
-    		List<StockData> data = provider.getManyStockQuotes(slice);
-            
-            storeStockData(data);
-            
-            i++;
+	            //Read File Line By Line
+	            while ((strLine = br.readLine()) != null)   {
+	                    int pos = strLine.indexOf("	");
+	
+	                    if (pos == -1) {
+	                            pos = strLine.indexOf(" ");
+	                    }
+	
+	                    String ticker = strLine.substring(0, pos);
+	
+	                    tickers.add(ticker);                    
+	                    if (tickers.size() == StockGrabber.BULK_SIZE) {
+	                        List<StockData> data = provider.getManyStockQuotes(tickers);
+	                        
+	                        storeStockData(data);
+	                        
+	                        tickers.clear();
+	                    }
+	            }
+	
+	            //Close the input stream
+	            in.close();
+	            br.close();
+	            fstream.close();
+	            
+	            in = null;
+	            br = null;
+	            fstream = null;
+	            
+	            tickers = null;
+	            
+	        }catch (Exception e){//Catch exception if any
+	            System.err.println("Error: " + e.getMessage());
+	        }
     	}
 	}
-
-	private static List<String> loadTickers(String filename) {
-		try{
-            // Open the file that is the first 
-            // command line parameter
-            FileInputStream fstream = new FileInputStream(filename);
-
-            // Get the object of DataInputStream
-            DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String strLine;
-
-            //truncateTable();
-            
-            ArrayList<String> tickers = new ArrayList<String>();
-
-            //Read File Line By Line
-            while ((strLine = br.readLine()) != null)   {
-                    int pos = strLine.indexOf("	");
-
-                    if (pos == -1) {
-                            pos = strLine.indexOf(" ");
-                    }
-
-                    String ticker = strLine.substring(0, pos);
-
-                    tickers.add(ticker);
-            }
-            
-            return tickers;
-            
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return new ArrayList<String>();
-	}
+	
 
     /**
      * Grabs all the stock data information and updates the database

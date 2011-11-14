@@ -138,6 +138,19 @@ public class SharedQuoteServiceV1Consumer
         return m_service;
     }
 
+    public List<Response<?>> poll(boolean param0, boolean param1)
+        throws InterruptedException
+    {
+        List<Response<?>> result = null;
+        try {
+            m_proxy = getProxy();
+        } catch (ServiceException serviceException) {
+            throw ServiceRuntimeException.wrap(serviceException);
+        }
+        result = m_proxy.poll(param0, param1);
+        return result;
+    }
+
     public Future<?> getQuotesAsync(GetQuotesRequest param0, AsyncHandler<GetQuotesResponse> param1) {
         Future<?> result = null;
         try {
@@ -157,19 +170,6 @@ public class SharedQuoteServiceV1Consumer
             throw ServiceRuntimeException.wrap(serviceException);
         }
         result = m_proxy.getQuotesAsync(param0);
-        return result;
-    }
-
-    public List<Response<?>> poll(boolean param0, boolean param1)
-        throws InterruptedException
-    {
-        List<Response<?>> result = null;
-        try {
-            m_proxy = getProxy();
-        } catch (ServiceException serviceException) {
-            throw ServiceRuntimeException.wrap(serviceException);
-        }
-        result = m_proxy.poll(param0, param1);
         return result;
     }
 

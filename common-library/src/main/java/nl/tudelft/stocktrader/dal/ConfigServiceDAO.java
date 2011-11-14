@@ -26,6 +26,8 @@ import nl.tudelft.stocktrader.dal.configservice.ServiceLocation;
 
 public interface ConfigServiceDAO {
 	
+	List<ServiceLocation> getQSLocations();
+	
 	List<ServiceLocation> getESLocations();
 	
     List<ServiceLocation> getBSLocations();

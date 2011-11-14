@@ -20,6 +20,7 @@ public class QuoteServiceV1TypeDefsBuilder
 
     private final static String NS1 = "http://www.ebayopensource.org/turmeric/common/v1/types";
     private final static String NS2 = "http://atlantis.st.ewi.tudelft.nl/v1/services";
+    private final static String NS3 = "http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types";
 
     public void build() {
         ArrayList<FlatSchemaComplexTypeImpl> complexTypes = new ArrayList<FlatSchemaComplexTypeImpl>();
@@ -45,15 +46,17 @@ public class QuoteServiceV1TypeDefsBuilder
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "BaseResponse")));
         // Type #3 (GetQuotesResponse)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS2, "GetQuotesResponse")));
-        // Type #4 (ErrorData)
+        // Type #4 (RemoteQuoteData)
+        complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS3, "RemoteQuoteData")));
+        // Type #5 (ErrorData)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "ErrorData")));
-        // Type #5 (CommonErrorData)
+        // Type #6 (CommonErrorData)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "CommonErrorData")));
-        // Type #6 (ExtensionType)
+        // Type #7 (ExtensionType)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "ExtensionType")));
-        // Type #7 (ErrorParameter)
+        // Type #8 (ErrorParameter)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "ErrorParameter")));
-        // Type #8 (ErrorMessage)
+        // Type #9 (ErrorMessage)
         complexTypes.add(new FlatSchemaComplexTypeImpl(new QName(NS1, "ErrorMessage")));
     }
 
@@ -62,42 +65,40 @@ public class QuoteServiceV1TypeDefsBuilder
          
         // Type #0 (BaseRequest)
         currType = complexTypes.get(0);
-        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(6), -1);
+        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(7), -1);
          
         // Type #1 (GetQuotesRequest)
         currType = complexTypes.get(1);
-        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(6), -1);
+        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(7), -1);
         currType.addSimpleElement(new QName(NS2, "symbols"), -1);
          
         // Type #2 (BaseResponse)
         currType = complexTypes.get(2);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
-        currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(8), 1);
+        currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(9), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
         currType.addSimpleElement(new QName(NS1, "timestamp"), 1);
-        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(6), -1);
+        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(7), -1);
          
         // Type #3 (GetQuotesResponse)
         currType = complexTypes.get(3);
         currType.addSimpleElement(new QName(NS1, "ack"), 1);
-        currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(8), 1);
+        currType.addComplexElement(new QName(NS1, "errorMessage"), complexTypes.get(9), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
         currType.addSimpleElement(new QName(NS1, "timestamp"), 1);
-        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(6), -1);
-        currType.addSimpleElement(new QName(NS2, "quoteData"), -1);
+        currType.addComplexElement(new QName(NS1, "extension"), complexTypes.get(7), -1);
+        currType.addComplexElement(new QName(NS2, "quoteData"), complexTypes.get(4), -1);
          
-        // Type #4 (ErrorData)
+        // Type #4 (RemoteQuoteData)
         currType = complexTypes.get(4);
-        currType.addSimpleElement(new QName(NS1, "errorId"), 1);
-        currType.addSimpleElement(new QName(NS1, "domain"), 1);
-        currType.addSimpleElement(new QName(NS1, "subdomain"), 1);
-        currType.addSimpleElement(new QName(NS1, "severity"), 1);
-        currType.addSimpleElement(new QName(NS1, "category"), 1);
-        currType.addSimpleElement(new QName(NS1, "message"), 1);
-        currType.addSimpleElement(new QName(NS1, "exceptionId"), 1);
-        currType.addComplexElement(new QName(NS1, "parameter"), complexTypes.get(7), -1);
+        currType.addSimpleElement(new QName(NS3, "ticker"), 1);
+        currType.addSimpleElement(new QName(NS3, "timestamp"), 1);
+        currType.addSimpleElement(new QName(NS3, "market"), 1);
+        currType.addSimpleElement(new QName(NS3, "value"), 1);
+        currType.addSimpleElement(new QName(NS3, "change"), 1);
+        currType.addSimpleElement(new QName(NS3, "changePercent"), 1);
          
-        // Type #5 (CommonErrorData)
+        // Type #5 (ErrorData)
         currType = complexTypes.get(5);
         currType.addSimpleElement(new QName(NS1, "errorId"), 1);
         currType.addSimpleElement(new QName(NS1, "domain"), 1);
@@ -106,27 +107,38 @@ public class QuoteServiceV1TypeDefsBuilder
         currType.addSimpleElement(new QName(NS1, "category"), 1);
         currType.addSimpleElement(new QName(NS1, "message"), 1);
         currType.addSimpleElement(new QName(NS1, "exceptionId"), 1);
-        currType.addComplexElement(new QName(NS1, "parameter"), complexTypes.get(7), -1);
+        currType.addComplexElement(new QName(NS1, "parameter"), complexTypes.get(8), -1);
+         
+        // Type #6 (CommonErrorData)
+        currType = complexTypes.get(6);
+        currType.addSimpleElement(new QName(NS1, "errorId"), 1);
+        currType.addSimpleElement(new QName(NS1, "domain"), 1);
+        currType.addSimpleElement(new QName(NS1, "subdomain"), 1);
+        currType.addSimpleElement(new QName(NS1, "severity"), 1);
+        currType.addSimpleElement(new QName(NS1, "category"), 1);
+        currType.addSimpleElement(new QName(NS1, "message"), 1);
+        currType.addSimpleElement(new QName(NS1, "exceptionId"), 1);
+        currType.addComplexElement(new QName(NS1, "parameter"), complexTypes.get(8), -1);
         currType.addSimpleElement(new QName(NS1, "errorName"), 1);
         currType.addSimpleElement(new QName(NS1, "cause"), 1);
         currType.addSimpleElement(new QName(NS1, "resolution"), 1);
         currType.addSimpleElement(new QName(NS1, "errorGroups"), 1);
         currType.addSimpleElement(new QName(NS1, "organization"), 1);
          
-        // Type #6 (ExtensionType)
-        currType = complexTypes.get(6);
+        // Type #7 (ExtensionType)
+        currType = complexTypes.get(7);
         currType.addSimpleElement(new QName(NS1, "id"), 1);
         currType.addSimpleElement(new QName(NS1, "version"), 1);
         currType.addSimpleElement(new QName(NS1, "contentType"), 1);
         currType.addSimpleElement(new QName(NS1, "value"), 1);
          
-        // Type #7 (ErrorParameter)
-        currType = complexTypes.get(7);
+        // Type #8 (ErrorParameter)
+        currType = complexTypes.get(8);
         currType.addAttribute(new QName(NS1, "name"));
          
-        // Type #8 (ErrorMessage)
-        currType = complexTypes.get(8);
-        currType.addComplexElement(new QName(NS1, "error"), complexTypes.get(5), -1);
+        // Type #9 (ErrorMessage)
+        currType = complexTypes.get(9);
+        currType.addComplexElement(new QName(NS1, "error"), complexTypes.get(6), -1);
     }
 
     private void addRootElements0(ArrayList<FlatSchemaComplexTypeImpl> complexTypes, HashMap<QName, FlatSchemaElementDeclImpl> rootElements) {

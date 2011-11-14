@@ -46,14 +46,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExtensionType }
-     * 
-     */
-    public ExtensionType createExtensionType() {
-        return new ExtensionType();
-    }
-
-    /**
      * Create an instance of {@link ErrorMessage }
      * 
      */
@@ -67,6 +59,14 @@ public class ObjectFactory {
      */
     public ErrorParameter createErrorParameter() {
         return new ErrorParameter();
+    }
+
+    /**
+     * Create an instance of {@link ExtensionType }
+     * 
+     */
+    public ExtensionType createExtensionType() {
+        return new ExtensionType();
     }
 
 }

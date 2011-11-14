@@ -8,6 +8,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationResponse;
@@ -84,6 +85,19 @@ public class ConfigurationServiceV1Test
         GetOPSConfigResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getOPSConfig(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testGetQSLocations()
+        throws Exception
+    {
+        GetQSLocationsResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getQSLocations(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

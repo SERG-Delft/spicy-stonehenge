@@ -29,6 +29,12 @@ public class QuoteServiceV1Proxy
         super(service);
     }
 
+    public List<Response<?>> poll(boolean block, boolean partial)
+        throws InterruptedException
+    {
+        return m_service.poll(block, partial);
+    }
+
     public Future<?> getQuotesAsync(GetQuotesRequest param0, AsyncHandler<GetQuotesResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getQuotes");
         Future<?> result = dispatch.invokeAsync(param0, param1);
@@ -39,12 +45,6 @@ public class QuoteServiceV1Proxy
         Dispatch dispatch = m_service.createDispatch("getQuotes");
         Response<GetQuotesResponse> result = dispatch.invokeAsync(param0);
         return result;
-    }
-
-    public List<Response<?>> poll(boolean block, boolean partial)
-        throws InterruptedException
-    {
-        return m_service.poll(block, partial);
     }
 
     public GetQuotesResponse getQuotes(GetQuotesRequest param0) {

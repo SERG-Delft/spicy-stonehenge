@@ -43,20 +43,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetQuotesResponse }
-     * 
-     */
-    public GetQuotesResponse createGetQuotesResponse() {
-        return new GetQuotesResponse();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetQuotesRequest }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/v1/services", name = "getQuotesRequest")
     public JAXBElement<GetQuotesRequest> createGetQuotesRequest(GetQuotesRequest value) {
         return new JAXBElement<GetQuotesRequest>(_GetQuotesRequest_QNAME, GetQuotesRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link GetQuotesResponse }
+     * 
+     */
+    public GetQuotesResponse createGetQuotesResponse() {
+        return new GetQuotesResponse();
     }
 
     /**
