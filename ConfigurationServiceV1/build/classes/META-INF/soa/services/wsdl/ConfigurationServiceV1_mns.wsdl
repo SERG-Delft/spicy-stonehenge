@@ -276,7 +276,22 @@
             </xs:element>
             
             <xs:complexType name="getESLocationRequest"/>
-        </xs:schema>
+            <xs:element name="getQSLocations" type="tns:GetQSLocationsRequest">
+            </xs:element>
+            <xs:element name="getQSLocationsResponse">
+            	<xs:complexType>
+            		<xs:sequence>
+
+            			<xs:element maxOccurs="unbounded" minOccurs="0" name="locations" type="types:ServiceLocation"/>
+            		</xs:sequence>
+            	</xs:complexType>
+            </xs:element>
+		
+		
+            <xs:complexType name="GetQSLocationsRequest"/>
+            <xs:element name="getQSLocationsRequest" type="tns:GetQSLocationsRequest">
+            </xs:element>
+		</xs:schema>
 	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types">
 <xs:complexType name="ServiceLocation">
 				<xs:annotation>
@@ -608,6 +623,12 @@
 	<wsdl:message name="getESLocationsResponse">
 		<wsdl:part element="tns:getESLocationsResponse" name="parameters"/>
 	</wsdl:message>
+	<wsdl:message name="getQSLocationsRequest">
+		<wsdl:part element="tns:getQSLocationsRequest" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getQSLocationsResponse">
+		<wsdl:part element="tns:getQSLocationsResponse" name="parameters"/>
+	</wsdl:message>
 	<wsdl:portType name="ConfigurationServicePort">
 		<wsdl:operation name="getClientConfig">
 			<wsdl:documentation>
@@ -665,6 +686,10 @@
 		<wsdl:operation name="getESLocations">
 			<wsdl:input message="tns:getESLocationsRequest"/>
 			<wsdl:output message="tns:getESLocationsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getQSLocations">
+			<wsdl:input message="tns:getQSLocationsRequest"/>
+			<wsdl:output message="tns:getQSLocationsResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="ConfigurationServiceHttpBinding" type="tns:ConfigurationServicePort">
@@ -775,6 +800,16 @@
 				<mime:content type="text/xml"/>
 			</wsdl:output>
 		</wsdl:operation>
+		<wsdl:operation name="getQSLocations">
+			<http:operation location="/getQSLocations"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded">
+				</mime:content>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:binding name="ConfigurationServiceSOAPBinding" type="tns:ConfigurationServicePort">
 
@@ -877,6 +912,16 @@
 		</wsdl:operation>
 		<wsdl:operation name="getESLocations">
 			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getESLocations"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getQSLocations">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getQSLocations">
+			</soap:operation>
 			<wsdl:input>
 				<soap:body use="literal"/>
 			</wsdl:input>

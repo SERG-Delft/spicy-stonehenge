@@ -17,6 +17,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSRequest;
@@ -29,13 +31,13 @@ public interface AsyncConfigurationServiceV1
 {
 
 
-    public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> handler);
-
-    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0);
-
     public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> handler);
 
     public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0);
+
+    public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> handler);
+
+    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0);
 
     public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> handler);
 
@@ -44,6 +46,10 @@ public interface AsyncConfigurationServiceV1
     public Future<?> getOPSConfigAsync(GetOPSConfigRequest param0, AsyncHandler<GetOPSConfigResponse> handler);
 
     public Response<GetOPSConfigResponse> getOPSConfigAsync(GetOPSConfigRequest param0);
+
+    public Future<?> getQSLocationsAsync(GetQSLocationsRequest param0, AsyncHandler<GetQSLocationsResponse> handler);
+
+    public Response<GetQSLocationsResponse> getQSLocationsAsync(GetQSLocationsRequest param0);
 
     public Future<?> setClientToBSAsync(SetClientToBSRequest param0, AsyncHandler<SetClientToBSResponse> handler);
 

@@ -26,6 +26,25 @@
                 <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
+        <operation name="login">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest</java-type-name>
+                <xml-type-name>LoginRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse</java-type-name>
+                <xml-type-name>LoginResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
         <operation name="logout">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest</java-type-name>
@@ -45,17 +64,36 @@
                 <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation name="login">
+        <operation name="updateWalletData">
             <request-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest</java-type-name>
-                <xml-type-name>LoginRequest</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginRequest</xml-element-name>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest</java-type-name>
+                <xml-type-name>updateWalletDataRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWalletDataRequest</xml-element-name>
                 <has-attachment>false</has-attachment>
             </request-message>
             <response-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse</java-type-name>
-                <xml-type-name>LoginResponse</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}loginResponse</xml-element-name>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse</java-type-name>
+                <xml-type-name>updateWalletDataResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWalletDataResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
+        <operation name="getWalletData">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest</java-type-name>
+                <xml-type-name>GetWalletDataRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getWalletDataRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse</java-type-name>
+                <xml-type-name>GetWalletDataResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getWalletDataResponse</xml-element-name>
                 <has-attachment>false</has-attachment>
             </response-message>
             <error-message>
@@ -151,25 +189,6 @@
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingResponse</java-type-name>
                 <xml-type-name>GetHoldingResponse</xml-type-name>
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getHoldingResponse</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </response-message>
-            <error-message>
-                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
-                <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
-            </error-message>
-        </operation>
-        <operation name="updateWalletData">
-            <request-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest</java-type-name>
-                <xml-type-name>updateWalletDataRequest</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWalletDataRequest</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </request-message>
-            <response-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse</java-type-name>
-                <xml-type-name>updateWalletDataResponse</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}updateWalletDataResponse</xml-element-name>
                 <has-attachment>false</has-attachment>
             </response-message>
             <error-message>
@@ -322,25 +341,6 @@
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetHoldingsResponse</java-type-name>
                 <xml-type-name>GetHoldingsResponse</xml-type-name>
                 <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getHoldingsResponse</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </response-message>
-            <error-message>
-                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
-                <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
-            </error-message>
-        </operation>
-        <operation name="getWalletData">
-            <request-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataRequest</java-type-name>
-                <xml-type-name>GetWalletDataRequest</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getWalletDataRequest</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </request-message>
-            <response-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse</java-type-name>
-                <xml-type-name>GetWalletDataResponse</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}getWalletDataResponse</xml-element-name>
                 <has-attachment>false</has-attachment>
             </response-message>
             <error-message>

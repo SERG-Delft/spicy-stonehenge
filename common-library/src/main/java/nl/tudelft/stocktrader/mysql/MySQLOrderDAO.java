@@ -17,6 +17,7 @@
 
 package nl.tudelft.stocktrader.mysql;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
@@ -257,14 +258,14 @@ public class MySQLOrderDAO extends AbstractMySQLDAO implements OrderDAO {
 		customerDAO.updateAccountBalance(accountId, total);
 	}
 
-	public void updateStockPriceVolume(double quantity, Quote quote) throws DAOException {
-		if (logger.isDebugEnabled()) {
-			logger.debug("OrderDAO.updateStockPriceVolume(double,QuatedataModle)\nQuantity :" + quantity + "\nQuote\nSymbol" + quote.getSymbol());
-		}
-		DAOFactory fac = MySQLDAOFactory.getInstance();
-		MarketSummaryDAO marketSummaryDAO = fac.getMarketSummaryDAO();
-		marketSummaryDAO.updateStockPriceVolume(quantity, quote);
-	}
+//	public void updateStockPriceVolume(double quantity, Quote quote) throws DAOException {
+//		if (logger.isDebugEnabled()) {
+//			logger.debug("OrderDAO.updateStockPriceVolume(double,QuatedataModle)\nQuantity :" + quantity + "\nQuote\nSymbol" + quote.getSymbol());
+//		}
+//		DAOFactory fac = MySQLDAOFactory.getInstance();
+//		MarketSummaryDAO marketSummaryDAO = fac.getMarketSummaryDAO();
+//		marketSummaryDAO.updateStockPriceVolume(quantity, quote);
+//	}
 
 	public void updateOrder(Order order) throws DAOException {
 		PreparedStatement updateHoldingStat = null;
@@ -420,6 +421,12 @@ public class MySQLOrderDAO extends AbstractMySQLDAO implements OrderDAO {
 			}
 		}
 		return order;
+	}
+
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote)
+			throws DAOException {
+		throw new DAOException("Not implemented");
+		
 	}
 }
 

@@ -67,187 +67,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAccountDataResponse }
-     * 
-     */
-    public GetAccountDataResponse createGetAccountDataResponse() {
-        return new GetAccountDataResponse();
-    }
-
-    /**
      * Create an instance of {@link GetHoldingsRequest }
      * 
      */
     public GetHoldingsRequest createGetHoldingsRequest() {
         return new GetHoldingsRequest();
-    }
-
-    /**
-     * Create an instance of {@link SellRequest }
-     * 
-     */
-    public SellRequest createSellRequest() {
-        return new SellRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetClosedOrdersResponse }
-     * 
-     */
-    public GetClosedOrdersResponse createGetClosedOrdersResponse() {
-        return new GetClosedOrdersResponse();
-    }
-
-    /**
-     * Create an instance of {@link SellEnhancedResponse }
-     * 
-     */
-    public SellEnhancedResponse createSellEnhancedResponse() {
-        return new SellEnhancedResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetWallet }
-     * 
-     */
-    public GetWallet createGetWallet() {
-        return new GetWallet();
-    }
-
-    /**
-     * Create an instance of {@link GetMarketSummaryRequest }
-     * 
-     */
-    public GetMarketSummaryRequest createGetMarketSummaryRequest() {
-        return new GetMarketSummaryRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetQuoteResponse }
-     * 
-     */
-    public GetQuoteResponse createGetQuoteResponse() {
-        return new GetQuoteResponse();
-    }
-
-    /**
-     * Create an instance of {@link SellEnhancedRequest }
-     * 
-     */
-    public SellEnhancedRequest createSellEnhancedRequest() {
-        return new SellEnhancedRequest();
-    }
-
-    /**
-     * Create an instance of {@link Logout }
-     * 
-     */
-    public Logout createLogout() {
-        return new Logout();
-    }
-
-    /**
-     * Create an instance of {@link SellResponse }
-     * 
-     */
-    public SellResponse createSellResponse() {
-        return new SellResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetTopOrdersResponse }
-     * 
-     */
-    public GetTopOrdersResponse createGetTopOrdersResponse() {
-        return new GetTopOrdersResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetHoldingRequest }
-     * 
-     */
-    public GetHoldingRequest createGetHoldingRequest() {
-        return new GetHoldingRequest();
-    }
-
-    /**
-     * Create an instance of {@link UpdateAccountProfileRequest }
-     * 
-     */
-    public UpdateAccountProfileRequest createUpdateAccountProfileRequest() {
-        return new UpdateAccountProfileRequest();
-    }
-
-    /**
-     * Create an instance of {@link BuyResponse }
-     * 
-     */
-    public BuyResponse createBuyResponse() {
-        return new BuyResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateWalletDataResponse }
-     * 
-     */
-    public UpdateWalletDataResponse createUpdateWalletDataResponse() {
-        return new UpdateWalletDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetMarketSummaryResponse }
-     * 
-     */
-    public GetMarketSummaryResponse createGetMarketSummaryResponse() {
-        return new GetMarketSummaryResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAccountDataRequest }
-     * 
-     */
-    public GetAccountDataRequest createGetAccountDataRequest() {
-        return new GetAccountDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetAllQuotesRequest }
-     * 
-     */
-    public GetAllQuotesRequest createGetAllQuotesRequest() {
-        return new GetAllQuotesRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOrdersRequest }
-     * 
-     */
-    public GetOrdersRequest createGetOrdersRequest() {
-        return new GetOrdersRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetHoldingResponse }
-     * 
-     */
-    public GetHoldingResponse createGetHoldingResponse() {
-        return new GetHoldingResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetWalletDataResponse }
-     * 
-     */
-    public GetWalletDataResponse createGetWalletDataResponse() {
-        return new GetWalletDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetWalletDataRequest }
-     * 
-     */
-    public GetWalletDataRequest createGetWalletDataRequest() {
-        return new GetWalletDataRequest();
     }
 
     /**
@@ -267,11 +91,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAccountProfileDataRequest }
+     * Create an instance of {@link UpdateWalletDataResponse }
      * 
      */
-    public GetAccountProfileDataRequest createGetAccountProfileDataRequest() {
-        return new GetAccountProfileDataRequest();
+    public UpdateWalletDataResponse createUpdateWalletDataResponse() {
+        return new UpdateWalletDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingResponse }
+     * 
+     */
+    public GetHoldingResponse createGetHoldingResponse() {
+        return new GetHoldingResponse();
     }
 
     /**
@@ -283,19 +115,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateAccountProfileResponse }
-     * 
-     */
-    public UpdateAccountProfileResponse createUpdateAccountProfileResponse() {
-        return new UpdateAccountProfileResponse();
-    }
-
-    /**
      * Create an instance of {@link BuyRequest }
      * 
      */
     public BuyRequest createBuyRequest() {
         return new BuyRequest();
+    }
+
+    /**
+     * Create an instance of {@link SellEnhancedRequest }
+     * 
+     */
+    public SellEnhancedRequest createSellEnhancedRequest() {
+        return new SellEnhancedRequest();
     }
 
     /**
@@ -307,51 +139,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginRequest }
+     * Create an instance of {@link GetHoldingRequest }
      * 
      */
-    public LoginRequest createLoginRequest() {
-        return new LoginRequest();
+    public GetHoldingRequest createGetHoldingRequest() {
+        return new GetHoldingRequest();
     }
 
     /**
-     * Create an instance of {@link LogoutResponse }
+     * Create an instance of {@link Logout }
      * 
      */
-    public LogoutResponse createLogoutResponse() {
-        return new LogoutResponse();
+    public Logout createLogout() {
+        return new Logout();
     }
 
     /**
-     * Create an instance of {@link GetAllQuotesResponse }
+     * Create an instance of {@link SellResponse }
      * 
      */
-    public GetAllQuotesResponse createGetAllQuotesResponse() {
-        return new GetAllQuotesResponse();
+    public SellResponse createSellResponse() {
+        return new SellResponse();
     }
 
     /**
-     * Create an instance of {@link RegisterRequest }
+     * Create an instance of {@link GetMarketSummaryRequest }
      * 
      */
-    public RegisterRequest createRegisterRequest() {
-        return new RegisterRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetOrdersResponse }
-     * 
-     */
-    public GetOrdersResponse createGetOrdersResponse() {
-        return new GetOrdersResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetQuoteRequest }
-     * 
-     */
-    public GetQuoteRequest createGetQuoteRequest() {
-        return new GetQuoteRequest();
+    public GetMarketSummaryRequest createGetMarketSummaryRequest() {
+        return new GetMarketSummaryRequest();
     }
 
     /**
@@ -363,19 +179,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Login }
+     * Create an instance of {@link LogoutResponse }
      * 
      */
-    public Login createLogin() {
-        return new Login();
+    public LogoutResponse createLogoutResponse() {
+        return new LogoutResponse();
     }
 
     /**
-     * Create an instance of {@link LogoutRequest }
+     * Create an instance of {@link GetWallet }
      * 
      */
-    public LogoutRequest createLogoutRequest() {
-        return new LogoutRequest();
+    public GetWallet createGetWallet() {
+        return new GetWallet();
+    }
+
+    /**
+     * Create an instance of {@link GetAllQuotesResponse }
+     * 
+     */
+    public GetAllQuotesResponse createGetAllQuotesResponse() {
+        return new GetAllQuotesResponse();
     }
 
     /**
@@ -387,11 +211,131 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginResponse }
+     * Create an instance of {@link GetOrdersResponse }
      * 
      */
-    public LoginResponse createLoginResponse() {
-        return new LoginResponse();
+    public GetOrdersResponse createGetOrdersResponse() {
+        return new GetOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetOrdersRequest }
+     * 
+     */
+    public GetOrdersRequest createGetOrdersRequest() {
+        return new GetOrdersRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetMarketSummaryResponse }
+     * 
+     */
+    public GetMarketSummaryResponse createGetMarketSummaryResponse() {
+        return new GetMarketSummaryResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetHoldingsResponse }
+     * 
+     */
+    public GetHoldingsResponse createGetHoldingsResponse() {
+        return new GetHoldingsResponse();
+    }
+
+    /**
+     * Create an instance of {@link SellRequest }
+     * 
+     */
+    public SellRequest createSellRequest() {
+        return new SellRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetTopOrdersResponse }
+     * 
+     */
+    public GetTopOrdersResponse createGetTopOrdersResponse() {
+        return new GetTopOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAccountProfileDataRequest }
+     * 
+     */
+    public GetAccountProfileDataRequest createGetAccountProfileDataRequest() {
+        return new GetAccountProfileDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link RegisterRequest }
+     * 
+     */
+    public RegisterRequest createRegisterRequest() {
+        return new RegisterRequest();
+    }
+
+    /**
+     * Create an instance of {@link UpdateAccountProfileResponse }
+     * 
+     */
+    public UpdateAccountProfileResponse createUpdateAccountProfileResponse() {
+        return new UpdateAccountProfileResponse();
+    }
+
+    /**
+     * Create an instance of {@link SellEnhancedResponse }
+     * 
+     */
+    public SellEnhancedResponse createSellEnhancedResponse() {
+        return new SellEnhancedResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAccountDataResponse }
+     * 
+     */
+    public GetAccountDataResponse createGetAccountDataResponse() {
+        return new GetAccountDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetWalletDataResponse }
+     * 
+     */
+    public GetWalletDataResponse createGetWalletDataResponse() {
+        return new GetWalletDataResponse();
+    }
+
+    /**
+     * Create an instance of {@link BuyResponse }
+     * 
+     */
+    public BuyResponse createBuyResponse() {
+        return new BuyResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetClosedOrdersResponse }
+     * 
+     */
+    public GetClosedOrdersResponse createGetClosedOrdersResponse() {
+        return new GetClosedOrdersResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateAccountProfileRequest }
+     * 
+     */
+    public UpdateAccountProfileRequest createUpdateAccountProfileRequest() {
+        return new UpdateAccountProfileRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetQuoteResponse }
+     * 
+     */
+    public GetQuoteResponse createGetQuoteResponse() {
+        return new GetQuoteResponse();
     }
 
     /**
@@ -403,11 +347,67 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetHoldingsResponse }
+     * Create an instance of {@link GetAccountDataRequest }
      * 
      */
-    public GetHoldingsResponse createGetHoldingsResponse() {
-        return new GetHoldingsResponse();
+    public GetAccountDataRequest createGetAccountDataRequest() {
+        return new GetAccountDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link Login }
+     * 
+     */
+    public Login createLogin() {
+        return new Login();
+    }
+
+    /**
+     * Create an instance of {@link LoginRequest }
+     * 
+     */
+    public LoginRequest createLoginRequest() {
+        return new LoginRequest();
+    }
+
+    /**
+     * Create an instance of {@link LogoutRequest }
+     * 
+     */
+    public LogoutRequest createLogoutRequest() {
+        return new LogoutRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetQuoteRequest }
+     * 
+     */
+    public GetQuoteRequest createGetQuoteRequest() {
+        return new GetQuoteRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetAllQuotesRequest }
+     * 
+     */
+    public GetAllQuotesRequest createGetAllQuotesRequest() {
+        return new GetAllQuotesRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetWalletDataRequest }
+     * 
+     */
+    public GetWalletDataRequest createGetWalletDataRequest() {
+        return new GetWalletDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link LoginResponse }
+     * 
+     */
+    public LoginResponse createLoginResponse() {
+        return new LoginResponse();
     }
 
     /**

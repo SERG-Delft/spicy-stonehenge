@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service enable-namespace-folding="true" name="QuoteServiceV1" xmlns="http://www.ebayopensource.org/turmeric/common/config">
+    <package-map>
+        <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.v1.services.quoteservice"/>
+        <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types"/>
+        <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="org.ebayopensource.turmeric.common.v1.types"/>
+        <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/v1/services" name="nl.tudelft.ewi.st.atlantis.v1.services"/>
+    </package-map>
+    <operation-list>
+        <operation methodName="getQuotes" name="getQuotes">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest</java-type-name>
+                <xml-type-name>GetQuotesRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/v1/services}getQuotesRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse</java-type-name>
+                <xml-type-name>GetQuotesResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/v1/services}getQuotesResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/v1/services}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
+    </operation-list>
+    <java-type-list>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest</java-type-name>
+        <java-type-name>nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.AckValue</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseRequest</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseResponse</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.CommonErrorData</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorCategory</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorData</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorParameter</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorSeverity</java-type-name>
+        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ExtensionType</java-type-name>
+    </java-type-list>
+</service>

@@ -44,6 +44,7 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
         this.connection = connection;
     }
 
+    private static final String SQL_SELECT_QSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_QS%'";
     private static final String SQL_SELECT_ESLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_ES%'";
     private static final String SQL_SELECT_BSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_BS%'";
     private static final String SQL_SELECT_OPSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_OPS%'";
@@ -119,6 +120,11 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
         return configServiceUrl;
     }
 
+    public List<ServiceLocation> getQSLocations() {
+    	return (List<ServiceLocation>) executeQuery(new SimpleStatementPopulator(SQL_SELECT_QSLOCATION_FROM_SERVICE),
+                new ServiceResultSetExtractor());
+    }
+    
 	public List<ServiceLocation> getESLocations() {
 		 return (List<ServiceLocation>) executeQuery(new SimpleStatementPopulator(SQL_SELECT_ESLOCATION_FROM_SERVICE),
 	                new ServiceResultSetExtractor());

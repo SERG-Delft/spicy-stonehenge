@@ -66,15 +66,21 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testLogout()
+    public void testLogin()
         throws Exception
     {
+<<<<<<< HEAD
+        LoginResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().login(null);
+=======
     		
     	LogoutRequest request = new LogoutRequest();
     	request.setUserID("cuiting");
         LogoutResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().logout(request);
+>>>>>>> 6a3c07e23418612f2aecd98f52ffe4c69ed56efc
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -82,9 +88,14 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testLogin()
+    public void testLogout()
         throws Exception
     {
+<<<<<<< HEAD
+        LogoutResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().logout(null);
+=======
     	
     	LoginRequest request = new LoginRequest();
     	request.setUserID("uid:0");
@@ -93,6 +104,7 @@ public class BusinessServiceV1Test
         LoginResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().login(request);
+>>>>>>> 6a3c07e23418612f2aecd98f52ffe4c69ed56efc
         if (result == null) {
             throw new Exception("Response is Null");
         }else{

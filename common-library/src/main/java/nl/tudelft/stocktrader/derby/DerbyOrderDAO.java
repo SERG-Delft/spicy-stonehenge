@@ -17,6 +17,7 @@
 
 package nl.tudelft.stocktrader.derby;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
@@ -257,9 +258,9 @@ public class DerbyOrderDAO extends AbstractDerbyDAO implements OrderDAO {
 		customerDAO.updateAccountBalance(accountId, total);
 	}
 
-	public void updateStockPriceVolume(double quantity, Quote quote) throws DAOException {
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote) throws DAOException {
 		if (logger.isDebugEnabled()) {
-			logger.debug("OrderDAO.updateStockPriceVolume(double,QuatedataModle)\nQuantity :" + quantity + "\nQuote\nSymbol" + quote.getSymbol());
+			logger.debug("OrderDAO.updateStockPriceVolume(double,QuatedataModle)\nQuantity :" + quantity + "\nQuote\nSymbol" + quote.getTicker());
 		}
 		DAOFactory fac = DerbyDAOFactory.getInstance();
 		MarketSummaryDAO marketSummaryDAO = fac.getMarketSummaryDAO();

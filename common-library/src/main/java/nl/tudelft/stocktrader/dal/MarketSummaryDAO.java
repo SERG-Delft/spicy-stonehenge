@@ -2,6 +2,7 @@ package nl.tudelft.stocktrader.dal;
 
 import java.util.List;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
 import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Quote;
 /*
@@ -32,7 +33,7 @@ public interface MarketSummaryDAO {
 	
 	public Quote getQuoteForUpdate(String symbol) throws DAOException;
 
-	public void updateStockPriceVolume(double quantity, Quote quote)
+	public void updateStockPriceVolume(double quantity, RemoteQuoteData quote)
 			throws DAOException;
 
 	public MarketSummary getCustomMarketSummary() throws DAOException;

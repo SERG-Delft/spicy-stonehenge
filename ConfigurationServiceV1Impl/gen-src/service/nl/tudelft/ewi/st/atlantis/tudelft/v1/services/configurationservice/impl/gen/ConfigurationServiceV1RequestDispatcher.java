@@ -13,6 +13,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSRequest;
@@ -41,6 +43,7 @@ public class ConfigurationServiceV1RequestDispatcher
         addSupportedOperation("setServiceLocation", new Class[] {SetServiceLocationRequest.class }, new Class[] {SetServiceLocationResponse.class });
         addSupportedOperation("getBSConfig", new Class[] {GetBSConfigRequest.class }, new Class[] {GetBSConfigResponse.class });
         addSupportedOperation("getOPSConfig", new Class[] {GetOPSConfigRequest.class }, new Class[] {GetOPSConfigResponse.class });
+        addSupportedOperation("getQSLocations", new Class[] {GetQSLocationsRequest.class }, new Class[] {GetQSLocationsResponse.class });
         addSupportedOperation("setClientToBS", new Class[] {SetClientToBSRequest.class }, new Class[] {SetClientToBSResponse.class });
         addSupportedOperation("getESLocations", new Class[] {GetESLocationRequest.class }, new Class[] {GetESLocationsResponse.class });
         addSupportedOperation("setBSToOPS", new Class[] {SetBSToOPSRequest.class }, new Class[] {SetBSToOPSResponse.class });
@@ -97,6 +100,18 @@ public class ConfigurationServiceV1RequestDispatcher
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
                 GetOPSConfigResponse result = service.getOPSConfig(param2);
+                responseMsg.setParam(0, result);
+            } catch (Throwable th) {
+                handleServiceException(msgCtx, th);
+            }
+            return true;
+        }
+        else 
+        if ("getQSLocations".equals(operationName)) {
+            GetQSLocationsRequest param2 = ((GetQSLocationsRequest) requestMsg.getParam(0));
+            try {
+                Message responseMsg = msgCtx.getResponseMessage();
+                GetQSLocationsResponse result = service.getQSLocations(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);

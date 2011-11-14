@@ -17,6 +17,13 @@
 
 package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.orderprocessorservice.impl;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.configurationservice.gen.SharedConfigurationServiceV1Consumer;
+import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse;
+import nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.gen.SharedQuoteServiceV1Consumer;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
@@ -29,6 +36,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.math.BigDecimal;
+import java.net.URL;
 import java.util.Calendar;
 
 public class OrderProcessManager {
@@ -68,14 +76,43 @@ public class OrderProcessManager {
 			BigDecimal total = null;
 			int holdingId = -1;
 
-			Quote quote = orderDAO.getQuoteForUpdate(order.getSymbol());
-			if (quote == null) {
+			//Quote quote = orderDAO.getQuoteForUpdate(order.getSymbol());
+			/* Tiago: making this more dynamic. query config service for a
+			 * quote service, then use quote service to get quote data
+			 */
+			
+			SharedConfigurationServiceV1Consumer consumer = new SharedConfigurationServiceV1Consumer("OrderProcessingService","production");
+			
+			GetQSLocationsResponse response = consumer.getQSLocations(new GetQSLocationsRequest());
+			
+			if (response.getLocations().size() == 0) {
+				System.out.println("Unable to locate a quote service");
+				return;
+			}
+			
+			/* Got the QS Endpoint */
+			String qsEndpoint = response.getLocations().get(0).getServiceURL();
+
+			SharedQuoteServiceV1Consumer qsConsumer = new SharedQuoteServiceV1Consumer("OrderProcessingService", "production");
+			
+			GetQuotesRequest request = new GetQuotesRequest();
+			request.getSymbols().add(order.getSymbol());
+			
+			qsConsumer.getService().setServiceLocation(new URL(qsEndpoint));
+			
+			GetQuotesResponse qsResponse = qsConsumer.getQuotes(request);
+			
+			if (qsResponse.getQuoteData().size() == 0) {
 				System.out.println("Unable to locate a quote entry for the symbol :"
 									+ order.getSymbol());
 				return;
 			}
-
-			order.setPrice(quote.getPrice());
+			
+			RemoteQuoteData quoteData = qsResponse.getQuoteData().get(0);
+			
+			BigDecimal price = BigDecimal.valueOf(quoteData.getValue());
+			
+			order.setPrice(price);
 
 			if (StockTraderUtility.ORDER_TYPE_BUY.equals(order.getOrderType())) {
 				holdingId = orderDAO.createHolding(order);
@@ -107,14 +144,14 @@ public class OrderProcessManager {
 				}
 			}
 			orderDAO.updateAccountBalance(order.getAccountId(), total);
-			orderDAO.updateStockPriceVolume(order.getQuantity(), quote);
+			orderDAO.updateStockPriceVolume(order.getQuantity(), quoteData);
 			order.setOrderStatus(StockTraderUtility.ORDER_STATUS_CLOSED);
 			order.setCompletionDate(Calendar.getInstance());
 			order.setHoldingId(holdingId);
 			orderDAO.closeOrder(order);
 			orderDAO.commitTransaction();
 
-		} catch (DAOException e) {
+		} catch (Exception e) {
 			try {
 				orderDAO.rollbackTransaction();
 				logger.error("", e);
