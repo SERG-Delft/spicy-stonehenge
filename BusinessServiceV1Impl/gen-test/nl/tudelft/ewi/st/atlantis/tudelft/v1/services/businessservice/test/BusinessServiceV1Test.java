@@ -14,7 +14,9 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuoteResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetTopOrdersResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetWalletDataResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LoginResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.LogoutResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.RegisterResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellEnhancedResponse;
@@ -22,6 +24,8 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SellResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateAccountProfileResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.BusinessServiceV1;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.types.AccountData;
+
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.sif.service.Service;
 import org.ebayopensource.turmeric.runtime.sif.service.ServiceFactory;
@@ -65,9 +69,18 @@ public class BusinessServiceV1Test
     public void testLogin()
         throws Exception
     {
+<<<<<<< HEAD
         LoginResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().login(null);
+=======
+    		
+    	LogoutRequest request = new LogoutRequest();
+    	request.setUserID("cuiting");
+        LogoutResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().logout(request);
+>>>>>>> 6a3c07e23418612f2aecd98f52ffe4c69ed56efc
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -78,11 +91,31 @@ public class BusinessServiceV1Test
     public void testLogout()
         throws Exception
     {
+<<<<<<< HEAD
         LogoutResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().logout(null);
+=======
+    	
+    	LoginRequest request = new LoginRequest();
+    	request.setUserID("uid:0");
+    	request.setPassword("xxx");
+    	
+        LoginResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().login(request);
+>>>>>>> 6a3c07e23418612f2aecd98f52ffe4c69ed56efc
         if (result == null) {
             throw new Exception("Response is Null");
+        }else{
+        	AccountData accountData = result.getAccount();
+        	System.out.println("Account ID is " + accountData.getAccountID());
+        	System.out.println("Open Balance is " + accountData.getOpenBalance());
+        	System.out.println("Creation Date is " + accountData.getCreationDate());
+        	System.out.println("Last Login is " + accountData.getLastLogin());
+        	System.out.println("Currency Type is " + accountData.getCurrencyType());
+        	System.out.println("Login Count is " + accountData.getLoginCount());
+        	System.out.println("Logout Count is " + accountData.getLogoutCount());
         }
         // TODO: FIX FOLLOWING ASSERT STATEMENT
         assertTrue(false);
