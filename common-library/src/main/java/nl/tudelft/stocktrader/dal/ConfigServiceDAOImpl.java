@@ -43,6 +43,10 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
+    
+    public Connection getConnection() {
+    	return connection;
+    }
 
     private static final String SQL_SELECT_QSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_QS%'";
     private static final String SQL_SELECT_ESLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_ES%'";
@@ -61,8 +65,8 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     private static final String SQL_SELECT_SERVICE = "SELECT * FROM service WHERE servicename = ?;";
     private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO service VALUES (?,?,?);";
 
-    private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT url FROM configservice WHERE name LIKE 'CONFIG_SERVICE'";
-    private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE configservice SET url=? WHERE name LIKE 'CONFIG_SERVICE'";
+    private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT url FROM service WHERE servicename LIKE 'CONFIG_SERVICE'";
+    private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE service SET url=? WHERE servicename LIKE 'CONFIG_SERVICE'";
     
     public boolean updateConfigService(String url) {
         int updateStatus;
