@@ -52,18 +52,18 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     private static final String SQL_SELECT_ESLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_ES%'";
     private static final String SQL_SELECT_BSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_BS%'";
     private static final String SQL_SELECT_OPSLOCATION_FROM_SERVICE = "SELECT servicename,url,sec FROM service WHERE servicename LIKE '%_OPS%'";
-    private static final String SQL_INSERT_VALUE_INTO_CLIENT_TO_BS = "INSERT INTO clienttobs (client , bs) VALUES (?,?);";
-    private static final String SQL_UPDATE_CLIENT_TO_BS = "UPDATE clienttobs SET bs=? WHERE client = ?;";
-    private static final String SQL_INSERT_VALUE_INTO_BS_TO_OPS = "INSERT INTO bstoops (bs, ops) VALUES (?,?);";
-    private static final String SQL_UPDATE_BS_TO_OPS = "UPDATE bstoops SET ops=? WHERE bs  = ?;";
+    private static final String SQL_INSERT_VALUE_INTO_CLIENT_TO_BS = "INSERT INTO clienttobs (client , bs) VALUES (?,?)";
+    private static final String SQL_UPDATE_CLIENT_TO_BS = "UPDATE clienttobs SET bs=? WHERE client = ?";
+    private static final String SQL_INSERT_VALUE_INTO_BS_TO_OPS = "INSERT INTO bstoops (bs, ops) VALUES (?,?)";
+    private static final String SQL_UPDATE_BS_TO_OPS = "UPDATE bstoops SET ops=? WHERE bs  = ?";
     private static final String SQL_SELECT_BSSERVICE_ADDRESS_BY_ClIENTNAME = "SELECT servicename,url,sec FROM service INNER JOIN clienttobs ON service.servicename = clienttobs.bs  WHERE client=?";
     private static final String SQL_SELECT_OPSSERVICE_ADDRESS_BY_CLIENTNAME = "SELECT servicename,url,sec,dbname, hostname,port FROM service INNER JOIN bstoops ON service.servicename = bstoops.ops CROSS JOIN dbconfig WHERE bstoops.bs=?";
-    private static final String SQL_SELECT_FROM_CLIENTTOBS = "SELECT * FROM clienttobs WHERE client = ?;";
-    private static final String SQL_SELECT_FROM_BSTOOPS = "SELECT * FROM bstoops WHERE bs = ?;";
-    private static final String SQL_SELECT_OPS_CONFIG = "SELECT * FROM dbconfig;";
-    private static final String SQL_UPDATE_SERVICE = "UPDATE service SET url = ?, sec = ? WHERE servicename = ?;";
-    private static final String SQL_SELECT_SERVICE = "SELECT * FROM service WHERE servicename = ?;";
-    private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO service VALUES (?,?,?);";
+    private static final String SQL_SELECT_FROM_CLIENTTOBS = "SELECT * FROM clienttobs WHERE client = ?";
+    private static final String SQL_SELECT_FROM_BSTOOPS = "SELECT * FROM bstoops WHERE bs = ?";
+    private static final String SQL_SELECT_OPS_CONFIG = "SELECT * FROM dbconfig";
+    private static final String SQL_UPDATE_SERVICE = "UPDATE service SET url = ?, sec = ? WHERE servicename = ?";
+    private static final String SQL_SELECT_SERVICE = "SELECT * FROM service WHERE servicename = ?";
+    private static final String SQL_INSERT_VALUE_INTO_SERVICE = "INSERT INTO service VALUES (?,?,?)";
 
     private static final String SQL_SELECT_URL_FROM_CONFIGSERVICE = "SELECT url FROM service WHERE servicename LIKE 'CONFIG_SERVICE'";
     private static final String SQL_UPDATE_URL_INTO_CONFIGSERVICE = "UPDATE service SET url=? WHERE servicename LIKE 'CONFIG_SERVICE'";
@@ -171,6 +171,15 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     }
 
     public boolean setBSToOPS(String bs, String ops) {
+    	if (getOPSConfig(ops) == null) return false;
+    	
+    	try {
+			connection = DAOFactory.getConnectionProvider().provide(DAOFactory.prop);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
         StatementPopulator queryStatement = new SimpleStatementPopulator(SQL_SELECT_FROM_BSTOOPS, bs);
         StatementPopulator updateStatement = new SimpleStatementPopulator(SQL_UPDATE_BS_TO_OPS, ops, bs);
         StatementPopulator insertStatement = new SimpleStatementPopulator(SQL_INSERT_VALUE_INTO_BS_TO_OPS,
@@ -180,6 +189,8 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     }
 
     public boolean setServiceLocation(final String serviceName, final String serviceUrl, final Boolean isSec) {
+    	if (isSec == null) return false;
+    	
         int sec = (isSec == true) ? 1 : 0;
         StatementPopulator queryStatement = new SimpleStatementPopulator(SQL_SELECT_SERVICE, serviceName);
         StatementPopulator updateStatement = new SimpleStatementPopulator(SQL_UPDATE_SERVICE, serviceUrl, sec,
