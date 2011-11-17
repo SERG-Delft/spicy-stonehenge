@@ -135,6 +135,10 @@ public abstract class DAOFactory {
 
             }
         }
+        
     }
 
+    public static ConnectionProvider getConnectionProvider() {
+    	return connectionProvider;
+    }
 }
