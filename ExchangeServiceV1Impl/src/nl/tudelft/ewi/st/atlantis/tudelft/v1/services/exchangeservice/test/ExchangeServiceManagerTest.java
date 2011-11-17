@@ -4,11 +4,14 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl.TraderServiceManager;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.impl.ExchangeServiceManager;
+import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -89,28 +92,54 @@ public class ExchangeServiceManagerTest {
 
 	@Test
 	public void testExchangeServiceManager() {
-		fail("Not yet implemented");
+		ExchangeServiceManager t = new ExchangeServiceManager();
+		assertTrue("ExchangeServiceManager Constructor failed", t != null);
 	}
 
 	@Test
 	public void testCheckCurrency() {
 		ExchangeServiceManager m = new ExchangeServiceManager();
-		m.checkCurrency("uid:0", "", "");
+		assertTrue("check existing currency failed", m.checkCurrency("uid:0", "EUR", "USD"));
+		assertTrue("check non-existing base currency failed", !m.checkCurrency("uid:0", "ER", "USD"));
+		assertTrue("check non-existing aim currency failed", !m.checkCurrency("uid:0", "EUR", "UD"));
+		assertTrue("check non-existing currencies failed", !m.checkCurrency("uid:0", "ER", "UD"));		
 	}
 
 	@Test
 	public void testCheckAmount() {
-		fail("Not yet implemented");
+		ExchangeServiceManager m = new ExchangeServiceManager();
+		assertTrue("check enough currency failed", m.checkAmount("uid:0", "EUR", BigDecimal.valueOf(90)));
+		assertTrue("check not-enough currency failed", !m.checkAmount("uid:0", "EUR", BigDecimal.valueOf(1000)));		
 	}
 
 	@Test
 	public void testExchangeCurrency() {
-		fail("Not yet implemented");
+		ExchangeServiceManager m = new ExchangeServiceManager();
+		BigDecimal exchSmall = m.exchangeCurrency(BigDecimal.valueOf(10), "EUR", "CNY");
+		assertTrue("Exchange small currency failed", exchSmall != null);
+		
+		//Pay attention!!!! The exchange rate is always changing. Need up-date data to test..		
+		assertTrue("Exchange small currency result correct", exchSmall.equals(BigDecimal.valueOf(85.54)));
+		
+		BigDecimal exchLarge = m.exchangeCurrency(BigDecimal.valueOf(10000000), "EUR", "CNY");
+		assertTrue("Exchange large currency failed", exchLarge != null);
+		assertTrue("Exchange large currency result correct", exchSmall.equals(BigDecimal.valueOf(85790493.10)));
 	}
 
 	@Test
 	public void testUpdateWallet() {
-		fail("Not yet implemented");
+		ExchangeServiceManager m = new ExchangeServiceManager();
+		Wallet w = m.updateWallet("uid:0", "EUR", "USD", BigDecimal.valueOf(10), BigDecimal.valueOf(100));
+		//  <WALLET WALLETID="1" USERID="uid:0" USD="100.00" EUR="990.00" GBP="10.00" CNY="20.00" INR="714.84" />
+		
+		assertTrue("updateWallet failed completely", w != null);
+		assertTrue("userID of Wallet does not match expected", w.getUserID().equals("uid:0"));
+		assertTrue("USD of Wallet does not match expected", w.getUsd().equals(BigDecimal.valueOf(200.00)));
+		assertTrue("EUR of Wallet does not match expected", w.getEur().equals(BigDecimal.valueOf(980.00)));
+		assertTrue("GBP of Wallet does not match expected", w.getGbp().equals(BigDecimal.valueOf(10.00)));
+		assertTrue("CNY of Wallet does not match expected", w.getCny().equals(BigDecimal.valueOf(20.00)));
+		assertTrue("INR of Wallet does not match expected", w.getInr().equals(BigDecimal.valueOf(714.84)));		
+		
 	}
 
 }
