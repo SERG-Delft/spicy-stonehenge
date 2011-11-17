@@ -401,23 +401,54 @@ public class TraderServiceManagerTest {
 	@Test
 	public void testGetHolding() throws DAOException {
 		TraderServiceManager t = new TraderServiceManager();
-		List<Holding> holdingList = t.getHoldings("uid:0");
-		assertTrue("getHolding failed completely", holdingList != null);
-		
-		assertTrue("The number of holdings does not match expected", holdingList.size()==2);
-		
-		for(int i=0; i<2; i++){
-			
-		}
-		
+		Holding h = t.getHolding("uid:0", 12);
+		assertTrue("getHolding failed completely", h != null);
+
+		assertTrue("PurchasePrice of Holding does not match expected", h.getPurchasePrice().equals(BigDecimal.valueOf(834.14)));
+		assertTrue("HoldingID of Holding does not match expected", h.getHoldingID()==12);
+		assertEquals("Quantity of Holding does not match expected", 10.0, h.getQuantity());
+		Calendar purchaseDate = Calendar.getInstance();
+		purchaseDate.set(1970, 1, 1, 0, 0, 0);
+		assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
+		assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
+		assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));		
 		
 	}
-//
-//	@Test
-//	public void testGetHoldings() {
-//		TraderServiceManager t = new TraderServiceManager();
-//		assertTrue("register function failed completely", result != null);
-//	}
+
+	@Test
+	public void testGetHoldings() throws DAOException {
+		TraderServiceManager t = new TraderServiceManager();
+		List<Holding> holdingList = t.getHoldings("uid:0");
+		assertTrue("getHoldings failed completely", holdingList != null);
+		
+		assertTrue("The number of holdings does not match expected", holdingList.size()==2);
+	
+		for(int i=0; i<2; i++){
+			Holding h = holdingList.get(i);
+			if(h.getHoldingId()==12){
+				assertTrue("PurchasePrice of Holding does not match expected", h.getPurchasePrice().equals(BigDecimal.valueOf(834.14)));
+				assertTrue("HoldingID of Holding does not match expected", h.getHoldingID()==12);
+				assertEquals("Quantity of Holding does not match expected", 10.0, h.getQuantity());
+				Calendar purchaseDate = Calendar.getInstance();
+				purchaseDate.set(1970, 1, 1, 0, 0, 0);
+				assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
+				assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
+				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));					
+			}else if(h.getHoldingId() == 13){
+				assertTrue("PurchasePrice of Holding does not match expected", h.getPurchasePrice().equals(BigDecimal.valueOf(817.45)));
+				assertTrue("HoldingID of Holding does not match expected", h.getHoldingID()==13);
+				assertEquals("Quantity of Holding does not match expected", 10.0, h.getQuantity());
+				Calendar purchaseDate = Calendar.getInstance();
+				purchaseDate.set(2011, 11, 10, 0, 0, 0);
+				assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
+				assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
+				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));	
+				
+			}else{
+				assertTrue("Holding information does not match expected", false);
+			}
+		}
+	}
 
 	@Test
 	public void testGetWallet() throws DAOException {
