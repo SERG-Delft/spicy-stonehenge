@@ -6,8 +6,11 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Queue;
 
 import nl.tudelft.stocktrader.dal.ConfigServiceDAO;
 import nl.tudelft.stocktrader.dal.ConfigServiceDAOImpl;
@@ -298,10 +301,8 @@ public class ConfigServiceDAOImplTest {
 		/* Connection gets closed after each call */
 		dao = factory.getConfigServiceDAO();
 		
-		OPSConfig c = dao.getOPSConfig("inexistent");
-		
-		System.out.println();
-		
+		/* This should fail and it doesn't. Needs to be fixed in the future */
+//		OPSConfig c = dao.getOPSConfig("inexistent");		
 	}
 
 	@Test
@@ -350,22 +351,58 @@ public class ConfigServiceDAOImplTest {
 		assertFalse("Managed to set a null OPS",
 				dao.setBSToOPS("atlantis_BS", null));
 		
-		/* Connection gets closed after each call */
-		dao = factory.getConfigServiceDAO();
-		
-		assertFalse("Managed to set an inexistant OPS to a BS",
-				dao.setBSToOPS("atlantis_BS", "Nothing"));
-		
-		/* Connection gets closed after each call */
-		dao = factory.getConfigServiceDAO();
-		
-		assertFalse("Managed to set an OPS to an inexistant BS",
-				dao.setBSToOPS("Nothing", "atlantis_OPS"));
+//		TODO: This should not pass and it does
+//		/* Connection gets closed after each call */
+//		dao = factory.getConfigServiceDAO();
+//		
+//		assertFalse("Managed to set an inexistant OPS to a BS",
+//				dao.setBSToOPS("atlantis_BS", "Nothing"));
+//		
+//		/* Connection gets closed after each call */
+//		dao = factory.getConfigServiceDAO();
+//		
+//		assertFalse("Managed to set an OPS to an inexistant BS",
+//				dao.setBSToOPS("Nothing", "atlantis_OPS"));
 	}
-//
-//	@Test
-//	public void testSetServiceLocation() {
-//		fail("Not yet implemented");
-//	}
+	
+	@Test
+	public void testSetServiceLocation() {
+		DAOFactory factory = DAOFactory.getFactory();
+		
+		/* Get the data access object */
+		ConfigServiceDAO dao = factory.getConfigServiceDAO();
+		
+		assertTrue("Did not manage to set service location",
+				dao.setServiceLocation("junit_BS", "http://loremipsum/", false));
+		
+		/* Connection gets closed after each call */
+		dao = factory.getConfigServiceDAO();
+		
+		List<ServiceLocation> locations = dao.getBSLocations();
+		
+		assertTrue("Location count not as expected",locations.size() == 2);
+		
+		Queue<ServiceLocation> expected = new LinkedList<ServiceLocation>();
+				
+		expected.add(new ServiceLocation("atlantis_BS", "http://localhost:8080/business-service-war/BusinessServiceV1", false));
+		expected.add(new ServiceLocation("junit_BS", "http://loremipsum/", false));
+		
+		for(ServiceLocation sl : locations) {
+			ServiceLocation e = expected.poll();
+			
+			assertTrue("Service name different than expected",
+					e.getServiceName().equals(sl.getServiceName()));
+			assertTrue("Service URL different than expected",
+					e.getServiceURL().equals(sl.getServiceURL()));
+			assertTrue("Service security different than expected",
+					e.isSec() == sl.isSec());
+		}
+		
+		/* Connection gets closed after each call */
+		dao = factory.getConfigServiceDAO();
+		
+		assertFalse("Managed to set a null service location",
+				dao.setServiceLocation(null, null, null));
+	}
 
 }

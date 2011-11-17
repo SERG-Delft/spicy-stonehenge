@@ -189,6 +189,8 @@ public class ConfigServiceDAOImpl implements ConfigServiceDAO {
     }
 
     public boolean setServiceLocation(final String serviceName, final String serviceUrl, final Boolean isSec) {
+    	if (isSec == null) return false;
+    	
         int sec = (isSec == true) ? 1 : 0;
         StatementPopulator queryStatement = new SimpleStatementPopulator(SQL_SELECT_SERVICE, serviceName);
         StatementPopulator updateStatement = new SimpleStatementPopulator(SQL_UPDATE_SERVICE, serviceUrl, sec,
