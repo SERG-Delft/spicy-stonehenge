@@ -15,6 +15,7 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl.Trade
 import nl.tudelft.stocktrader.Account;
 import nl.tudelft.stocktrader.AccountProfile;
 import nl.tudelft.stocktrader.Holding;
+import nl.tudelft.stocktrader.MarketSummary;
 import nl.tudelft.stocktrader.Order;
 import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.Wallet;
@@ -39,8 +40,7 @@ public class TraderServiceManagerTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		  //FileUtils.copyFileToDirectory(new File("resources/db.properties"), new File("./build/classes/nl/tudelft/ewi/st/atlantis/tudelft/v1/services/businessservice/impl/"));
-		   
+	   
 		  DdlToDatabaseTask d = new DdlToDatabaseTask();
 		  
 		  WriteSchemaToDatabaseCommand writeCommand = new WriteSchemaToDatabaseCommand();
@@ -196,7 +196,7 @@ public class TraderServiceManagerTest {
 				assertTrue("OpenDate of Order 1 does not match expected", o.getOpenDate().equals(openDate));
 				assertTrue("OrderID of Order 1 does not match expected", o.getOrderID()==1);
 				assertTrue("AccountID of Order 1 does not match expected", o.getAccountId()==1);
-				assertTrue("Quote_Symbol of Order 1 does not match expected", o.getSymbol().equals("s:AAPL"));
+				assertTrue("Quote_Symbol of Order 1 does not match expected", o.getSymbol().equals("AAPL"));
 				assertTrue("HoldingID of Order 1 does not match expected", o.getHoldingId()== -1);				
 				
 			}else if(o.getOrderID() == 2){
@@ -210,7 +210,7 @@ public class TraderServiceManagerTest {
 				assertTrue("OpenDate of Order 2 does not match expected", o.getOpenDate().equals(openDate));
 				assertTrue("OrderID of Order 2 does not match expected", o.getOrderID()==2);
 				assertTrue("AccountID of Order 2 does not match expected", o.getAccountId()==1);
-				assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("s:AAPL"));
+				assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("AAPL"));
 				assertTrue("HoldingID of Order 2 does not match expected", o.getHoldingId()== -1);	
 				
 			}else{
@@ -240,7 +240,7 @@ public class TraderServiceManagerTest {
 				assertTrue("OpenDate of Order 1 does not match expected", o.getOpenDate().equals(openDate));
 				assertTrue("OrderID of Order 1 does not match expected", o.getOrderID()==1);
 				assertTrue("AccountID of Order 1 does not match expected", o.getAccountId()==1);
-				assertTrue("Quote_Symbol of Order 1 does not match expected", o.getSymbol().equals("s:AAPL"));
+				assertTrue("Quote_Symbol of Order 1 does not match expected", o.getSymbol().equals("AAPL"));
 				assertTrue("HoldingID of Order 1 does not match expected", o.getHoldingId()== -1);				
 				
 			}else if(o.getOrderID() == 2){
@@ -254,7 +254,7 @@ public class TraderServiceManagerTest {
 				assertTrue("OpenDate of Order 2 does not match expected", o.getOpenDate().equals(openDate));
 				assertTrue("OrderID of Order 2 does not match expected", o.getOrderID()==2);
 				assertTrue("AccountID of Order 2 does not match expected", o.getAccountId()==1);
-				assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("s:AAPL"));
+				assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("AAPL"));
 				assertTrue("HoldingID of Order 2 does not match expected", o.getHoldingId()== -1);	
 				
 			}else{
@@ -282,7 +282,7 @@ public class TraderServiceManagerTest {
 		assertTrue("OpenDate of Order 2 does not match expected", o.getOpenDate().equals(openDate));
 		assertTrue("OrderID of Order 2 does not match expected", o.getOrderID()==2);
 		assertTrue("AccountID of Order 2 does not match expected", o.getAccountId()==1);
-		assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("s:AAPL"));
+		assertTrue("Quote_Symbol of Order 2 does not match expected", o.getSymbol().equals("AAPL"));
 		assertTrue("HoldingID of Order 2 does not match expected", o.getHoldingId()== -1);		
 	}
 
@@ -319,15 +319,69 @@ public class TraderServiceManagerTest {
 		assertTrue("Fullname of AccountProfile does not match expected", ap.getFullName().equals("blah"));
 	}
 
-//	@Test
-//	public void testGetMarketSummary() {
-//		TraderServiceManager t = new TraderServiceManager();
-//	}
+	@Test
+	public void testGetMarketSummary() throws DAOException {
+		TraderServiceManager t = new TraderServiceManager();
+		MarketSummary ms = t.getMarketSummary();
+		
+		assertTrue("getMarketSummary failed completely", ms != null);
+		
+		assertTrue("OpenTSIA of MarketSummary does not match expected", ms.getOpenTSIA().equals(BigDecimal.valueOf(200.0)));
+		assertTrue("TSIA of MarketSummary does not match expected", ms.getTSIA().equals(BigDecimal.valueOf(510.0)));
+		assertTrue("Volume of MarketSummary does not match expected", ms.getVolume().equals(468.00));
+		
+		List<Quote> topGainers = ms.getTopGainers();
+		assertTrue("getTopGainers failed", topGainers != null);
+		Quote qTop = topGainers.get(0);		
+		assertTrue("Low of QuoteTop does not match expected", qTop.getLow().equals(BigDecimal.valueOf(100.00)));
+		assertTrue("Open1 of QuoteTop does not match expected", qTop.getOpen().equals(BigDecimal.valueOf(200.00)));
+		assertEquals("Volume of QuoteTop does not match expected", 123.0, qTop.getVolume());
+		assertEquals("Price of QuoteTop does not match expected", 256.00, qTop.getPrice());
+		assertTrue("High of QuoteTop does not match expected", qTop.getHigh().equals(BigDecimal.valueOf(300.00)));
+		assertTrue("CompanyName of QuoteTop does not match expected", qTop.getCompanyName().equals("Apple"));
+		assertTrue("Symbol of QuoteTop does not match expected", qTop.getSymbol().equals("AAPL"));
+		assertEquals("Change1 of QuoteTop does not match expected", 21.0, qTop.getChange());
+		
+		Quote qTopSecond = topGainers.get(1);		
+		assertTrue("Low of Quote does not match expected", qTopSecond.getLow().equals(BigDecimal.valueOf(100.00)));
+		assertTrue("Open1 of Quote does not match expected", qTopSecond.getOpen().equals(BigDecimal.valueOf(200.00)));
+		assertEquals("Volume of Quote does not match expected", 345.0, qTopSecond.getVolume());
+		assertEquals("Price of Quote does not match expected", 764.00, qTopSecond.getPrice());
+		assertTrue("High of Quote does not match expected", qTopSecond.getHigh().equals(BigDecimal.valueOf(321.00)));
+		assertTrue("CompanyName of Quote does not match expected", qTopSecond.getCompanyName().equals("Microsoft"));
+		assertTrue("Symbol of Quote does not match expected", qTopSecond.getSymbol().equals("MSFT"));
+		assertEquals("Change1 of Quote does not match expected", 2.0, qTopSecond.getChange());
+		
+		
+		List<Quote> topLosers = ms.getTopLosers();
+		assertTrue("getTopLosers failed", topLosers != null);
+		
+		Quote qLoser = topLosers.get(0);		
+		assertTrue("Low of QuoteLoser does not match expected", qLoser.getLow().equals(BigDecimal.valueOf(100.00)));
+		assertTrue("Open1 of QuoteLoser does not match expected", qLoser.getOpen().equals(BigDecimal.valueOf(200.00)));
+		assertEquals("Volume of QuoteLoser does not match expected", 345.0, qLoser.getVolume());
+		assertEquals("Price of QuoteLoser does not match expected", 764.00, qLoser.getPrice());
+		assertTrue("High of QuoteLoser does not match expected", qLoser.getHigh().equals(BigDecimal.valueOf(321.00)));
+		assertTrue("CompanyName of QuoteLoser does not match expected", qLoser.getCompanyName().equals("Microsoft"));
+		assertTrue("Symbol of QuoteLoser does not match expected", qLoser.getSymbol().equals("MSFT"));
+		assertEquals("Change1 of QuoteLoser does not match expected", 2.0, qLoser.getChange());
+		
+		Quote qLoseSecond = topLosers.get(1);		
+		assertTrue("Low of QuoteLoser2 does not match expected", qLoseSecond.getLow().equals(BigDecimal.valueOf(100.00)));
+		assertTrue("Open1 of QuoteLoser2 does not match expected", qLoseSecond.getOpen().equals(BigDecimal.valueOf(200.00)));
+		assertEquals("Volume of QuoteLoser2 does not match expected", 123.0, qLoseSecond.getVolume());
+		assertEquals("Price of QuoteLoser2 does not match expected", 256.00, qLoseSecond.getPrice());
+		assertTrue("High of QuoteLoser2 does not match expected", qLoseSecond.getHigh().equals(BigDecimal.valueOf(300.00)));
+		assertTrue("CompanyName of QuoteLoser2 does not match expected", qLoseSecond.getCompanyName().equals("Apple"));
+		assertTrue("Symbol of QuoteLoser2 does not match expected", qLoseSecond.getSymbol().equals("AAPL"));
+		assertEquals("Change1 of QuoteLoser2 does not match expected", 21.0, qLoseSecond.getChange());	
+		
+	}
 
 	@Test
 	public void testGetQuote() throws DAOException {
 		TraderServiceManager t = new TraderServiceManager();
-		Quote q = t.getQuote("s:AAPL");
+		Quote q = t.getQuote("AAPL");
 		assertTrue("getQuote failed completely", q != null);
 
 		assertTrue("Low of Quote does not match expected", q.getLow().equals(BigDecimal.valueOf(100.00)));
@@ -336,7 +390,7 @@ public class TraderServiceManagerTest {
 		assertEquals("Price of Quote does not match expected", 256.00, q.getPrice());
 		assertTrue("High of Quote does not match expected", q.getHigh().equals(BigDecimal.valueOf(300.00)));
 		assertTrue("CompanyName of Quote does not match expected", q.getCompanyName().equals("Apple"));
-		assertTrue("Symbol of Quote does not match expected", q.getSymbol().equals("s:AAPL"));
+		assertTrue("Symbol of Quote does not match expected", q.getSymbol().equals("AAPL"));
 		assertEquals("Change1 of Quote does not match expected", 21.0, q.getChange());
 
 	}
@@ -350,37 +404,40 @@ public class TraderServiceManagerTest {
 		
 		for(int i=0; i<2; i++){
 			Quote q = quoteList.get(i);
-			if(q.getSymbol().equals("s:AAPL")){
+			if(q.getSymbol().equals("AAPL")){
 				
-				assertTrue("Low of Quote does not match expected", q.getLow().equals(BigDecimal.valueOf(100.00)));
-				assertTrue("Open1 of Quote does not match expected", q.getOpen().equals(BigDecimal.valueOf(200.00)));
-				assertEquals("Volume of Quote does not match expected", 123.0, q.getVolume());
-				assertEquals("Price of Quote does not match expected", 256.00, q.getPrice());
-				assertTrue("High of Quote does not match expected", q.getHigh().equals(BigDecimal.valueOf(300.00)));
-				assertTrue("CompanyName of Quote does not match expected", q.getCompanyName().equals("Apple"));
-				assertTrue("Symbol of Quote does not match expected", q.getSymbol().equals("s:AAPL"));
-				assertEquals("Change1 of Quote does not match expected", 21.0, q.getChange());	
+				assertTrue("Low of Quote AAPL does not match expected", q.getLow().equals(BigDecimal.valueOf(100.00)));
+				assertTrue("Open1 of Quote AAPL does not match expected", q.getOpen().equals(BigDecimal.valueOf(200.00)));
+				assertEquals("Volume of Quote AAPL does not match expected", 123.0, q.getVolume());
+				assertEquals("Price of Quote AAPL does not match expected", 256.00, q.getPrice());
+				assertTrue("High of Quote AAPL does not match expected", q.getHigh().equals(BigDecimal.valueOf(300.00)));
+				assertTrue("CompanyName of Quote AAPL does not match expected", q.getCompanyName().equals("Apple"));
+				assertTrue("Symbol of Quote AAPL does not match expected", q.getSymbol().equals("AAPL"));
+				assertEquals("Change1 of Quote AAPL does not match expected", 21.0, q.getChange());	
 				
-			}else if(q.getSymbol().equals("")){
+			}else if(q.getSymbol().equals("MSFT")){
 				
-				assertTrue("Low of Quote does not match expected", q.getLow().equals(BigDecimal.valueOf(100.00)));
-				assertTrue("Open1 of Quote does not match expected", q.getOpen().equals(BigDecimal.valueOf(200.00)));
-				assertEquals("Volume of Quote does not match expected", 345.0, q.getVolume());
-				assertEquals("Price of Quote does not match expected", 764.00, q.getPrice());
-				assertTrue("High of Quote does not match expected", q.getHigh().equals(BigDecimal.valueOf(321.00)));
-				assertTrue("CompanyName of Quote does not match expected", q.getCompanyName().equals("Microsoft"));
-				assertTrue("Symbol of Quote does not match expected", q.getSymbol().equals("s:MSFT"));
-				assertEquals("Change1 of Quote does not match expected", 2.0, q.getChange());
+				assertTrue("Low of Quote MSFT does not match expected", q.getLow().equals(BigDecimal.valueOf(100.00)));
+				assertTrue("Open1 of Quote MSFT does not match expected", q.getOpen().equals(BigDecimal.valueOf(200.00)));
+				assertEquals("Volume of Quote MSFT does not match expected", 345.0, q.getVolume());
+				assertEquals("Price of Quote MSFT does not match expected", 764.00, q.getPrice());
+				assertTrue("High of Quote MSFT does not match expected", q.getHigh().equals(BigDecimal.valueOf(321.00)));
+				assertTrue("CompanyName of Quote MSFT does not match expected", q.getCompanyName().equals("Microsoft"));
+				assertTrue("Symbol of Quote MSFT does not match expected", q.getSymbol().equals("MSFT"));
+				assertEquals("Change1 of Quote MSFT does not match expected", 2.0, q.getChange());
 				
 			}else{
 				assertTrue("Quote information does not match expected", false);
 			}		
 		}		
 	}
-//
+
 //	@Test
-//	public void testBuy() {
+//	public void testBuy() throws DAOException {
 //		TraderServiceManager t = new TraderServiceManager();
+//		Order o = t.buy("uid:0", "AAPL", 20.0);
+//		buy service invoke other services
+//		
 //	}
 //
 //	@Test
@@ -393,11 +450,7 @@ public class TraderServiceManagerTest {
 //		TraderServiceManager t = new TraderServiceManager();
 //	}
 //
-//	@Test
-//	public void testPlaceOrder() {
-//		TraderServiceManager t = new TraderServiceManager();
-//	}
-//
+
 	@Test
 	public void testGetHolding() throws DAOException {
 		TraderServiceManager t = new TraderServiceManager();
@@ -411,7 +464,7 @@ public class TraderServiceManagerTest {
 		purchaseDate.set(1970, 1, 1, 0, 0, 0);
 		assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
 		assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
-		assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));		
+		assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("AAPL"));		
 		
 	}
 
@@ -433,7 +486,7 @@ public class TraderServiceManagerTest {
 				purchaseDate.set(1970, 1, 1, 0, 0, 0);
 				assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
 				assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
-				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));					
+				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("AAPL"));					
 			}else if(h.getHoldingId() == 13){
 				assertTrue("PurchasePrice of Holding does not match expected", h.getPurchasePrice().equals(BigDecimal.valueOf(817.45)));
 				assertTrue("HoldingID of Holding does not match expected", h.getHoldingID()==13);
@@ -442,7 +495,7 @@ public class TraderServiceManagerTest {
 				purchaseDate.set(2011, 11, 10, 0, 0, 0);
 				assertTrue("PurchaseDate of Holding does not match expected", h.getPurchaseDate().equals(purchaseDate));
 				assertTrue("AccountID of Holding does not match expected", h.getAccountID()==1);
-				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("s:AAPL"));	
+				assertTrue("QuoteSymbol of Holding does not match expected", h.getQuoteId().equals("AAPL"));	
 				
 			}else{
 				assertTrue("Holding information does not match expected", false);
