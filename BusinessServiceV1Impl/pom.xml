@@ -55,7 +55,7 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
-<dependency>
+	<dependency>
 	    <groupId>org.apache.ddlutils</groupId>
 	    <artifactId>ddlutils</artifactId>
 	    <version>1.0</version>

@@ -100,7 +100,8 @@ public class TraderServiceManagerTest {
 
 	@Test
 	public void testTraderServiceManager() {
-		//how to create test case for constructor
+		TraderServiceManager t = new TraderServiceManager();
+		assertTrue("TraderServiceManager Constructor failed", t != null);
 	}
 
 	@Test
