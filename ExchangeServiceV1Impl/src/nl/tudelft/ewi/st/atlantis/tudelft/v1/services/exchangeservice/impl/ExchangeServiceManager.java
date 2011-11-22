@@ -77,12 +77,13 @@ public class ExchangeServiceManager {
 			    if(!(money.contains("million")||money.contains("billion")||money.contains("trillion")))
 			    	return result;
 			    else if(money.contains("million")){
-			    	return result = BigDecimal.valueOf(1000).multiply(result);
-			    }else if(money.contains("billion")){
 			    	return result = BigDecimal.valueOf(1000000).multiply(result);
-			    }else if(money.contains("trillion")){
+			    }else if(money.contains("billion")){
 			    	return result = BigDecimal.valueOf(1000000000).multiply(result);
 			    }
+//			    else if(money.contains("trillion")){
+//			    	return result = BigDecimal.valueOf(1000000000000).multiply(result);
+//			    }
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
