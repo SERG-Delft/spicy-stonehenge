@@ -55,10 +55,39 @@
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
+	<dependency>
+	    <groupId>org.apache.ddlutils</groupId>
+	    <artifactId>ddlutils</artifactId>
+	    <version>1.0</version>
+	    <scope>test</scope>
+  	</dependency>
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derby</artifactId>
+	    <version>10.8.2.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbyclient</artifactId>
+	    <version>10.8.2.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbynet</artifactId>
+	    <version>10.8.2.2</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.16</version>
+</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
+    <testSourceDirectory>src-test</testSourceDirectory>
     <outputDirectory>build/classes</outputDirectory>
     <testOutputDirectory>build/classes</testOutputDirectory>
     <resources>

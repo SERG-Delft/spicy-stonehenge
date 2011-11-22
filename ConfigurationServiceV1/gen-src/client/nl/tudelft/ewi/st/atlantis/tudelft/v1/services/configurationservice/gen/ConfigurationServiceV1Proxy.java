@@ -65,15 +65,15 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("getClientConfig");
-        Response<GetClientConfigResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
     public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getClientConfig");
         Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getClientConfig");
+        Response<GetClientConfigResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -125,15 +125,15 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Response<GetESLocationsResponse> getESLocationsAsync(GetESLocationRequest param0) {
-        Dispatch dispatch = m_service.createDispatch("getESLocations");
-        Response<GetESLocationsResponse> result = dispatch.invokeAsync(param0);
-        return result;
-    }
-
     public Future<?> getESLocationsAsync(GetESLocationRequest param0, AsyncHandler<GetESLocationsResponse> param1) {
         Dispatch dispatch = m_service.createDispatch("getESLocations");
         Future<?> result = dispatch.invokeAsync(param0, param1);
+        return result;
+    }
+
+    public Response<GetESLocationsResponse> getESLocationsAsync(GetESLocationRequest param0) {
+        Dispatch dispatch = m_service.createDispatch("getESLocations");
+        Response<GetESLocationsResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
@@ -149,20 +149,14 @@ public class ConfigurationServiceV1Proxy
         return result;
     }
 
-    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getBSLocations");
-        Future<?> result = dispatch.invokeAsync(param0, param1);
-        return result;
-    }
-
     public Response<GetBSLocationsResponse> getBSLocationsAsync(GetBSLocationsRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getBSLocations");
         Response<GetBSLocationsResponse> result = dispatch.invokeAsync(param0);
         return result;
     }
 
-    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
-        Dispatch dispatch = m_service.createDispatch("getOPSLocations");
+    public Future<?> getBSLocationsAsync(GetBSLocationsRequest param0, AsyncHandler<GetBSLocationsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getBSLocations");
         Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
@@ -170,6 +164,12 @@ public class ConfigurationServiceV1Proxy
     public Response<GetOPSLocationsResponse> getOPSLocationsAsync(GetOPSLocationsRequest param0) {
         Dispatch dispatch = m_service.createDispatch("getOPSLocations");
         Response<GetOPSLocationsResponse> result = dispatch.invokeAsync(param0);
+        return result;
+    }
+
+    public Future<?> getOPSLocationsAsync(GetOPSLocationsRequest param0, AsyncHandler<GetOPSLocationsResponse> param1) {
+        Dispatch dispatch = m_service.createDispatch("getOPSLocations");
+        Future<?> result = dispatch.invokeAsync(param0, param1);
         return result;
     }
 

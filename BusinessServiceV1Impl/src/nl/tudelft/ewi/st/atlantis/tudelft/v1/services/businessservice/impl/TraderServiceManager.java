@@ -187,7 +187,7 @@ public class TraderServiceManager {
 				holdingID, null, quantity);
 	}
 
-	public Order placeOrder(String orderType, String userID,
+	private Order placeOrder(String orderType, String userID,
 			int holdingID, String symbol, double quantity) throws DAOException {
 		
 	  	

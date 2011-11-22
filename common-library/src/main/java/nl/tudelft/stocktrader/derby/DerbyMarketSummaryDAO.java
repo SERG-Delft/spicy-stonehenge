@@ -45,11 +45,11 @@ public class DerbyMarketSummaryDAO extends AbstractDerbyDAO implements MarketSum
 	private static final String SQL_SELECT_QUOTE_NOLOCK = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote WHERE symbol = ?";
 	private static final String SQL_UPDATE_STOCKPRICEVOLUME = "UPDATE quote SET price = ?, low = ?, high = ?, change1 = ? - open1, volume = volume + ? WHERE symbol = ?";
 
-	private static final String SQL_SELECT_MARKETSUMMARY_GAINERS = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote WHERE symbol LIKE 's:%' ORDER BY change1 DESC";
-	private static final String SQL_SELECT_MARKETSUMMARY_LOSERS = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote WHERE symbol LIKE 's:%' ORDER BY change1";
-	private static final String SQL_SELECT_MARKETSUMMARY_TSIA = "SELECT SUM(price) / COUNT(*) as tsia FROM quote WHERE symbol LIKE 's:%'";
-	private static final String SQL_SELECT_MARKETSUMMARY_OPENTSIA = "SELECT SUM(open1) / COUNT(*) as opentsia FROM quote WHERE symbol LIKE 's:%'";
-	private static final String SQL_SELECT_MARKETSUMMARY_VOLUME = "SELECT SUM(volume) FROM quote WHERE symbol LIKE 's:%'";
+	private static final String SQL_SELECT_MARKETSUMMARY_GAINERS = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote ORDER BY change1 DESC";
+	private static final String SQL_SELECT_MARKETSUMMARY_LOSERS = "SELECT symbol, companyname, volume, price, open1, low, high, change1 FROM quote ORDER BY change1";
+	private static final String SQL_SELECT_MARKETSUMMARY_TSIA = "SELECT SUM(price) / COUNT(*) as tsia FROM quote";
+	private static final String SQL_SELECT_MARKETSUMMARY_OPENTSIA = "SELECT SUM(open1) / COUNT(*) as opentsia FROM quote";
+	private static final String SQL_SELECT_MARKETSUMMARY_VOLUME = "SELECT SUM(volume) FROM quote";
 
 	public DerbyMarketSummaryDAO(Connection sqlConnection) throws DAOException {
 		super(sqlConnection);
