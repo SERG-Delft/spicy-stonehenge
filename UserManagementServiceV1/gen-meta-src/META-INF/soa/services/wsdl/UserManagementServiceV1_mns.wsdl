@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2006-2010 eBay Inc. All Rights Reserved.
+	Licensed under the Apache License, Version 2.0 (the "License"); 
+	you may not use this file except in compliance with the License. 
+	You may obtain a copy of the License at 
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+-->
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://atlantis.st.ewi.tudelft.nl/v1/services" xmlns:types="http://www.ebayopensource.org/turmeric/common/v1/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="UserManagementService" targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+<xs:import namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<xs:element name="getAccountDataRequest" type="tns:GetAccountDataRequest"/>
+			<xs:complexType name="GetAccountDataRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getAccountDataResponse" type="tns:GetAccountDataResponse"/>
+			<xs:complexType name="GetAccountDataResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="updateAccountProfileRequest" type="tns:UpdateAccountProfileRequest"/>
+			<xs:complexType name="UpdateAccountProfileRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="updateAccountProfileResponse" type="tns:UpdateAccountProfileResponse"/>
+			<xs:complexType name="UpdateAccountProfileResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getAccountProfileDataRequest" type="tns:GetAccountProfileDataRequest"/>
+			<xs:complexType name="GetAccountProfileDataRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getAccountProfileDataResponse" type="tns:GetAccountProfileDataResponse"/>
+			<xs:complexType name="GetAccountProfileDataResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="loginRequest" type="tns:LoginRequest"/>
+			<xs:complexType name="LoginRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="loginResponse" type="tns:LoginResponse"/>
+			<xs:complexType name="LoginResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="logoutRequest" type="tns:LogoutRequest"/>
+			<xs:complexType name="LogoutRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="logoutResponse" type="tns:LogoutResponse"/>
+			<xs:complexType name="LogoutResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="registerRequest" type="tns:RegisterRequest"/>
+			<xs:complexType name="RegisterRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="registerResponse" type="tns:RegisterResponse"/>
+			<xs:complexType name="RegisterResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getWalletDataRequest" type="tns:GetWalletDataRequest"/>
+			<xs:complexType name="GetWalletDataRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="getWalletDataResponse" type="tns:GetWalletDataResponse"/>
+			<xs:complexType name="GetWalletDataResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="updateWalletDataRequest" type="tns:UpdateWalletDataRequest"/>
+			<xs:complexType name="UpdateWalletDataRequest">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseRequest">
+						<xs:sequence/>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+			<xs:element name="updateWalletDataResponse" type="tns:UpdateWalletDataResponse"/>
+			<xs:complexType name="UpdateWalletDataResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Document goes here
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:BaseResponse">
+						<xs:sequence>
+							<xs:element maxOccurs="1" minOccurs="1" name="output" type="xs:string"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ebayopensource.org/turmeric/common/v1/types">
+<xs:simpleType name="AckValue">
+				<xs:annotation>
+					<xs:documentation>
+						Indicates whether the error is a severe error
+						(causing the request to fail) or an
+						informational error (a warning) that should be
+						communicated to the user.
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success">
+						<xs:annotation>
+							<xs:documentation>
+								The request was processed successfully,
+								but something occurred that may affect
+								your application or the user.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Failure">
+						<xs:annotation>
+							<xs:documentation>
+								The request that triggered the error was
+								not processed successfully. When a
+								serious application-level error occurs,
+								the error is returned instead of the
+								business data.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="Warning">
+						<xs:annotation>
+							<xs:documentation>
+								The request that triggered the error was
+								processed successfully but with some
+								warnings.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="PartialFailure">
+						<xs:annotation>
+							<xs:documentation>
+								The request that triggered the error was
+								processed successfully but with some
+								warnings.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+<xs:complexType abstract="true" name="BaseRequest">
+				<xs:annotation>
+					<xs:documentation>
+						This is the base class for request container for
+						all service operations.
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+				</xs:sequence>
+			</xs:complexType>
+<xs:complexType abstract="true" name="BaseResponse">
+				<xs:annotation>
+					<xs:documentation>
+						Base response container for all service
+						operations. Contains error information
+						associated with the request.
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="ack" type="types:AckValue">
+						<xs:annotation>
+							<xs:documentation/>
+							<xs:appinfo>
+								<CallInfo>
+									<AllCalls/>
+									<Returned>Always</Returned>
+								</CallInfo>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="errorMessage" type="types:ErrorMessage">
+						<xs:annotation>
+							<xs:documentation>
+								Information for an error or warning that
+								occurred when eBay processed the
+								request.
+							</xs:documentation>
+							<xs:appinfo>
+								<CallInfo>
+									<AllCalls/>
+									<Returned>Conditionally</Returned>
+								</CallInfo>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="version" type="xs:string">
+						<xs:annotation>
+							<xs:documentation/>
+							<xs:appinfo>
+								<CallInfo>
+									<AllCalls/>
+									<Returned>Always</Returned>
+								</CallInfo>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="timestamp" type="xs:dateTime">
+						<xs:annotation>
+							<xs:documentation/>
+							<xs:appinfo>
+								<CallInfo>
+									<AllCalls/>
+									<Returned>Always</Returned>
+								</CallInfo>
+							</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="extension" type="types:ExtensionType"/>
+				</xs:sequence>
+			</xs:complexType>
+<xs:complexType name="CommonErrorData">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexContent>
+					<xs:extension base="types:ErrorData">
+						<xs:sequence>
+							<xs:element name="errorName" type="xs:string"/>
+							<xs:element minOccurs="0" name="cause" type="xs:string"/>
+							<xs:element minOccurs="0" name="resolution" type="xs:string"/>
+							<xs:element minOccurs="0" name="errorGroups" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>
+										Error group values are
+										whitespace separated
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="organization" type="xs:string"/>
+							<xs:any maxOccurs="unbounded" minOccurs="0" processContents="lax"/>
+						</xs:sequence>
+					</xs:extension>
+				</xs:complexContent>
+			</xs:complexType>
+<xs:simpleType name="ErrorCategory">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here.
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="System"/>
+					<xs:enumeration value="Application"/>
+					<xs:enumeration value="Request"/>
+				</xs:restriction>
+			</xs:simpleType>
+<xs:complexType name="ErrorData">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="errorId" type="xs:long"/>
+					<xs:element name="domain" type="xs:string"/>
+					<xs:element minOccurs="0" name="subdomain" type="xs:string"/>
+					<xs:element name="severity" type="types:ErrorSeverity"/>
+					<xs:element name="category" type="types:ErrorCategory"/>
+					<xs:element name="message" type="xs:string"/>
+					<xs:element minOccurs="0" name="exceptionId" type="xs:token"/>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="types:ErrorParameter"/>
+				</xs:sequence>
+			</xs:complexType>
+<xs:complexType name="ErrorMessage">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<!-- 
+					<xs:sequence>
+					<xs:any maxOccurs="unbounded" minOccurs="0"
+					processContents="lax" />
+					</xs:sequence>
+				-->
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="types:CommonErrorData"/>
+				</xs:sequence>
+			</xs:complexType>
+<xs:complexType name="ErrorParameter">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:simpleContent>
+					<xs:extension base="xs:string">
+						<xs:attribute name="name" type="xs:string" use="optional"/>
+					</xs:extension>
+				</xs:simpleContent>
+			</xs:complexType>
+<xs:simpleType name="ErrorSeverity">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here.
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="Error"/>
+					<xs:enumeration value="Warning"/>
+				</xs:restriction>
+			</xs:simpleType>
+<xs:complexType name="ExtensionType">
+				<xs:annotation>
+					<xs:documentation>
+						Documentation goes here
+					</xs:documentation>
+					<xs:appinfo>
+						<typeLibrarySource library="common-type-library" namespace="http://www.ebayopensource.org/turmeric/common/v1/types"/>
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="id" type="xs:positiveInteger"/>
+					<xs:element name="version" type="xs:string"/>
+					<xs:element name="contentType" type="xs:string"/>
+					<xs:element name="value" type="xs:string"/>
+					<xs:any maxOccurs="unbounded" minOccurs="0" processContents="lax"/>
+				</xs:sequence>
+			</xs:complexType>
+</xs:schema>
+</wsdl:types>
+	<wsdl:message name="getAccountDataRequest">
+		<wsdl:part element="tns:getAccountDataRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountDataResponse">
+		<wsdl:part element="tns:getAccountDataResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="updateAccountProfileRequest">
+		<wsdl:part element="tns:updateAccountProfileRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="updateAccountProfileResponse">
+		<wsdl:part element="tns:updateAccountProfileResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountProfileDataRequest">
+		<wsdl:part element="tns:getAccountProfileDataRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="getAccountProfileDataResponse">
+		<wsdl:part element="tns:getAccountProfileDataResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="loginRequest">
+		<wsdl:part element="tns:loginRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="loginResponse">
+		<wsdl:part element="tns:loginResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="logoutRequest">
+		<wsdl:part element="tns:logoutRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="logoutResponse">
+		<wsdl:part element="tns:logoutResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="registerRequest">
+		<wsdl:part element="tns:registerRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="registerResponse">
+		<wsdl:part element="tns:registerResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="getWalletDataRequest">
+		<wsdl:part element="tns:getWalletDataRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="getWalletDataResponse">
+		<wsdl:part element="tns:getWalletDataResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataRequest">
+		<wsdl:part element="tns:updateWalletDataRequest" name="params"/>
+	</wsdl:message>
+	<wsdl:message name="updateWalletDataResponse">
+		<wsdl:part element="tns:updateWalletDataResponse" name="params"/>
+	</wsdl:message>
+	<wsdl:portType name="UserManagementServicePort">
+		<wsdl:operation name="getAccountData">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:getAccountDataRequest"/>
+			<wsdl:output message="tns:getAccountDataResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountProfile">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:updateAccountProfileRequest"/>
+			<wsdl:output message="tns:updateAccountProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountProfileData">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:getAccountProfileDataRequest"/>
+			<wsdl:output message="tns:getAccountProfileDataResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="login">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:loginRequest"/>
+			<wsdl:output message="tns:loginResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="logout">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:logoutRequest"/>
+			<wsdl:output message="tns:logoutResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="register">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:registerRequest"/>
+			<wsdl:output message="tns:registerResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getWalletData">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:getWalletDataRequest"/>
+			<wsdl:output message="tns:getWalletDataResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="updateWalletData">
+			<wsdl:documentation>
+				Documentation goes here.
+			</wsdl:documentation>
+			<wsdl:input message="tns:updateWalletDataRequest"/>
+			<wsdl:output message="tns:updateWalletDataResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="UserManagementServiceHttpBinding" type="tns:UserManagementServicePort">
+		<http:binding verb="POST"/>
+		<wsdl:operation name="getAccountData">
+			<http:operation location="/getAccountData"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountProfile">
+			<http:operation location="/updateAccountProfile"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountProfileData">
+			<http:operation location="/getAccountProfileData"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="login">
+			<http:operation location="/login"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="logout">
+			<http:operation location="/logout"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="register">
+			<http:operation location="/register"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getWalletData">
+			<http:operation location="/getWalletData"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateWalletData">
+			<http:operation location="/updateWalletData"/>
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded"/>
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="UserManagementServiceSOAPBinding" type="tns:UserManagementServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getAccountData">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/getAccountData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateAccountProfile">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/updateAccountProfile"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAccountProfileData">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/getAccountProfileData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="login">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/login"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="logout">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/logout"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="register">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/register"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getWalletData">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/getWalletData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="updateWalletData">
+			<soap:operation soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/updateWalletData"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="UserManagementService">
+		<wsdl:documentation>
+			<version>1.0.0</version>
+		</wsdl:documentation>
+		<wsdl:port binding="tns:UserManagementServiceHttpBinding" name="UserManagementServiceHttp">
+			<http:address location="http://www.ebayopensource.org/turmeric/UserManagementService"/>
+		</wsdl:port>
+		<wsdl:port binding="tns:UserManagementServiceSOAPBinding" name="UserManagementServiceSOAP">
+			<soap:address location="http://www.ebayopensource.org/turmeric/UserManagementService"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
