@@ -53,22 +53,6 @@ public interface AsyncBusinessServiceV1
 
     public Response<RegisterResponse> registerAsync(RegisterRequest param0);
 
-    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> handler);
-
-    public Response<LoginResponse> loginAsync(LoginRequest param0);
-
-    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> handler);
-
-    public Response<LogoutResponse> logoutAsync(LogoutRequest param0);
-
-    public Future<?> updateWalletDataAsync(UpdateWalletDataRequest param0, AsyncHandler<UpdateWalletDataResponse> handler);
-
-    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0);
-
-    public Future<?> getWalletDataAsync(GetWalletDataRequest param0, AsyncHandler<GetWalletDataResponse> handler);
-
-    public Response<GetWalletDataResponse> getWalletDataAsync(GetWalletDataRequest param0);
-
     public Future<?> getQuoteAsync(GetQuoteRequest param0, AsyncHandler<GetQuoteResponse> handler);
 
     public Response<GetQuoteResponse> getQuoteAsync(GetQuoteRequest param0);
@@ -89,6 +73,10 @@ public interface AsyncBusinessServiceV1
 
     public Response<GetHoldingResponse> getHoldingAsync(GetHoldingRequest param0);
 
+    public Future<?> updateWalletDataAsync(UpdateWalletDataRequest param0, AsyncHandler<UpdateWalletDataResponse> handler);
+
+    public Response<UpdateWalletDataResponse> updateWalletDataAsync(UpdateWalletDataRequest param0);
+
     public Future<?> sellEnhancedAsync(SellEnhancedRequest param0, AsyncHandler<SellEnhancedResponse> handler);
 
     public Response<SellEnhancedResponse> sellEnhancedAsync(SellEnhancedRequest param0);
@@ -96,6 +84,10 @@ public interface AsyncBusinessServiceV1
     public Future<?> updateAccountProfileAsync(UpdateAccountProfileRequest param0, AsyncHandler<UpdateAccountProfileResponse> handler);
 
     public Response<UpdateAccountProfileResponse> updateAccountProfileAsync(UpdateAccountProfileRequest param0);
+
+    public Future<?> logoutAsync(LogoutRequest param0, AsyncHandler<LogoutResponse> handler);
+
+    public Response<LogoutResponse> logoutAsync(LogoutRequest param0);
 
     public Future<?> getTopOrdersAsync(GetTopOrdersRequest param0, AsyncHandler<GetTopOrdersResponse> handler);
 
@@ -117,9 +109,17 @@ public interface AsyncBusinessServiceV1
 
     public Response<GetOrdersResponse> getOrdersAsync(GetOrdersRequest param0);
 
+    public Future<?> loginAsync(LoginRequest param0, AsyncHandler<LoginResponse> handler);
+
+    public Response<LoginResponse> loginAsync(LoginRequest param0);
+
     public Future<?> getHoldingsAsync(GetHoldingsRequest param0, AsyncHandler<GetHoldingsResponse> handler);
 
     public Response<GetHoldingsResponse> getHoldingsAsync(GetHoldingsRequest param0);
+
+    public Future<?> getWalletDataAsync(GetWalletDataRequest param0, AsyncHandler<GetWalletDataResponse> handler);
+
+    public Response<GetWalletDataResponse> getWalletDataAsync(GetWalletDataRequest param0);
 
     public Future<?> getClosedOrdersAsync(GetClosedOrdersRequest param0, AsyncHandler<GetClosedOrdersResponse> handler);
 

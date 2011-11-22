@@ -79,10 +79,15 @@
 	    <version>10.8.2.2</version>
 	    <scope>test</scope>
 	</dependency>
+	<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.16</version>
+</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
+    <testSourceDirectory>src-test</testSourceDirectory>
     <outputDirectory>build/classes</outputDirectory>
     <testOutputDirectory>build/classes</testOutputDirectory>
     <resources>

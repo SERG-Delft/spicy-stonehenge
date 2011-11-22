@@ -46,11 +46,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ErrorMessage }
+     * Create an instance of {@link ExtensionType }
      * 
      */
-    public ErrorMessage createErrorMessage() {
-        return new ErrorMessage();
+    public ExtensionType createExtensionType() {
+        return new ExtensionType();
     }
 
     /**
@@ -62,11 +62,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExtensionType }
+     * Create an instance of {@link ErrorMessage }
      * 
      */
-    public ExtensionType createExtensionType() {
-        return new ExtensionType();
+    public ErrorMessage createErrorMessage() {
+        return new ErrorMessage();
     }
 
 }

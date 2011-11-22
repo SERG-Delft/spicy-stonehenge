@@ -58,8 +58,8 @@ public class BusinessServiceV1RequestDispatcher
     public BusinessServiceV1RequestDispatcher() {
         super(BusinessServiceV1 .class);
         addSupportedOperation("register", new Class[] {RegisterRequest.class }, new Class[] {RegisterResponse.class });
-        addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
         addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
+        addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
         addSupportedOperation("updateWalletData", new Class[] {UpdateWalletDataRequest.class }, new Class[] {UpdateWalletDataResponse.class });
         addSupportedOperation("getWalletData", new Class[] {GetWalletDataRequest.class }, new Class[] {GetWalletDataResponse.class });
         addSupportedOperation("getQuote", new Class[] {GetQuoteRequest.class }, new Class[] {GetQuoteResponse.class });
@@ -98,11 +98,11 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("login".equals(operationName)) {
-            LoginRequest param2 = ((LoginRequest) requestMsg.getParam(0));
+        if ("logout".equals(operationName)) {
+            LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                LoginResponse result = service.login(param2);
+                LogoutResponse result = service.logout(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
@@ -110,11 +110,11 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("logout".equals(operationName)) {
-            LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
+        if ("login".equals(operationName)) {
+            LoginRequest param2 = ((LoginRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                LogoutResponse result = service.logout(param2);
+                LoginResponse result = service.login(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
