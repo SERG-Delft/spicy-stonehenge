@@ -215,7 +215,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                                             rs.getInt(4),
                                             rs.getBigDecimal(5),
                                             StockTraderUtility.convertToCalendar(rs.getDate(6)),
-                                            rs.getInt(7) + 1);
+                                            rs.getInt(7));
                                     return accountData;
                                 } finally {
                                     try {
