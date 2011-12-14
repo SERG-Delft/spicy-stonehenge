@@ -35,7 +35,7 @@ public class StockTraderUtility {
 	public static final String ORDER_TYPE_BUY = "buy";
 	public static final String ORDER_TYPE_SELL = "sell";
 	public static final String ORDER_TYPE_SELL_ENHANCED = "sellEnhanced";
-	public static final String ORDER_STATUS_CLOSED = "closed";
+	public static final String ORDER_STATUS_CLOSED = "completed";
 	public static final String ORDER_STATUS_OPEN = "open";
 
 	public static final int MAX_QUERY_TOP_ORDERS = 5;

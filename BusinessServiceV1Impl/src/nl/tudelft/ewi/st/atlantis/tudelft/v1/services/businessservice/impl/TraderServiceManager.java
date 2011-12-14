@@ -99,10 +99,10 @@ public class TraderServiceManager {
 				StockTraderUtility.MAX_QUERY_ORDERS);
 	}
 
-	public List<Order> getClosedOrders(String userId)
+	public List<Order> getCompletedOrders(String userId)
 			throws DAOException {
 		CustomerDAO customerDAO = factory.getCustomerDAO();
-		return customerDAO.getClosedOrders(userId);
+		return customerDAO.getCompletedOrders(userId);
 	}
 
 	public String register(String userId, String password,

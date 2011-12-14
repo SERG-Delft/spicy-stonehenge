@@ -59,7 +59,10 @@ public class BusinessServiceV1RequestDispatcher
         super(BusinessServiceV1 .class);
         addSupportedOperation("register", new Class[] {RegisterRequest.class }, new Class[] {RegisterResponse.class });
         addSupportedOperation("login", new Class[] {LoginRequest.class }, new Class[] {LoginResponse.class });
+<<<<<<< HEAD
         addSupportedOperation("logout", new Class[] {LogoutRequest.class }, new Class[] {LogoutResponse.class });
+=======
+>>>>>>> d51ff7eceaa97c8c4cfd5734d0b2a8752aaa3fae
         addSupportedOperation("getQuote", new Class[] {GetQuoteRequest.class }, new Class[] {GetQuoteResponse.class });
         addSupportedOperation("getMarketSummary", new Class[] {GetMarketSummaryRequest.class }, new Class[] {GetMarketSummaryResponse.class });
         addSupportedOperation("buy", new Class[] {BuyRequest.class }, new Class[] {BuyResponse.class });
@@ -110,6 +113,7 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
+<<<<<<< HEAD
         if ("logout".equals(operationName)) {
             LogoutRequest param2 = ((LogoutRequest) requestMsg.getParam(0));
             try {
@@ -122,6 +126,8 @@ public class BusinessServiceV1RequestDispatcher
             return true;
         }
         else 
+=======
+>>>>>>> d51ff7eceaa97c8c4cfd5734d0b2a8752aaa3fae
         if ("getQuote".equals(operationName)) {
             GetQuoteRequest param2 = ((GetQuoteRequest) requestMsg.getParam(0));
             try {

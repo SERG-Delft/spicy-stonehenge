@@ -421,7 +421,7 @@ public class MySQLCustomerDAO extends AbstractMySQLDAO implements CustomerDAO {
         }
     }
 
-    public List<Order> getClosedOrders(String userId) throws DAOException {
+    public List<Order> getCompletedOrders(String userId) throws DAOException {
         PreparedStatement selectClosedOrders = null;
         PreparedStatement updateClosedOrders = null;
         try {

@@ -52,7 +52,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
     private static final String SQL_UPDATE_LOGOUT = "UPDATE account SET logoutcount = logoutcount + 1 WHERE profile_userid = ?";
     private static final String SQL_SELECT_GET_CUSTOMER_BY_USERID = "SELECT account.ACCOUNTID, account.PROFILE_USERID, account.CREATIONDATE, account.OPENBALANCE, account.LOGOUTCOUNT, account.BALANCE, account.LASTLOGIN, account.LOGINCOUNT, account.CURRENCY FROM account WHERE account.PROFILE_USERID = ?";
     private static final String SQL_SELECT_ORDERS_BY_ID = " o.orderid, o.ordertype, o.orderstatus, o.opendate, o.completiondate, o.quantity, o.price, o.orderfee, o.quote_symbol FROM orders o WHERE o.account_accountid = (SELECT a.accountid FROM account a WHERE a.profile_userid = ?) ORDER BY o.orderid DESC";
-    private static final String SQL_SELECT_CLOSED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'closed'";
+    private static final String SQL_SELECT_COMPLETED_ORDERS = "SELECT orderid, ordertype, orderstatus, completiondate, opendate, quantity, price, orderfee, quote_symbol FROM orders WHERE account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?) AND orderstatus = 'completed'";
     private static final String SQL_UPDATE_CLOSED_ORDERS = "UPDATE orders SET orderstatus = 'completed' WHERE orderstatus = 'closed' AND account_accountid = (SELECT accountid FROM account WHERE profile_userid = ?)";
     private static final String SQL_INSERT_ACCOUNT_PROFILE = "INSERT INTO accountprofile VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SQL_INSERT_ACCOUNT = "INSERT INTO account (creationdate, openbalance, logoutcount, balance, logincount, profile_userid, currency) VALUES (current_timestamp, ?, ?, ?, ?, ?, ?)";//; SELECT LAST_INSERT_ID()
@@ -215,7 +215,7 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
                                             rs.getInt(4),
                                             rs.getBigDecimal(5),
                                             StockTraderUtility.convertToCalendar(rs.getDate(6)),
-                                            rs.getInt(7) + 1);
+                                            rs.getInt(7));
                                     return accountData;
                                 } finally {
                                     try {
@@ -434,11 +434,11 @@ public class DerbyCustomerDAO extends AbstractDerbyDAO implements CustomerDAO {
         }
     }
 
-    public List<Order> getClosedOrders(String userId) throws DAOException {
+    public List<Order> getCompletedOrders(String userId) throws DAOException {
         PreparedStatement selectClosedOrders = null;
         PreparedStatement updateClosedOrders = null;
         try {
-            selectClosedOrders = sqlConnection.prepareStatement(SQL_SELECT_CLOSED_ORDERS);
+            selectClosedOrders = sqlConnection.prepareStatement(SQL_SELECT_COMPLETED_ORDERS);
             selectClosedOrders.setString(1, userId);
             ResultSet rs = selectClosedOrders.executeQuery();
             List<Order> closedOrders = new ArrayList<Order>();
