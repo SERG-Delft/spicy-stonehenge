@@ -52,7 +52,7 @@ public interface CustomerDAO {
 	public List<Order> getOrders(String userId, boolean top,
 			int maxTop, int maxDefault) throws DAOException;
 
-	public List<Order> getClosedOrders(String userId)
+	public List<Order> getCompletedOrders(String userId)
 			throws DAOException;
 
 	public boolean insertAccountProfile(AccountProfile accountProfileBean)
