@@ -249,7 +249,7 @@ public class BusinessServiceV1Impl
         List<Order> orders = null;
         
         try {
-			orders = mgr.getClosedOrders(request.getUserID());
+			orders = mgr.getCompletedOrders(request.getUserID());
 		} catch (DAOException e) {
 			logger.debug("", e);
 		}

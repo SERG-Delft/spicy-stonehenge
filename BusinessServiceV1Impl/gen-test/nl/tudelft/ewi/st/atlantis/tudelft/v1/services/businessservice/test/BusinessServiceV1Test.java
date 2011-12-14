@@ -88,32 +88,6 @@ public class BusinessServiceV1Test
         assertTrue(false);
     }
 
-    public void testUpdateWalletData()
-        throws Exception
-    {
-        UpdateWalletDataResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().updateWalletData(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
-    public void testGetWalletData()
-        throws Exception
-    {
-        GetWalletDataResponse result = null;
-        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().getWalletData(null);
-        if (result == null) {
-            throw new Exception("Response is Null");
-        }
-        // TODO: FIX FOLLOWING ASSERT STATEMENT
-        assertTrue(false);
-    }
-
     public void testGetQuote()
         throws Exception
     {
@@ -172,6 +146,19 @@ public class BusinessServiceV1Test
         GetHoldingResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getHolding(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testUpdateWalletData()
+        throws Exception
+    {
+        UpdateWalletDataResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().updateWalletData(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -276,6 +263,19 @@ public class BusinessServiceV1Test
         GetHoldingsResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
         result = getProxy().getHoldings(null);
+        if (result == null) {
+            throw new Exception("Response is Null");
+        }
+        // TODO: FIX FOLLOWING ASSERT STATEMENT
+        assertTrue(false);
+    }
+
+    public void testGetWalletData()
+        throws Exception
+    {
+        GetWalletDataResponse result = null;
+        // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
+        result = getProxy().getWalletData(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
