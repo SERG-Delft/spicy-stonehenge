@@ -13,16 +13,6 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.ebayopensource.turmeric.runtime</groupId>
-      <artifactId>soa-server</artifactId>
-      <version>1.0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.ebayopensource.turmeric.runtime</groupId>
-      <artifactId>soa-client</artifactId>
-      <version>1.0.1.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.4</version>
@@ -37,6 +27,20 @@
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
     	<artifactId>common-library</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.ebayopensource.turmeric.runtime</groupId>
+    	<artifactId>soa-client</artifactId>
+    	<version>1.1.0</version>
+    	<type>jar</type>
+    	<scope>provided</scope>
+    </dependency>
+    <dependency>
+    	<groupId>org.ebayopensource.turmeric.runtime</groupId>
+    	<artifactId>soa-server</artifactId>
+    	<version>1.1.0</version>
+    	<type>jar</type>
+    	<scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
