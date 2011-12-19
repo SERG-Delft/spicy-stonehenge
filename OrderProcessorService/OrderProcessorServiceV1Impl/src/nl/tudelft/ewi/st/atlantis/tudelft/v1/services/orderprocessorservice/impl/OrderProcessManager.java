@@ -81,7 +81,7 @@ public class OrderProcessManager {
 			 * quote service, then use quote service to get quote data
 			 */
 			
-			SharedConfigurationServiceV1Consumer consumer = new SharedConfigurationServiceV1Consumer("OrderProcessingService","production");
+			SharedConfigurationServiceV1Consumer consumer = new SharedConfigurationServiceV1Consumer("OrderProcessorService","production");
 			
 			GetQSLocationsResponse response = consumer.getQSLocations(new GetQSLocationsRequest());
 			
@@ -93,7 +93,7 @@ public class OrderProcessManager {
 			/* Got the QS Endpoint */
 			String qsEndpoint = response.getLocations().get(0).getServiceURL();
 
-			SharedQuoteServiceV1Consumer qsConsumer = new SharedQuoteServiceV1Consumer("OrderProcessingService", "production");
+			SharedQuoteServiceV1Consumer qsConsumer = new SharedQuoteServiceV1Consumer("OrderProcessorService", "production");
 			
 			GetQuotesRequest request = new GetQuotesRequest();
 			request.getSymbols().add(order.getSymbol());
