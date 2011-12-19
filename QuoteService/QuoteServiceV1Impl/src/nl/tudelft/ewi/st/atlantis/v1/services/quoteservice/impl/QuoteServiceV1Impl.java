@@ -47,7 +47,7 @@ public class QuoteServiceV1Impl
 			
 			i = 1;
 			for(String t : symbols) {
-				ps.setString(++i, t);
+				ps.setString(i++, t);
 			}
 			
 			DatatypeFactory dtf = DatatypeFactory.newInstance();
