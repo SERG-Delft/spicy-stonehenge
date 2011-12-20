@@ -1,3 +1,9 @@
 *.war
 *.jar
 *.class
+target/
+gen-src/
+gen-test/
+build/
+gen-meta-src/
+.DS_Store
