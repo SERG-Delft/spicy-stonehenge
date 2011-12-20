@@ -10,6 +10,7 @@
   		<groupId>org.apache.commons</groupId>
   		<artifactId>org.apache.commons.logging</artifactId>
   		<version>1.0.4.v200706111724</version>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>org.ebayopensource.turmeric.typelib</groupId>
@@ -27,7 +28,7 @@
   		<artifactId>commons-io</artifactId>
   		<version>1.3.2</version>
   		<type>jar</type>
-  		<scope>compile</scope>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
 	    <groupId>org.apache.ddlutils</groupId>
