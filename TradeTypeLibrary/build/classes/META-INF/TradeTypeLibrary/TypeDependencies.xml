@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<typeLibraryDependencyType xmlns:ns2="http://www.ebayopensource.org/turmeric/common/config" version="1.0.0" libraryName="TradeTypeLibrary">
-    <ns2:type version="1.0.0" name="MarketSummaryData">
-        <ns2:referredTypeLibrary version="1.0.0" name="TradeTypeLibrary">
-            <ns2:referredType version="1.0.0" name="QuoteData"/>
-        </ns2:referredTypeLibrary>
-    </ns2:type>
-</typeLibraryDependencyType>

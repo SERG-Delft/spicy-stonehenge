@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<typeLibraryType xmlns:ns2="http://www.ebayopensource.org/turmeric/common/config" libraryNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/external/v1/types" category="COMMON" version="1.0.0" libraryName="QuoteTypeLibrary">
-    <ns2:type version="1.0.0" java-type-name="nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData" xml-type-name="RemoteQuoteData"/>
-</typeLibraryType>
