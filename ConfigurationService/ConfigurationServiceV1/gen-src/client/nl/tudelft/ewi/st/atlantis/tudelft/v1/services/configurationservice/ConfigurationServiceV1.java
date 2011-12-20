@@ -3,7 +3,7 @@
  * ConfigurationServiceV1.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6-wso2v4  Built on : Jan 03, 2011 (12:16:01 UTC)
+ * by the Apache Axis2 version: 1.6-wso2v2  Built on : Oct 25, 2010 (02:27:59 MST)
  */
     package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.configurationservice;
     /**

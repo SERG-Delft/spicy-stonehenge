@@ -40,12 +40,12 @@ public class ConfigurationServiceV1Test
         return m_proxy;
     }
 
-    public void testGetClientConfig()
+    public void testSetServiceLocation()
         throws Exception
     {
-        GetClientConfigResponse result = null;
+        SetServiceLocationResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().getClientConfig(null);
+        result = getProxy().setServiceLocation(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }
@@ -53,12 +53,12 @@ public class ConfigurationServiceV1Test
         assertTrue(false);
     }
 
-    public void testSetServiceLocation()
+    public void testGetClientConfig()
         throws Exception
     {
-        SetServiceLocationResponse result = null;
+        GetClientConfigResponse result = null;
         // TODO: REPLACE PARAMETER(S) WITH ACTUAL VALUE(S)
-        result = getProxy().setServiceLocation(null);
+        result = getProxy().getClientConfig(null);
         if (result == null) {
             throw new Exception("Response is Null");
         }

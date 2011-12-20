@@ -7,26 +7,7 @@
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" name="nl.tudelft.ewi.st.atlantis.tudelft.v1.services"/>
     </package-map>
     <operation-list>
-        <operation methodName="setServiceLocation" name="setServiceLocation">
-            <request-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationRequest</java-type-name>
-                <xml-type-name>SetServiceLocationRequest</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}setServiceLocationRequest</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </request-message>
-            <response-message>
-                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationResponse</java-type-name>
-                <xml-type-name>SetServiceLocationResponse</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}setServiceLocationResponse</xml-element-name>
-                <has-attachment>false</has-attachment>
-            </response-message>
-            <error-message>
-                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
-                <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
-            </error-message>
-        </operation>
-        <operation methodName="getClientConfig" name="getClientConfig">
+        <operation name="getClientConfig">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetClientConfigRequest</java-type-name>
                 <xml-type-name>GetClientConfigRequest</xml-type-name>
@@ -42,10 +23,29 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getBSConfig" name="getBSConfig">
+        <operation name="setServiceLocation">
+            <request-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationRequest</java-type-name>
+                <xml-type-name>SetServiceLocationRequest</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}setServiceLocationRequest</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </request-message>
+            <response-message>
+                <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationResponse</java-type-name>
+                <xml-type-name>SetServiceLocationResponse</xml-type-name>
+                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}setServiceLocationResponse</xml-element-name>
+                <has-attachment>false</has-attachment>
+            </response-message>
+            <error-message>
+                <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
+                <xml-type-name>ErrorMessage</xml-type-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
+            </error-message>
+        </operation>
+        <operation name="getBSConfig">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSConfigRequest</java-type-name>
                 <xml-type-name>GetBSConfigRequest</xml-type-name>
@@ -61,10 +61,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getOPSConfig" name="getOPSConfig">
+        <operation name="getOPSConfig">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSConfigRequest</java-type-name>
                 <xml-type-name>GetOPSConfigRequest</xml-type-name>
@@ -80,10 +80,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getQSLocations" name="getQSLocations">
+        <operation name="getQSLocations">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQSLocationsRequest</java-type-name>
                 <xml-type-name>GetQSLocationsRequest</xml-type-name>
@@ -99,10 +99,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="setClientToBS" name="setClientToBS">
+        <operation name="setClientToBS">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetClientToBSRequest</java-type-name>
                 <xml-type-name>SetClientToBSRequest</xml-type-name>
@@ -118,10 +118,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getESLocations" name="getESLocations">
+        <operation name="getESLocations">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetESLocationRequest</java-type-name>
                 <xml-type-name>getESLocationRequest</xml-type-name>
@@ -137,10 +137,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="setBSToOPS" name="setBSToOPS">
+        <operation name="setBSToOPS">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetBSToOPSRequest</java-type-name>
                 <xml-type-name>SetBSToOPSRequest</xml-type-name>
@@ -156,10 +156,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getBSLocations" name="getBSLocations">
+        <operation name="getBSLocations">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetBSLocationsRequest</java-type-name>
                 <xml-type-name>GetBSLocationsRequest</xml-type-name>
@@ -175,10 +175,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="getOPSLocations" name="getOPSLocations">
+        <operation name="getOPSLocations">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetOPSLocationsRequest</java-type-name>
                 <xml-type-name>getOPSLocationsRequest</xml-type-name>
@@ -194,7 +194,7 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
     </operation-list>
@@ -222,15 +222,12 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.SetServiceLocationResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.ServiceLocation</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.AckValue</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseRequest</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseResponse</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.CommonErrorData</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorCategory</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorData</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorParameter</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorSeverity</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ExtensionType</java-type-name>
     </java-type-list>
 </service>

@@ -7,7 +7,7 @@
         <package xml-namespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services" name="nl.tudelft.ewi.st.atlantis.tudelft.v1.services"/>
     </package-map>
     <operation-list>
-        <operation methodName="updateWalletData" name="updateWalletData">
+        <operation name="updateWalletData">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest</java-type-name>
                 <xml-type-name>updateWalletDataRequest</xml-type-name>
@@ -23,10 +23,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="exchangeCurrency" name="exchangeCurrency">
+        <operation name="exchangeCurrency">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.ExchangeCurrencyRequest</java-type-name>
                 <xml-type-name>ExchangeCurrencyRequest</xml-type-name>
@@ -42,10 +42,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="checkCurrency" name="checkCurrency">
+        <operation name="checkCurrency">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyRequest</java-type-name>
                 <xml-type-name>checkCurrencyRequest</xml-type-name>
@@ -61,10 +61,10 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
-        <operation methodName="checkAmount" name="checkAmount">
+        <operation name="checkAmount">
             <request-message>
                 <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountRequest</java-type-name>
                 <xml-type-name>checkAmountRequest</xml-type-name>
@@ -80,7 +80,7 @@
             <error-message>
                 <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
                 <xml-type-name>ErrorMessage</xml-type-name>
-                <xml-element-name>{http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services}errorMessage</xml-element-name>
+                <xml-element-name>{http://www.ebayopensource.org/turmeric/common/v1/types}errorMessage</xml-element-name>
             </error-message>
         </operation>
     </operation-list>
@@ -96,15 +96,12 @@
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataRequest</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.UpdateWalletDataResponse</java-type-name>
         <java-type-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.types.WalletData</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.AckValue</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseRequest</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.BaseResponse</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.CommonErrorData</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorCategory</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorData</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorMessage</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorParameter</java-type-name>
-        <java-type-name>org.ebayopensource.turmeric.common.v1.types.ErrorSeverity</java-type-name>
         <java-type-name>org.ebayopensource.turmeric.common.v1.types.ExtensionType</java-type-name>
     </java-type-list>
 </service>
