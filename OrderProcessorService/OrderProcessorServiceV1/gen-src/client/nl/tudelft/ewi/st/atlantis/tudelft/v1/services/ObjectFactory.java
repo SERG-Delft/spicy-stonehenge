@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SubmitOrderRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "submitOrderRequest");
     private final static QName _IsOnlineRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "isOnlineRequest");
     private final static QName _IsOnlineResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "isOnlineResponse");
-    private final static QName _SubmitOrderRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "submitOrderRequest");
     private final static QName _SubmitOrderResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "submitOrderResponse");
 
     /**
@@ -34,23 +34,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link IsOnlineRequest }
-     * 
-     */
-    public IsOnlineRequest createIsOnlineRequest() {
-        return new IsOnlineRequest();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IsOnlineRequest }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "isOnlineRequest")
-    public JAXBElement<IsOnlineRequest> createIsOnlineRequest(IsOnlineRequest value) {
-        return new JAXBElement<IsOnlineRequest>(_IsOnlineRequest_QNAME, IsOnlineRequest.class, null, value);
     }
 
     /**
@@ -62,20 +45,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IsOnlineResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "isOnlineResponse")
-    public JAXBElement<IsOnlineResponse> createIsOnlineResponse(IsOnlineResponse value) {
-        return new JAXBElement<IsOnlineResponse>(_IsOnlineResponse_QNAME, IsOnlineResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link SubmitOrderRequest }
      * 
      */
     public SubmitOrderRequest createSubmitOrderRequest() {
         return new SubmitOrderRequest();
+    }
+
+    /**
+     * Create an instance of {@link IsOnlineRequest }
+     * 
+     */
+    public IsOnlineRequest createIsOnlineRequest() {
+        return new IsOnlineRequest();
+    }
+
+    /**
+     * Create an instance of {@link SubmitOrderResponse }
+     * 
+     */
+    public SubmitOrderResponse createSubmitOrderResponse() {
+        return new SubmitOrderResponse();
     }
 
     /**
@@ -88,11 +78,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubmitOrderResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsOnlineRequest }{@code >}}
      * 
      */
-    public SubmitOrderResponse createSubmitOrderResponse() {
-        return new SubmitOrderResponse();
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "isOnlineRequest")
+    public JAXBElement<IsOnlineRequest> createIsOnlineRequest(IsOnlineRequest value) {
+        return new JAXBElement<IsOnlineRequest>(_IsOnlineRequest_QNAME, IsOnlineRequest.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsOnlineResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "isOnlineResponse")
+    public JAXBElement<IsOnlineResponse> createIsOnlineResponse(IsOnlineResponse value) {
+        return new JAXBElement<IsOnlineResponse>(_IsOnlineResponse_QNAME, IsOnlineResponse.class, null, value);
     }
 
     /**

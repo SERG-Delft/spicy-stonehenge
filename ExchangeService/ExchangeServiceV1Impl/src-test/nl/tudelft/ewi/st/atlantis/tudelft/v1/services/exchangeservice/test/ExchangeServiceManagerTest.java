@@ -126,7 +126,7 @@ public class ExchangeServiceManagerTest {
 		assertTrue("Exchange small currency failed", exchSmall != null);
 		
 		//Pay attention!!!! The exchange rate is always changing. Need up-date data to test..		
-		assertTrue("Exchange small currency result does not match expected", exchSmall.compareTo(BigDecimal.valueOf(85))==1);
+		assertTrue("Exchange small currency result does not match expected", exchSmall.compareTo(BigDecimal.valueOf(82))==1);
 		
 		BigDecimal exchLarge = m.exchangeCurrency(BigDecimal.valueOf(10000000), "EUR", "CNY");
 		assertTrue("Exchange large currency failed", exchLarge != null);
