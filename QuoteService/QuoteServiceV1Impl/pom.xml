@@ -33,6 +33,11 @@
       <artifactId>QuoteServiceV1</artifactId>
       <version>1.0.0</version>
     </dependency>
+    <dependency>
+	<groupId>org.apache.derby</groupId>
+	<artifactId>derbyclient</artifactId>
+	<version>10.8.2.2</version>
+	</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>

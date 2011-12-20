@@ -13,5 +13,10 @@
       <version>1.0.0</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+		<groupId>org.apache.derby</groupId>
+		<artifactId>derbyclient</artifactId>
+		<version>10.8.2.2</version>
+	</dependency>
   </dependencies>
 </project>

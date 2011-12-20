@@ -39,8 +39,8 @@ public class ConfigurationServiceV1RequestDispatcher
 
     public ConfigurationServiceV1RequestDispatcher() {
         super(ConfigurationServiceV1 .class);
-        addSupportedOperation("getClientConfig", new Class[] {GetClientConfigRequest.class }, new Class[] {GetClientConfigResponse.class });
         addSupportedOperation("setServiceLocation", new Class[] {SetServiceLocationRequest.class }, new Class[] {SetServiceLocationResponse.class });
+        addSupportedOperation("getClientConfig", new Class[] {GetClientConfigRequest.class }, new Class[] {GetClientConfigResponse.class });
         addSupportedOperation("getBSConfig", new Class[] {GetBSConfigRequest.class }, new Class[] {GetBSConfigResponse.class });
         addSupportedOperation("getOPSConfig", new Class[] {GetOPSConfigRequest.class }, new Class[] {GetOPSConfigResponse.class });
         addSupportedOperation("getQSLocations", new Class[] {GetQSLocationsRequest.class }, new Class[] {GetQSLocationsResponse.class });
@@ -59,11 +59,11 @@ public class ConfigurationServiceV1RequestDispatcher
         String operationName = msgCtx.getOperationName();
         Message requestMsg = msgCtx.getRequestMessage();
          
-        if ("getClientConfig".equals(operationName)) {
-            GetClientConfigRequest param2 = ((GetClientConfigRequest) requestMsg.getParam(0));
+        if ("setServiceLocation".equals(operationName)) {
+            SetServiceLocationRequest param2 = ((SetServiceLocationRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                GetClientConfigResponse result = service.getClientConfig(param2);
+                SetServiceLocationResponse result = service.setServiceLocation(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
@@ -71,11 +71,11 @@ public class ConfigurationServiceV1RequestDispatcher
             return true;
         }
         else 
-        if ("setServiceLocation".equals(operationName)) {
-            SetServiceLocationRequest param2 = ((SetServiceLocationRequest) requestMsg.getParam(0));
+        if ("getClientConfig".equals(operationName)) {
+            GetClientConfigRequest param2 = ((GetClientConfigRequest) requestMsg.getParam(0));
             try {
                 Message responseMsg = msgCtx.getResponseMessage();
-                SetServiceLocationResponse result = service.setServiceLocation(param2);
+                GetClientConfigResponse result = service.getClientConfig(param2);
                 responseMsg.setParam(0, result);
             } catch (Throwable th) {
                 handleServiceException(msgCtx, th);
