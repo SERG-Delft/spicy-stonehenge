@@ -1,9 +1,9 @@
 
 package nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.impl.gen;
 
-import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest;
-import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse;
-import nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.QuoteServiceV1;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuotesResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.QuoteServiceV1;
 import org.ebayopensource.turmeric.runtime.common.exceptions.ServiceException;
 import org.ebayopensource.turmeric.runtime.common.pipeline.Message;
 import org.ebayopensource.turmeric.runtime.common.pipeline.MessageContext;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <service-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
-    <service-impl-class-name>nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.impl.QuoteServiceV1Impl</service-impl-class-name>
-    <service-interface-class-name>nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.QuoteServiceV1</service-interface-class-name>
+    <service-impl-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.impl.QuoteServiceV1Impl</service-impl-class-name>
+    <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.QuoteServiceV1</service-interface-class-name>
     <service-instance-config>
         <protocol-processor version="1.1" name="SOAP11">
             <indicator>
