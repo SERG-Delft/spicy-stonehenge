@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
+  <artifactId>JettyDeploymentLibraries</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>JettyDeploymentLibraries</name>
+  <dependencies>
+  	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbyclient</artifactId>
+	    <version>10.8.2.2</version>
+	    <scope>compile</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.derby</groupId>
+	    <artifactId>derbynet</artifactId>
+	    <version>10.8.2.2</version>
+	    <scope>compile</scope>
+	</dependency>
+  </dependencies>
+</project>

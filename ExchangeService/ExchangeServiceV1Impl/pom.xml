@@ -17,11 +17,6 @@
       <artifactId>ExchangeServiceV1</artifactId>
       <version>1.0.0</version>
     </dependency>
-    <dependency>
-      <groupId>org.ebayopensource.turmeric.runtime</groupId>
-      <artifactId>soa-client</artifactId>
-      <version>1.0.1.0-SNAPSHOT</version>
-    </dependency>
     
             <!--  Gson: Java to Json conversion -->
     <dependency>
@@ -39,12 +34,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.4</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.ebayopensource.turmeric.runtime</groupId>
-      <artifactId>soa-server</artifactId>
-      <version>1.0.1.0-SNAPSHOT</version>
+      <scope>test</scope>
     </dependency>
     
     <dependency>
@@ -75,6 +65,20 @@
 	    <artifactId>derbynet</artifactId>
 	    <version>10.8.2.2</version>
 	    <scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.ebayopensource.turmeric.runtime</groupId>
+		<artifactId>soa-server</artifactId>
+		<version>1.1.0</version>
+		<type>jar</type>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.ebayopensource.turmeric.runtime</groupId>
+		<artifactId>soa-client</artifactId>
+		<version>1.1.0</version>
+		<type>jar</type>
+		<scope>provided</scope>
 	</dependency>
   </dependencies>
   <build>

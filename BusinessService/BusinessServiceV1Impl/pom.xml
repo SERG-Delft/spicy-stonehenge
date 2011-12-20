@@ -35,20 +35,6 @@
     	<scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>org.ebayopensource.turmeric.runtime</groupId>
-    	<artifactId>soa-client</artifactId>
-    	<version>1.0.0</version>
-    	<type>jar</type>
-    	<scope>compile</scope>
-    </dependency>
-    <dependency>
-    	<groupId>org.ebayopensource.turmeric.runtime</groupId>
-    	<artifactId>soa-server</artifactId>
-    	<version>1.0.0</version>
-    	<type>jar</type>
-    	<scope>compile</scope>
-    </dependency>
-    <dependency>
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
     	<artifactId>BusinessServiceV1</artifactId>
     	<version>1.0.0</version>
@@ -84,6 +70,20 @@
     <artifactId>log4j</artifactId>
     <version>1.2.16</version>
 </dependency>
+	<dependency>
+		<groupId>org.ebayopensource.turmeric.runtime</groupId>
+		<artifactId>soa-client</artifactId>
+		<version>1.1.0</version>
+		<type>jar</type>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.ebayopensource.turmeric.runtime</groupId>
+		<artifactId>soa-server</artifactId>
+		<version>1.1.0</version>
+		<type>jar</type>
+		<scope>provided</scope>
+	</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
