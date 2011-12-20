@@ -6,8 +6,6 @@ import java.math.BigDecimal;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import sun.awt.RepaintArea;
-
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountRequest;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckAmountResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.CheckCurrencyRequest;

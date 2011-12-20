@@ -23,7 +23,6 @@ import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.commons.io.FileUtils;
 import org.apache.ddlutils.task.DdlToDatabaseTask;
 import org.apache.ddlutils.task.WriteDataToDatabaseCommand;
 import org.apache.ddlutils.task.WriteSchemaToDatabaseCommand;

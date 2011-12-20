@@ -6,8 +6,8 @@ import java.io.Reader;
 import java.math.BigDecimal;
 import java.net.URL;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 
 import nl.tudelft.stocktrader.Wallet;
 import nl.tudelft.stocktrader.dal.CustomerDAO;
@@ -28,8 +28,7 @@ public class ExchangeServiceManager {
 		      
 		  }
 		                    
-			private static final Log logger = LogFactory
-					.getLog(ExchangeServiceManager.class);
+			//private static final Log logger = LogFactory.getLog(ExchangeServiceManager.class);
 	
 //	private Wallet wallet = null;
 	
