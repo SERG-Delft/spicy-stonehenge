@@ -15,7 +15,6 @@ import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 
 import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.commons.io.FileUtils;
 import org.apache.ddlutils.task.DdlToDatabaseTask;
 import org.apache.ddlutils.task.WriteDataToDatabaseCommand;
 import org.apache.ddlutils.task.WriteSchemaToDatabaseCommand;
@@ -84,7 +83,7 @@ public class ExchangeServiceManagerTest {
 		  try {
 		   while(true) {
 		    server.ping();
-		    Thread.currentThread().sleep(1000);
+		    Thread.sleep(1000);
 		   }
 		  } catch(Exception e) {}
 		  

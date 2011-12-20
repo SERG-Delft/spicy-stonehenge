@@ -26,7 +26,6 @@ import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuotesResponse;
 import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.gen.SharedQuoteServiceV1Consumer;
 import nl.tudelft.stocktrader.Holding;
 import nl.tudelft.stocktrader.Order;
-import nl.tudelft.stocktrader.Quote;
 import nl.tudelft.stocktrader.dal.DAOException;
 import nl.tudelft.stocktrader.dal.DAOFactory;
 import nl.tudelft.stocktrader.dal.OrderDAO;
