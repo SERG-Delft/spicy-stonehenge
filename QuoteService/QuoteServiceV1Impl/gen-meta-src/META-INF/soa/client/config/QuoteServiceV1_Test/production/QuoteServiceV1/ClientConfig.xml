@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <client-config-list xmlns="http://www.ebayopensource.org/turmeric/common/config">
     <client-config>
-        <service-interface-class-name>nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.QuoteServiceV1</service-interface-class-name>
+        <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.QuoteServiceV1</service-interface-class-name>
         <client-instance-config>
             <invocation-options>
                 <preferred-transport name="LOCAL"/>
