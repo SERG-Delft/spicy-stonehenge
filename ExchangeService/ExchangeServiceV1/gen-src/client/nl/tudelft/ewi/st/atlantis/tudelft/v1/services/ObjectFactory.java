@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _CheckAmountRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "checkAmountRequest");
     private final static QName _CheckCurrencyRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "checkCurrencyRequest");
+    private final static QName _CheckAmountRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "checkAmountRequest");
     private final static QName _ExchangeCurrencyRequest_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "exchangeCurrencyRequest");
     private final static QName _ExchangeCurrencyResponse_QNAME = new QName("http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", "exchangeCurrencyResponse");
 
@@ -37,20 +37,59 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CheckAmountRequest }
+     * Create an instance of {@link CheckCurrency }
      * 
      */
-    public CheckAmountRequest createCheckAmountRequest() {
-        return new CheckAmountRequest();
+    public CheckCurrency createCheckCurrency() {
+        return new CheckCurrency();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CheckAmountRequest }{@code >}}
+     * Create an instance of {@link CheckCurrencyResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "checkAmountRequest")
-    public JAXBElement<CheckAmountRequest> createCheckAmountRequest(CheckAmountRequest value) {
-        return new JAXBElement<CheckAmountRequest>(_CheckAmountRequest_QNAME, CheckAmountRequest.class, null, value);
+    public CheckCurrencyResponse createCheckCurrencyResponse() {
+        return new CheckCurrencyResponse();
+    }
+
+    /**
+     * Create an instance of {@link CheckCurrencyRequest }
+     * 
+     */
+    public CheckCurrencyRequest createCheckCurrencyRequest() {
+        return new CheckCurrencyRequest();
+    }
+
+    /**
+     * Create an instance of {@link ExchangeCurrencyRequest }
+     * 
+     */
+    public ExchangeCurrencyRequest createExchangeCurrencyRequest() {
+        return new ExchangeCurrencyRequest();
+    }
+
+    /**
+     * Create an instance of {@link UpdateWalletDataRequest }
+     * 
+     */
+    public UpdateWalletDataRequest createUpdateWalletDataRequest() {
+        return new UpdateWalletDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link ExchangeCurrencyResponse }
+     * 
+     */
+    public ExchangeCurrencyResponse createExchangeCurrencyResponse() {
+        return new ExchangeCurrencyResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateWalletDataResponse }
+     * 
+     */
+    public UpdateWalletDataResponse createUpdateWalletDataResponse() {
+        return new UpdateWalletDataResponse();
     }
 
     /**
@@ -62,11 +101,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CheckCurrency }
+     * Create an instance of {@link CheckAmountRequest }
      * 
      */
-    public CheckCurrency createCheckCurrency() {
-        return new CheckCurrency();
+    public CheckAmountRequest createCheckAmountRequest() {
+        return new CheckAmountRequest();
     }
 
     /**
@@ -75,14 +114,6 @@ public class ObjectFactory {
      */
     public CheckCurrencyReponse createCheckCurrencyReponse() {
         return new CheckCurrencyReponse();
-    }
-
-    /**
-     * Create an instance of {@link CheckCurrencyRequest }
-     * 
-     */
-    public CheckCurrencyRequest createCheckCurrencyRequest() {
-        return new CheckCurrencyRequest();
     }
 
     /**
@@ -95,19 +126,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CheckCurrencyResponse }
+     * Create an instance of {@link JAXBElement }{@code <}{@link CheckAmountRequest }{@code >}}
      * 
      */
-    public CheckCurrencyResponse createCheckCurrencyResponse() {
-        return new CheckCurrencyResponse();
-    }
-
-    /**
-     * Create an instance of {@link ExchangeCurrencyRequest }
-     * 
-     */
-    public ExchangeCurrencyRequest createExchangeCurrencyRequest() {
-        return new ExchangeCurrencyRequest();
+    @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "checkAmountRequest")
+    public JAXBElement<CheckAmountRequest> createCheckAmountRequest(CheckAmountRequest value) {
+        return new JAXBElement<CheckAmountRequest>(_CheckAmountRequest_QNAME, CheckAmountRequest.class, null, value);
     }
 
     /**
@@ -120,36 +144,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExchangeCurrencyResponse }
-     * 
-     */
-    public ExchangeCurrencyResponse createExchangeCurrencyResponse() {
-        return new ExchangeCurrencyResponse();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ExchangeCurrencyResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services", name = "exchangeCurrencyResponse")
     public JAXBElement<ExchangeCurrencyResponse> createExchangeCurrencyResponse(ExchangeCurrencyResponse value) {
         return new JAXBElement<ExchangeCurrencyResponse>(_ExchangeCurrencyResponse_QNAME, ExchangeCurrencyResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link UpdateWalletDataRequest }
-     * 
-     */
-    public UpdateWalletDataRequest createUpdateWalletDataRequest() {
-        return new UpdateWalletDataRequest();
-    }
-
-    /**
-     * Create an instance of {@link UpdateWalletDataResponse }
-     * 
-     */
-    public UpdateWalletDataResponse createUpdateWalletDataResponse() {
-        return new UpdateWalletDataResponse();
     }
 
 }

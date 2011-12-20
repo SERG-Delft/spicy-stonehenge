@@ -31,13 +31,13 @@ public interface AsyncConfigurationServiceV1
 {
 
 
-    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> handler);
-
-    public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0);
-
     public Future<?> getClientConfigAsync(GetClientConfigRequest param0, AsyncHandler<GetClientConfigResponse> handler);
 
     public Response<GetClientConfigResponse> getClientConfigAsync(GetClientConfigRequest param0);
+
+    public Future<?> setServiceLocationAsync(SetServiceLocationRequest param0, AsyncHandler<SetServiceLocationResponse> handler);
+
+    public Response<SetServiceLocationResponse> setServiceLocationAsync(SetServiceLocationRequest param0);
 
     public Future<?> getBSConfigAsync(GetBSConfigRequest param0, AsyncHandler<GetBSConfigResponse> handler);
 
