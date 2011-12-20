@@ -13,13 +13,13 @@
 	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
 	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xmlns:tns="http://atlantis.st.ewi.tudelft.nl/v1/services"
+	xmlns:tns="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" name="QuoteService"
-	targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+	targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 	<wsdl:types>
 		<xs:schema attributeFormDefault="unqualified"
 			elementFormDefault="qualified"
-			targetNamespace="http://atlantis.st.ewi.tudelft.nl/v1/services">
+			targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
 			<xs:simpleType name="AckValue">
 				<xs:annotation>
 					<xs:documentation>
@@ -391,7 +391,7 @@
 			transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="getQuotes">
 			<soap:operation
-				soapAction="http://atlantis.st.ewi.tudelft.nl/v1/services/getQuotes" />
+				soapAction="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services/getQuotes" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>

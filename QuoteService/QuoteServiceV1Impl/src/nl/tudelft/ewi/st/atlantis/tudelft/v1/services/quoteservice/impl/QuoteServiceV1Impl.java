@@ -1,5 +1,5 @@
 
-package nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.impl;
+package nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,9 +15,9 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import nl.tudelft.ewi.st.atlantis.tudelft.external.v1.types.RemoteQuoteData;
-import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesRequest;
-import nl.tudelft.ewi.st.atlantis.v1.services.GetQuotesResponse;
-import nl.tudelft.ewi.st.atlantis.v1.services.quoteservice.QuoteServiceV1;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuotesRequest;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.GetQuotesResponse;
+import nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.QuoteServiceV1;
 
 public class QuoteServiceV1Impl
     implements QuoteServiceV1
