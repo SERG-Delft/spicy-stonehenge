@@ -15,48 +15,21 @@
     </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>gen-src</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
-    <outputDirectory>build/classes</outputDirectory>
-    <testOutputDirectory>build/classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <directory>gen-meta-src</directory>
-      </resource>
-      <resource>
-        <directory>meta-src</directory>
-      </resource>
-    </resources>
     <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <debug>true</debug>
-          <encoding>UTF-8</encoding>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.ebayopensource.turmeric.maven</groupId>
         <artifactId>turmeric-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <executions>
           <execution>
             <goals>
               <goal>gen-typelibrary</goal>
             </goals>
+            <configuration>
+            	<typelibNamespace>http://atlantis.st.ewi.tudelft.nl/tudelft/v1/types</typelibNamespace>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <verbose>true</verbose>
-          <legacy>true</legacy>
-          <resourcesOutputDirectory>${project.basedir}/gen-meta-src</resourcesOutputDirectory>
-          <outputDirectory>${project.basedir}/gen-src</outputDirectory>
-        </configuration>
       </plugin>
     </plugins>
   </build>

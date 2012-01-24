@@ -22,6 +22,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -231,12 +232,12 @@ public class DerbyMarketSummaryDAO extends AbstractDerbyDAO implements MarketSum
 				high = quote.getValue();
 			}
 			
-			BigDecimal value = new BigDecimal(quote.getValue());
+			BigDecimal value = new BigDecimal(quote.getValue()).setScale(4, RoundingMode.HALF_UP);
 			
 			updateStockPriceVolumeStat = sqlConnection.prepareStatement(SQL_UPDATE_STOCKPRICEVOLUME);
 			updateStockPriceVolumeStat.setBigDecimal(1, value);
-			updateStockPriceVolumeStat.setBigDecimal(2, new BigDecimal(low));
-			updateStockPriceVolumeStat.setBigDecimal(3, new BigDecimal(high));
+			updateStockPriceVolumeStat.setBigDecimal(2, new BigDecimal(low).setScale(4, RoundingMode.HALF_UP));
+			updateStockPriceVolumeStat.setBigDecimal(3, new BigDecimal(high).setScale(4, RoundingMode.HALF_UP));
 			updateStockPriceVolumeStat.setBigDecimal(4, value);
 			updateStockPriceVolumeStat.setFloat(5, (float) quantity);
 			updateStockPriceVolumeStat.setString(6, quote.getTicker());

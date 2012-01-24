@@ -82,58 +82,13 @@
 	</dependency>
   </dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>src-test</testSourceDirectory>
-    <outputDirectory>build/classes</outputDirectory>
-    <testOutputDirectory>build/classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <directory>gen-meta-src</directory>
-      </resource>
-      <resource>
-        <directory>meta-src</directory>
-      </resource>
-      <resource>
-        <directory>gen-web-content</directory>
-      </resource>
-    </resources>
+    
     <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <debug>true</debug>
-          <encoding>UTF-8</encoding>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>gen-src/service</source>
-                <source>gen-src/client</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+      
       <plugin>
         <groupId>org.ebayopensource.turmeric.maven</groupId>
         <artifactId>turmeric-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <executions>
           <execution>
             <goals>
@@ -143,11 +98,9 @@
         </executions>
         <configuration>
           <verbose>true</verbose>
-          <legacy>true</legacy>
-          <serviceName>${serviceName}</serviceName>
-          <resourcesOutputDirectory>${project.basedir}/gen-meta-src</resourcesOutputDirectory>
-          <outputDirectory>${project.basedir}/gen-src/service</outputDirectory>
-        </configuration>
+          <useClassnameFromConfig>true</useClassnameFromConfig>
+          <serviceName>ExchangeServiceV1</serviceName>
+       </configuration>
       </plugin>
     </plugins>
   </build>

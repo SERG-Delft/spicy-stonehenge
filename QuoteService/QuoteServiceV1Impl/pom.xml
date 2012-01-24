@@ -2,14 +2,14 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.ebayopensource.turmeric.impl</groupId>
+  <groupId>nl.tudelft.ewi.st.atlantis.tudelft.impl</groupId>
   <artifactId>QuoteServiceV1Impl</artifactId>
   <version>1.0.0</version>
   <name>QuoteServiceV1Impl</name>
   <properties>
     <requiredServices></requiredServices>
     <serviceName>QuoteServiceV1</serviceName>
-    <serviceGroupID>org.ebayopensource.turmeric.intf</serviceGroupID>
+    <serviceGroupID>nl.tudelft.ewi.st.atlantis.tudelft.intf</serviceGroupID>
   </properties>
   <dependencies>
     <dependency>
@@ -17,11 +17,6 @@
       <artifactId>junit</artifactId>
       <version>4.4</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.ebayopensource.turmeric.intf</groupId>
-      <artifactId>QuoteServiceV1</artifactId>
-      <version>1.0.0</version>
     </dependency>
     <dependency>
     	<groupId>org.ebayopensource.turmeric.runtime</groupId>
@@ -37,60 +32,20 @@
     	<type>jar</type>
     	<scope>provided</scope>
     </dependency>
+    <dependency>
+    	<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
+    	<artifactId>QuoteServiceV1</artifactId>
+    	<version>1.0.0</version>
+    	<type>jar</type>
+    	<scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
-    <outputDirectory>build/classes</outputDirectory>
-    <testOutputDirectory>build/classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <directory>gen-meta-src</directory>
-      </resource>
-      <resource>
-        <directory>meta-src</directory>
-      </resource>
-      <resource>
-        <directory>gen-web-content</directory>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <debug>true</debug>
-          <encoding>UTF-8</encoding>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>gen-src/service</source>
-                <source>gen-src/client</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+  <plugins>
       <plugin>
         <groupId>org.ebayopensource.turmeric.maven</groupId>
         <artifactId>turmeric-maven-plugin</artifactId>
-        <version>1.0.1.0-SNAPSHOT</version>
+        <version>1.1.0</version>
         <executions>
           <execution>
             <goals>
@@ -100,11 +55,9 @@
         </executions>
         <configuration>
           <verbose>true</verbose>
-          <legacy>true</legacy>
-          <serviceName>${serviceName}</serviceName>
-          <resourcesOutputDirectory>${project.basedir}/gen-meta-src</resourcesOutputDirectory>
-          <outputDirectory>${project.basedir}/gen-src/service</outputDirectory>
-        </configuration>
+          <useClassnameFromConfig>true</useClassnameFromConfig>
+          <serviceName>QuoteServiceV1</serviceName>
+       </configuration>
       </plugin>
     </plugins>
   </build>

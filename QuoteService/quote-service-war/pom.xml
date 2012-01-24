@@ -8,7 +8,7 @@
   <description>Quote Service</description>
   <dependencies>
     <dependency>
-      <groupId>org.ebayopensource.turmeric.impl</groupId>
+      <groupId>nl.tudelft.ewi.st.atlantis.tudelft.impl</groupId>
       <artifactId>QuoteServiceV1Impl</artifactId>
       <version>1.0.0</version>
       <scope>compile</scope>
