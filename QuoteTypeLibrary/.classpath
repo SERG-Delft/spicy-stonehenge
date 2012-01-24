@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="gen-src"/>
-	<classpathentry kind="src" path="gen-meta-src"/>
-	<classpathentry kind="src" path="meta-src"/>
+	<classpathentry kind="src" path="target/generated-sources/codegen"/>
 	<classpathentry exported="true" kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="build/classes"/>

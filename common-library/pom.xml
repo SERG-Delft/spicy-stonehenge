@@ -16,11 +16,14 @@
   		<groupId>org.ebayopensource.turmeric.typelib</groupId>
   		<artifactId>TradeTypeLibrary</artifactId>
   		<version>1.0.0</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
   	</dependency>
   	<dependency>
   		<groupId>org.ebayopensource.turmeric.typelib</groupId>
   		<artifactId>QuoteTypeLibrary</artifactId>
   		<version>1.0.0</version>
+  		<type>jar</type>
   		<scope>compile</scope>
   	</dependency>
   	<dependency>
