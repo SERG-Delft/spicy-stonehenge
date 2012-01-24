@@ -9,7 +9,7 @@
   <properties>
     <requiredServices></requiredServices>
     <serviceName>OrderProcessorServiceV1</serviceName>
-    <serviceGroupID>org.ebayopensource.turmeric.intf</serviceGroupID>
+    <serviceGroupID>nl.tudelft.ewi.st.atlantis.tudelft.intf</serviceGroupID>
   </properties>
   <dependencies>
     <dependency>
@@ -27,19 +27,22 @@
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
     	<artifactId>common-library</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
+    	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
     <dependency>
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
     	<artifactId>ConfigurationServiceV1</artifactId>
     	<version>1.0.0</version>
-    	<scope>compile</scope>
+    	<type>jar</type>
+    	<scope>provided</scope>
     </dependency>
     <dependency>
-    	<groupId>org.ebayopensource.turmeric.intf</groupId>
+    	<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
     	<artifactId>QuoteServiceV1</artifactId>
     	<version>1.0.0</version>
-    	<scope>compile</scope>
+    	<type>jar</type>
+    	<scope>provided</scope>
     </dependency>
     <dependency>
     	<groupId>org.ebayopensource.turmeric.runtime</groupId>
@@ -57,59 +60,14 @@
     </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <testSourceDirectory>test</testSourceDirectory>
-    <outputDirectory>build/classes</outputDirectory>
-    <testOutputDirectory>build/classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <directory>gen-meta-src</directory>
-      </resource>
-      <resource>
-        <directory>meta-src</directory>
-      </resource>
-      <resource>
-        <directory>gen-web-content</directory>
-      </resource>
-    </resources>
+    
     <plugins>
+      
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <debug>true</debug>
-          <encoding>UTF-8</encoding>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>gen-src/service</source>
-                <source>gen-src/client</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.ebayopensource.turmeric.maven</groupId>
-        <artifactId>turmeric-maven-plugin</artifactId>
-        <version>1.0.1.0-SNAPSHOT</version>
-        <executions>
+      	<groupId>org.ebayopensource.turmeric.maven</groupId>
+      	<artifactId>turmeric-maven-plugin</artifactId>
+      	<version>1.1.0</version>
+      	<executions>
           <execution>
             <goals>
               <goal>gen-implementation</goal>
@@ -118,11 +76,9 @@
         </executions>
         <configuration>
           <verbose>true</verbose>
-          <legacy>true</legacy>
-          <serviceName>${serviceName}</serviceName>
-          <resourcesOutputDirectory>${project.basedir}/gen-meta-src</resourcesOutputDirectory>
-          <outputDirectory>${project.basedir}/gen-src/service</outputDirectory>
-        </configuration>
+          <useClassnameFromConfig>true</useClassnameFromConfig>
+          <serviceName>OrderProcessorServiceV1</serviceName>
+       </configuration>
       </plugin>
     </plugins>
   </build>

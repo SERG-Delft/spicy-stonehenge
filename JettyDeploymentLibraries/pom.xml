@@ -3,7 +3,7 @@
   <groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
   <artifactId>JettyDeploymentLibraries</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <name>JettyDeploymentLibraries</name>
   <dependencies>
   	<dependency>

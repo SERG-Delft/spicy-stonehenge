@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
+    <service-impl-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.impl.ExchangeServiceV1Impl</service-impl-class-name>
+    <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.intf.ExchangeServiceV1</service-interface-class-name>
+    <service-instance-config>
+        <protocol-processor version="1.1" name="SOAP11">
+            <indicator>
+                <transport-header name="X-TURMERIC-MESSAGE-PROTOCOL">SOAP11</transport-header>
+            </indicator>
+            <class-name>org.ebayopensource.turmeric.runtime.spf.impl.protocolprocessor.soap.ServerSOAPProtocolProcessor</class-name>
+        </protocol-processor>
+        <protocol-processor version="1.2" name="SOAP12">
+            <indicator>
+                <transport-header name="X-TURMERIC-MESSAGE-PROTOCOL">SOAP12</transport-header>
+            </indicator>
+            <class-name>org.ebayopensource.turmeric.runtime.spf.impl.protocolprocessor.soap.ServerSOAPProtocolProcessor</class-name>
+        </protocol-processor>
+    </service-instance-config>
+</service-config>
