@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
+    <service-impl-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.businessservice.impl.BusinessServiceV1Impl</service-impl-class-name>
+    <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.intf.BusinessServiceV1</service-interface-class-name>
+    <service-instance-config>
+    	<!-- <provider-options>
+		  <request-header-mapping-options>
+		    <option name="X-TURMERIC-OPERATION-NAME">header[SOAPAction]</option>
+		  </request-header-mapping-options>
+		</provider-options> -->
+        <protocol-processor version="1.1" name="SOAP11">
+            <indicator>
+                <transport-header name="X-TURMERIC-MESSAGE-PROTOCOL">SOAP11</transport-header>
+            </indicator>
+            <class-name>org.ebayopensource.turmeric.runtime.spf.impl.protocolprocessor.soap.ServerSOAPProtocolProcessor</class-name>
+        </protocol-processor>
+        <protocol-processor version="1.2" name="SOAP12">
+            <indicator>
+                <transport-header name="X-TURMERIC-MESSAGE-PROTOCOL">SOAP12</transport-header>
+            </indicator>
+            <class-name>org.ebayopensource.turmeric.runtime.spf.impl.protocolprocessor.soap.ServerSOAPProtocolProcessor</class-name>
+        </protocol-processor>
+        <pipeline-config>
+            <request-handlers>
+                 <handler name="ServerRequest">
+                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ServerRequestFilter</class-name>
+                 </handler>
+             </request-handlers>
+             <response-handlers>
+                 <handler name="ServerResponse">
+                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ServerResponseFilter</class-name>
+                 </handler>
+             </response-handlers>
+         </pipeline-config>
+    </service-instance-config>
+</service-config>
