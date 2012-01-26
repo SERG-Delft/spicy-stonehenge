@@ -22,18 +22,6 @@
 				</default-options>
 			
 			</transport>
-			<!-- <pipeline-config>
-            <request-handlers>
-                 <handler name="ClientRequest">
-                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ClientRequestFilter</class-name>
-                 </handler>
-             </request-handlers>
-             <response-handlers>
-                 <handler name="ClientResponse">
-                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ClientResponseFilter</class-name>
-                 </handler>
-             </response-handlers>
-         </pipeline-config> -->
         </client-instance-config>
     </client-config>
 </client-config-list>

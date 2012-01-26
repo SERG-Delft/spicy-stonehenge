@@ -39,7 +39,7 @@
     	<artifactId>BusinessServiceV1</artifactId>
     	<version>1.0.0</version>
     	<type>jar</type>
-    	<scope>compile</scope>
+    	<scope>provided</scope>
     </dependency>
 	<dependency>
 	    <groupId>org.apache.ddlutils</groupId>
