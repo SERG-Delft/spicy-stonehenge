@@ -22,6 +22,7 @@
       <groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
       <artifactId>OrderProcessorServiceV1</artifactId>
       <version>1.0.0</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
