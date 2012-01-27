@@ -351,7 +351,7 @@ public class DerbyOrderDAO extends AbstractDerbyDAO implements OrderDAO {
 				order.setAccountId(rs.getInt(1));
 			}
 		} catch (SQLException e) {
-
+			throw new DAOException("",e);
 		} finally {
 			if (getAccountId != null) {
 				try {

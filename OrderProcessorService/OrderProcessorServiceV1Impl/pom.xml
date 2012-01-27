@@ -29,7 +29,7 @@
     	<artifactId>common-library</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     	<type>jar</type>
-    	<scope>compile</scope>
+    	<scope>provided</scope>
     </dependency>
     <dependency>
     	<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>

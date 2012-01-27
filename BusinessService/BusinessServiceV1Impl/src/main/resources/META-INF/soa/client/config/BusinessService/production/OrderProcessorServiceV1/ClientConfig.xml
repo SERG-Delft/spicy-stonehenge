@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <client-config-list xmlns="http://www.ebayopensource.org/turmeric/common/config">
     <client-config group="CommonClientGroup">
-        <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.orderprocessorservice.OrderProcessorServiceV1</service-interface-class-name>
+        <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.intf.OrderProcessorServiceV1</service-interface-class-name>
         <service-location>http://localhost:8080/orderprocessor/OrderProcessorServiceV1</service-location>
         <client-instance-config>
             <invocation-options>
