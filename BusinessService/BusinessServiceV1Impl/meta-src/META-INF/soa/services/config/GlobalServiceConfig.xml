@@ -22,6 +22,11 @@
 					<handler name="G11N">
 						<class-name>org.ebayopensource.turmeric.runtime.spf.impl.handlers.G11nHandler</class-name>
 					</handler>
+					<request-handlers>
+                 <handler name="ServerRequest">
+                     <class-name>nl.tudelft.ewi.st.SflHandler</class-name>
+                 </handler>
+             </request-handlers>
 				</request-handlers>
 				<logging-handler>
 					<class-name>org.ebayopensource.turmeric.runtime.spf.impl.pipeline.ServerLoggingHandler</class-name>
