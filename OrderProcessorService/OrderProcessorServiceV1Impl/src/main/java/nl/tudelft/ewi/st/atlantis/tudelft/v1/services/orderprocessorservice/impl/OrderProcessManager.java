@@ -113,6 +113,7 @@ public class OrderProcessManager {
 			
 			order.setPrice(price);
 
+			System.out.println("order type is:"+order.getOrderType());
 			if (StockTraderUtility.ORDER_TYPE_BUY.equals(order.getOrderType())) {
 				holdingId = orderDAO.createHolding(order);
 				BigDecimal orderQuantity = BigDecimal.valueOf(order
@@ -150,6 +151,7 @@ public class OrderProcessManager {
 			orderDAO.commitTransaction();
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			try {
 				orderDAO.rollbackTransaction();
 				logger.error("", e);
