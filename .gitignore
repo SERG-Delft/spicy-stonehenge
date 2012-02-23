@@ -1,3 +1,11 @@
 *.war
 *.jar
 *.class
+target/
+gen-src/
+gen-test/
+build/
+gen-meta-src/
+gen-web-content/
+.DS_Store
+.externalToolBuilders/
