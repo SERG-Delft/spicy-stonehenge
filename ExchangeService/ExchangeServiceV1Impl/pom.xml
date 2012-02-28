@@ -103,6 +103,21 @@
           <serviceName>ExchangeServiceV1</serviceName>
        </configuration>
       </plugin>
+      
+      <plugin>
+    <groupId>org.pitest</groupId>
+    <artifactId>pitest-maven</artifactId>
+    <version>0.25</version>
+    <configuration>
+      <inScopeClasses>
+        <param>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.impl*</param>
+      </inScopeClasses>
+      <targetClasses>
+        <param>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.exchangeservice.impl*</param>
+      </targetClasses>
+    </configuration>
+  </plugin>
+      
     </plugins>
   </build>
 </project>
