@@ -9,3 +9,4 @@ gen-meta-src/
 gen-web-content/
 .DS_Store
 .externalToolBuilders/
+derby.log

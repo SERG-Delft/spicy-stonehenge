@@ -7,9 +7,9 @@
   <description>The set of classes that are shared across several web services</description>
   <dependencies>
   	<dependency>
-  		<groupId>org.apache.commons</groupId>
-  		<artifactId>org.apache.commons.logging</artifactId>
-  		<version>1.0.4.v200706111724</version>
+  		<groupId>commons-logging</groupId>
+  		<artifactId>commons-logging</artifactId>
+  		<version>1.0.4</version>
   		<scope>provided</scope>
   	</dependency>
   	<dependency>
