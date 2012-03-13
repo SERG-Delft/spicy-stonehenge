@@ -32,6 +32,7 @@ public class OrderProcessorServiceV1Impl implements OrderProcessorServiceV1
 		try {
 			processOrder(order);
 		} catch (DAOException e) {
+			e.printStackTrace();
 			logger.error("", e);
 		}
 		
