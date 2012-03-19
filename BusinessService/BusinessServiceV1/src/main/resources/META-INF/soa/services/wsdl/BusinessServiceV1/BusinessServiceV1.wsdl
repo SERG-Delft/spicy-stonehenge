@@ -19,7 +19,6 @@
 	<wsdl:types>
 		<xs:schema attributeFormDefault="unqualified"
 			elementFormDefault="qualified" targetNamespace="http://atlantis.st.ewi.tudelft.nl/tudelft/v1/services">
-
 			<xs:element name="getOrdersRequest"
 				type="tns:GetOrdersRequest" />
 			<xs:complexType name="GetOrdersRequest">
