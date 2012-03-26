@@ -1,0 +1,563 @@
+SHIP	Seanergy Maritime Holdings Corp
+SHIPW	Seanergy Maritime Holdings Corp
+SHLD	Sears Holdings Corp.
+SHLM	A. Schulman
+SHLO	Shiloh Industries
+SHOO	Steven Madden
+SHOR	Shoretel
+SHPGY	Shire Plc
+SIAL	Sigma-Aldrich Corp.
+SIBC	State Investors Bancorp Inc.
+SIEB	Siebert Financial
+SIFI	Si Financial Group
+SIFY	Sify Technologies Limited
+SIGA	Siga Technologies Inc.
+SIGI	Selective Insurance Group
+SIGM	Sigma Designs
+SILC	Silicom Ltd
+SIMG	Silicon Image
+SIMO	Silicon Motion Technology Corp.
+SINA	Sina Corp.
+SINO	Sino-Global Shipping America
+SIRI	Sirius Xm Radio Inc.
+SIRO	Sirona Dental Systems
+SIVB	Svb Financial Group
+SIVBO	Svb Financial Group
+SKBI	Skystar Bio-Pharmaceutical Company
+SKUL	Skullcandy Inc.
+SKYW	Skywest
+SKYY	First Trust Ise Cloud Computing
+SLAB	Silicon Laboratories
+SLGN	Silgan Holdings
+SLP	Simulations Plus
+SLRC	Solar Capital Ltd
+SLTC	Selectica
+SLTM	Solta Medical Inc
+SLXP	Salix Pharmaceuticals
+SMBC	Southern Missouri Bancorp
+SMBL	Smart Balance Inc
+SMCG	Millenium India Acquisition Company Inc.
+SMCI	Super Micro Computer
+SMED	Sharps Compliance Corp
+SMIT	Schmitt Industries
+SMMF	Summit Financial Group
+SMOD	SMART Modular Technologies (WWH) Inc.
+SMRT	Stein Mart
+SMSC	Standard Microsystems Corp.
+SMSI	Smith Micro Software
+SMT	Smart Technologies Inc.
+SMTC	Semtech Corp.
+SMTX	Smtc Corp.
+SNAK	Inventure Foods
+SNBC	Sun Bancorp
+SNCR	Synchronoss Technologies
+SNDA	Shanda Interactive Entertainment Limited
+SNDK	Sandisk Corp.
+SNFCA	Security National Financial Corp.
+SNHY	Sun Hydraulics Corp.
+SNMX	Senomyx
+SNPS	Synopsys
+SNSS	Sunesis Pharmaceuticals
+SNSTA	Sonesta International Hotels Corp.
+SNTA	Synta Pharmaceuticals
+SNTS	Santarus
+SOCB	Southcoast Financial Corp.
+SODA	Sodastream International Ltd
+SOFO	Sonic Foundry
+SOHU	Sohu.Com Inc.
+SOMH	Somerset Hills Bancorp
+SOMX	Somaxon Pharmaceuticals
+SONA	Southern National Bancorp Of Virginia
+SONC	Sonic
+SONE	S1 Corp.
+SONO	Sonosite
+SONS	Sonus Networks
+SORL	Sorl Auto Parts
+SOXX	Phlx Sox Semiconductor Sector
+SPAN	Span-America Medical Systems
+SPAR	Spartan Motors
+SPBC	Sp Bancorp
+SPCHA	Sport Chalet
+SPCHB	Sport Chalet
+SPEX	Spherix Inc.
+SPIL	Siliconware Precision Industries Company Ltd
+SPIR	Spire Corp.
+SPLS	Staples
+SPMD	Supermedia Inc.
+SPNC	The Spectranetics Corp.
+SPNS	Sapiens International Corporation N.V.
+SPPI	Spectrum Pharmaceuticals
+SPPR	Supertel Hospitality
+SPPRO	Supertel Hospitality
+SPPRP	Supertel Hospitality
+SPRD	Spreadtrum Communications
+SPRO	Smartpros Ltd
+SPRT	Support.Com
+SPSC	Sps Commerce
+SPTN	Spartan Stores
+SPU	Skypeople Fruit Juice
+SPWRA	Sunpower Corp.
+SPWRB	Sunpower Corp.
+SQI	Sciquest
+SQNM	Sequenom
+SQQQ	Ultrapro Short QQQ
+SRCE	1St Source Corp.
+SRCL	Stericycle
+SRDX	Surmodics
+SREV	Servicesource International In
+SRLS	Seracare Life Sciences Inc
+SRSL	Srs Labs
+SSBI	Summit State Bank
+SSFN	Stewardship Financial Corp
+SSNC	SS&C Technologies Holdings
+SSRI	Silver Standard Resources Inc
+SSRX	3Sbio Inc.
+SSYS	Stratasys
+STAA	Staar Surgical Company
+STAN	Standard Parking Corp.
+STBA	S&T Bancorp
+STBC	State Bancorp
+STBZ	State Bank Finl Corp
+STEC	Stec
+STEI	Stewart Enterprises
+STEL	Stellarone Corp.
+STEM	Stemcells
+STFC	State Auto Financial Corp.
+STKL	Sunopta
+STLD	Steel Dynamics
+STLY	Stanley Furniture Company
+STMP	Stamps.Com Inc.
+STND	Standard Financial
+STNR	Steiner Leisure Limited
+STON	Stonemor Partners L.P.
+STRA	Strayer Education
+STRC	Sri/Surgical Express
+STRL	Sterling Construction Company Inc
+STRM	Streamline Health Solutions
+STRN	Sutron Corp.
+STRS	Stratus Properties
+STRT	Strattec Security Corp.
+STSA	Sterling Financial Corp.
+STX	Seagate Technology.
+STXS	Stereotaxis
+SUBK	Suffolk Bancorp
+SUMR	Summer Infant
+SUNH	Sun Healthcare Group
+SUNS	Solar Senior Capital Ltd.
+SUPG	Supergen
+SUPX	Supertex
+SURG	Synergetics Usa
+SURW	Surewest Communications
+SUSQ	Susquehanna Bancshares
+SUSS	Susser Holdings Corp.
+SUTR	Sutor Technology Group Limited
+SVA	Sinovac Biotech
+SVBI	Severn Bancorp Inc
+SVNT	Savient Pharmaceuticals Inc
+SVVC	Firsthand Technology Value Fund
+SWHC	Smith & Wesson Holding Corp.
+SWIR	Sierra Wireless
+SWKS	Skyworks Solutions
+SWSH	Swisher Hygiene
+SWTX	Southwall Tech Inc#
+SXCI	Sxc Health Solutions
+SYBT	S.Y. Bancorp
+SYBTP	S.Y. Bancorp
+SYKE	Sykes Enterprises Inc.
+SYMC	Symantec Corp.
+SYMM	Symmetricom
+SYMS	Syms Corp
+SYMX	Synthesis Energy Systems
+SYNA	Synaptics Inc.
+SYNL	Synalloy Corp.
+SYNM	Syntroleum Corp.
+SYNO	Synovis Life Technologies
+SYNT	Syntel
+SYPR	Sypris Solutions
+SYUT	Synutra International
+SZYM	Solazyme Inc
+TACT	Transact Technologies Inc.
+TAIT	Taitron Components Inc.
+TASR	Taser International
+TAST	Carrols Restaurant Group
+TATT	Tat Technologies Ltd
+TAXI	Medallion Financial
+TAYC	Taylor Capital Group
+TAYCP	Taylor Capital Group
+TAYD	Taylor Devices
+TBAC	Tandy Brands Accessories
+TBBK	The Bancorp
+TBET	Tibet Pharmaceuticals
+TBNK	Territorial Bancorp Inc.
+TBOW	Trunkbow International Holdings Ltd
+TBSI	Tbs International Plc
+TBUS	Dri Corp.
+TCBI	Texas Capital Bancshares
+TCBIW	Texas Capital Bancshares
+TCBK	Trico Bancshares
+TCCO	Technical Communications Corp.
+TCHC	21St Century Holding Company
+TCLP	Tc Pipelines Lp
+TCRD	Thl Credit
+TEAR	Tearlab Corp.
+TECD	Tech Data Corp.
+TECH	Techne Corp.
+TECUA	Tecumseh Products Company
+TECUB	Tecumseh Products Company
+TELK	Telik
+TESO	Tesco Corp.
+TESS	Tessco Technologies Inc.
+TEVA	Teva Pharmaceutical Industries Limited
+TFCO	Tufco Technologies
+TFM	The Fresh Market
+TFONY	Telefonos De Mexico
+TFSL	Tfs Financial Corp.
+TGA	Transglobe Energy Corp
+TGAL	Tegal Corp.
+TGE	Tgc Industries
+THER	Thermocompact S.A.
+THFF	First Financial Corporation Indiana
+THLD	Threshold Pharmaceuticals
+THOR	Thoratec Corp.
+THQI	Thq Inc.
+THRD	Tf Financial Corp.
+THRX	Theravance
+THTI	Tht Heat Transfer Technology
+TIBB	Tib Financial Corp.
+TIBX	Tibco Software
+TICC	Ticc Capital
+TIER	Tier Technologies
+TIGR	Tigerlogic Corp.
+TIII	Tii Network Technologies
+TINY	Harris & Harris Group
+TISA	Top Image Systems
+TISI	Team
+TITN	Titan Machinery Inc.
+TIVO	Tivo Inc.
+TKLC	Tekelec
+TKMR	Tekmira Pharmaceuticals Corp
+TLAB	Tellabs
+TLEO	Taleo Corp.
+TLF	Tandy Leather Factory
+TLVT	Telvent Git S.A.
+TMNG	The Management Network Group
+TNAV	Telenav
+TNCC	Tennessee Commerce Bancorp Inc.
+TNDM	Neutral Tandem
+TNGN	Tengion
+TNGO	Tangoe Inc.
+TOBC	Tower Bancorp Inc
+TOFC	Tower Financial Corp.
+TOPS	Top Ships Inc.
+TORM	Tor Minerals International Inc
+TOWN	Towne Bank
+TPCG	Tpc Group
+TPGI	Thomas Properties Group
+TQNT	Triquint Semiconductor
+TQQQ	Ultrapro QQQ
+TRAK	Dealertrack Holdings
+TRBR	Trailer Bridge
+TRCR	Transcend Services
+TREE	Tree.Com
+TRGL	Toreador Resources Corp.
+TRGT	Targacept
+TRIB	Trinity Biotech Plc
+TRID	Trident Microsystems
+TRIT	Tri-Tech Holding Inc.
+TRLG	True Religion Apparel
+TRMB	Trimble Navigation Limited
+TRMD	Torm A/S
+TRMK	Trustmark Corp.
+TRMS	Trimeris
+TRNS	Transcat
+TRNX	Tornier N.V.
+TROW	T. Rowe Price Group
+TRS	Trimas Corp.
+TRST	Trustco Bank Corp Ny
+TSBK	Timberland Bancorp
+TSCO	Tractor Supply Company
+TSEM	Tower Semiconductor Ltd
+TSEMG	Tower Semiconductor Ltd.
+TSLA	Tesla Motors
+TSON	Trans1 Inc.
+TSPT	Transcept Pharmaceuticals
+TSRA	Tessera Technologies
+TSRI	Tsr
+TSRX	Trius Therapeutics
+TST	Thestreet.Com
+TSTC	Telestone Technologies
+TSTF	Teamstaff
+TSYS	Telecommunication Systems
+TTEC	Teletech Holdings
+TTEK	Tetra Tech
+TTGT	Techtarget
+TTHI	Transition Therapeutics
+TTMI	Ttm Technologies
+TTWO	Take-Two Interactive Software
+TUDO	Tudou Holdings Limited
+TUES	Tuesday Morning
+TWER	Towerstream Corp.
+TWGP	Tower Group
+TWIN	Twin Disc Inc.
+TWMC	Trans World Entertainment
+TWTC	Tw Telecom Inc.
+TXCC	Transwitch Corp.
+TXRH	Texas Roadhouse
+TYPE	Monotype Imaging Holdings Inc.
+TZOO	Travelzoo Inc
+TZYM	Tranzyme Inc.
+UACL	Universal Truckload Services
+UBCP	United Bancorp
+UBFO	United Security Bancshares
+UBNK	United Financial Bancorp
+UBOH	United Bancshares
+UBPS	Universal Business Payment Solu
+UBPSU	Universal Business Payment Solu
+UBPSW	Universal Business Payment Solu
+UBSH	Union First Market Bankshares Corp.
+UBSI	United Bankshares
+UCBA	United Community Bancorp
+UCBI	United Community Banks
+UCFC	United Community Financial
+UCTT	Ultra Clean Holdings
+UDRL	Union Drilling
+UEIC	Universal Electronics Inc.
+UEPS	Net 1 Ueps Technologies
+UFCS	United Fire & Casualty Company
+UFPI	Universal Forest Products
+UFPT	Ufp Technologies
+UG	United-Guardian
+UHAL	Amerco
+ULBI	Ultralife Corp.
+ULGX	Urologix
+ULTA	Ulta Salon Cosmetics & Fragrance
+ULTI	The Ultimate Software Group
+ULTR	Ultrapetrol [Bahamas] Limited
+UMBF	Umb Financial Corp.
+UMPQ	Umpqua Holdings Corp.
+UNAM	Unico American Corp.
+UNB	Union Bankshares
+UNFI	United Natural Foods
+UNIS	Unilife Corp.
+UNTD	United Online
+UNTK	Unitek Global Services
+UNTY	Unity Bancorp
+UNXL	Uni-Pixel
+UPI	Uroplasty
+URBN	Urban Outfitters
+URRE	Uranium Resources
+USAK	Usa Truck
+USAP	Universal Stainless & Alloy Products
+USAT	Usa Technologies
+USATP	Usa Technologies
+USATW	Usa Technologies
+USATZ	Usa Technologies
+USBI	United Security Bancshares
+USCR	U S Concrete
+USEG	U.S. Energy
+USHS	U.S. Home Systems
+USLM	United States Lime & Minerals
+USMO	Usa Mobility
+USPH	U.S. Physical Therapy
+USTR	United Stationers Inc.
+UTEK	Ultratech
+UTHR	United Therapeutics Corp.
+UTIW	Uti Worldwide Inc.
+UTMD	Utah Medical Products
+UTSI	Utstarcom
+UVSP	Univest Corporation Of Pennsylvania
+VALU	Value Line
+VALV	Shengkai Innovations
+VASC	Vascular Solutions
+VBFC	Village Bank And Trust Financial
+VCBI	Virginia Commerce Bancorp
+VCIT	Vg Intermediate-Term ETF
+VCLK	Valueclick
+VCLT	Vg Long-Term ETF
+VCSH	Vg Short-Term ETF
+VDSI	Vasco Data Security International
+VECO	Veeco Instruments Inc.
+VELT	Velti Plc
+VGIT	Vg Intermediate -Term Bond ETF
+VGLT	Vg Long-Term Government Bond ETF
+VGSH	Vg Short Term Government Bond ETF
+VIAS	Viasystems Group
+VICL	Vical Inc.
+VICR	Vicor Corp.
+VIDE	Video Display Corp.
+VIFL	Food Technology Service
+VIMC	Vimicro International Corp.
+VIRC	Virco Manufacturing Corp.
+VISN	Visionchina Media
+VIST	Vist Financial Corp
+VITC	Vitacost.Com Inc.
+VIVO	Meridian Bioscience Inc.
+VLCCF	Knightsbridge Tankers Limited
+VLGEA	Village Super Market
+VLNC	Valence Technology
+VLTR	Volterra Semiconductor Corp.
+VLYWW	Valley National Bancorp
+VMBS	Vg Mortgage-Backed Securities ETF
+VMED	Virgin Media Inc.
+VNDA	Vanda Pharmaceuticals Inc.
+VNET	21Vianet Group Inc.
+VNQI	Vg Global Ex-U.S
+VOCS	Vocus
+VOD	Vodafone Group Plc
+VOLC	Volcano Corp.
+VONE	Vg Russell 1000 ETF
+VONG	Vg Russell 1000 Growth ETF
+VONV	Vg Russell 1000 Value ETF
+VOXX	Audiovox Corp.
+VPF	Valpey Fisher Corp.
+VPFG	Viewpoint Financial Group
+VPHM	Viropharma Inc.
+VPRT	Vistaprint N.V.
+VRA	Vera Bradley
+VRML	Vermillion
+VRNM	Verenium Corp.
+VRNT	Verint Systems Inc.
+VRSK	Verisk Analytics
+VRSN	Verisign
+VRTA	Vestin Realty Mortgage I
+VRTB	Vestin Realty Mortgage Ii
+VRTS	Virtus Investment Partners
+VRTU	Virtusa Corp.
+VRTX	Vertex Pharmaceuticals Inc.
+VRUS	Pharmasset
+VSAT	Viasat
+VSBN	Vsb Bancorp Inc. [Ny]
+VSCI	Vision-Sciences
+VSCP	Virtualscopics
+VSEA	Varian Semiconductor Equipment
+VSEC	Vse Corp.
+VSNT	Versant Corp.
+VTHR	Vg Russell 3000 ETF
+VTNC	Vitran Corp.
+VTRO	Vertro Inc
+VTSS	Vitesse Semicond
+VTUS	Ventrus Biosciences
+VTWG	Vg Russell 2000 Growth ETF
+VTWO	Vg Russell 2000 ETF
+VTWV	Vg Russell 2000 Value ETF
+VVTV	Valuevision Media
+VVUS	Vivus
+VXUS	Vg Total International Stock ETF
+VYFC	Valley Financial Corp.
+WABC	Westamerica Bancorporation
+WACLY	Wacoal Holdings Corp.
+WASH	Washington Trust Bancorp
+WAVX	Wave Systems
+WAYN	Wayne Savings Bancshares Inc.
+WBCO	Washington Banking Company
+WBKC	Wolverine Bancorp
+WBMD	Webmd Health Corp
+WBNK	Waccamaw Bankshares Inc
+WBSN	Websense
+WBSTP	Webster Preferred Capital Corp
+WCAA	Wca Waste Corp.
+WCBO	West Coast Bancorp
+WCRX	Warner Chilcott Plc
+WDFC	Wd-40 Company
+WEBM	Webmediabrands Inc
+WERN	Werner Enterprises
+WEST	Westinghouse Solar Inc
+WETF	Wisdomtree Invstmnts
+WEYS	Weyco Group
+WFD	Westfield Financial
+WFM	Whole Foods Market
+WFSL	Washington Federal
+WFSLW	Washington Federal
+WHRT	World Heart Corp.
+WIBC	Wilshire Bancorp
+WIFI	Boingo Wireless Inc.
+WILC	G. Willi-Food International Ltd
+WILN	Wi-Lan Inc
+WIN	Windstream Corp.
+WINA	Winmark Corp.
+WINN	Winn-Dixie Stores
+WIRE	Encore Wire Corp.
+WLB	Westmoreland Coal Company
+WLBC	Western Liberty Bancorp
+WLBPZ	Westmoreland Coal Company
+WLDN	Willdan Group
+WLFC	Willis Lease Finance Corp.
+WLFCP	Willis Lease Finance Corp.
+WMAR	West Marine
+WMCO	Williams Controls
+WMGI	Wright Medical Group
+WOLF	Great Wolf Resorts
+WOOD	S&P Global Timber &Forestry
+WOOF	Vca Antech
+WPCS	Wpcs International Inc.
+WPPGY	Wpp Plc
+WPRT	Westport Innovations Inc
+WRES	Warren Resources
+WRLD	World Acceptance Corp.
+WRLS	Telular Corp.
+WSB	Wsb Holdings
+WSBC	Wesbanco
+WSBF	Waterstone Financial
+WSCI	Wsi Industries Inc.
+WSFS	Wsfs Financial Corp.
+WSTG	Wayside Technology Group
+WSTL	Westell Technologies
+WTBA	West Bancorporation
+WTFC	Wintrust Financial Corp.
+WTFCW	Wintrust Financial Corp.
+WTSLA	The Wet Seal
+WUHN	Wuhan General Group [China]
+WVFC	Wvs Financial
+WVVI	Willamette Valley Vineyards
+WWAY	Westway Group
+WWD	Woodward
+WWIN	Winner Medical Group Inc.
+WWON	Westwood One
+WWVY	Warwick Valley Telephone Company
+WWWW	Web.Com Group Inc
+WYNN	Wynn Resorts Limited
+XATA	Xata Corp.
+XBKS	Xenith Bankshares
+XIDE	Exide Technologies
+XING	Qiao Xing Universal Resources
+XLNX	Xilinx
+XNPT	Xenoport
+XOMA	Xoma Ltd
+XRAY	Dentsply International Inc.
+XRIT	X-Rite Inc.
+XRTX	Xyratex Ltd
+XTEX	Crosstex Energy L.P.
+XTXI	Crosstex Energy
+XWES	World Energy Solutions Inc [De]
+XXIA	Ixia
+YAVY	Yadkin Valley Financial Corporation
+YDNT	Young Innovations
+YHOO	Yahoo! Inc.
+YNDX	Yandex N.V.
+YONG	Yongye International
+YORW	The York Water Company
+YRCW	Yrc Worldwide
+YTEC	Yucheng Technologies
+Z	Zillow Inc. Cl A
+ZAGG	Zagg Inc.
+ZANE	Zanett Inc.
+ZBRA	Zebra Technologies Corporation
+ZEUS	Olympic Steel
+ZGNX	Zogenix
+ZHNE	Zhone Technologies
+ZIGO	Zygo Corporation
+ZINC	Horsehead Holding
+ZION	Zions Bancorporation
+ZIONW	Zions Bancorporation
+ZIOP	Ziopharm Oncology Inc
+ZIP	Zipcar Inc.
+ZIPR	Ziprealty
+ZIXI	Zix Corporation
+ZLCS	Zalicus Inc.
+ZN	Zion Oil & Gas Inc
+ZNWAL	Zion Oil & Gas Inc
+ZNWAW	Zion Oil & Gas Inc
+ZOLL	Zoll Medical Corporation
+ZOLT	Zoltek Companies
+ZOOG	Zoo Entertainment
+ZOOM	Zoom Technologies
