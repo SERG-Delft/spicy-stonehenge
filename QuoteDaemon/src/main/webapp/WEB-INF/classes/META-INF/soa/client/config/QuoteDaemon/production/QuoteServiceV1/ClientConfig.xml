@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client-config-list xmlns="http://www.ebayopensource.org/turmeric/common/config">
+    <client-config>
+        <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.quoteservice.QuoteServiceV1</service-interface-class-name>
+        <service-location>http://localhost:8080/quoteservice/QuoteServiceV1</service-location>
+        <client-instance-config>
+            <invocation-options>
+                <preferred-transport name="HTTP11"/>
+                <request-data-binding>XML</request-data-binding>
+                <response-data-binding>XML</response-data-binding>
+                <invocation-use-case>QuoteDaemon</invocation-use-case>
+            </invocation-options>
+            <transport name="HTTP11">
+				<class-name>
+					org.ebayopensource.turmeric.runtime.sif.impl.transport.http.HTTPSyncAsyncClientTransport
+				</class-name>
+											
+				<default-options>
+					<socket-connect-timeout-msec>50000</socket-connect-timeout-msec>
+					<socket-read-timeout-msec>50000</socket-read-timeout-msec>
+					<invocation-timeout-msec>50000</invocation-timeout-msec>
+				</default-options>
+			
+			</transport>
+			<pipeline-config>
+            <request-handlers>
+                 <handler name="ClientRequest">
+                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ClientRequestFilter</class-name>
+                 </handler>
+             </request-handlers>
+             <response-handlers>
+                 <handler name="ClientResponse">
+                     <class-name>nl.tudelft.ewi.st.atlantis.v1.services.tools.filters.ClientResponseFilter</class-name>
+                 </handler>
+             </response-handlers>
+         </pipeline-config>
+        </client-instance-config>
+    </client-config>
+</client-config-list>

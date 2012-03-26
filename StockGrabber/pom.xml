@@ -5,11 +5,26 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>StockGrabber</name>
   <description>StockGrabber</description>
+  <repositories>
+    <!--other repositories if any-->
+    <repository>
+        <id>project.local</id>
+        <name>project</name>
+        <url>file:${project.basedir}/repo</url>
+    </repository>
+</repositories>
+
   <dependencies>
   	<dependency>
 		<groupId>org.apache.derby</groupId>
 		<artifactId>derbyclient</artifactId>
 		<version>10.8.2.2</version>
 	</dependency>
+	<dependency>
+    <groupId>org.zeromq</groupId>
+    <artifactId>ZMQ</artifactId>
+    <version>1.0</version>
+	</dependency>
   </dependencies>
+  
 </project>
