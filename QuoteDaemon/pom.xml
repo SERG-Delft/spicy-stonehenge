@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.tudelft.ewi.st.atlantis.tudelft</groupId>
+  <artifactId>QuoteDaemon</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>QuoteDaemon</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.quartz-scheduler</groupId>
+  		<artifactId>quartz</artifactId>
+  		<version>2.1.1</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet</artifactId>
+  		<version>2.4.0.v200706111738</version>
+  		<type>jar</type>
+  		<scope>compile</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>nl.tudelft.ewi.st.atlantis.tudelft.intf</groupId>
+  		<artifactId>QuoteServiceV1</artifactId>
+  		<version>1.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.ebayopensource.turmeric.runtime</groupId>
+  		<artifactId>soa-client</artifactId>
+  		<version>1.1.0</version>
+  		<scope>provided</scope>
+  	</dependency>
+  </dependencies>
+</project>
