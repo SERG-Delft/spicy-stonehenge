@@ -1,0 +1,563 @@
+CNYD	China Yida Holding Co.
+COBK	Colonial Financial Services
+COBR	Cobra Electronics Corp.
+COBZ	Cobiz Financial Inc.
+COCO	Corinthian Colleges
+COGO	Cogo Group
+COHR	Coherent
+COHU	Cohu
+COKE	Coca-Cola Bottling Co. Consolidated
+COLB	Columbia Banking System
+COLM	Columbia Sportswear Company
+COMV	Comverge
+CONN	Conn's
+COOL	Majesco Entertainment Company
+CORE	Core-Mark Holding Company
+CORT	Corcept Therapeutics Inc.
+COSI	Cosi
+COST	Costco Wholesale Corp.
+COWN	Cowen Group
+CPBC	Community Partners Bancorp
+CPBK	Community Capital Corp.
+CPGI	China Shengda Packaging Group
+CPHC	Canterbury Park Holding Corp.
+CPHD	Cepheid
+CPIX	Cumberland Pharmaceuticals Inc.
+CPLA	Capella Education Company
+CPLP	Capital Product Partners L.P.
+CPNO	Copano Energy L.L.C.
+CPRT	Copart
+CPRX	Catalyst Pharmaceutical Partners
+CPSI	Computer Programs And Systems
+CPSL	China Precision Steel
+CPSS	Consumer Portfolio Services
+CPST	Capstone Turbine Corp.
+CPTS	Conceptus
+CPWM	Cost Plus
+CPWR	Compuware Corp.
+CRAI	Cra Internationalinc.
+CRAY	Cray Inc
+CRBC	Citizens Republic Bancorp
+CRDC	Cardica
+CRDN	Ceradyne
+CRDS	Crossroads Systems#
+CRED	Credo Petroleum Corp.
+CREE	Cree
+CREG	China Recycling Energy Corp.
+CRESW	Cresud S.A.C.I.F. Y A.
+CRESY	Cresud S.A.C.I.F. Y A.
+CRFN	Crescent Financial Corp.
+CRIC	China Real Estate Information
+CRIS	Curis
+CRMB	57Th Str Gen Acquisi
+CRMBU	57Th Str Gen Acquisi
+CRMBW	57Th Str Gen Acquisi
+CRME	Cardiome Pharma Corp.
+CRMT	America's Car-Mart
+CRNT	Ceragon Networks Ltd
+CROX	Crocs
+CRRC	Courier Corp.
+CRTX	Cornerstone Therapeutics Inc.
+CRUS	Cirrus Logic
+CRVL	Corvel
+CRWN	Crown Media Holdings
+CRWS	Crown Crafts
+CRYP	Cryptologic Limited
+CRZO	Carrizo Oil & Gas
+CSBC	Citizens South Banking Corp.
+CSBK	Clifton Savings Bancorp
+CSCD	Cascade Microtech
+CSCO	Cisco Systems
+CSFL	Centerstate Banks
+CSGP	Costar Group
+CSGS	Csg Systems International
+CSII	Cardiovascular Systems
+CSIQ	Canadian Solar Inc.
+CSKI	China Sky One Medical
+CSOD	Cornerstone Ondemand Inc.
+CSPI	Csp Inc.
+CSRE	CSR plc
+CSREV	Csr Plc
+CSTR	Coinstar
+CSUN	China Sunergy Co.
+CSWC	Capital Southwest Corp.
+CTAS	Cintas Corp.
+CTBC	The Connecticut Bank And Trust
+CTBI	Community Trust Bancorp
+CTCH	Commtouch Software Ltd
+CTCM	Ctc Media
+CTCT	Constant Contact
+CTDC	China Technology Development
+CTEL	City Telecom [H.K.] Limited
+CTFO	China Transinfo Technology
+CTGX	Computer Task Group Inc.
+CTHR	Charles & Colvard Ltd
+CTIB	Cti Industries Corp.
+CTIC	Cell Therapeutics
+CTRN	Citi Trends
+CTRP	Ctrip.Com International
+CTSH	Cognizant Technology Solutions
+CTWS	Connecticut Water Service
+CTXS	Citrix Systems
+CU	Ft ETF Ii First Trust Ise Global Coppe
+CUBA	The Herzfeld Caribbean Basin Fund
+CUTR	Cutera
+CVBF	Cvb Financial Corp.
+CVBK	Central Virginia Bankshares
+CVCO	Cavco Industries
+CVCY	Central Valley Community Bancorp
+CVGI	Commercial Vehicle Group
+CVGW	Calavo Growers
+CVLT	Commvault Systems
+CVLY	Codorus Valley Bancorp Inc
+CVTI	Covenant Transportation Group
+CVV	Cvd Equipment Corp.
+CVVT	China Valves Technology
+CWBC	Community West Bancshares
+CWBS	Commonwealth Bankshares
+CWCO	Consolidated Water Co. Ltd
+CWEI	Clayton Williams Energy
+CWST	Casella Waste Systems
+CWTR	Coldwater Creek
+CXDC	China Xd Plastics Company
+CXPO	Crimson Exploration Inc.
+CY	Cypress Semiconductor Corp.
+CYAN	Cyanotech Corp.
+CYBE	Cyberoptics Corp.
+CYBI	Cybex International
+CYBX	Cyberonics
+CYCC	Cyclacel Pharmaceuticals
+CYCCP	Cyclacel Pharmaceuticals
+CYDE	Cyberdefender Corp.
+CYMI	Cymer
+CYNO	Cynosure
+CYOU	Changyou.Com Limited
+CYTK	Cytokinetics Inc.
+CYTR	Cytrx Corp.
+CYTX	Cytori Therapeutics Inc
+CYTXW	Cytori Therapeutics Inc
+CZFC	Citizens First Corp.
+CZNC	Citizens & Northern Corp
+CZWI	Citizens Community Bancorp
+DAEG	Unify Corp.
+DAIO	Data I/O Corp.
+DAKT	Daktronics
+DARA	Dara Biosciences
+DATE	Jiayuan.Com International Ltd.
+DAVE	Famous Dave's Of America
+DBLE	Double Eagle Petroleum Company
+DBLEP	Double Eagle Petroleum Company
+DCIX	Diana Containerships Inc.
+DCOM	Dime Community Bancshares
+DCTH	Delcath Systems
+DDIC	Ddi
+DEAR	Dearborn Bancorp
+DECK	Deckers Outdoor Corp.
+DEER	Deer Consumer Products
+DELL	Dell Inc.
+DENN	Denny's Corp.
+DEPO	Depomed
+DEST	Destination Maternity Corp.
+DFR	Deerfield Capital
+DFZ	R.G. Barry Corp.
+DGAS	Delta Natural Gas Company
+DGICA	Donegal Group
+DGICB	Donegal Group
+DGII	Digi International Inc.
+DGIT	Dg Fastchannel
+DGLY	Digital Ally
+DHFT	Diamond Hill Financial Trends Fund
+DHIL	Diamond Hill Investment Group
+DHRM	Dehaier Medical Systems
+DIET	Ediets.Com
+DIOD	Diodes Inc.
+DISCA	Discovery Communications Inc
+DISCB	Discovery Communications Inc
+DISCK	Discovery Communications Inc
+DISH	Dish Network Corp.
+DITC	Ditech Networks
+DJCO	Daily Journal Corp. [S.C.]
+DLGC	Dialogic
+DLIA	Delia*S Inc.
+DLLR	Dollar Financial
+DLTR	Dollar Tree
+DMAN	Demandtec
+DMED	D. Medical Industries Ltd
+DMLP	Dorchester Minerals L.P.
+DMND	Diamond Foods
+DMRC	Digimarc Corp.
+DNBF	Dnb Financial Corp
+DNDN	Dendreon Corp.
+DNKN	Dunkin' Brands Group Inc.
+DORM	Dorman Products
+DOVR	Dover Saddlery
+DPTR	Delta Petroleum Corp.
+DRAD	Digirad Corp.
+DRAM	Dataram Corp.
+DRCO	Dynamics Research Corp.
+DRIV	Digital River
+DROOY	Drdgold Limited
+DRRX	Durect Corp.
+DRWI	Dragonwave Inc
+DRYS	Dryships Inc.
+DSCI	Derma Sciences
+DSCO	Discovery Laboratories
+DSGX	The Descartes Systems Group Inc.
+DSPG	Dsp Group
+DSTI	Daystar Technologies
+DSWL	Deswell Industries
+DTLK	Datalink Corp.
+DTSI	Dts
+DTV	Directv
+DUCK	Duckwall-Alco Stores
+DUSA	Dusa Pharmaceuticals
+DVAX	Dynavax Technologies Corp.
+DVOX	Dynavox Inc.
+DWA	Dreamworks Animation Skg
+DWCH	Datawatch Corp.
+DWSN	Dawson Geophysical Company
+DXCM	Dexcom
+DXPE	Dxp Enterprises
+DXYN	The Dixie Group
+DYAX	Dyax
+DYII	Dynacq Healthcare
+DYNT	Dynatronics Corp.
+DYSL	Dynasil Corporation Of America
+EAGL	Global Eagle Acquisition Corp.
+EAGLU	Global Eagle Acquisition Corp.
+EAGLW	Global Eagle Acquisition Corp.
+EBAY	Ebay Inc.
+EBIX	Ebix Inc
+EBMT	Eagle Bancorp Montana
+EBSB	Meridian Interstate Bancorp
+EBTC	Enterprise Bancorp Inc
+EBTX	Encore Bancshares
+ECBE	Ecb Bancorp Inc
+ECGI	Envoy Capital Group Inc.
+ECHO	Echo Global Logistics
+ECOL	US Ecology
+ECPG	Encore Capital Group Inc
+ECTE	Echo Therapeutics
+ECTY	Ecotality
+ECYT	Endocyte
+EDAC	Edac Technologies Corp.
+EDAP	Edap Tms S.A.
+EDGR	Edgar Online
+EDGW	Edgewater Technology
+EDMC	Education Management Corp.
+EDS	Exceed Company Ltd
+EDSUU	Exceed Company Ltd.
+EDSWW	Exceed Company Ltd
+EDUC	Educational Development Corp.
+EEFT	Euronet Worldwide
+EEI	Ecology And Environment
+EF	Edelman Financial Group Inc
+EFII	Electronics For Imaging
+EFOI	Energy Focus
+EFSC	Enterprise Financial Services Corp.
+EFUT	Efuture Information Technology Inc.
+EGBN	Eagle Bancorp
+EGHT	8X8 Inc
+EGLE	Eagle Bulk Shipping Inc.
+EGOV	Nic Inc.
+EHTH	Ehealth
+EIHI	Eastern Insurance Holdings
+ELGX	Endologix Inc
+ELMD	Electromed
+ELMG	EMS Technologies Inc.
+ELNK	Earthlink
+ELON	Echelon Corp.
+ELOS	Syneron Medical Ltd
+ELRC	Electro Rent Corp.
+ELSE	Electro-Sensors
+ELTK	Eltek Ltd
+EMCF	Emclaire Financial Corp
+EMCI	Emc Insurance Group
+EMFN	MSCI Emerging Markets Financials Sector
+EMIF	S&P Emerging Markets Infrastructure
+EMITF	Elbit Imaging Ltd
+EMKR	Emcore Corp.
+EMMS	Emmis Communications Corp.
+EMMSP	Emmis Communications Corp.
+EMMT	MSCI Emerging Markets Materials Sector
+ENDP	Endo Pharmaceuticals Holdings Inc.
+ENER	Energy Conversion Devices
+ENG	Englobal Corp.
+ENMD	Entremed
+ENOC	Enernoc
+ENSG	The Ensign Group
+ENTG	Entegris
+ENTR	Entropic Communications
+ENZN	Enzon Pharmaceuticals
+EONC	Eon Communications Corp.
+EOSPN	Eos Preferred Corp.
+EPAX	Ambassadors Group
+EPAY	Bottomline Technologies
+EPCT	Epicept Corp.
+EPHC	Epoch Holding Corp.
+EPIQ	Epiq Systems
+EPOC	Epocrates
+EQIX	Equinix
+ERIC	Lm Ericsson Telephone Company
+ERIE	Erie Indemnity Company
+ERII	Energy Recovery
+EROC	Eagle Rock Energy Partners L.P.
+EROCW	Eagle Rock Energy Partners L.P.
+ERT	Eresearch Technology Inc.
+ERTS	Electronic Arts Inc.
+ESBF	Esb Financial Corp.
+ESBK	The Elmira Savings Bank Fsb
+ESCA	Escalade Inc.
+ESEA	Euroseas Ltd
+ESGR	Enstar Group Limited
+ESIC	Easylink Services International Corp.
+ESIO	Electro Scientific Industries
+ESLR	Evergreen Solar Inc.
+ESLT	Elbit Systems Ltd
+ESMC	Escalon Medical
+ESRX	Express Scripts
+ESSA	Essa Bancorp
+ESSX	Essex Rental Corp.
+ESTE	Earthstone Energy
+ESYS	Elecsys Corp.
+ETFC	E*Trade Financial Corp.
+ETRM	Enteromedics Inc.
+EUFN	MSCI Europe Financials Sector
+EVBS	Eastern Virginia Bankshares
+EVEP	Ev Energy Partners L.P.
+EVOL	Evolving Systems
+EWBC	East West Bancorp
+EXAC	Exactech
+EXAR	Exar Corp.
+EXAS	Exact Sciences Corp.
+EXEL	Exelixis
+EXFO	Exfo Inc
+EXLP	Exterran Partners L.P.
+EXLS	Exlservice Holdings
+EXPD	Expeditors International Of Washington
+EXPE	Expedia
+EXPO	Exponent
+EXTR	Extreme Networks
+EXXI	Energy Xxi [Bermuda] Limited
+EZCH	Ezchip Semiconductor Limited
+EZPW	Ezcorp
+FABK	First Advantage Bancorp
+FACE	Physicians Formula Holdings
+FALC	Falconstor Software
+FARM	Farmer Brothers Company
+FARO	Faro Technologies
+FAST	Fastenal Company
+FBIZ	First Business Financial Services
+FBMI	Firstbank Corp.
+FBMS	The First Bancshares
+FBNC	First Bancorp
+FBNK	First Connecticut Bancorp Inc.
+FBRC	Fbr & Co
+FBSI	First Bancshares
+FBSS	Fauquier Bankshares
+FCAL	First California Financial Group
+FCAP	First Capital
+FCBC	First Community Bancshares
+FCCO	First Community Corp.
+FCCY	1St Constitution Bancorp [Nj]
+FCEL	Fuelcell Energy
+FCFC	Firstcity Financial Corp.
+FCFS	First Cash Financial Services
+FCHI	FTSE China [Hk Listed]
+FCLF	First Clover Leaf Financial
+FCNCA	First Citizens Bancshares
+FCTY	1St Century Bancshares Inc
+FCVA	First Capital Bancorp Inc. [Va]
+FCZA	First Citizens Banc
+FDEF	First Defiance Financial
+FDML	Federal-Mogul Corp.
+FDUS	Fidus Investment Corporation
+FEED	Agfeed Industries
+FEFN	MSCI Far East Financials Sector
+FEIC	Fei Company
+FEIM	Frequency Electronics
+FELE	Franklin Electric Co.
+FES	Forbes Energy Svcs
+FFBC	First Financial Bancorp.
+FFBCW	First Financial Bancorp.
+FFBH	First Federal Bancshares Of Arkansas
+FFCH	First Financial Holdings
+FFCO	Fedfirst Financial Corp.
+FFDF	Ffd Financial Corp.
+FFEX	Frozen Food Express Industries
+FFFD	North Central Bancshares
+FFHL	Fuwei Films Co.
+FFIC	Flushing Financial Corp.
+FFIN	First Financial Bankshares
+FFIV	F5 Networks
+FFKT	Farmers Capital Bank Corp.
+FFKY	First Financial Service Corp.
+FFN	Friendfinder Networks Inc.
+FFNM	First Federal Of Northern Michigan Bancorp
+FFNW	First Financial Northwest
+FHCO	Female Health Company
+FIBK	First Interstate Bancsystem
+FINL	The Finish Line
+FIRE	Sourcefire
+FISI	Financial Institutions
+FISV	Fiserv
+FITB	Fifth Third Bancorp
+FITBP	Fifth Third Bancorp
+FIZZ	National Beverage
+FLDM	Fluidigm Corp.
+FLEX	Flextronics International Ltd
+FLIC	The First Of Long Island Corp.
+FLIR	Flir Systems
+FLML	Flamel Technologies S.A.
+FLOW	Flow International Corp.
+FLWS	1-800 Flowers.Com
+FLXS	Flexsteel Industries
+FMAR	First Mariner Bancorp
+FMBI	First Midwest Bancorp
+FMCN	Focus Media Holding Limited
+FMER	Firstmerit Corp.
+FMFC	First M & F Corp.
+FNBN	Fnb United
+FNDT	Fundtech Ltd
+FNFG	First Niagara Financial Group Inc.
+FNGN	Financial Engines
+FNLC	First Bancorp Inc [Me]
+FNSR	Finisar Corp.
+FOLD	Amicus Therapeutics
+FONE	First Trust Nasdaq Cea Smartphone Index Fund
+FONR	Fonar Corp.
+FORD	Forward Industries
+FORM	Formfactor
+FORR	Forrester Research
+FORTY	Formula Systems Ltd
+FOSL	Fossil
+FPFC	First Place Financial
+FPIC	Fpic Insurance Group
+FPTB	First Pactrust Bancorp
+FRAN	Francesca's Holdings Corporatio
+FRBK	Republic First Bancorp
+FRCCO	First Republic Preferred Capital Corp.
+FRED	Fred's
+FREE	Freeseas Inc.
+FRME	First Merchants Corp.
+FRNK	Franklin Financial Corporation
+FRP	Fairpoint Communications
+FRPT	Force Protection
+FSBI	Fidelity Bancorp
+FSBK	First South Bancorp Inc
+FSCI	Fisher Communications
+FSFG	First Savings Financial Group
+FSGI	First Security Group
+FSII	Fsi International
+FSIN	Fushi Copperweld
+FSLR	First Solar
+FSRV	Firstservice Corp.
+FSTR	L.B. Foster Company
+FSYS	Fuel Systems Solutions
+FTEK	Fuel Tech
+FTLK	Funtalk China Holdings Limited
+FTNT	Fortinet
+FTWR	Fibertower Corp.
+FUBC	1St United Bancorp Inc. [Fl]
+FUEL	Smf Energy Corp.
+FULL	Full Circle Capital Corp.
+FULT	Fulton Financial Corp.
+FUNC	First United Corp.
+FUND	Royce Focus Trust
+FURX	Furiex Pharmaceuticals
+FWLT	Foster Wheeler Ag.
+FWRD	Forward Air Corp.
+FXCB	Fox Chase Bancorp
+FXEN	FX Energy
+GABC	German American Bancorp
+GAGA	Le Gaga Holdings
+GAI	Global-Tech Advanced Innovations Inc.
+GAIA	Gaiam
+GAIN	Gladstone Investment Corp.
+GAME	Shanda Games Limited
+GASS	Stealthgas
+GBCI	Glacier Bancorp
+GBDC	Golub Capital Bdc
+GBLI	Global Indemnity Plc
+GBNK	Guaranty Bancorp
+GCBC	Greene County Bancorp
+GCFB	Granite City Food And Brewery Ltd
+GCOM	Globecomm Systems Inc.
+GCVRZ	Sanofi-Aventis Cvr
+GEDU	Global Education & Technology Group
+GENC	Gencor Industries Inc.
+GENE	Genetic Technologies Ltd
+GENT	Gentium Spa
+GEOI	Georesources
+GEOY	Geoeye
+GERN	Geron Corp.
+GEVO	Gevo
+GFED	Guaranty Federal Bancshares
+GFN	General Finance Corp.
+GFNCL	General Finance Corp.
+GGAL	Grupo Financiero Galicia S.A.
+GHDX	Genomic Health
+GIFI	Gulf Island Fabrication
+GIGA	Giga-Tronics Inc.
+GIGM	Gigamedia Limited
+GIII	G-III Apparel Group
+GILD	Gilead Sciences
+GILT	Gilat Satellite Networks Ltd
+GIVN	Given Imaging Ltd
+GKNT	Geeknet
+GKSR	G&K Services
+GLAD	Gladstone Capital Corp.
+GLBC	Global Crossing Ltd
+GLBL	Global Industries
+GLBS	Globus Maritime Limited
+GLBZ	Glen Burnie Bancorp
+GLCH	Gleacher & Company
+GLDC	Golden Enterprises
+GLDD	Great Lakes Dredge & Dock Corp.
+GLGL	Glg Life Tech Corp
+GLNG	Golar Lng Limited
+GLPW	Global Power Equipment Group Inc
+GLRE	Greenlight Capital Re
+GLUU	Glu Mobile Inc.
+GMAN	Gordmans Stores
+GMCR	Green Mountain Coffee Roasters
+GMET	Geomet
+GMETP	Geomet
+GMLP	Golar Lng Partners Lp
+GNCMA	General Communication
+GNET	Global Traffic Network
+GNMK	Genmark Diagnostics
+GNOM	Complete Genomics
+GNTX	Gentex Corp.
+GNVC	Genvec
+GOLD	Randgold Resources Limited
+GOLF	Golfsmith International Holdings
+GOOD	Gladstone Commercial Corp.
+GOODO	Gladstone Commercial Corp.
+GOODP	Gladstone Commercial Corp.
+GOOG	Google Inc.
+GPIC	Gaming Partners International Corp.
+GPOR	Gulfport Energy Corp.
+GPRC	Guanwei Recycling
+GPRE	Green Plains Renewable Energy
+GPRO	Gen-Probe Inc.
+GRAN	Bank Of Granite Corp.
+GRFS	Grifols S.A.
+GRID	Nasdaq Clean Edge Smart Grid
+GRIF	Griffin Land & Nurseries
+GRMH	Graymark Healthcare
+GRMN	Garmin Ltd
+GRNB	Green Bankshares
+GROW	U.S. Global Investors
+GRRF	China Grentech Corporation
+GRVY	Gravity Co.
+GSAT	Globalstar
+GSBC	Great Southern Bancorp
+GSIG	Gsi Group Inc
+GSIT	Gsi Technology
+GSJK	Compressco Partners L.P.
+GSM	Globe Specialty Metals Inc.
+GSOL	Global Sources Ltd
+GSVC	Next Innovation Corp.
+GTAT	Gt Advanced Technologies Inc
+GTIM	Good Times Restaurants Inc.
