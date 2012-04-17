@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<service-config xmlns="http://www.ebayopensource.org/turmeric/common/config">
+<service-config xmlns="http://www.ebayopensource.org/turmeric/common/config" group="CommonSOAServiceGroup">
     <service-impl-class-name>nl.tudelft.ewi.st.atlantis.tudelft.v1.services.configurationservice.impl.ConfigurationServiceV1Impl</service-impl-class-name>
     <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.intf.ConfigurationServiceV1</service-interface-class-name>
     <service-instance-config>
