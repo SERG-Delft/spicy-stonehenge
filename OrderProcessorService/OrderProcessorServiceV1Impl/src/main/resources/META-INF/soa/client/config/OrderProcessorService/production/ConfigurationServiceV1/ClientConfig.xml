@@ -2,7 +2,7 @@
 <client-config-list xmlns="http://www.ebayopensource.org/turmeric/common/config">
     <client-config group="CommonClientGroup">
         <service-interface-class-name>nl.tudelft.ewi.st.atlantis.tudelft.intf.ConfigurationServiceV1</service-interface-class-name>
-        <service-location>http://localhost:8080/configuration/ConfigurationServiceV1</service-location>
+        <service-location>http://localhost:8080/configuration-service-war/ConfigurationServiceV1</service-location>
         <client-instance-config>
             <invocation-options>
                 <preferred-transport name="HTTP11"/>

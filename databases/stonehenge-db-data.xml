@@ -20,6 +20,7 @@
   <SERVICE SERVICENAME="atlantis_BS" URL="http://localhost:8080/business-service-war/BusinessServiceV1" SEC="0" />
   <SERVICE SERVICENAME="atlantis_OPS" URL="http://localhost:8080/orderprocessor-service-war/OrderProcessorServiceV1" SEC="0" />
   <SERVICE SERVICENAME="atlantis_ES" URL="http://localhost:8080/exchange-service-war/ExchangeServiceV1" SEC="0" />
+  <SERVICE SERVICENAME="atlantis_QS" URL="http://localhost:8080/quote-service-war/QuoteServiceV1" SEC="0" />
   <WALLET WALLETID="1" USERID="uid:0" USD="100.00" EUR="990.00" GBP="10.00" CNY="20.00" INR="714.84" />
   <WALLET WALLETID="2" USERID="cuiting" USD="100.00" EUR="1000.00" GBP="0.01" CNY="2800.00" INR="10000.00" />
 </data>
